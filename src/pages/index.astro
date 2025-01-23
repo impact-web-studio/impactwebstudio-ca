@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import Services from '../components/home/Services.astro';
+import SBS from '../components/container/SBS.astro';
+import SBSReversed from '../components/container/SBSReversed.astro';
+import Gallery from '../components/Gallery.astro';
+import Reviews from '../components/home/Review.astro';
+import CTA from '../components/CTA.astro';
+
+const title =
+	'Pixel Perfect Websites | Impact Web Studio | Greater Toronto Area, ON';
+const description = 'Meta description for the page';
+const preloadImg = '/assets/images/landing.jpg';
+---
+
+<Layout
+	title={title}
+	description={description}
+>
+	<Hero />
+	<Services />
+	<SBS />
+	<SBSReversed />
+	<Gallery />
+	<Reviews />
+	<CTA />
+
+	<link
+		rel='stylesheet'
+		href='/styles/css/critical.css'
+		slot='head'
+	/>
+	<link
+		rel='stylesheet'
+		href='/styles/css/local.css'
+		slot='head'
+	/>
+	<script
+		slot='head'
+		defer
+		src='https://identity.netlify.com/v1/netlify-identity-widget.js'
+	></script>
+	<script slot='head' defer>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on('init', (user) => {
+				if (!user) {
+					window.netlifyIdentity.on('login', () => {
+						document.location.href = '/admin/';
+					});
+				}
+			});
+		}
+	</script>
+</Layout>

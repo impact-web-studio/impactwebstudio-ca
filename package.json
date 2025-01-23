@@ -1,0 +1,17 @@
+{
+	"name": "iws-astro-starter-kit",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"watch:sass": "sass --watch public/styles/scss:./public/styles/css",
+		"build:sass": "sass public/styles/sass:./public/styles/css"
+	},
+	"dependencies": {
+		"astro": "^5.1.7",
+		"vite": ">=6.0.9"
+	}
+}

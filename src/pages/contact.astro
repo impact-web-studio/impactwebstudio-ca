@@ -1,0 +1,173 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import { client } from '../_data/client.js';
+
+const title = 'Contact | Impact Web Studio';
+const description = 'Meta description for the page';
+const reloadImg = '/assets/images/cabinets2.jpg';
+---
+
+<Layout
+	title={title}
+	description={description}
+>
+	<link
+		rel='stylesheet'
+		href='/styles/css/contact.css'
+		slot='head'
+	/>
+
+	<!-- ============================================ -->
+	<!--                    LANDING                   -->
+	<!-- ============================================ -->
+
+	<section id='int-hero'>
+		<h1 id='home-h'>Contact Us</h1>
+		<picture>
+			<source
+				media='(max-width: 600px)'
+				srcset='/assets//images/cabinets2-m.jpg'
+			/>
+			<source
+				media='(min-width: 601px)'
+				srcset='/assets//images/cabinets2.jpg'
+			/>
+			<img
+				aria-hidden='true'
+				decoding='async'
+				src='/assets//images/cabinets2.jpg'
+				alt='kitchen cabinets'
+				loading='eager'
+				width='2500'
+				height='1667'
+			/>
+		</picture>
+	</section>
+
+	<!-- ============================================ -->
+	<!--                Contact Form                  -->
+	<!-- ============================================ -->
+
+	<section id='iws-contact'>
+		<div class='iws-container'>
+			<form
+				id='iws-form'
+				name='Contact Form'
+				method='post'
+			>
+				<div class='iws-content'>
+					<span class='iws-topper'>Contact</span>
+					<h2 class='iws-title'>Get in Touch</h2>
+					<p class='iws-text'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
+						elementum ullamcorper ipsum porttitor aliquam. Id magna urna
+						ultrices odio pulvinar. Sed ut.
+					</p>
+				</div>
+				<label>
+					Name
+					<input
+						required
+						type='text'
+						id='name'
+						name='name'
+						placeholder='Name'
+					/>
+				</label>
+				<label>
+					Email
+					<input
+						required
+						type='text'
+						id='email'
+						name='email'
+						placeholder='Email'
+					/>
+				</label>
+				<label>
+					Phone
+					<input
+						required
+						type='text'
+						id='phone'
+						name='phone'
+						placeholder='Phone'
+					/>
+				</label>
+				<label>
+					How Did You Find Us
+					<input
+						type='text'
+						id='find'
+						name='find-us'
+						placeholder='How did you find us?'
+					/>
+				</label>
+				<label class='iws-label-message'>
+					Message
+					<textarea
+						required
+						name='Message'
+						id='message'
+						placeholder='Write message...'
+					></textarea>
+				</label>
+				<button
+					class='iws-button-solid'
+					type='submit'
+				>
+					Submit Message
+				</button>
+			</form>
+			<div class='iws-right-section'>
+				<!--Email-->
+				<span class='iws-header'>Email</span>
+				<a
+					class='iws-link'
+					href='mailto:{ client.email }'
+					>{client.email}</a
+				>
+				<!--Phone-->
+				<span class='iws-header'>Phone</span>
+				<a
+					class='iws-link'
+					href='tel:{ client.phoneForTel }'
+					>{client.phone}</a
+				>
+				<!--Address-->
+				<span class='iws-header'>Address</span>
+				<a
+					class='iws-link'
+					href='{ client.address.mapLink }'
+				>
+					{client.address.lineOne},
+					<br />
+					{client.address.lineTwo},
+					<br />
+					<span class='iws-block'>
+						{client.address.city}
+						{client.address.province}
+						{client.address.postalCode}
+					</span>
+				</a>
+
+				<!-- Background Image-->
+				<picture class='iws-bg-picture'>
+					<source
+						media='(min-width: 601px)'
+						srcset='/assets//images/skyscraper.jpg'
+					/>
+					<img
+						aria-hidden='true'
+						decoding='async'
+						src='/assets//images/skyscraper.jpg'
+						alt='building'
+						loading='lazy'
+						width='2500'
+						height='1667'
+					/>
+				</picture>
+			</div>
+		</div>
+	</section>
+</Layout>
