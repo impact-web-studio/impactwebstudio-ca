@@ -1,22 +1,39 @@
 ---
 import { client } from '../../_data/client.js';
+
+const email = client.email || null;
+const phone = client.phone || null;
+const lineOne = client.address.lineOne || null;
+const lineTwo = client.address.lineTwo || null;
+const city = client.address.city || null;
+const province = client.address.province || null;
+const postalCode = client.address.postalCode || null;
+const country = client.address.country || null;
+const logo = client.links.logo || null;
 ---
 
 <footer id='footer'>
 	<div class='container'>
 		<div class='left-section'>
-			<a
-				class='logo'
-				href='/'
-				><img
-					loading='lazy'
-					decoding='async'
-					src={client.links.logo}
-					alt='logo'
-					width='264'
-					height='78'
-				/></a
-			>
+			{
+				logo && (
+					<>
+						<a
+							class='logo'
+							href='/'
+						>
+							<img
+								loading='lazy'
+								decoding='async'
+								src={logo}
+								alt='logo'
+								width='264'
+								height='78'
+							/>
+						</a>
+					</>
+				)
+			}
 			<p>
 				Extra content if you need it, if not you can delete this whole p tag. I
 				usually do.
@@ -59,21 +76,45 @@ import { client } from '../../_data/client.js';
 					</li>
 					<li>
 						<a href='/contact'>
-							{client.address.lineOne}<br />
-							{client.address.lineTwo}<br />
-							{client.address.city}
-							{client.address.province}
-							{client.address.postalCode}
+							{
+								// checks if address exists and if it does, it will display it
+								lineOne && (
+									<>
+										{lineOne}
+										<br />
+									</>
+								)
+							}
+							{
+								lineTwo && (
+									<>
+										{lineTwo}
+										<br />
+									</>
+								)
+							}
+
+							{city && <>{city},</>}
+							{province && <>{province}.</>}
+							{postalCode && <>{postalCode}</>}
+
+							{}
 						</a>
 					</li>
-					<li>
-						<a href=`tel:${client.phone}`>
-							T: {client.phone}
-						</a>
-					</li>
-					<li>
-						<a href=`mailto:${ client.email }`>Click to Email</a>
-					</li>
+					{
+						phone && (
+							<li>
+								<a href={`tel:${phone}`}>T: {phone}</a>
+							</li>
+						)
+					}
+					{
+						email && (
+							<li>
+								<a href={`mailto:${email}`}>E: {email}</a>
+							</li>
+						)
+					}
 				</ul>
 			</div>
 		</div>

@@ -1,23 +1,22 @@
 export const client = {
-	name: 'Business Name',
-	email: 'name@domain.com',
-	phone: '555-555-555',
+	name: 'Impact Web Studio',
+	email: 'contact@impactwebstudio.ca',
+	phone: '647-767-8840',
 	address: {
-		lineOne: 'First Address Line',
-		lineTwo: 'Second Address Line',
-		city: 'City',
-		province: 'Province.',
-		postalCode: 'A1A 1A1',
-		country: 'CountryCode',
-		mapLink: 'https://maps.app.goo.gl/yhMP9U2iPeaXMPdj9',
+		lineOne: '',
+		lineTwo: '',
+		city: 'Toronto',
+		province: 'ON',
+		postalCode: '',
+		country: 'CA',
+		mapLink: '',
 	},
 	socials: {
-		facebook: 'https://www.facebook.com',
-		instagram: 'https://www.instagram.com',
+		facebook: '',
+		instagram: '',
 	},
 	links: {
 		logo: 'https://i.imgur.com/uRlzXA9.png',
 	},
-	//! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-	domain: 'https://www.hendersonhomeimprovements.ca',
+	domain: 'https://www.impactwebstudio.ca',
 };
