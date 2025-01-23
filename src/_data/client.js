@@ -3,17 +3,17 @@ export const client = {
 	email: 'contact@impactwebstudio.ca',
 	phone: '647-767-8840',
 	address: {
-		lineOne: '',
-		lineTwo: '',
+		lineOne,
+		lineTwo,
 		city: 'Toronto',
 		province: 'ON',
-		postalCode: '',
+		postalCode,
 		country: 'CA',
-		mapLink: '',
+		mapLink,
 	},
 	socials: {
-		facebook: '',
-		instagram: '',
+		facebook,
+		instagram,
 	},
 	links: {
 		logo: 'https://i.imgur.com/uRlzXA9.png',

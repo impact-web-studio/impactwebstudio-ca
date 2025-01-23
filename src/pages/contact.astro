@@ -4,7 +4,16 @@ import { client } from '../_data/client.js';
 
 const title = 'Contact | Impact Web Studio';
 const description = 'Meta description for the page';
-const reloadImg = '/assets/images/cabinets2.jpg';
+
+const email = client.email || null;
+const phone = client.phone || null;
+const lineOne = client.address.lineOne || null;
+const lineTwo = client.address.lineTwo || null;
+const city = client.address.city || null;
+const province = client.address.province || null;
+const postalCode = client.address.postalCode || null;
+const mapLink = client.address.mapLink || null;
+const logo = client.links.logo || null;
 ---
 
 <Layout
@@ -125,31 +134,53 @@ const reloadImg = '/assets/images/cabinets2.jpg';
 				<a
 					class='iws-link'
 					href='mailto:{ client.email }'
-					>{client.email}</a
+					>{email}</a
 				>
 				<!--Phone-->
-				<span class='iws-header'>Phone</span>
-				<a
-					class='iws-link'
-					href='tel:{ client.phoneForTel }'
-					>{client.phone}</a
-				>
+				{
+					phone && (
+						<>
+							<span class='iws-header'>Phone</span>
+							<a
+								class='iws-link'
+								href='tel:{ phone }'
+							>
+								{phone}
+							</a>
+						</>
+					)
+				}
+
 				<!--Address-->
 				<span class='iws-header'>Address</span>
-				<a
-					class='iws-link'
-					href='{ client.address.mapLink }'
-				>
-					{client.address.lineOne},
-					<br />
-					{client.address.lineTwo},
-					<br />
-					<span class='iws-block'>
-						{client.address.city}
-						{client.address.province}
-						{client.address.postalCode}
-					</span>
-				</a>
+				{
+					mapLink && (
+						<>
+							<a
+								class='iws-link'
+								href='{ mapLink }'
+							>
+								{lineOne && (
+									<>
+										{lineOne},
+										<br />
+									</>
+								)}
+								{lineTwo && (
+									<>
+										{lineTwo},
+										<br />
+									</>
+								)}
+								<span class='iws-block'>
+									{city && <>{city},</>}
+									{province && <>{province}.</>}
+									{postalCode && <>{postalCode}</>}
+								</span>
+							</a>
+						</>
+					)
+				}
 
 				<!-- Background Image-->
 				<picture class='iws-bg-picture'>
