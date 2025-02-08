@@ -25,31 +25,30 @@ const preloadImg = '/assets/images/landing.jpg';
 	<Gallery />
 	<Reviews />
 	<CTA />
-
-	<link
-		rel='stylesheet'
-		href='/styles/css/critical.css'
-		slot='head'
-	/>
-	<link
-		rel='stylesheet'
-		href='/styles/css/local.css'
-		slot='head'
-	/>
-	<script
-		slot='head'
-		defer
-		src='https://identity.netlify.com/v1/netlify-identity-widget.js'
-	></script>
-	<script slot='head' defer>
-		if (window.netlifyIdentity) {
-			window.netlifyIdentity.on('init', (user) => {
-				if (!user) {
-					window.netlifyIdentity.on('login', () => {
-						document.location.href = '/admin/';
-					});
-				}
-			});
-		}
-	</script>
 </Layout>
+<link
+	rel='stylesheet'
+	href='/styles/css/critical.css'
+	slot='head'
+/>
+<link
+	rel='stylesheet'
+	href='/styles/css/local.css'
+	slot='head'
+/>
+<script
+	slot='head'
+	defer
+	src='https://identity.netlify.com/v1/netlify-identity-widget.js'
+></script>
+<script slot='head' defer>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on('init', (user) => {
+			if (!user) {
+				window.netlifyIdentity.on('login', () => {
+					document.location.href = '/admin/';
+				});
+			}
+		});
+	}
+</script>

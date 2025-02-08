@@ -129,6 +129,7 @@
 		font-family: 'Roboto', Arial, sans-serif;
 		font-size: 100%;
 		color: var(--bodyTextColor);
+		width: 100dvw;
 	}
 	*,
 	*:before,
