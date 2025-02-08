@@ -40,13 +40,8 @@
 	}
 	.iws-topper {
 		display: block;
-		margin-bottom: 0.25rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-size: var(--topperFontSize);
-		line-height: 1.2em;
 		font-weight: 700;
-		color: var(--primary);
 		text-align: inherit;
 	}
 	.iws-title {
@@ -112,7 +107,7 @@
 /* Mobile Layouts */
 @media screen and (min-width: 0rem){
 	section{
-		padding: 2rem 0.75rem;
+		padding: 3rem 0.75rem;
 	}
 }
 /* Desktop - 1024px */
