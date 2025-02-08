@@ -44,9 +44,34 @@ import BenefitsCard from '../home/BenefitsCard.astro';
 
 			<ul class='iws-flex-group benefit-cards'>
 				<BenefitsCard
-					icon='MobileIcon'
+					icon='CheckIcon'
 					title='100% secure'
 					description='Our sites are just static HTML and CSS code, meaning there’s literally nothing that can be hacked.'
+				/>
+				<BenefitsCard
+					icon='CheckIcon'
+					title='Custom Designed'
+					description='Our designs are made by an in-house design team, which allows us to make anything we want.'
+				/>
+				<BenefitsCard
+					icon='CheckIcon'
+					title='100 pagespeed score'
+					description='Our sites have zero bloat, zero waste, and built with purpose so we get perfect 98-100/100 speed scores with Google.'
+				/>
+				<BenefitsCard
+					icon='CheckIcon'
+					title='money back guarantee'
+					description='If we can’t design something you like, you get your money back and the contract is cancelled. We stand by our work.'
+				/>
+				<BenefitsCard
+					icon='CheckIcon'
+					title='Unlimited edits'
+					description='Need to make an update? Just let us know and we’ll get it done for you.'
+				/>
+				<BenefitsCard
+					icon='CheckIcon'
+					title='SEO focused'
+					description='No snake oil, no tricks, no lies. We explain very clearly what SEO is, how it works, and what we can do to get you ranking.'
 				/>
 			</ul>
 		</div>
@@ -117,7 +142,6 @@ import BenefitsCard from '../home/BenefitsCard.astro';
 			.iws-flex-group {
 				position: relative;
 				border-radius: 1rem;
-				background-color: #f7f7f7;
 				/* 16px - 32px */
 				padding: clamp(1rem, 3vw, 2rem);
 			}
@@ -128,7 +152,7 @@ import BenefitsCard from '../home/BenefitsCard.astro';
 				margin: 0 0 1.5rem 0;
 				padding: 0;
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+				grid-template-columns: 1fr;
 				align-items: center;
 				gap: clamp(1rem, 2vw, 1.25rem);
 			}
@@ -295,7 +319,6 @@ import BenefitsCard from '../home/BenefitsCard.astro';
 			#sbs-r .iws-flex-group {
 				position: relative;
 				border-radius: 1rem;
-				background-color: #f7f7f7;
 				/* 16px - 32px */
 				padding: clamp(1rem, 3vw, 2rem);
 			}
