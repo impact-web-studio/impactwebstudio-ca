@@ -110,6 +110,11 @@
 }
 
 /* Mobile Layouts */
+@media screen and (min-width: 0rem){
+	section{
+		padding: 2rem 0.75rem;
+	}
+}
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
 	.iws-hide-on-mobile {
