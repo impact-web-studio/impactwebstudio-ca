@@ -3,11 +3,11 @@ import { client } from '../_data/client.js';
 
 const email = client.email || null;
 const phone = client.phone || null;
-const lineOne = client.address.lineOne || null;
-const lineTwo = client.address.lineTwo || null;
+// const lineOne = client.address.lineOne || null;
+// const lineTwo = client.address.lineTwo || null;
 const city = client.address.city || null;
 const province = client.address.province || null;
-const postalCode = client.address.postalCode || null;
+// const postalCode = client.address.postalCode || null;
 const logo = client.links.logo || null;
 ---
 
@@ -75,29 +75,8 @@ const logo = client.links.logo || null;
 					</li>
 					<li>
 						<a href='/contact'>
-							{
-								// checks if address exists and if it does, it will display it
-								lineOne && (
-									<>
-										{lineOne}
-										<br />
-									</>
-								)
-							}
-							{
-								lineTwo && (
-									<>
-										{lineTwo}
-										<br />
-									</>
-								)
-							}
-
 							{city && <>{city},</>}
 							{province && <>{province}.</>}
-							{postalCode && <>{postalCode}</>}
-
-							{}
 						</a>
 					</li>
 					{

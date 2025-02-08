@@ -14,6 +14,22 @@
 		--bodyTextColor: #4e4b66;
 		--bodyTextColorWhite: #fafbfc;
 		--bgColor: #1b1b42;
+
+		/* IWS Colors */
+		--dark-one: #181818;
+		--dark-two: #37474f;
+		--dark-three: #37474fbf;
+		--primary-blue: #192b80;
+		--accent-blue-light-mode: #232ed1;
+		--accent-yellow-light-mode: #ffcd39;
+		--light-one: #fafafa;
+		--light-two: #fafafacc;
+		--light-three: #fafafa80;
+		--accent-blue-dark-mode: #a7c7e7;
+		--accent-yellow-dark-mode: #ffd675;
+		--primary-green: #37474f;
+		--off-white-bg: #eee;
+
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
 		/* 31px - 49px */
