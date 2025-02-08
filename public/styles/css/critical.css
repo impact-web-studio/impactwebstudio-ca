@@ -108,56 +108,6 @@
 		color: var(--bodyTextColorWhite);
 		text-align: center;
 	}
-	#hero .iws-button-solid {
-		margin-bottom: 1rem;
-		height: initial;
-		line-height: clamp(2.875em, 5.5vw, 3.5em);
-	}
-	#hero .iws-button-transparent {
-		z-index: 1;
-		position: relative;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		border: 1px solid var(--bodyTextColorWhite);
-		margin: 0 0.5rem;
-		background-color: transparent;
-		/* 46px - 56px */
-		height: clamp(2.875em, 5.5vw, 3.5em);
-		width: 11.25rem;
-		box-sizing: border-box;
-		padding: 0;
-		text-decoration: none;
-		font-size: 1rem;
-		/* 46px - 56px */
-		line-height: clamp(2.875em, 5.5vw, 3.5em);
-		font-weight: 700;
-		color: #fff;
-	}
-	#hero .iws-button-transparent .iws-img {
-		display: block;
-		margin-right: 0.75rem;
-	}
-	#hero .iws-button-transparent:before {
-		z-index: -1;
-		position: absolute;
-		/* so it sits on top of the border */
-		top: -1px;
-		bottom: -1px;
-		left: -1px;
-		right: -1px;
-		content: '';
-		opacity: 1;
-		/* this is what creates the grow affect on hover */
-		transform: scaleX(0);
-		display: block;
-		background: #000;
-		transition: transform 0.3s;
-		transform-origin: left;
-	}
-	#hero .iws-button-transparent:hover:before {
-		transform: scaleX(1);
-	}
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
@@ -306,5 +256,3 @@
 		color: #fff;
 	}
 }
-
-/*# sourceMappingURL=critical.css.map */
