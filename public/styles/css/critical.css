@@ -94,11 +94,7 @@
 		width: 80vw;
 		box-sizing: border-box;
 	}
-	#hero .iws-topper {
-		margin-bottom: 1rem;
-		color: var(--accent-yellow-light-mode);
-		text-align: center;
-	}
+
 	#hero .iws-title {
 		width: 100%;
 		color: var(--bodyTextColorWhite);
