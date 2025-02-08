@@ -1,0 +1,106 @@
+---
+const { icon, title, description, link } = Astro.props;
+
+const iconPath = `/assets/svgs/${icon}.svg`;
+---
+
+<ul class='iws-card-group'>
+	<li class='iws-item'>
+		<a
+			class='iws-link'
+			href={link}
+		>
+			<img
+				class='iws-icon'
+				src={iconPath}
+				alt='icon'
+				width=''
+				height=''
+				loading='lazy'
+				decoding='async'
+				aria-hidden='true'
+			/>
+			<p class='iws-item-text'>
+				{description}
+			</p>
+			<a href={link}>Learn More</a>
+		</a>
+	</li>
+</ul>
+
+<style>
+	/*-- -------------------------- -->
+<---        Why Choose          -->
+<--- -------------------------- -*/
+	/* Mobile - 360px */
+	@media only screen and (min-width: 0rem) {
+		.iws-item {
+			list-style: none;
+			text-align: left;
+			width: 100%;
+			margin: 0;
+			padding: 2rem;
+			background-color: #f7f7f7;
+			border-radius: 1rem;
+			/* clips image corners */
+			overflow: hidden;
+			/* prevents padding from adding to height and width */
+			box-sizing: border-box;
+			position: relative;
+			z-index: 1;
+			transition: background-color 0.3s;
+		}
+		.iws-item:hover {
+			cursor: pointer;
+		}
+
+		.iws-item:hover .iws-icon {
+			/* turns it white */
+			filter: grayscale(1) brightness(1000%);
+		}
+		.iws-item:hover .iws-h3,
+		.iws-item:hover .iws-item-text {
+			color: #fff;
+		}
+
+		.iws-link {
+			text-decoration: none;
+		}
+		.iws-icon {
+			width: auto;
+			height: 3rem;
+			margin-bottom: 1.5rem;
+			display: block;
+		}
+		.iws-icon path {
+			transition: fill 0.3s;
+		}
+		.iws-h3 {
+			font-size: 1.25rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: var(--dark-one);
+			transition: color 0.3s;
+		}
+		.iws-item-text {
+			font-size: 1rem;
+			line-height: 1.5em;
+			margin: 0;
+			color: var(--bodyTextColor);
+			transition: color 0.3s;
+		}
+	}
+	/* Tablet - 768px */
+	@media only screen and (min-width: 48rem) {
+		.iws-item {
+			width: 48.6%;
+		}
+	}
+	/* Desktop - 1300px */
+	@media only screen and (min-width: 81.25rem) {
+		.iws-item {
+			/* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 22.5vw or 23% to get the desired sizes fit 4 in a row and then stack when you add more */
+			width: clamp(23.84%, 22.5vw, 23.95%);
+		}
+	}
+</style>

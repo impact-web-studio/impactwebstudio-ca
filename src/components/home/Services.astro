@@ -1,5 +1,6 @@
 ---
 import SectionHeader from '../SectionHeader.astro';
+import ServiceCard from './ServiceCard.astro';
 ---
 
 <section id='services'>
@@ -8,4 +9,70 @@ import SectionHeader from '../SectionHeader.astro';
 		heading='set it and forget it'
 		description='We offer a variety of services to help your business grow. From website design to SEO, we have you covered.'
 	/>
+	<ul class='iws-card-group'>
+		<ServiceCard
+			title='Mobile First Design'
+			description='Most users browse on mobile. We design for smaller screens first, ensuring fast loading, easy navigation, and a smooth experience.'
+			link='/services/mobile-first-design'
+			icon='MobileIcon'
+		/>
+		<ServiceCard
+			title='Fully Responsive'
+			description='Your website will automatically adjust to any screen size—desktop, tablet, or mobile—so customers always have a consistent viewing experience.'
+			link='/services/mobile-first-design'
+			icon='ResponsiveIcon'
+		/>
+		<ServiceCard
+			title='All-in-one solution'
+			description='We handle everything—design, hosting, security, updates, and support—so you can focus on running your business without the technical headaches.'
+			link='/services/mobile-first-design'
+			icon='AIO'
+		/>
+		<ServiceCard
+			title='optimized page speed'
+			description='Slow websites drive customers away. We optimize images, code, and server performance to ensure fast load times and better search rankings.'
+			link='/services/mobile-first-design'
+			icon='PageSpeedIcon'
+		/>
+		<ServiceCard
+			title='Google PPC Ads'
+			description='Get instant visibility on Google with targeted ads that attract the right customers and maximize your ROI'
+			link='/services/mobile-first-design'
+			icon='GooglePPCIcon'
+		/>
+		<ServiceCard
+			title='SEO Services'
+			description='Improve your Google rankings with keyword research, copy optimization, and technical SEO, bringing in more organic traffic over time.'
+			link='/services/mobile-first-design'
+			icon='SEOIcon'
+		/>
+	</ul>
 </section>
+
+<style>
+	/*-- -------------------------- -->
+<---        Why Choose          -->
+<--- -------------------------- -*/
+	/* Mobile - 360px */
+	@media only screen and (min-width: 0rem) {
+		.iws-title {
+			max-width: 30ch;
+		}
+	}
+	/* Tablet - 768px */
+	@media only screen and (min-width: 48rem) {
+		.iws-card-group {
+			justify-content: space-between;
+			/* makes sure every box "stretches" to be the same height as the tallest box */
+			align-items: stretch;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+	/* Desktop - 1300px */
+	@media only screen and (min-width: 81.25rem) {
+		.iws-card-group {
+			justify-content: center;
+		}
+	}
+</style>
