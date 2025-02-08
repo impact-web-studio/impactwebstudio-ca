@@ -96,7 +96,7 @@
 	}
 	#hero .iws-topper {
 		margin-bottom: 1rem;
-		color: var(--primary);
+		color: var(--accent-yellow-light-mode);
 		text-align: center;
 	}
 	#hero .iws-title {
