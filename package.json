@@ -11,7 +11,19 @@
 		"build:sass": "sass public/styles/sass:./public/styles/css"
 	},
 	"dependencies": {
+		"@astrojs/react": "^4.2.0",
+		"@astrojs/tailwind": "^6.0.0",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
 		"astro": "^5.1.7",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.474.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.0.1",
+		"tailwindcss": "^3.4.17",
+		"tailwindcss-animate": "^1.0.7",
 		"vite": ">=6.0.9"
 	}
 }
