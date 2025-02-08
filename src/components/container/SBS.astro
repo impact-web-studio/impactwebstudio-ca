@@ -1,3 +1,7 @@
+---
+import BenefitsCard from '../home/BenefitsCard.astro';
+---
+
 <section id='sbs'>
 	<div class='iws-container'>
 		<!-- Left Image Section -->
@@ -38,7 +42,13 @@
 				support, and lifetime updates.
 			</p>
 
-			<div class='iws-flex-group'></div>
+			<ul class='iws-flex-group benefit-cards'>
+				<BenefitsCard
+					icon='MobileIcon'
+					title='100% secure'
+					description='Our sites are just static HTML and CSS code, meaning there’s literally nothing that can be hacked.'
+				/>
+			</ul>
 		</div>
 	</div>
 
@@ -110,6 +120,17 @@
 				background-color: #f7f7f7;
 				/* 16px - 32px */
 				padding: clamp(1rem, 3vw, 2rem);
+			}
+
+			.benefit-cards {
+				width: 100%;
+				max-width: 39.375rem;
+				margin: 0 0 1.5rem 0;
+				padding: 0;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+				align-items: center;
+				gap: clamp(1rem, 2vw, 1.25rem);
 			}
 			.iws-flex-p {
 				margin: 0 0 1rem;
