@@ -50,86 +50,38 @@ const { icon, title, description } = Astro.props;
 				transform: translateY(0);
 			}
 		}
-		.iws-container {
-			width: 100%;
-			/* changes to 1280px at desktop */
-			max-width: 36.5rem;
-			margin: auto;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			/* 48px - 64px */
-			gap: clamp(3rem, 6vw, 4rem);
-		}
-		.iws-content {
-			/* set text align to left if content needs to be left aligned */
-			text-align: left;
-			width: 100%;
-			max-width: 39.375rem;
-			display: flex;
-			flex-direction: column;
-			/* centers content horizontally, set to flex-start to left align */
-			align-items: flex-start;
-		}
 
-		.iws-topper {
-			color: #767676;
-		}
-		.iws-title {
-			/* 23 characters wide including spaces */
-			max-width: 26ch;
-		}
-		.iws-text {
-			margin-bottom: 1rem;
-		}
-		.iws-text:last-of-type {
-			margin-bottom: 1.5rem;
-		}
-		.iws-card-group {
-			width: 100%;
-			max-width: 39.375rem;
-			margin: 0 0 1.5rem 0;
-			padding: 0;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
-			align-items: center;
-			gap: clamp(1rem, 2vw, 1.25rem);
-		}
 		.iws-item {
 			list-style: none;
-			/* 16px - 24px */
-			padding: clamp(1rem, 3vw, 1.5rem);
-			/* prevents padding from affecting height and width */
-			box-sizing: border-box;
-			background-color: #f7f7f7;
-			border-radius: 1rem;
-			border: 1px solid #e8e8e8;
+			padding: 1rem 0.75rem;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 0.75rem;
 		}
 		.iws-h3 {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			line-height: 1.2em;
 			font-weight: 700;
 			margin: 0;
-			color: var(--headerColor);
+			color: var(--dark-one);
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
 			gap: 0.5rem;
+			text-transform: uppercase;
 		}
 		.iws-h3-icon {
 			width: 2rem;
 			height: auto;
 			display: block;
+			color: var(--primary-blue);
 		}
 		.iws-item-text {
-			font-size: 0.875rem;
+			font-size: 1rem;
 			line-height: 1.5em;
 			margin: 0;
-			color: var(--bodyTextColor);
+			color: var(--dark-two);
 		}
 		.iws-ul {
 			width: 100%;
