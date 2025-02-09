@@ -1,0 +1,282 @@
+---
+import SectionHeader from "../SectionHeader.astro"
+import BlogCard from "./BlogCard.astro"
+---
+
+<section id="blog">
+    <div class="iws-container">
+        <div class="iws-content">
+            <SectionHeader topper="Our blog" heading="latest news and articles"/>
+        </div>
+        <ul class="iws-card-group">
+            <BlogCard title="blog title" image="/assets/images/performance" category="Ecommerce" date="07 Sept 2024"/>
+        </ul>
+    </div>
+    <div class="iws-bubbles" aria-hidden="true"></div>
+</section>
+
+
+<style>
+/*-- -------------------------- -->
+<---        Recent Posts        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #blog{
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    #blog.iws-container {
+        width: 100%;
+        /* changes to 1280px on desktop */
+        max-width: 43.75rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #blog.iws-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #blog.iws-title {
+        max-width: 20ch;
+    }
+    #blog.iws-topper {
+        color: var(--secondary);
+    }
+    #blog.iws-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+    #blog.iws-item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        grid-column: span 12;
+    }
+    #blog.iws-item:hover .iws-h3,
+    #blog.iws-item:hover .iws-date,
+    #blog.iws-item:hover .iws-category {
+        color: #fff;
+    }
+    #blog.iws-item:hover .iws-item-text {
+        background-color: var(--primary);
+    }
+    #blog.iws-item:hover .iws-icon-wrapper {
+        border-color: #fff;
+    }
+    #blog.iws-item:hover .iws-icon,
+    #blog.iws-item:hover .iws-date-icon {
+        filter: brightness(1000%) grayscale(1);
+    }
+    #blog.iws-item:hover .iws-icon {
+        transform: rotate(45deg);
+    }
+    #blog.iws-item:hover .iws-category::before {
+        background-color: #fff;
+        opacity: 0.2;
+    }
+    #blog.iws-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        /* if one card has more content then the others, the card will stretch to fill the parent container */
+        flex-grow: 1;
+        gap: 1rem;
+    }
+    #blog.iws-picture {
+        width: 100%;
+        height: 20rem;
+        margin: 0;
+        border-radius: 1.5rem;
+        display: block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    #blog.iws-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #blog.iws-item-text {
+        padding: 1.25rem;
+        background-color: #f7f7f7;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* makes the item text the element that grows to fill the container */
+        flex-grow: 1;
+        transition: background-color 0.3s;
+    }
+    #blog.iws-h3 {
+        /* 20px - 25px */
+        font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
+        line-height: 1.2em;
+        text-align: left;
+        margin: 0;
+        color: #1a1a1a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        transition: color 0.3s;
+    }
+    #blog.iws-icon-wrapper {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #bababa;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* prevents the parent flexbox from shrinking the icon */
+        flex-shrink: 0;
+        transition: border-color 0.3s;
+    }
+    #blog.iws-icon {
+        width: auto;
+        height: 0.75rem;
+        transition:
+            filter 0.3s,
+            transform 0.3s;
+    }
+    #blog.iws-info {
+        margin: 1rem 0 0;
+        padding: 1rem 0 0;
+        border-top: 1px solid #e8e8e8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #blog.iws-date {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        text-align: left;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.3s;
+    }
+    #blog.iws-date-icon {
+        width: auto;
+        height: 1.5rem;
+        transition: filter 0.3s;
+    }
+    #blog.iws-category {
+        font-size: 0.875rem;
+        /* centers the text if the category bullet has to span multiple lines */
+        text-align: center;
+        padding: 0.25rem 1rem;
+        color: #1a1a1a;
+        border-radius: 5rem;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+    }
+    #blog.iws-category::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #e8e8e8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #blog.iws-bubbles {
+        width: 20.0625rem;
+        height: 26.4375rem;
+        display: none;
+        position: absolute;
+        top: 66.4375rem;
+        right: -8.75rem;
+        z-index: -1;
+    }
+    #blog.iws-bubbles:before {
+        /* white border bubble */
+        content: "";
+        width: 16.5rem;
+        height: 16.5rem;
+        background: transparent;
+        opacity: 1;
+        border: 1px solid #1a1a1a;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation-name: floatAnimation;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+    #blog.iws-bubbles:after {
+        /* orange bubble */
+        content: "";
+        width: 16.5rem;
+        height: 16.5rem;
+        background: var(--primary);
+        opacity: 0.1;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        animation-name: floatAnimation2;
+        animation-duration: 14s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #blog.iws-bubbles {
+        display: block;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #blog.iws-container {
+        max-width: 80rem;
+    }
+    #blog.iws-item {
+        grid-column: span 4;
+    }
+    #blog.iws-bubbles {
+        top: 17.5625rem;
+    }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #blog.iws-bubbles {
+        margin-right: -61.875rem;
+        right: 50%;
+    }
+}
+
+                                
+</style>
