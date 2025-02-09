@@ -66,6 +66,9 @@ const contactInfo = [
 		value: "24/7"
 	}
 ];
+
+const currentYear = new Date().getFullYear();
+
 ---
 
 <footer id='footer'>
@@ -131,7 +134,7 @@ const contactInfo = [
 			rel='noopener'
 			>Impact Web Studio</a
 		>
-		<span class='copyright'> | Copyright 2025 - Present</span>
+		<span class='copyright'>Copyright &copy {currentYear}</span>
 	</div>
 </footer>
 
@@ -269,22 +272,23 @@ const contactInfo = [
 		margin: auto;
 		margin-top: 6.25rem;
 		width: 100%;
-		font-size: 1rem;
-		line-height: 2.25rem;
-		color: var(--light-one);
+		font-size: 0.875rem;
+		color: var(--light-two);
 		text-align: center;
 	}
 	.credit a {
 		text-decoration: none;
-		font-size: 1rem;
-		color: var(--primary);
+		font-size: 0.875rem;
+
+		color: var(--accent-yellow-light-mode);
 	}
 	.credit a:hover {
 		text-decoration: underline;
 	}
 	.credit .copyright {
 		display: block;
-		font-size: 1rem;
+		font-size: 0.875rem;
+		color: var(--light-two);
 	}
 }
 /* Small Desktop */
