@@ -1,15 +1,26 @@
 ---
+import { getCollection } from 'astro:content';
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allBlogPosts = await getCollection('blogs');
+
 import SectionHeader from "../SectionHeader.astro"
 import BlogCard from "./BlogCard.astro"
 ---
-
 <section id="blog">
     <div class="iws-container">
         <div class="iws-content">
             <SectionHeader topper="Our blog" heading="latest news and articles"/>
         </div>
         <ul class="iws-card-group">
-            <BlogCard title="blog title" image="/assets/images/performance" category="Ecommerce" date="07 Sept 2024"/>
+            <!-- <BlogCard title="blog title" image="/assets/images/performance" category="Ecommerce" date="07 Sept 2024"/> -->
+            {
+                allBlogPosts.map((post: any) => (
+                <pre>{JSON.stringify(post, null, 2)}</pre>
+                    <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href=`/blog/${post.id}`/>
+                ))
+            }
         </ul>
     </div>
     <div class="iws-bubbles" aria-hidden="true"></div>

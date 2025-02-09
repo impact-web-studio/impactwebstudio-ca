@@ -1,9 +1,20 @@
 ---
-const {image, title, date, category} = Astro.props;
+const {image, title, date, category, href} = Astro.props;
+
+const formatDate = (isoString: string) => {
+    const date = new Date(isoString);
+    return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    }).replace(/(\d+)(?=(st|nd|rd|th))/g, "$1");
+};
+
+const formattedDate = formatDate(date);
 ---
 
 <li class="iws-item">
-    <a class="iws-link" href="/">
+    <a class="iws-link" href={href}>
         <picture class="iws-picture">
             <source media="(max-width: 600px)"
                 srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-client.png">
@@ -27,7 +38,7 @@ const {image, title, date, category} = Astro.props;
                     <img class="iws-date-icon" decoding="async"
                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-calendar.svg"
                             alt="calendar" width="413" height="374" aria-hidden="true">
-                    {date}
+                    {formattedDate}
                 </span>
                 <span class="iws-category">
                     {category}
