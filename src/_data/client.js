@@ -8,8 +8,9 @@ export const client = {
 		country: 'CA',
 	},
 	socials: {},
-	links: {
-		logo: 'https://i.imgur.com/uRlzXA9.png',
+	logo: {
+		header: '/assets/svgs/iws-logo.svg',
+		footer: '/assets/svgs/iws-white-text.svg',
 	},
 	domain: 'https://www.impactwebstudio.ca',
 };
