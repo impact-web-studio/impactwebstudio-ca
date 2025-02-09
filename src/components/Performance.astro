@@ -46,9 +46,7 @@
             </ul>
             <!--Picture-->
             <picture class="iws-picture">
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/lightbulb.jpg">
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/lightbulb.jpg">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/lightbulb.jpg" alt="lightbulbs" width="630" height="461">
+                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/performance.png" alt="performance">
             </picture>
         </div>
     </div>
@@ -191,8 +189,7 @@
     }
     #performance .iws-picture {
         width: 100%;
-        /* 244px - 339px, changes clamp at tablet */
-        height: clamp(14rem, 62vw, 21.1875rem);
+        height: 400px;
         display: block;
         position: relative;
     }
@@ -202,7 +199,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 /* Tablet - 768px */
