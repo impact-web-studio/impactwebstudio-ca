@@ -28,19 +28,10 @@ import PerformanceMetric from './PerformanceMetric.astro'
         <!--Image Group-->
         <div class="iws-image-group">
             <ul class="iws-stat-group">
-                <PerformanceMetric metric="100%" title="PageSpeed Score"/>
-                <li class="iws-stat">
-                    <span class="iws-number">95+ PageSpeed Score</span>
-                    <span class="iws-desc">Lorem Ipsum Dolor Sit Amet Consectetur</span>
-                </li>
-                <li class="iws-stat">
-                    <span class="iws-number">{"<1s Load Times"}</span>
-                    <span class="iws-desc">Lorem Ipsum Dolor Sit Amet Consectetur</span>
-                </li>
-                <li class="iws-stat">
-                    <span class="iws-number">{"99.9% Uptime Guarantee"}</span>
-                    <span class="iws-desc">Lorem Ipsum Dolor Sit Amet Consectetur</span>
-                </li>
+                <PerformanceMetric metric="100%" title="Satisfaction Guaranteed"/>
+                <PerformanceMetric metric="90+" title="PageSpeed Score"/>
+                <PerformanceMetric metric="< 1s" title="Load Times"/>
+                <PerformanceMetric metric="99.9%" title="Uptime Guarantee"/>
             </ul>
             <!--Picture-->
             <picture class="iws-picture">
@@ -159,9 +150,11 @@ import PerformanceMetric from './PerformanceMetric.astro'
         padding: 0;
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 1rem;
+        row-gap: 3rem;
     }
     #performance .iws-stat {
         list-style: none;

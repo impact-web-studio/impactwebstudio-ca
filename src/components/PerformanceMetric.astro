@@ -9,18 +9,28 @@ const {metric, title} = Astro.props;
 <style>
 li{
     list-style: none;
+    width: 40%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+p{
+    line-height: 1em;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    width: fit-content;
+
 }
 
 .metric{
     font-size: 2.25rem;
     letter-spacing: -0.03em;
     font-weight: bold;
-    font-family: 'Poppins', 'Arial', sans-serif;
 
 }
 
 .title{
     font-size: 1rem;
-    font-family: 'Poppins', 'Arial', sans-serif;
 }
 </style>
