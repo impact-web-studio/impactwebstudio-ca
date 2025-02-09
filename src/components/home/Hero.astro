@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <section id='hero'>
@@ -27,6 +26,7 @@
 			</div>
 		</div>
 	</div>
+	<img src="/assets/images/iws-bg.png"/>
 </section>
 
 <style>
@@ -35,13 +35,16 @@
 	<--- -------------------------- -*/
 	/* Mobile - 360px */
 	@media only screen and (min-width: 0rem) {
+		img{
+			width: 100%;
+		}
 		#hero {
 			overflow: hidden;
 			position: relative;
 			z-index: 10;
 			display: flex;
 			flex-direction: column;
-			padding: 12rem 0.75rem 2rem 0.75rem;
+			padding: 12rem 0.75rem 0rem 0.75rem;
 			background-color: var(--dark-one);
 		}
 		.iws-container {
