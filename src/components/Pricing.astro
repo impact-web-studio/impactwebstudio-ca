@@ -96,13 +96,13 @@ const ecommerceBenefits = [
 ];
 ---
 
-<section id='pricing'>
+<section id='pricing iws-container'>
     <SectionHeader
     topper='our pricing'
     heading='flexible package options'
     description='We offer flexible package options to help with all budget, including optional add-ons for additional needs.'
 />
-	<ul>
+	<ul class="iws-card-group">
 		<PricingCard
 			title='Lump Sum'
 			primaryPrice='$3500'
@@ -133,6 +133,7 @@ const ecommerceBenefits = [
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+    
     .iws-container {
         width: 100%;
         max-width: 80em;
@@ -140,20 +141,8 @@ const ecommerceBenefits = [
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* 48px - 64px */
-        gap: clamp(3rem, 6vw, 4rem);
+        gap: 3rem;
         position: relative;
-    }
-    .iws-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: center;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-        position: relative;
-        z-index: 10;
     }
 
     .iws-card-group {
