@@ -17,7 +17,6 @@ import BlogCard from "./BlogCard.astro"
             <!-- <BlogCard title="blog title" image="/assets/images/performance" category="Ecommerce" date="07 Sept 2024"/> -->
             {
                 allBlogPosts.map((post: any) => (
-                <pre>{JSON.stringify(post, null, 2)}</pre>
                     <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href=`/blog/${post.id}`/>
                 ))
             }
