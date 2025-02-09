@@ -36,7 +36,7 @@ const formattedDate = formatDate(date);
             <div class="iws-info">
                 <span class="iws-date">
                     <img class="iws-date-icon" decoding="async"
-                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-calendar.svg"
+                            src="/assets/svgs/calendar.svg"
                             alt="calendar" width="413" height="374" aria-hidden="true">
                     {formattedDate}
                 </span>
@@ -81,7 +81,7 @@ const formattedDate = formatDate(date);
     }
     .iws-item:hover .iws-category::before {
         background-color: var(--light-one);
-        opacity: 0.2;
+        opacity: 0.3;
     }
     .iws-link {
         text-decoration: none;
@@ -180,7 +180,7 @@ const formattedDate = formatDate(date);
         /* centers the text if the category bullet has to span multiple lines */
         text-align: center;
         padding: 0.25rem 1rem;
-        color: var(--dark-one);
+        color: var(--light-one);
         border-radius: 5rem;
         position: relative;
         z-index: 0;
@@ -190,7 +190,7 @@ const formattedDate = formatDate(date);
         content: "";
         width: 100%;
         height: 100%;
-        background: #e8e8e8;
+        background: var(--dark-two);
         position: absolute;
         top: 0;
         left: 0;

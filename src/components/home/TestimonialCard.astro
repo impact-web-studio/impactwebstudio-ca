@@ -3,12 +3,14 @@ const {review, name, role} = Astro.props;
 ---
 
 <li class="iws-item">
-    <img class="iws-quote" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quote-blue.svg" decoding="async" alt="quote icon" width="40" height="33">
+    <img class="iws-quote" aria-hidden="true" src="/assets/svgs/quote.svg" decoding="async" alt="quote icon" width="40" height="33">
     <p class="iws-review">
         {review}
     </p>
-    <span class="iws-name">{name}</span>
-    <span class="iws-job">{role}</span>
+    <div class="client">
+        <span class="iws-name">{name}</span>
+        <span class="iws-job">{role}</span>
+    </div>
 </li>
 
 <style>
@@ -35,11 +37,11 @@ const {review, name, role} = Astro.props;
         align-items: flex-start;
         flex-direction: column;
         position: relative;
+        gap: 2rem;
     }
     .iws-quote {
         width: 2.5rem;
         height: auto;
-        margin-bottom: 2rem;
         display: block;
     }
     .iws-review {
@@ -47,9 +49,7 @@ const {review, name, role} = Astro.props;
         font-size: clamp(0.875rem, 2vw, 1.25rem);
         line-height: 1.5em;
         margin: 0;
-        /* 20px - 40px */
-        margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
-        color: var(--dark-one);
+        color: var(--dark-three);
     }
     .iws-name {
         /* 20px - 25px */
@@ -61,14 +61,20 @@ const {review, name, role} = Astro.props;
         margin-top: auto;
         color: var(--dark-one);
         display: block;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
     }
     .iws-job {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 1.6vw, 1rem);
         line-height: 1.5em;
         margin: 0;
-        color: var(--dark-two);
+        color: var(--dark-three);
         display: block;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: -0.03em;
+
     }
 }                                
 </style>
