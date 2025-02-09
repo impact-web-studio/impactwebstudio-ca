@@ -3,7 +3,7 @@ const { topper, heading, description } = Astro.props;
 ---
 
 <div class='iws-container'>
-	{topper && <spa class='iws-topper'>{topper}</spa>}
+	{topper && <span class='iws-topper'>{topper}</span>}
 	<div class='iws-content'>
 		<h2 class='iws-title'>{heading}</h2>
 		{description && <p class='iws-text'>{description}</p>}

@@ -1,0 +1,50 @@
+---
+import PortfolioCard from './home/PortfolioCard.astro';
+---
+
+<section id='portfolio'>
+	<div class='section-header'>
+		<div class='iws-header'>
+			<span class='iws-topper'>Portfolio</span>
+			<h2 class='iws-title'>Some of our previous work</h2>
+		</div>
+		<p class='iws-text'>
+			We have worked with clients all over the US and Canada for home services
+			contractors, restaurants, consulting agencies, start ups, dermatologists,
+			doctors, accountants, and more. No matter what your business is, we can
+			build a website that is effective, beautiful, performant, and tailored to
+			your industry.
+		</p>
+	</div>
+</section>
+
+<style>
+	.section-header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.iws-topper {
+		font-size: 0.875rem;
+		color: var(--dark-three);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.iws-title {
+		text-transform: uppercase;
+		font-size: 1.75rem;
+		line-height: 2rem;
+		color: var(--dark-one);
+	}
+
+	.iws-text {
+		font-size: 1rem;
+		color: var(--dark-two);
+	}
+
+	.iws-header {
+		display: flex;
+		flex-direction: column;
+	}
+</style>

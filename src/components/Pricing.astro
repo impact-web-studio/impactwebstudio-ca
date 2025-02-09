@@ -1,0 +1,121 @@
+---
+import PricingCard from './PricingCard.astro';
+
+const lumpSumBenefits = [
+	{
+		title: 'Design And Development',
+		included: true,
+	},
+	{
+		title: 'Website Hosting ($25/mo)',
+		included: true,
+	},
+	{
+		title: '5 Page Setup (+$100/page after 5)',
+		included: true,
+	},
+	{
+		title: '[Optional] Unlimited Edits Add-on (+$50/mo)',
+		included: true,
+	},
+	{
+		title: '[Optional] Blog Add-on (+$250)',
+		included: true,
+	},
+	{
+		title: '24/7 Support',
+		included: false,
+	},
+	{
+		title: 'Lifetime Updates',
+		included: false,
+	},
+];
+
+const monthlyBenefits = [
+	{
+		title: 'Design And Development',
+		included: true,
+	},
+	{
+		title: 'Includes Website Hosting',
+		included: true,
+	},
+	{
+		title: '5 Page Setup (+$100/page after 5)',
+		included: true,
+	},
+	{
+		title: 'Unlimited Edits',
+		included: true,
+	},
+	{
+		title: '[Optional] Blog Add-on (+$250)',
+		included: true,
+	},
+	{
+		title: '24/7 Support',
+		included: true,
+	},
+	{
+		title: 'Lifetime Updates',
+		included: true,
+	},
+];
+
+const ecommerceBenefits = [
+	{
+		title: 'Custom Shopify Store',
+		included: true,
+	},
+	{
+		title: 'Unlimited App Configuration',
+		included: true,
+	},
+	{
+		title: 'Shipping Integration',
+		included: true,
+	},
+	{
+		title: 'Shopify Tutorial Walkthrough',
+		included: true,
+	},
+	{
+		title: 'Fully Editable In Shopify CMS',
+		included: true,
+	},
+	{
+		title: '24/7 support',
+		included: false,
+	},
+	{
+		title: 'lifetime updates',
+		included: false,
+	},
+];
+---
+
+<section id='pricing'>
+	<ul>
+		<PricingCard
+			title='Lump Sum'
+			primaryPrice='$3500'
+			secondaryPrice='+ $25/mo hosting'
+			type=''
+			benefitList={lumpSumBenefits}
+		/>
+		<PricingCard
+			title='Monthly'
+			primaryPrice='$199/mo'
+			type='popular'
+			benefitList={monthlyBenefits}
+		/>
+		<PricingCard
+			title='Ecommerce'
+			primaryPrice='$8000'
+			secondaryPrice='starting price'
+			type=''
+			benefitList={ecommerceBenefits}
+		/>
+	</ul>
+</section>
