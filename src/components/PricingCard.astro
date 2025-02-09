@@ -1,5 +1,8 @@
 ---
 const { title, benefitList, primaryPrice, secondaryPrice, type } = Astro.props;
+
+const CheckIcon = '/assets/svgs/check.svg';
+const CrossIcon = '/assets/svgs/no.svg';
 ---
 
 <!-- ============================================ --><!--                   Pricing                    --><!-- ============================================ -->
@@ -11,7 +14,7 @@ const { title, benefitList, primaryPrice, secondaryPrice, type } = Astro.props;
         {console.log(benefitList)}
         {benefitList.map((benefit: { included: boolean; title: string; }) => (
             <li class={benefit.included ? 'iws-li' : 'iws-li iws-disabled'}>
-                <p>{benefit.title}</p> <span>{benefit.included ? 'YES' : 'NO'} </span>
+                <p>{benefit.title}</p> <span>{benefit.included ? <img src={CheckIcon}/> : <img src={CrossIcon}/>} </span>
             </li>
         ))}
 	</ul>
