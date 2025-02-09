@@ -1,26 +1,27 @@
 ---
+import SectionHeader from './SectionHeader.astro'
 import PerformanceMetric from './PerformanceMetric.astro'
+
+const hourglass = '/assets/svgs/hourglass.svg'
+const timer = '/assets/svgs/timer.svg'
+const timeCheck = '/assets/svgs/timecheck.svg'
 ---
 <section id="performance">
     <div class="iws-container">
         <div class="iws-content">
-            <span class="iws-topper">Performance</span>
-            <h2 class="iws-title">better websites that perform better</h2>
-            <p class="iws-text">
-                When it comes to website load times, not very many can get the Google PageSpeed scores that we get with each and every site. Test your website load times with Google PageSpeed Insights and see what your current site is scoring right now.
-            </p>
+            <SectionHeader topper="performance" heading="better websites, better results" description=" When it comes to website load times, not very many can get the Google PageSpeed scores that we get with each and every site. Test your website load times with Google PageSpeed Insights and see what your current site is scoring right now."/>
             <ul class="iws-ul">
                 <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/sheild.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40">
-                    Lorem Ipsum Dolor Sit Amet Consectectur
+                    <img class="iws-icon" aria-hidden="true" src={timeCheck} loading="lazy" decoding="async" alt="icon" width="24" height="24">
+                    Better load times means more traffic and more site conversions over time.
                 </li>
                 <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/pencil.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40">
-                    Lorem Ipsum Dolor Sit Amet Consectectur
+                    <img class="iws-icon" aria-hidden="true" src={timer} loading="lazy" decoding="async" alt="icon" width="24" height="24">
+                    Faster websites can help improve SEO and your Google ads performance.
                 </li>
                 <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/hat.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40">
-                    Lorem Ipsum Dolor Sit Amet Consectectur
+                    <img class="iws-icon" aria-hidden="true" src={hourglass} loading="lazy" decoding="async" alt="icon" width="24" height="24">
+                    Our sites load instantly in under 1 second or less, which leads to a better user experience and conversions.
                 </li>
             </ul>
             <a href="" class="iws-button-solid">More About Us</a>
@@ -69,6 +70,9 @@ import PerformanceMetric from './PerformanceMetric.astro'
         align-items: flex-start;
     }
 
+    .iws-title{
+        text-transform: uppercase;
+    }
     #performance .iws-text {
         margin-bottom: 1rem;
     }
