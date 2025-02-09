@@ -1,4 +1,5 @@
 ---
+import PerformanceMetric from './PerformanceMetric.astro'
 ---
 <section id="performance">
     <div class="iws-container">
@@ -27,10 +28,7 @@
         <!--Image Group-->
         <div class="iws-image-group">
             <ul class="iws-stat-group">
-                <li class="iws-stat">
-                    <span class="iws-number">100% Satisfaction Guarantee</span>
-                    <span class="iws-desc">Lorem Ipsum Dolor Sit Amet Consectetur</span>
-                </li>
+                <PerformanceMetric metric="100%" title="PageSpeed Score"/>
                 <li class="iws-stat">
                     <span class="iws-number">95+ PageSpeed Score</span>
                     <span class="iws-desc">Lorem Ipsum Dolor Sit Amet Consectetur</span>

@@ -1,3 +1,37 @@
+/* Fonts */
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Poppins/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Poppins/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* IMPACT WEB STUDIO STYLES, RESET, HEADER/NAVIGATION AND FOOTER */
 /*-- -------------------------- -->
 <---        Core Styles         -->

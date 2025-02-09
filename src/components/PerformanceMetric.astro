@@ -1,7 +1,26 @@
 ---
-const {stat, title} = Astro.props;
+const {metric, title} = Astro.props;
 ---
 <li class="iws-stat">
-    <p class="metric">{stat}</p>
+    <p class="metric">{metric}</p>
     <p class="title">{title}</p>
 </li>
+
+<style>
+li{
+    list-style: none;
+}
+
+.metric{
+    font-size: 2.25rem;
+    letter-spacing: -0.03em;
+    font-weight: bold;
+    font-family: 'Poppins', 'Arial', sans-serif;
+
+}
+
+.title{
+    font-size: 1rem;
+    font-family: 'Poppins', 'Arial', sans-serif;
+}
+</style>
