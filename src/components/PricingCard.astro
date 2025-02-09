@@ -1,8 +1,8 @@
 ---
 const { title, benefitList, primaryPrice, secondaryPrice, type } = Astro.props;
 
-const CheckIcon = '/assets/svgs/check.svg';
-const CrossIcon = '/assets/svgs/no.svg';
+import CheckIcon from '../components/svgs/YesIcon.astro';
+import CrossIcon from '../components/svgs/NoIcon.astro';
 ---
 
 <!-- ============================================ --><!--                   Pricing                    --><!-- ============================================ -->
@@ -14,7 +14,7 @@ const CrossIcon = '/assets/svgs/no.svg';
         {console.log(benefitList)}
         {benefitList.map((benefit: { included: boolean; title: string; }) => (
             <li class={benefit.included ? 'iws-li' : 'iws-li iws-disabled'}>
-                <p>{benefit.title}</p> <span>{benefit.included ? <img src={CheckIcon}/> : <img src={CrossIcon}/>} </span>
+                <p>{benefit.title}</p> <span>{benefit.included ? <CheckIcon class="check"/> : <CrossIcon/>} </span>
             </li>
         ))}
 	</ul>
@@ -28,6 +28,22 @@ const CrossIcon = '/assets/svgs/no.svg';
 <style>
 
 @media only screen and (min-width: 0rem) {
+
+    .iws-popular .iws-li p{
+        color: var(--white-one);
+    }
+    .iws-popular .iws-li span{
+        color: var(--accent-blue-dark-mode);
+    }
+
+    .iws-li span{
+        color: var(--accent-blue-light-mode)
+    }
+
+    .iws-li.iws-disabled span{
+        color: var(--dark-one)
+    }
+
     .iws-container {
         width: 100%;
         max-width: 80em;
@@ -81,24 +97,9 @@ const CrossIcon = '/assets/svgs/no.svg';
         position: relative;
     }
     .iws-item.iws-popular {
-        background-color: #1a1a1a;
+        background-color: var(--primary-green);
     }
-    .iws-item.iws-popular:before {
-        content: 'Popular';
-        text-transform: uppercase;
-        font-size: 0.8125rem;
-        font-weight: 700;
-        line-height: 1.2em;
-        letter-spacing: 0.01em;
-        padding: 0.5rem 1.25rem;
-        background: var(--secondary);
-        color: var(--headerColor);
-        opacity: 1;
-        position: absolute;
-        display: block;
-        top: 0;
-        right: 0;
-    }
+    
     .iws-item.iws-popular .iws-package {
         color: #888;
     }
