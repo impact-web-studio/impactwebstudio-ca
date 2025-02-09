@@ -8,94 +8,12 @@ const { title, benefitList, primaryPrice, secondaryPrice, type } = Astro.props;
 	<span class='iws-price'>{primaryPrice}</span>
     {secondaryPrice && <span class='iws-secondary-price'>{secondaryPrice}</span>}
 	<ul class='iws-ul'>
-		<li class='iws-li'>
-			All available starter feature
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-		<li class='iws-li'>
-			Home service 24/7
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-		<li class='iws-li'>
-			Customer agent service
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-		<li class='iws-li'>
-			Professional Service
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-		<li class='iws-li iws-disabled'>
-			2 dedicated mechanic
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-		<li class='iws-li iws-disabled'>
-			Remote Service mechanic
-			<img
-				class='iws-icon'
-				aria-hidden='true'
-				loading='lazy'
-				decoding='async'
-				src='https://iwsimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-check.svg'
-				alt='checkmark'
-				width='18'
-				height='18'
-			/>
-		</li>
-
-        <h3>testr</h3>
         {console.log(benefitList)}
         {benefitList.map((benefit) => (
-            <li class='iws-li'>
+            <li class={benefit.included ? 'iws-li' : 'iws-li iws-disabled'}>
                 <p>{benefit.title}</p> <span>{benefit.included ? 'YES' : 'NO'} </span>
             </li>
         ))}
-        <h3>testr</h3>
-
 	</ul>
     <a
 		href=''
