@@ -9,6 +9,63 @@ const city = client.address.city || null;
 const province = client.address.province || null;
 // const postalCode = client.address.postalCode || null;
 const logo = client.logo.footer || null;
+
+const navigationLinks = [
+	{
+		name: 'Home',
+		url: '/'
+	},
+	{
+		name: 'About Us',
+		url: '/about'
+	},
+	{
+		name: 'Reviews',
+		url: '/reviews'
+	},
+	{
+		name: 'Design',
+		url: '/design'
+	},
+	{
+		name: 'Development',
+		url: '/development'
+	},
+	{
+		name: 'SEO',
+		url: '/seo'
+	},
+	{
+		name: 'Blog',
+		url: '/blog'
+	},
+	{
+		name: 'Contact',
+		url: '/contact'
+	}
+];
+
+const contactInfo = [
+	{
+		name: 'Email',
+		url: `mailto:${email}`,
+		value: "info@impactwebstudio.ca"
+		// icon: '/assets/icons/email.svg'
+	},
+	{
+		name: 'Phone',
+		url: `tel:${phone}`,
+		value: "+1 (647) 767-8840"
+	},
+	{
+		name: 'Address',
+		value: `${city}, ${province}`
+	},
+	{
+		name: 'Hours',
+		value: "24/7"
+	}
+];
 ---
 
 <footer id='footer'>
@@ -40,45 +97,25 @@ const logo = client.logo.footer || null;
 				<div class="navigation-links">
 					<h2>Quick Links</h2>
 					<ul>
-						<li>
-							<a href='/'>Home</a>
-						</li>
-						<li>
-							<a href='/about'>About Us</a>
-						</li>
-						<li>
-							<a href='/projects'>Projects</a>
-						</li>
-						<li>
-							<a href='/reviews'>Reviews</a>
-						</li>
-						<li>
-							<a href='/contact'>Contact</a>
-						</li>
+						{
+							navigationLinks.map((link, index) => (
+								<li key={index}>
+									<a href={link.url}>{link.name}</a>
+								</li>
+							))
+						}
 					</ul>
 				</div>
 				<div class="contact-info">
 					<h2>Contact</h2>
 					<ul>
-						<li>
-							<a href='/contact'>
-								{city && <>{city},</>}
-								{province && <>{province}.</>}
-							</a>
-						</li>
 						{
-							phone && (
-								<li>
-									<a href={`tel:${phone}`}>T: {phone}</a>
+							contactInfo.map((info, index) => (
+								<li key={index}>
+									<span>{info.name} logo</span>
+									{(info.url && (<a href={info.url}>{info.value}</a>)) || <span>{info.value}</span>}
 								</li>
-							)
-						}
-						{
-							email && (
-								<li>
-									<a href={`mailto:${email}`}>E: {email}</a>
-								</li>
-							)
+							))
 						}
 					</ul>
 				</div>
@@ -110,7 +147,7 @@ const logo = client.logo.footer || null;
 	.container{
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 3rem;
 	}
 
 	.left-section {
@@ -142,7 +179,7 @@ const logo = client.logo.footer || null;
 	.right-section .lists {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 3rem;
 		justify-content: space-between;
 		max-width: 19.1875rem;
 		width: 100%;
@@ -156,9 +193,15 @@ const logo = client.logo.footer || null;
 		gap: 1rem;
 	}
 
-	.right-section .lists ul {
+	.right-section .lists .navigation-links ul {
 		display: flex;
 		flex-wrap: wrap;
+		gap: 0.25rem;
+	}
+
+	.right-section .lists .contact-info ul {
+		display: flex;
+		flex-direction: column;
 		gap: 0.25rem;
 	}
 
@@ -166,8 +209,12 @@ const logo = client.logo.footer || null;
 		list-style: none;
 		font-size: 1rem;
 		color: var(--light-one);
+	}
+
+	.right-section .lists .navigation-links ul li {
 		width: calc(50% - 1rem);
 	}
+
 	.right-section .lists ul li a {
 		text-decoration: none;
 		color: var(--light-one);
