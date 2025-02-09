@@ -1,4 +1,5 @@
 ---
+import SectionHeader from './SectionHeader.astro';
 import PricingCard from './PricingCard.astro';
 
 const lumpSumBenefits = [
@@ -96,6 +97,11 @@ const ecommerceBenefits = [
 ---
 
 <section id='pricing'>
+    <SectionHeader
+    topper='our pricing'
+    heading='flexible package options'
+    description='We offer flexible package options to help with all budget, including optional add-ons for additional needs.'
+/>
 	<ul>
 		<PricingCard
 			title='Lump Sum'
@@ -119,3 +125,263 @@ const ecommerceBenefits = [
 		/>
 	</ul>
 </section>
+<style>
+  /*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .iws-container {
+        width: 100%;
+        max-width: 80em;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+    }
+    .iws-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .iws-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 16px - 20px */
+        gap: clamp(1rem, 1.8vw, 1.25rem);
+        position: relative;
+        z-index: 10;
+    }
+    .iws-item {
+        text-align: left;
+        list-style: none;
+        width: 100%;
+        max-width: 31.25rem;
+        margin: 0;
+        /* 20px - 40px top *
+            /* 16px - 32px left & right */
+        padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+        background-color: #fff;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: relative;
+    }
+    .iws-item.iws-popular {
+        background-color: #1a1a1a;
+    }
+    .iws-item.iws-popular:before {
+        content: "Popular";
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        letter-spacing: 0.01em;
+        padding: 0.5rem 1.25rem;
+        background: var(--secondary);
+        color: var(--headerColor);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+    }
+    .iws-item.iws-popular .iws-package {
+        color: #888;
+    }
+    .iws-item.iws-popular .iws-price,
+    .iws-item.iws-popular .iws-item-p,
+    .iws-item.iws-popular .iws-li {
+        color: var(--bodyTextColorWhite);
+    }
+    .iws-item.iws-popular .iws-li.iws-disabled {
+        filter: grayscale(1) brightness(550%);
+    }
+    .iws-item.iws-popular .iws-icon {
+        /* if icon is not black, this turns it white */
+        filter: grayscale(1) brightness(1000%);
+    }
+    .iws-item.iws-popular .iws-button-solid {
+        transition: color 0.3s;
+    }
+    .iws-item.iws-popular .iws-button-solid:hover {
+        color: var(--primary);
+    }
+    .iws-item.iws-popular .iws-button-solid:before {
+        background-color: #fff;
+    }
+    .iws-package {
+        /* 13px - 16px */
+        font-size: clamp(0.8125rem, 1.4vw, 1rem);
+        line-height: 1.2em;
+        text-align: inherit;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: #767676;
+        display: block;
+    }
+    .iws-price {
+        /* 31px - 49px */
+        font-size: var(--headerFontSize);
+        line-height: 1.2em;
+        text-align: inherit;
+        font-weight: 900;
+        margin: 0;
+        color: var(--headerColor);
+    }
+    .iws-item-p {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-align: inherit;
+        font-weight: 400;
+        /* 16px - 24px */
+        margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+        color: var(--bodyTextColor);
+    }
+    .iws-ul {
+        /* 32px - 48px */
+        margin: 1.5rem 0 0;
+        padding: 1.5rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        position: relative;
+    }
+    .iws-ul:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            rgba(232, 232, 232, 0.2) 0%,
+            #e8e8e8 53.78%,
+            rgba(232, 232, 232, 0.2) 100%
+        );
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+    }
+    .iws-li {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        list-style: none;
+        line-height: 1.2em;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        color: var(--bodyTextColor);
+        display: flex;
+        justify-content: space-between;
+        /* push everything to the top so if the li goes to two lines the icon stays at the top */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .iws-li.iws-disabled {
+        opacity: 0.5;
+    }
+    .iws-li.iws-disabled .iws-icon {
+        filter: grayscale(1) brightness(300%);
+    }
+    .iws-icon {
+        width: 1.125rem;
+        height: auto;
+        display: block;
+    }
+    .iws-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    .iws-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    .iws-button-solid:hover:before {
+        width: 100%;
+    }
+    .iws-price-button {
+        /* pushes up against the iws-ul so if there's loess li's in the list, the button always pushes itself to the bottom */
+        margin-top: auto;
+        width: 100%;
+        border-radius: 0;
+    }
+    .iws-price-button:before {
+        border-radius: 0;
+    }
+    .iws-floater {
+        /* 76PX - 121PX */
+        width: clamp(4.75rem, 7vw, 7.5625rem);
+        height: auto;
+        display: block;
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .iws-floater1 {
+        top: 0;
+        left: 0;
+    }
+    .iws-floater2 {
+        bottom: 0;
+        right: 0;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .iws-card-group {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .iws-option2 {
+        top: auto;
+        bottom: 0;
+    }
+}
+
+                                
+</style>
