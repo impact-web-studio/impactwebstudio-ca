@@ -1,0 +1,74 @@
+---
+const {review, name, role} = Astro.props;
+---
+
+<li class="iws-item">
+    <img class="iws-quote" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quote-blue.svg" decoding="async" alt="quote icon" width="40" height="33">
+    <p class="iws-review">
+        {review}
+    </p>
+    <span class="iws-name">{name}</span>
+    <span class="iws-job">{role}</span>
+</li>
+
+<style>
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+   
+    .iws-item {
+        list-style: none;
+        width: 100%;
+        max-width: 39.375rem;
+        /* 24px - 32px top & bottom */
+        /* 16px - 40px left & right */
+        padding: clamp(1.5rem, 3.15vw, 2rem) clamp(1rem, 3.15vw, 2.5rem);
+        background-color: var(--off-white-bg);
+        border-radius: 1rem;
+        /* prevents padding from adding to height and width */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+    }
+    .iws-quote {
+        width: 2.5rem;
+        height: auto;
+        margin-bottom: 2rem;
+        display: block;
+    }
+    .iws-review {
+        /* 14px - 20px */
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+        line-height: 1.5em;
+        margin: 0;
+        /* 20px - 40px */
+        margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+        color: var(--dark-one);
+    }
+    .iws-name {
+        /* 20px - 25px */
+        font-size: clamp(1.25rem, 3vw, 1.5625rem);
+        line-height: 1.2em;
+        font-weight: 700;
+        margin: 0;
+        /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
+        margin-top: auto;
+        color: var(--dark-one);
+        display: block;
+    }
+    .iws-job {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.6vw, 1rem);
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--dark-two);
+        display: block;
+    }
+}                                
+</style>

@@ -1,86 +1,66 @@
+---
+import SectionHeader from "../SectionHeader.astro"
+import TestimonialCard from "./TestimonialCard.astro"
+---
 <section id='reviews'>
 	<div class='iws-container'>
-		<span class='iws-topper'>Our Reviews</span>
-		<h2 class='iws-title'>Words From Our Customers</h2>
-		<p class='iws-text'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor
-			volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida
-			viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo,
-			ornare. Lorem ipsum dolor sit amet.
-		</p>
-		<ul class='iws-card-group'>
-			<!-- Review 1 -->
-			<li class='iws-item'>
-				<img
-					class='iws-item-img'
-					aria-hidden='true'
-					loading='lazy'
-					decoding='async'
-					src='https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png'
-					alt='profile picture'
-					width='80'
-					height='80'
-				/>
-				<p class='iws-item-p'>
-					Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor
-					habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed
-					ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat
-					viverra massa urna, volutpat orci imperdiet eget eget.
-				</p>
-				<span class='iws-reviewer'>
-					Jon Doe
-					<span class='iws-desc'>Homeowner</span>
-				</span>
-				<img
-					class='iws-item-stars'
-					aria-hidden='true'
-					loading='lazy'
-					decoding='async'
-					src='https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg'
-					alt='stars'
-					width='96'
-					height='16'
-				/>
-			</li>
-			<!-- Review 2 -->
-			<li class='iws-item'>
-				<img
-					class='iws-item-img'
-					aria-hidden='true'
-					loading='lazy'
-					decoding='async'
-					src='https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png'
-					alt='profile picture'
-					width='80'
-					height='80'
-				/>
-				<p class='iws-item-p'>
-					Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor
-					habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed
-					ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat
-					viverra massa urna, volutpat orci imperdiet eget eget.
-				</p>
-				<span class='iws-reviewer'>
-					Jane Doe
-					<span class='iws-desc'>Homeowner</span>
-				</span>
-				<img
-					class='iws-item-stars'
-					aria-hidden='true'
-					loading='lazy'
-					decoding='async'
-					src='https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg'
-					alt='stars'
-					width='96'
-					height='16'
-				/>
-			</li>
-		</ul>
-		<a
-			aria-label='read more reviews'
-			href='/reviews'
-			class='iws-button-solid'
-			>Our Reviews</a
-		>
+		<SectionHeader topper="testimonials" heading="what our clients say" description="We have helped small business owners all over the US and Canada get the website they have been wanting for years. At Impact Web Studio, we're more than just web developers; we're your partner and ally in navigating the digital world. Impact Web Studio was started with a simple belief: every entrepreneur deserves a website that works as hard as they do."/>
+		<ul class="iws-card-group">
+			<TestimonialCard name="John Doe" role="Chief Executive" review="I have used CleanPro service for about four years. I describe myself very picky and difficult to be pleased. Exceeded my expectations."/>
+			<TestimonialCard name="John Doe" role="Chief Executive" review="I have used CleanPro service for about four years. I describe myself very picky and difficult to be pleased. Exceeded my expectations."/>
+        </ul>
 	</div>
 </section>
+
+<style>
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #reviews {
+        padding: var(--sectionPadding);
+    }
+    .iws-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    .iws-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    .iws-card-group {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* 16px - 20px */
+        gap: clamp(1rem, 2.5vw, 1.15rem);
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .iws-card-group {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+}
+
+                                
+</style>
