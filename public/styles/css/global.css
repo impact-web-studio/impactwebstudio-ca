@@ -83,7 +83,6 @@
 	.iws-title {
 		position: relative;
 		margin: 0 0 1rem 0;
-		max-width: 85%;
 		font-size: var(--headerFontSize);
 		line-height: 1.2em;
 		font-weight: 900;
@@ -92,7 +91,6 @@
 	}
 	.iws-text {
 		margin: 0;
-		max-width: 85%;
 		width: 100%;
 		font-size: 1rem;
 		line-height: 1.5em;
