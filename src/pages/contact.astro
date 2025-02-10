@@ -7,13 +7,6 @@ const description = 'Meta description for the page';
 
 const email = client.email || null;
 const phone = client.phone || null;
-const lineOne = client.address.lineOne || null;
-const lineTwo = client.address.lineTwo || null;
-const city = client.address.city || null;
-const province = client.address.province || null;
-const postalCode = client.address.postalCode || null;
-const mapLink = client.address.mapLink || null;
-const logo = client.links.logo || null;
 ---
 
 <Layout
@@ -151,36 +144,6 @@ const logo = client.links.logo || null;
 					)
 				}
 
-				<!--Address-->
-				<span class='iws-header'>Address</span>
-				{
-					mapLink && (
-						<>
-							<a
-								class='iws-link'
-								href='{ mapLink }'
-							>
-								{lineOne && (
-									<>
-										{lineOne},
-										<br />
-									</>
-								)}
-								{lineTwo && (
-									<>
-										{lineTwo},
-										<br />
-									</>
-								)}
-								<span class='iws-block'>
-									{city && <>{city},</>}
-									{province && <>{province}.</>}
-									{postalCode && <>{postalCode}</>}
-								</span>
-							</a>
-						</>
-					)
-				}
 
 				<!-- Background Image-->
 				<picture class='iws-bg-picture'>
