@@ -4,32 +4,31 @@ const { icon, title, description, link } = Astro.props;
 const iconPath = `/assets/svgs/${icon}.svg`;
 ---
 
-<ul class='iws-card-group'>
-	<li class='iws-item'>
-		<a
-			class='iws-link'
-			href={link}
-		>
-			<div class='wrapper'>
-				<img
-					class='iws-icon'
-					src={iconPath}
-					alt='icon'
-					loading='lazy'
-					decoding='async'
-					aria-hidden='true'
-				/>
-				<h3 class='iws-h3'>
-					{title}
-				</h3>
-				<p class='iws-item-text'>
-					{description}
-				</p>
-			</div>
-			<span class='iws-link-copy'>Learn More</span>
-		</a>
-	</li>
-</ul>
+<li class='iws-item'>
+	<a
+		class='iws-link'
+		href={link}
+	>
+		<div class='wrapper'>
+			<img
+				class='iws-icon'
+				src={iconPath}
+				alt='icon'
+				loading='lazy'
+				decoding='async'
+				aria-hidden='true'
+			/>
+			<h3 class='iws-h3'>
+				{title}
+			</h3>
+			<p class='iws-item-text'>
+				{description}
+			</p>
+		</div>
+		<span class='iws-link-copy'>Learn More</span>
+	</a>
+</li>
+
 
 <style>
 	/*-- -------------------------- -->
@@ -155,9 +154,9 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 		}
 	}
 	/* Tablet - 768px */
-	@media only screen and (min-width: 48rem) {
+	@media only screen and (min-width: 600px) {
 		.iws-item {
-			width: 48.6%;
+			width: calc(50% - 1.5rem);
 		}
 	}
 	/* Desktop - 1300px */
