@@ -30,10 +30,6 @@
 </section>
 
 <style>
-	/*-- -------------------------- -->
-	<---           Hero             -->
-	<--- -------------------------- -*/
-	/* Mobile - 360px */
 	@media only screen and (min-width: 0rem) {
 		img{
 			width: 100%;
@@ -44,7 +40,8 @@
 			z-index: 10;
 			display: flex;
 			flex-direction: column;
-			padding: 12rem 0.75rem 0rem 0.75rem;
+			align-items:center;
+			padding: 15rem 0.75rem 0rem 0.75rem;
 			background-color: var(--dark-one);
 		}
 		.iws-container {
@@ -61,16 +58,17 @@
 			/* background-color: var(--bgColor); */
 		}
 		.iws-content {
-			/* set text align to left if content needs to be left aligned */
-			text-align: left;
+			text-align: center;
 			width: 100%;
 			max-width: 39.375rem;
 			display: flex;
 			flex-direction: column;
-			/* centers content horizontally, set to flex-start to left align */
-			align-items: flex-start;
 			position: relative;
 			z-index: 10;
+		}
+
+		.iws-flex-group{
+			text-align: center;
 		}
 
 		.iws-topper {
@@ -174,37 +172,6 @@
 			left: 0;
 			bottom: -1px;
 			z-index: 1;
-		}
-	}
-	/* Tablet - 768px */
-	@media only screen and (min-width: 48rem) {
-		#hero {
-			padding-bottom: 9.375rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.iws-container {
-			justify-content: flex-start;
-			flex-direction: row;
-		}
-		.iws-content {
-			text-align: left;
-			width: 53%;
-			align-items: flex-start;
-		}
-		.iws-picture {
-			width: 56%;
-		}
-	}
-	/* Desktop - 1024px */
-	@media only screen and (min-width: 64rem) {
-		#hero {
-			padding-bottom: 17vw;
-		}
-		.iws-picture {
-			width: 45%;
 		}
 	}
 </style>
