@@ -15,8 +15,6 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 					class='iws-icon'
 					src={iconPath}
 					alt='icon'
-					width=''
-					height=''
 					loading='lazy'
 					decoding='async'
 					aria-hidden='true'
@@ -85,6 +83,7 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 			width: 3rem;
 			height: 3rem;
 			display: block;
+			object-fit: cover;
 		}
 		.iws-icon path {
 			transition: fill 0.3s;
