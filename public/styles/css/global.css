@@ -142,6 +142,7 @@
 @media screen and (min-width: 0rem) {
 	section {
 		padding: 3rem 0.75rem;
+		align-items: center;
 	}
 }
 /* Desktop - 1024px */
