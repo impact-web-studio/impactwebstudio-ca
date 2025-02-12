@@ -18,7 +18,11 @@ import SectionHeader from "./SectionHeader.astro"
 
 <style>
 	section{
-		color: var(--light-one);
+		color: var(--dark-one);
+		background-image: url(/assets/svgs/layered-waves-3.svg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 	.iws-container,
 	.iws-content {
@@ -26,7 +30,6 @@ import SectionHeader from "./SectionHeader.astro"
 		flex-direction: column;
 		text-align: center;
 		align-items:center;
-		background-color: var(--primary-blue);
 	}
 	.iws-container{
 		padding: 3rem 2rem;
@@ -37,30 +40,33 @@ import SectionHeader from "./SectionHeader.astro"
 		gap: 0.5rem;
 	}
 	span {
-		font-size: 0.875rem;
-		color: var(--light-two);
+		font-size: calc(var(--topperFontSize)*1.2);
+		color: var(--dark-two);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
+		font-family: 'Poppins', sans-serif;
 	}
 
 	h2 {
 		text-transform: uppercase;
-		font-size: 1.75rem;
-		line-height: 2rem;
-		color: var(--light-one);
+		font-size: calc(var(--headerFontSize)*0.5);
+		line-height: 1em;
+		color: var(--dark-one);
 	}
 
 	.iws-button-solid{
 		border-radius: 100px;
-		background: var(--light-one);
+		background: var(--primary-green);
+		color: var(--light-one);
 	}
 
 	.iws-button-solid::before{
 		border-radius: 100px;
-		background: var(--accent-yellow-light-mode);
+		background: var(--light-one);
 	}
 
 	.iws-button-solid:hover{
 		color: var(--dark-one);
 	}
+
 </style>
