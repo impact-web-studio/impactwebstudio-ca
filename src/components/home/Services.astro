@@ -3,7 +3,7 @@ import SectionHeader from '../SectionHeader.astro';
 import ServiceCard from './ServiceCard.astro';
 ---
 
-<section id='services'>
+<section id='services' class="container">
 	<div class="iws-container wrapper">
 		<SectionHeader
 			topper='what we do'
@@ -65,7 +65,7 @@ import ServiceCard from './ServiceCard.astro';
 		}
 		.iws-card-group {
 			display: flex;
-			flex-direction: column;
+			flex-wrap: wrap;
 			gap: 1.5rem;
 		}
 		.iws-title {
