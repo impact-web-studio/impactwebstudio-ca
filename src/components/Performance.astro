@@ -48,8 +48,9 @@ const timeCheck = '/assets/svgs/timecheck.svg'
 @media only screen and (min-width: 0rem) {
     #performance {
         padding: var(--sectionPadding);
+        background: var(--light-one);
     }
-    #performance .iws-container {
+    .iws-container {
         width: 100%;
         /* changes to 1280px at tablet */
         max-width: 34.375rem;
@@ -58,7 +59,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         flex-direction: column;
         align-items: center;
     }
-    #performance .iws-content {
+    .iws-content {
         /* set text align to left if content needs to be left aligned */
         text-align: left;
         width: 100%;
@@ -72,13 +73,13 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     .iws-title{
         text-transform: uppercase;
     }
-    #performance .iws-text {
+    .iws-text {
         margin-bottom: 1rem;
     }
-    #performance .iws-text:last-of-type {
+    .iws-text:last-of-type {
         margin-bottom: 2rem;
     }
-    #performance .iws-ul {
+    .iws-ul {
         width: 85%;
         padding: 0;
         display: flex;
@@ -87,7 +88,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         /* 24px - 32px */
         row-gap: clamp(1.5rem, 4vw, 2rem);
     }
-    #performance .iws-li {
+    .iws-li {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         list-style: none;
@@ -100,7 +101,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         align-items: center;
         gap: 1rem;
     }
-    #performance .iws-button-solid {
+    .iws-button-solid {
         font-size: 1rem;
         /* 46px - 56px */
         line-height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -119,7 +120,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         /* prevents padding from adding to the width */
         box-sizing: border-box;
     }
-    #performance .iws-button-solid:before {
+    .iws-button-solid:before {
         content: "";
         position: absolute;
         height: 100%;
@@ -132,10 +133,10 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         border-radius: 100px;
         transition: width 0.3s;
     }
-    #performance .iws-button-solid:hover:before {
+    .iws-button-solid:hover:before {
         width: 100%;
     }
-    #performance .iws-image-group {
+    .iws-image-group {
         width: 100%;
         max-width: 39.375rem;
         display: flex;
@@ -143,7 +144,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         flex-wrap: wrap;
         order: -1;
     }
-    #performance .iws-stat-group {
+    .iws-stat-group {
         margin: 0;
         padding: 0;
         width: 100%;
@@ -154,7 +155,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         gap: 1rem;
         row-gap: 3rem;
     }
-    #performance .iws-stat {
+    .iws-stat {
         list-style: none;
         max-width: 14.375rem;
         display: flex;
@@ -162,31 +163,29 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         align-items: flex-start;
         gap: 0.5rem;
     }
-    #performance .iws-number {
+    .iws-number {
         /* 39px - 61px */
         font-size: clamp(2.4375rem, 5vw, 3.8125rem);
         line-height: 1.2em;
         font-weight: 900;
         color: var(--headerColor);
     }
-    #performance .iws-desc {
+    .iws-desc {
         font-size: clamp(0.875rem, 1rem, 1.25rem);
         line-height: 1.5em;
         font-weight: 400;
         margin: 0;
         color: var(--bodyTextColor);
     }
-    #performance .iws-picture {
+    .iws-picture {
         width: 100%;
-        height: 400px;
         display: block;
         position: relative;
         /* background: var(--off-white-bg); */
         border-radius: 2rem;
         padding: 1rem;
     }
-    #performance .iws-picture img {
-        height: 100%;
+    .iws-picture img {
         width: 100%;
         object-fit: contain;
     }
