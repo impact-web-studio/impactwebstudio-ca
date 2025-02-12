@@ -9,7 +9,7 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 		class='iws-link'
 		href={link}
 	>
-		<div class='wrapper'>
+		<div class='card-wrapper'>
 			<img
 				class='iws-icon'
 				src={iconPath}
@@ -51,6 +51,9 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 			position: relative;
 			z-index: 1;
 			transition: background-color 0.3s;
+			flex: 1 1 300px;
+			max-width: 600px;
+			min-width: 280px;
 		}
 		.iws-item:hover {
 			cursor: pointer;
@@ -72,7 +75,7 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 			gap: 1.5rem;
 		}
 
-		.wrapper {
+		.card-wrapper {
 			display: flex;
 			flex-direction: column;
 			gap: 0.75rem;
