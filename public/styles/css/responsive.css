@@ -27,6 +27,13 @@
 	.wrapper {
 		max-width: 85%;
 	}
+
+	picture:not(:has(.blog-image)),
+	img:not(.blog-image) {
+		max-width: 85%;
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 /* 1100px - 1440px (max) */
