@@ -17,13 +17,16 @@
 /* MEDIA QUERIES */
 
 /* 0 - 599px */
-@media screen and (min-width = 0rem) {
+@media screen and (width = 0rem) {
 }
 
 /* 600px - 1099px */
-@media screen and (min-width >= 37.5rem) {
+@media screen and (width >= 37.5rem) {
+	.wrapper {
+		max-width: 85%;
+	}
 }
 
 /* 1100px - 1440px (max) */
-@media screen and (min-width >= 68.76rem) {
+@media screen and (width >= 68.76rem) {
 }

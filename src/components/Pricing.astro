@@ -97,35 +97,37 @@ const ecommerceBenefits = [
 ---
 
 <section id='pricing' class='iws-container'>
-    <SectionHeader
-    topper='our pricing'
-    heading='flexible package options'
-    description='We offer flexible package options to help with all budget, including optional add-ons for additional needs.'
-/>
-	<ul class="iws-card-group">
-		<PricingCard
-			title='Lump Sum'
-			primaryPrice='$3500'
-			secondaryPrice='+ $25/mo hosting'
-			type=''
-			benefitList={lumpSumBenefits}
-		/>
-		<PricingCard
-			title='Monthly'
-			primaryPrice='$199'
-            secondaryPrice='/mo'
-			type='popular'
-			benefitList={monthlyBenefits}
-		/>
-		<PricingCard
-			title='Ecommerce'
-			primaryPrice='$8000'
-			secondaryPrice='starting price'
-			type=''
-			benefitList={ecommerceBenefits}
-		/>
-	</ul>
-</section>
+    <div class="wrapper">
+        <SectionHeader
+        topper='our pricing'
+        heading='flexible package options'
+        description='We offer flexible package options to help with all budget, including optional add-ons for additional needs.'
+        />
+            <ul class="iws-card-group">
+                <PricingCard
+                    title='Lump Sum'
+                    primaryPrice='$3500'
+                    secondaryPrice='+ $25/mo hosting'
+                    type=''
+                    benefitList={lumpSumBenefits}
+                />
+                <PricingCard
+                    title='Monthly'
+                    primaryPrice='$199'
+                    secondaryPrice='/mo'
+                    type='popular'
+                    benefitList={monthlyBenefits}
+                />
+                <PricingCard
+                    title='Ecommerce'
+                    primaryPrice='$8000'
+                    secondaryPrice='starting price'
+                    type=''
+                    benefitList={ecommerceBenefits}
+                />
+            </ul>
+        </section>
+    </div>
 <style>
   /*-- -------------------------- -->
 <---          Pricing           -->
