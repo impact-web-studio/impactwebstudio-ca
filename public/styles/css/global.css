@@ -128,13 +128,17 @@
 	.iws-hide-on-mobile {
 		display: none;
 	}
-}
 
-/* Mobile Layouts */
-@media screen and (min-width: 0rem) {
-	section {
-		padding: 3rem 0.75rem;
-		align-items: center;
+	/* Layout */
+	.container {
+		padding: var(--sectionPadding);
+		width: 100%;
+		margin-inline: auto;
+	}
+
+	.wrapper {
+		max-width: 1440px;
+		margin-inline: auto;
 	}
 }
 /* Desktop - 1024px */
@@ -168,11 +172,7 @@
 	body {
 		transition: background-color 0.3s;
 	}
-	.container {
-		position: relative;
-		margin: auto;
-		width: 92%;
-	}
+
 	h1,
 	h2,
 	h3,
