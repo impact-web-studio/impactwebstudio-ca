@@ -39,8 +39,6 @@
 /* IWS Root and Helpers */
 @media only screen and (min-width: 0rem) {
 	:root {
-		font-size: 16px;
-
 		--primary: #232ed1;
 		--primaryDark: #192b80;
 		--primaryLight: #ffd675;
@@ -65,35 +63,29 @@
 		--accent-yellow-dark-mode: #ffd675;
 		--primary-green: #37474f;
 		--off-white-bg: #eee;
-
-		/* 13px - 16px */
-		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-		/* 31px - 49px */
-		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-		--bodyFontSize: 1rem;
-		/* 60px - 100px top and bottom */
-		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 	}
 	.iws-topper {
 		display: block;
 		text-transform: uppercase;
 		font-weight: 700;
 		text-align: inherit;
+		letter-spacing: 0.1em;
+		font-size: var(--topperFontSize);
 	}
 	.iws-title {
 		position: relative;
 		margin: 0 0 1rem 0;
 		font-size: var(--headerFontSize);
-		line-height: 1.2em;
+		line-height: 1em;
 		font-weight: 900;
-		color: var(--headerColor);
+		color: var(--dark-one);
 		text-align: inherit;
 	}
 	.iws-text {
 		margin: 0;
 		width: 100%;
-		font-size: 1rem;
-		line-height: 1.5em;
+		font-size: var(--bodyFontSize);
+		line-height: 1.25em;
 		color: var(--dark-one);
 		text-align: inherit;
 	}
@@ -101,12 +93,12 @@
 		z-index: 1;
 		position: relative;
 		display: inline-block;
-		background-color: var(--primary);
+		background-color: var(--primary-blue);
 		width: auto;
 		padding: 0 1.875rem;
 		text-decoration: none;
 		text-transform: uppercase;
-		font-size: 1rem;
+		font-size: var(--bodyFontSize);
 		line-height: 3.125em;
 		font-weight: bold;
 		color: var(--dark-one);
@@ -197,7 +189,7 @@
 	li,
 	a {
 		margin: 0;
-		font-size: 1rem;
+		font-size: var(--bodyFontSize);
 		line-height: 1.5em;
 	}
 	p,
@@ -703,7 +695,7 @@
 			width: 100%;
 			list-style: none;
 			text-decoration: none;
-			font-size: 1rem;
+			font-size: var(--bodyFontSize);
 			color: var(--bodyTextColor);
 			transition:
 				opacity 0.6s,
@@ -756,7 +748,7 @@
 			padding: 0.75rem;
 			white-space: nowrap;
 			text-decoration: none;
-			font-size: 1rem;
+			font-size: var(--bodyFontSize);
 			line-height: 1.5em;
 			color: var(--bodyTextColor);
 			transition:
@@ -958,26 +950,6 @@
 			background: var(--dark-one);
 			height: 100%;
 			width: 100%;
-		}
-	}
-	/* Tablet */
-	@media only screen and (min-width: 48rem) {
-		#int-hero {
-			font-size: 100%;
-		}
-		#int-hero h1 {
-			font-size: 4rem;
-		}
-	}
-	/* Small Desktop */
-	@media only screen and (min-width: 64rem) {
-		#int-hero {
-			background-attachment: fixed;
-			min-height: 18.75rem;
-			height: auto;
-			padding-top: 11.25rem;
-			font-size: inherit;
-			padding-block-end: 6.25rem;
 		}
 	}
 }

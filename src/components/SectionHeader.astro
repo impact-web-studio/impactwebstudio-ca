@@ -38,11 +38,25 @@ const { topper, heading, description } = Astro.props;
 		color: var(--dark-two);
 	}
 	/* Tablet */
-	@media screen and (min-width: 600px) {
-		.iws-container{
-			max-width: 85%;
-		}
+@media only screen and (min-width: 600px){
+
+	.iws-container{
+		/* gap: 1rem; */
 	}
+
+	.iws-topper{
+		font-size: 1rem;
+	}
+
+	.iws-title{
+		font-size: 3.5rem;
+		line-height: 1em;
+	}
+
+	.iws-text{
+		max-width: 85%;
+	}
+}
 
 	/* Desktop */
 	@media screen and (min-width: 1000px) {

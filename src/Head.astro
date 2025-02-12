@@ -13,6 +13,10 @@ const { title, description } = Astro.props;
 	rel='stylesheet'
 	href='/styles/css/global.css'
 />
+<link
+	rel='stylesheet'
+	href='/styles/css/responsive.css'
+/>
 <slot name='style' />
 
 <title>{title}</title>
@@ -31,7 +35,7 @@ const { title, description } = Astro.props;
 <!-- Open Graph tags -->
 <meta
 	property='og:title'
-	content='My New Astro Website'
+	content='Impact Web Studio'
 />
 <meta
 	property='og:type'
@@ -39,7 +43,7 @@ const { title, description } = Astro.props;
 />
 <meta
 	property='og:url'
-	content='http://www.example.com/'
+	content='http://www.impactwebstudio.ca'
 />
 <meta
 	property='og:description'
@@ -47,11 +51,11 @@ const { title, description } = Astro.props;
 />
 <meta
 	property='og:image'
-	content='https://www.example.com/_astro/seo-banner.BZD7kegZ.webp'
+	content='/assets/images/iws-favicon.png'
 />
 <meta
 	property='og:image:alt'
-	content=''
+	content='Impact Web Studio Favicon'
 />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
