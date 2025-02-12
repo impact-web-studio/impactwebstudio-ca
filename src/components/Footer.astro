@@ -75,7 +75,7 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer id='footer'>
-	<div class='container'>
+	<div class='container wrapper'>
 		<div class='left-section'>
 			{
 				logo && (
@@ -146,7 +146,6 @@ const currentYear = new Date().getFullYear();
 @media only screen and (min-width: 0rem) {
 	#footer{
 		background: var(--dark-one);
-		padding: 3rem 0.75rem 0.5rem 0.75rem;
 		font-size: min(4vw, 1.2em);
 	}
 
@@ -174,7 +173,7 @@ const currentYear = new Date().getFullYear();
 	.left-section p {
 		padding: 0rem 0.5rem;
 		width: 100%;
-		font-size: 0.875rem;
+		font-size: var(--topperFontSize);
 		color: var(--light-two);
 	}
 	.right-section {
@@ -295,6 +294,15 @@ const currentYear = new Date().getFullYear();
 		font-size: 0.875rem;
 		color: var(--light-three);
 	}
+}
+
+@media only screen and (width >= 37.5rem){
+	.left-section p {
+		width: 85%;
+		font-size: 0.875rem;
+		color: var(--light-two);
+	}
+
 }
 /* Small Desktop */
 @media only screen and (min-width: 64rem) {

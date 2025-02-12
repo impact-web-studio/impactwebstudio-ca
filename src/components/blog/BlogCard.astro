@@ -245,7 +245,10 @@ const formattedDate = formatDate(date);
     }
 }
 /* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
+@media only screen and (width >= 48rem) {
+    .iws-item {
+        grid-column: span 6;
+    }
     .iws-bubbles {
         display: block;
     }
