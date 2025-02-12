@@ -9,15 +9,14 @@ import SectionHeader from "../SectionHeader.astro"
 import BlogCard from "./BlogCard.astro"
 ---
 <section id="blog">
-    <div class="iws-container">
+    <div class="iws-container wrapper">
         <div class="iws-content">
             <SectionHeader topper="Our blog" heading="latest news and articles"/>
         </div>
         <ul class="iws-card-group">
-            <!-- <BlogCard title="blog title" image="/assets/images/performance" category="Ecommerce" date="07 Sept 2024"/> -->
             {
                 allBlogPosts.map((post: any) => (
-                    <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href=`/blog/${post.id}`/>
+                    <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href={`/blog/${post.id}`}/>
                 ))
             }
         </ul>
@@ -36,7 +35,7 @@ import BlogCard from "./BlogCard.astro"
         background: var(--light-one);
 
     }
-    #blog.iws-container {
+    iws-container {
         width: 100%;
         /* changes to 1280px on desktop */
         max-width: 43.75rem;
@@ -47,7 +46,7 @@ import BlogCard from "./BlogCard.astro"
         /* 48px - 64px */
         gap: clamp(3rem, 6vw, 4rem);
     }
-    #blog.iws-content {
+    .iws-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
         width: 100%;
@@ -57,13 +56,13 @@ import BlogCard from "./BlogCard.astro"
         align-items: center;
     }
 
-    #blog.iws-title {
+    .iws-title {
         max-width: 20ch;
     }
-    #blog.iws-topper {
+    .iws-topper {
         color: var(--secondary);
     }
-    #blog.iws-card-group {
+    .iws-card-group {
         width: 100%;
         margin: 0;
         padding: 0;
@@ -71,35 +70,35 @@ import BlogCard from "./BlogCard.astro"
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
     }
-    #blog.iws-item {
+    .iws-item {
         list-style: none;
         display: flex;
         flex-direction: column;
         grid-column: span 12;
     }
-    #blog.iws-item:hover .iws-h3,
-    #blog.iws-item:hover .iws-date,
-    #blog.iws-item:hover .iws-category {
+    .iws-item:hover .iws-h3,
+    .iws-item:hover .iws-date,
+    .iws-item:hover .iws-category {
         color: #fff;
     }
-    #blog.iws-item:hover .iws-item-text {
+    .iws-item:hover .iws-item-text {
         background-color: var(--primary);
     }
-    #blog.iws-item:hover .iws-icon-wrapper {
+    .iws-item:hover .iws-icon-wrapper {
         border-color: #fff;
     }
-    #blog.iws-item:hover .iws-icon,
-    #blog.iws-item:hover .iws-date-icon {
+    .iws-item:hover .iws-icon,
+    .iws-item:hover .iws-date-icon {
         filter: brightness(1000%) grayscale(1);
     }
-    #blog.iws-item:hover .iws-icon {
+    .iws-item:hover .iws-icon {
         transform: rotate(45deg);
     }
-    #blog.iws-item:hover .iws-category::before {
+    .iws-item:hover .iws-category::before {
         background-color: #fff;
         opacity: 0.2;
     }
-    #blog.iws-link {
+    .iws-link {
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -107,7 +106,7 @@ import BlogCard from "./BlogCard.astro"
         flex-grow: 1;
         gap: 1rem;
     }
-    #blog.iws-picture {
+    .iws-picture {
         width: 100%;
         height: 20rem;
         margin: 0;
@@ -117,7 +116,7 @@ import BlogCard from "./BlogCard.astro"
         z-index: 1;
         overflow: hidden;
     }
-    #blog.iws-picture img {
+    .iws-picture img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -125,7 +124,7 @@ import BlogCard from "./BlogCard.astro"
         top: 0;
         left: 0;
     }
-    #blog.iws-item-text {
+    .iws-item-text {
         padding: 1.25rem;
         background-color: #f7f7f7;
         border-radius: 1.5rem;
@@ -136,7 +135,7 @@ import BlogCard from "./BlogCard.astro"
         flex-grow: 1;
         transition: background-color 0.3s;
     }
-    #blog.iws-h3 {
+    .iws-h3 {
         /* 20px - 25px */
         font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
         line-height: 1.2em;
@@ -149,7 +148,7 @@ import BlogCard from "./BlogCard.astro"
         gap: 1rem;
         transition: color 0.3s;
     }
-    #blog.iws-icon-wrapper {
+    .iws-icon-wrapper {
         width: 3rem;
         height: 3rem;
         border: 1px solid #bababa;
@@ -161,14 +160,14 @@ import BlogCard from "./BlogCard.astro"
         flex-shrink: 0;
         transition: border-color 0.3s;
     }
-    #blog.iws-icon {
+    .iws-icon {
         width: auto;
         height: 0.75rem;
         transition:
             filter 0.3s,
             transform 0.3s;
     }
-    #blog.iws-info {
+    .iws-info {
         margin: 1rem 0 0;
         padding: 1rem 0 0;
         border-top: 1px solid #e8e8e8;
@@ -176,7 +175,7 @@ import BlogCard from "./BlogCard.astro"
         justify-content: space-between;
         align-items: center;
     }
-    #blog.iws-date {
+    .iws-date {
         font-size: 0.875rem;
         line-height: 1.5em;
         text-align: left;
@@ -186,12 +185,12 @@ import BlogCard from "./BlogCard.astro"
         gap: 0.5rem;
         transition: color 0.3s;
     }
-    #blog.iws-date-icon {
+    .iws-date-icon {
         width: auto;
         height: 1.5rem;
         transition: filter 0.3s;
     }
-    #blog.iws-category {
+    .iws-category {
         font-size: 0.875rem;
         /* centers the text if the category bullet has to span multiple lines */
         text-align: center;
@@ -202,7 +201,7 @@ import BlogCard from "./BlogCard.astro"
         z-index: 0;
         overflow: hidden;
     }
-    #blog.iws-category::before {
+    .iws-category::before {
         content: "";
         width: 100%;
         height: 100%;
@@ -212,7 +211,7 @@ import BlogCard from "./BlogCard.astro"
         left: 0;
         z-index: -1;
     }
-    #blog.iws-bubbles {
+    .iws-bubbles {
         width: 20.0625rem;
         height: 26.4375rem;
         display: none;
@@ -221,7 +220,7 @@ import BlogCard from "./BlogCard.astro"
         right: -8.75rem;
         z-index: -1;
     }
-    #blog.iws-bubbles:before {
+    .iws-bubbles:before {
         /* white border bubble */
         content: "";
         width: 16.5rem;
@@ -240,7 +239,7 @@ import BlogCard from "./BlogCard.astro"
         animation-iteration-count: infinite;
         animation-fill-mode: forwards;
     }
-    #blog.iws-bubbles:after {
+    .iws-bubbles:after {
         /* orange bubble */
         content: "";
         width: 16.5rem;
@@ -262,25 +261,25 @@ import BlogCard from "./BlogCard.astro"
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #blog.iws-bubbles {
+    .iws-bubbles {
         display: block;
     }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #blog.iws-container {
+    .iws-container {
         max-width: 80rem;
     }
-    #blog.iws-item {
+    .iws-item {
         grid-column: span 4;
     }
-    #blog.iws-bubbles {
+    .iws-bubbles {
         top: 17.5625rem;
     }
 }
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-    #blog.iws-bubbles {
+    .iws-bubbles {
         margin-right: -61.875rem;
         right: 50%;
     }

@@ -65,7 +65,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         display: flex;
         flex-direction: column;
         /* centers content horizontally, set to flex-start to left align */
-        align-items: flex-start;
+        align-items: center;
         gap: 3rem;
     }
 
@@ -191,26 +191,5 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         object-fit: contain;
     }
 }
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #performance .iws-container {
-        max-width: 80rem;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    #performance .iws-content {
-        width: 71%;
-        max-width: 33.75rem;
-    }
-    #performance .iws-image-group {
-        width: 68%;
-    }
-    #performance .iws-stat-group {
-        justify-content: flex-start;
-    }
-    #performance .iws-picture {
-        /* 340px - 461px */
-        height: clamp(21.25rem, 35vw, 28.8125rem);
-    }
-}
+
 </style>

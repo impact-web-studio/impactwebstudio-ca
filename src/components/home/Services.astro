@@ -4,7 +4,7 @@ import ServiceCard from './ServiceCard.astro';
 ---
 
 <section id='services'>
-	<div class="wrapper">
+	<div class="iws-container wrapper">
 		<SectionHeader
 			topper='what we do'
 			heading='set it and forget it'
@@ -72,20 +72,5 @@ import ServiceCard from './ServiceCard.astro';
 			max-width: 30ch;
 		}
 	}
-	/* Tablet - 768px */
-	@media only screen and (min-width: 600px) {
-		.iws-card-group {
-			justify-content: space-between;
-			/* makes sure every box "stretches" to be the same height as the tallest box */
-			align-items: stretch;
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
-	}
-	/* Desktop - 1300px */
-	@media only screen and (min-width: 81.25rem) {
-		.iws-card-group {
-			justify-content: center;
-		}
-	}
+	
 </style>
