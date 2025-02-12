@@ -179,15 +179,12 @@ const currentYear = new Date().getFullYear();
 	}
 	.right-section {
 		margin: auto;
-		max-width: 25.4375rem;
 		width: 100%;
 	}
 	.right-section .lists {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		gap: 3rem;
-		justify-content: space-between;
-		max-width: 19.1875rem;
 		width: 100%;
 	}
 	.right-section .lists div {
@@ -197,6 +194,7 @@ const currentYear = new Date().getFullYear();
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		max-width: 19.1875rem;
 	}
 
 	.right-section .lists .navigation-links ul {
