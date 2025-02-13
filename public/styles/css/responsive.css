@@ -1,17 +1,20 @@
-/* Typography */
-
 :root {
+	/*** Typography ***/
 	font-size: 16px;
 	/* 14px - 16px */
 	--topperFontSize: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
 	/* 28px - 96px */
 	--headerFontSize: clamp(1.75rem, 0.5357rem + 6.0714vw, 6rem);
-
 	/* 16px - 18px */
 	--bodyFontSize: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
 	/*  top/bot: 60px - 120px | sides: 12px - 32px */
 	--sectionPadding: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem)
 		clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
+
+	/*** Layout  ***/
+	/* Content Wrapper - 1100px */
+	--wrapper-max-width: 68.75rem;
+	--card-max-width: 30rem;
 }
 
 /* Images */
