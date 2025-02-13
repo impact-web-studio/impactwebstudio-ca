@@ -5,7 +5,7 @@ const { topper, heading, description, alignment } = Astro.props;
 <div class={alignment ? 'iws-container sbs' : 'iws-container'}>
 	<div class='iws-content'>
 		{topper && <span class='iws-topper'>{topper}</span>}
-		<h2 class='iws-title'>{heading}</h2>
+		<h2 class='iws-header'>{heading}</h2>
 	</div>
 	{description && <p class='iws-text'>{description}</p>}
 </div>
@@ -57,7 +57,7 @@ const { topper, heading, description, alignment } = Astro.props;
 		font-size: 1rem;
 	}
 
-	.iws-title{
+	.iws-header{
 		font-size: 3.5rem;
 		line-height: 1em;
 	}

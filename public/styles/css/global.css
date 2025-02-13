@@ -110,14 +110,23 @@ li {
 	font-size: var(--topperFontSize);
 }
 
-.iws-title {
+.iws-title,
+.iws-header {
 	position: relative;
 	margin-bottom: 1rem;
-	font-size: var(--headerFontSize);
 	line-height: 1em;
 	font-weight: 900;
 	color: var(--dark-one);
 	text-align: inherit;
+	text-transform: uppercase;
+}
+
+.iws-title {
+	font-size: var(--titleFontSize);
+}
+
+.iws-header {
+	font-size: var(--headerFontSize);
 }
 
 .iws-text {

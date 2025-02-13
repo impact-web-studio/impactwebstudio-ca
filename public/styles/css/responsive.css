@@ -7,7 +7,9 @@
 	/* 14px - 16px */
 	--topperFontSize: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
 	/* 28px - 96px */
-	--headerFontSize: clamp(1.75rem, 0.5357rem + 6.0714vw, 6rem);
+	--titleFontSize: clamp(1.75rem, 0.5357rem + 6.0714vw, 6rem);
+	/* 28px - 56px */
+	--headerFontSize: clamp(1.75rem, 1.25rem + 2.5vw, 3.5rem);
 	/* 16px - 18px */
 	--bodyFontSize: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
 	/*  top/bot: 60px - 120px | sides: 12px - 32px */
