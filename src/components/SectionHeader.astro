@@ -1,13 +1,14 @@
 ---
-const { topper, heading, description } = Astro.props;
+const { topper, heading, description, cta, ctaLink } = Astro.props;
 ---
 
-<div class={description ? 'iws-container align-left' : 'iws-container'}>
+<div class='iws-container'>
+	{topper && <span class='iws-topper'>{topper}</span>}
 	<div class='iws-content'>
-		{topper && <span class='iws-topper'>{topper}</span>}
 		<h2 class='iws-header'>{heading}</h2>
+		{description && <p class='iws-text'>{description}</p>}
+		{cta && <a href={ctaLink}>{cta}</a>}
 	</div>
-	{description && <p class='iws-text'>{description}</p>}
 </div>
 
 <style>
@@ -21,6 +22,7 @@ const { topper, heading, description } = Astro.props;
 		flex-direction: column;
 		text-align: center;
 		align-items:center;
+		width: 100%;
 	}
 
 	.sbs{
@@ -45,10 +47,27 @@ const { topper, heading, description } = Astro.props;
 		color: var(--dark-two);
 	}
 	/* Tablet */
-@media only screen and (width >= 40rem){
+@media only screen and (width >= 68.75rem){
 
-	.iws-text{
-		max-width: 85%;
+	.iws-container{
+		align-items: flex-start;
+	}
+
+	.iws-content{
+		flex-direction: row;
+		text-align: left;
+		justify-content: space-between;
+		align-items: flex-start;
+
+	}
+
+	h2{
+		max-width: 600px;
+	}
+
+	p{
+		max-width: 500px;
+		text-align: left;
 	}
 }
 

@@ -33,6 +33,7 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
 .pricing-card {
     min-width: 308px;
     width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -58,9 +59,16 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
     }
 }
 
-@media screen and (width >= 80rem) {
+@media screen and (width >= 68.75rem) {
     .pricing-card {
-        max-width: 380px;
+        min-width: 330px;
+        max-width: calc(33% - 1rem);
+    }
+}
+
+@media screen and (width >= 80rem){
+    .pricing-card {
+        min-width: 380px;
     }
 }
 
