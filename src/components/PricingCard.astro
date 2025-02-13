@@ -33,7 +33,6 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
 .pricing-card {
     min-width: 308px;
     width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -49,210 +48,195 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
     border-radius: 0.75rem;
 }
 
-/* Tablet & Desktop: Side by side */
 @media screen and (width >= 40rem) {
-  .pricing-card:last-child {
-    grid-column: span 2; /* Ensure the last card takes full width */
-    justify-self: center;
-  }
-}
+    .pricing-card{
+        max-width: 400px;
+    }
 
-@media screen and (width >= 68.75rem) {
     .pricing-card:last-child {
-    grid-column: auto; /* Reset so all are equal */
-  }
+        justify-self: center;
+    }
 }
 
-    .iws-popular .iws-li span{
-        color: var(--accent-blue-dark-mode);
-    }
-
-    .iws-li span{
-        color: var(--accent-blue-light-mode)
-    }
-
-    .iws-li.iws-disabled span{
-        color: var(--dark-one)
-    }
-
+@media screen and (width >= 80rem) {
     .pricing-card {
-        text-align: left;
-        list-style: none;
-        /* width: 100%; */
-        /* max-width: 31.25rem; */
-        margin: 0;
-        padding: 1.5rem;
-        background-color: var(--off-white-bg);
-        /* prevents padding and border from affecting height and width */
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        position: relative;
-        gap: 2rem;
-        border-radius: 0.75rem;
+        max-width: 380px;
     }
-    .pricing-card.iws-popular {
-        background-color: var(--primary-green);
-    }
+}
 
-    .pricing-card.iws-popular .iws-price,
-    .pricing-card.iws-popular p,
-    .pricing-card.iws-popular .iws-li,
-    .pricing-card.iws-popular .iws-package {
-        color: var(--light-one);
-    }
-    .pricing-card.iws-popular .iws-li.iws-disabled {
-        filter: grayscale(1) brightness(550%);
-    }
-    .pricing-card.iws-popular .iws-icon {
-        /* if icon is not black, this turns it white */
-        filter: grayscale(1) brightness(1000%);
-    }
-    .pricing-card.iws-popular .iws-button-solid {
-        transition: color 0.3s;
-    }
-    .pricing-card.iws-popular .iws-button-solid:hover {
-        color: var(--primary);
-    }
-    .pricing-card.iws-popular .iws-button-solid:before {
-        background-color: #fff;
-    }
-    .iws-package {
-        font-size: 2rem;
-        line-height: 1.2em;
-        text-align: inherit;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: var(--dark-one);
-        display: block;
-        letter-spacing: -0.03em;
-    }
-    .iws-price {
-        font-size: 2rem;
-        line-height: 1.2em;
-        text-align: inherit;
-        font-weight: 900;
-        margin: 0;
-        color: var(--headerColor);
-        letter-spacing: -0.03em;
-        font-family: 'Poppins', sans-serif;
+.iws-popular .iws-li span{
+    color: var(--accent-blue-dark-mode);
+}
 
-    }
+.iws-li span{
+    color: var(--accent-blue-light-mode)
+}
 
-    .iws-ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        position: relative;
-    }
-    .price{
-        font-size: 1rem;
-        line-height: 1.2em;
-        text-align: inherit;
-        font-weight: 400;
-        margin: 0px;
-        color: var(--bodyTextColor);
-        padding-top: 1.5rem;
-        position: relative;
-    }
-    .price:before{
-        content: '';
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(
-            90deg,
-            rgba(232, 232, 232, 0.2) 0%,
+.iws-li.iws-disabled span{
+    color: var(--dark-one)
+}
+    
+.pricing-card.iws-popular {
+    background-color: var(--primary-green);
+}
+
+.pricing-card.iws-popular .iws-price,
+.pricing-card.iws-popular p,
+.pricing-card.iws-popular .iws-li,
+.pricing-card.iws-popular .iws-package {
+    color: var(--light-one);
+}
+.pricing-card.iws-popular .iws-li.iws-disabled {
+    filter: grayscale(1) brightness(550%);
+}
+.pricing-card.iws-popular .iws-icon {
+    /* if icon is not black, this turns it white */
+    filter: grayscale(1) brightness(1000%);
+}
+.pricing-card.iws-popular .iws-button-solid {
+    transition: color 0.3s;
+}
+.pricing-card.iws-popular .iws-button-solid:hover {
+    color: var(--primary);
+}
+.pricing-card.iws-popular .iws-button-solid:before {
+    background-color: #fff;
+}
+.iws-package {
+    font-size: 2rem;
+    line-height: 1.2em;
+    text-align: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--dark-one);
+    display: block;
+    letter-spacing: -0.03em;
+}
+.iws-price {
+    font-size: 2rem;
+    line-height: 1.2em;
+    text-align: inherit;
+    font-weight: 900;
+    margin: 0;
+    color: var(--headerColor);
+    letter-spacing: -0.03em;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.iws-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    position: relative;
+}
+.price{
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-align: inherit;
+    font-weight: 400;
+    margin: 0px;
+    color: var(--bodyTextColor);
+    padding-top: 1.5rem;
+    position: relative;
+}
+.price:before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(232, 232, 232, 0.2) 0%,
 rgb(60, 60, 60) 53.78%,
-            rgba(232, 232, 232, 0.2) 100%
-        );
-        opacity: 1;
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-    }
+        rgba(232, 232, 232, 0.2) 100%
+    );
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
 
 
-    .iws-popular .price:before {
-                background: linear-gradient(
-            90deg,
-            rgba(232, 232, 232, 0.2) 0%,
-            #e8e8e8 53.78%,
-            rgba(232, 232, 232, 0.2) 100%
-        );
-       
-    }
-    .iws-li {
-        /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        list-style: none;
-        line-height: 1.2em;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        color: var(--bodyTextColor);
-        display: flex;
-        justify-content: space-between;
-        /* push everything to the top so if the li goes to two lines the icon stays at the top */
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .iws-li.iws-disabled {
-        opacity: 0.5;
-    }
-    .iws-li.iws-disabled .iws-icon {
-        filter: grayscale(1) brightness(300%);
-    }
-    .iws-icon {
-        width: 1.125rem;
-        height: auto;
-        display: block;
-    }
-    .iws-button-solid {
-        font-size: 1rem;
-        /* 46px - 56px */
-        line-height: clamp(2.875em, 5.5vw, 3.5em);
-        text-decoration: none;
-        font-weight: 700;
-        text-align: center;
-        margin: 0;
-        color: #fff;
-        min-width: 9.375rem;
-        padding: 0 3rem;
-        background-color: var(--primary);
-        border-radius: 0.25rem;
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        /* prevents padding from adding to the width */
-        box-sizing: border-box;
-    }
-    .iws-button-solid:before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 0%;
-        background: #000;
-        opacity: 1;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        border-radius: 0.25rem;
-        transition: width 0.3s;
-    }
-    .iws-button-solid:hover:before {
-        width: 100%;
-    }
-    .iws-price-button {
-        /* pushes up against the iws-ul so if there's loess li's in the list, the button always pushes itself to the bottom */
-        margin-top: auto;
-        width: 100%;
-        border-radius: 100px;
-    }
-    .iws-price-button:before {
-        border-radius: 100px;
-    }
+.iws-popular .price:before {
+            background: linear-gradient(
+        90deg,
+        rgba(232, 232, 232, 0.2) 0%,
+        #e8e8e8 53.78%,
+        rgba(232, 232, 232, 0.2) 100%
+    );
+    
+}
+.iws-li {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    list-style: none;
+    line-height: 1.2em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: space-between;
+    /* push everything to the top so if the li goes to two lines the icon stays at the top */
+    align-items: flex-start;
+    gap: 1rem;
+}
+.iws-li.iws-disabled {
+    opacity: 0.5;
+}
+.iws-li.iws-disabled .iws-icon {
+    filter: grayscale(1) brightness(300%);
+}
+.iws-icon {
+    width: 1.125rem;
+    height: auto;
+    display: block;
+}
+.iws-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 3rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+}
+.iws-button-solid:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+}
+.iws-button-solid:hover:before {
+    width: 100%;
+}
+.iws-price-button {
+    /* pushes up against the iws-ul so if there's loess li's in the list, the button always pushes itself to the bottom */
+    margin-top: auto;
+    width: 100%;
+    border-radius: 100px;
+}
+.iws-price-button:before {
+    border-radius: 100px;
+}
 
 </style>

@@ -134,23 +134,23 @@ const ecommerceBenefits = [
 <--- -------------------------- -*/
 
 .pricing-container {
-    display: grid;
-  grid-template-columns: 1fr; /* Default: stacked */
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: stretch;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
 }
 
 @media screen and (width >= 40rem) {
     .pricing-container {
-    grid-template-columns: repeat(2, 1fr);
+      
     }
 }
 
 @media (min-width: 68.75rem) {
   .pricing-container {
-    grid-template-columns: repeat(3, 1fr);
+    
   }
 }
 
