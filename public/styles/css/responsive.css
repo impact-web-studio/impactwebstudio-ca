@@ -72,10 +72,15 @@
 		max-width: 85%;
 	}
 
-	picture:not(:has(.blog-image)),
-	img:not(.blog-image) {
-		max-width: 85%;
+	picture,
+	img {
+		max-width: 100%;
 		display: block;
+		margin: 0;
+	}
+
+	.section-image {
+		max-width: 85%;
 		margin: 0 auto;
 	}
 }
