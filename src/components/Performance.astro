@@ -10,184 +10,223 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     <div class="iws-container wrapper">
         <SectionHeader topper="performance" heading="better websites, better results" description=" When it comes to website load times, not very many can get the Google PageSpeed scores that we get with each and every site. Test your website load times with Google PageSpeed Insights and see what your current site is scoring right now."/>
         <div class="iws-content">
-            <ul class="iws-ul">
-                <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src={timeCheck} loading="lazy" decoding="async" alt="icon" width="32" height="32">
-                    Better load times means more traffic and more site conversions over time.
-                </li>
-                <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src={timer} loading="lazy" decoding="async" alt="icon" width="32" height="32">
-                    Faster websites can help improve SEO and your Google ads performance.
-                </li>
-                <li class="iws-li">
-                    <img class="iws-icon" aria-hidden="true" src={hourglass} loading="lazy" decoding="async" alt="icon" width="32" height="32">
-                    Our sites load instantly in under 1 second or less, which leads to a better user experience and conversions.
-                </li>
-            </ul>
-            <a href="" class="iws-button-solid">More About Us</a>
-        </div>
-        <!--Image Group-->
-        <div class="iws-image-group">
-            <ul class="iws-stat-group">
-                <PerformanceMetric metric="100%" title="Satisfaction Guaranteed"/>
-                <PerformanceMetric metric="90+" title="PageSpeed Score"/>
-                <PerformanceMetric metric="< 1s" title="Load Times"/>
-                <PerformanceMetric metric="99.9%" title="Uptime Guarantee"/>
-            </ul>
-            <!--Picture-->
-            <picture class="iws-picture">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/iws-stats.png" alt="performance" class="section-image">
-            </picture>
+            <div class="lhs">
+                <ul class="iws-ul">
+                    <li class="iws-li">
+                        <img class="iws-icon" aria-hidden="true" src={timeCheck} loading="lazy" decoding="async" alt="icon" width="32" height="32">
+                        Better load times means more traffic and more site conversions over time.
+                    </li>
+                    <li class="iws-li">
+                        <img class="iws-icon" aria-hidden="true" src={timer} loading="lazy" decoding="async" alt="icon" width="32" height="32">
+                        Faster websites can help improve SEO and your Google ads performance.
+                    </li>
+                    <li class="iws-li">
+                        <img class="iws-icon" aria-hidden="true" src={hourglass} loading="lazy" decoding="async" alt="icon" width="32" height="32">
+                        Our sites load instantly in under 1 second or less, which leads to a better user experience and conversions.
+                    </li>
+                </ul>
+                <a href="" class="iws-button-solid">More About Us</a>
+            </div>
+            <!--Image Group-->
+            <div class="iws-image-group">  
+                <picture class="iws-picture">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/iws-stats.png" alt="performance" class="section-image">
+                </picture>
+                <ul class="iws-stat-group">
+                    <PerformanceMetric metric="100%" title="Satisfaction Guaranteed"/>
+                    <PerformanceMetric metric="90+" title="Pagespeed Score"/>
+                    <PerformanceMetric metric="< 1s" title="Page Load Times"/>
+                    <PerformanceMetric metric="99.9%" title="Uptime Guarantee"/>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
                                 
 
 <style>
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #performance {
-        padding: var(--sectionPadding);
-        background: var(--light-one);
-    }
-    .iws-container {
-        width: 100%;
-        /* changes to 1280px at tablet */
-        max-width: 80rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+#performance {
+    padding: var(--sectionPadding);
+    background: var(--light-one);
+}
+.iws-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.iws-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    gap: 3rem;
+}
+
+.iws-stat-group {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjust spacing between items */
+    justify-content: center;
+    align-items: center;
+}
+
+.iws-title{
+    text-transform: uppercase;
+}
+.iws-text {
+    margin-bottom: 1rem;
+}
+.iws-text:last-of-type {
+    margin-bottom: 2rem;
+}
+.iws-ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* 24px - 32px */
+    row-gap: clamp(1.5rem, 4vw, 2rem);
+}
+
+.lhs{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.iws-li {
+    /* 14px - 16px */
+    font-size: var(--topperFontSize);
+    font-weight: 700;
+    margin: 0;
+    color: var(--headerColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.iws-li .iws-icon{
+    padding-top: 0.25rem;
+}
+
+.iws-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--accent-blue-light-mode);
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    width: fit-content;
+    align-self: center;
+}
+.iws-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 100px;
+    transition: width 0.3s;
+}
+.iws-button-solid:hover:before {
+    width: 100%;
+}
+.iws-image-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    order: -1;
+}
+
+
+.iws-stat {
+    list-style: none;
+    max-width: 14.375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.iws-number {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+    line-height: 1.2em;
+    font-weight: 900;
+    color: var(--headerColor);
+}
+.iws-desc {
+    font-size: clamp(0.875rem, 1rem, 1.25rem);
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+.iws-picture {
+    width: 100%;
+    display: block;
+    position: relative;
+    /* background: var(--off-white-bg); */
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.iws-picture img {
+    width: 100%;
+    object-fit: contain;
+}
+
+
+@media screen and (width >= 67.85rem){
     .iws-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: left;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-        gap: 3rem;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
 
-    .iws-title{
-        text-transform: uppercase;
+    .iws-image-group{
+        justify-content: flex-end;
     }
-    .iws-text {
-        margin-bottom: 1rem;
-    }
-    .iws-text:last-of-type {
-        margin-bottom: 2rem;
-    }
-    .iws-ul {
-        width: 85%;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* 24px - 32px */
-        row-gap: clamp(1.5rem, 4vw, 2rem);
-    }
-    .iws-li {
-        /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        list-style: none;
-        line-height: 1.5em;
-        font-weight: 700;
-        margin: 0;
-        color: var(--headerColor);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 1rem;
-    }
-    .iws-button-solid {
-        font-size: 1rem;
-        /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-        text-decoration: none;
-        font-weight: 700;
-        text-align: center;
-        margin: 0;
-        color: #fff;
-        min-width: 9.375rem;
-        padding: 0 1.5rem;
-        background-color: var(--accent-blue-light-mode);
-        border-radius: 100px;
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        /* prevents padding from adding to the width */
-        box-sizing: border-box;
-    }
-    .iws-button-solid:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 0%;
-        background: #000;
-        opacity: 1;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        border-radius: 100px;
-        transition: width 0.3s;
-    }
-    .iws-button-solid:hover:before {
-        width: 100%;
-    }
-    .iws-image-group {
-        width: 100%;
-        max-width: 39.375rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        order: -1;
-    }
+
     .iws-stat-group {
-        margin: 0;
-        padding: 0;
-        width: 100%;
+        grid-template-columns: repeat(4, 100px); /* Four equal columns */
+        justify-content: space-evenly;
+        gap: 0px;
+
+    }
+
+    .iws-stat-group li{
         display: flex;
+        justify-content: center; /* Centers content inside each grid item */
         align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        row-gap: 3rem;
     }
-    .iws-stat {
-        list-style: none;
-        max-width: 14.375rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    .iws-number {
-        /* 39px - 61px */
-        font-size: clamp(2.4375rem, 5vw, 3.8125rem);
-        line-height: 1.2em;
-        font-weight: 900;
-        color: var(--headerColor);
-    }
-    .iws-desc {
-        font-size: clamp(0.875rem, 1rem, 1.25rem);
-        line-height: 1.5em;
-        font-weight: 400;
-        margin: 0;
-        color: var(--bodyTextColor);
-    }
-    .iws-picture {
-        width: 100%;
-        display: block;
-        position: relative;
-        /* background: var(--off-white-bg); */
-        border-radius: 2rem;
-        padding: 1rem;
-    }
-    .iws-picture img {
-        width: 100%;
-        object-fit: contain;
+
+    .iws-image{
+        max-width: 500px;
     }
 }
 
