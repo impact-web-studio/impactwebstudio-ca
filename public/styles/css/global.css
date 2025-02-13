@@ -1,5 +1,6 @@
-/* Fonts */
-/* Register your custom font family and tell the browser where to find it. */
+/* ==================================
+	FONT DEFINITIONS
+================================== */
 @font-face {
 	font-family: 'Poppins';
 	src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
@@ -7,7 +8,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Poppins';
 	src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
@@ -15,7 +15,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Roboto';
 	src: url('/fonts/Poppins/Roboto-Regular.ttf') format('truetype');
@@ -23,7 +22,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Roboto';
 	src: url('/fonts/Poppins/Roboto-Bold.ttf') format('truetype');
@@ -32,123 +30,184 @@
 	font-display: swap;
 }
 
-/* IMPACT WEB STUDIO STYLES & RESETS */
-/*-- -------------------------- -->
-<---        Core Styles         -->
-<--- -------------------------- -*/
-/* IWS Root and Helpers */
-@media only screen and (min-width: 0rem) {
-	:root {
-		--primary: #232ed1;
-		--primaryDark: #192b80;
-		--primaryLight: #ffd675;
-		--secondary: #001f3f;
-		--secondaryLight: #001f3f;
-		--headerColor: #1a1a1a;
-		--bodyTextColor: #4e4b66;
-		--bodyTextColorWhite: #fafbfc;
-		--bgColor: #1b1b42;
+/* ==================================
+	COLOR VARIABLES & ROOT STYLES
+================================== */
+:root {
+	--primary: #232ed1;
+	--primaryDark: #192b80;
+	--primaryLight: #ffd675;
+	--secondary: #001f3f;
+	--secondaryLight: #001f3f;
+	--headerColor: #1a1a1a;
+	--bodyTextColor: #4e4b66;
+	--bodyTextColorWhite: #fafbfc;
+	--bgColor: #1b1b42;
 
-		/* IWS Colors */
-		--dark-one: #181818;
-		--dark-two: #37474f;
-		--dark-three: #37474fbf;
-		--primary-blue: #192b80;
-		--accent-blue-light-mode: #232ed1;
-		--accent-yellow-light-mode: #ffcd39;
-		--light-one: #fafafa;
-		--light-two: #fafafacc;
-		--light-three: #fafafa80;
-		--accent-blue-dark-mode: #a7c7e7;
-		--accent-yellow-dark-mode: #ffd675;
-		--primary-green: #37474f;
-		--off-white-bg: #eee;
-	}
-	.iws-topper {
-		display: block;
-		text-transform: uppercase;
-		font-weight: 700;
-		text-align: inherit;
-		letter-spacing: 0.1em;
-		font-size: var(--topperFontSize);
-	}
-	.iws-title {
-		position: relative;
-		margin: 0 0 1rem 0;
-		font-size: var(--headerFontSize);
-		line-height: 1em;
-		font-weight: 900;
-		color: var(--dark-one);
-		text-align: inherit;
-	}
-	.iws-text {
-		margin: 0;
-		width: 100%;
-		font-size: var(--bodyFontSize);
-		line-height: 1.25em;
-		color: var(--dark-one);
-		text-align: inherit;
-	}
-	.iws-button-solid {
-		z-index: 1;
-		position: relative;
-		display: inline-block;
-		background-color: var(--primary-blue);
-		width: auto;
-		padding: 0 1.875rem;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-size: var(--bodyFontSize);
-		line-height: 3.125em;
-		font-weight: bold;
-		color: var(--dark-one);
-		transition: color 0.3s;
-		transition-delay: 0.1s;
-		text-align: center;
-	}
-	.iws-button-solid:hover {
-		color: var(--light-one);
-	}
-	.iws-button-solid:hover:before {
-		width: 100%;
-	}
-	.iws-button-solid:before {
-		z-index: -1;
-		position: absolute;
-		top: 0;
-		left: 0;
-		content: '';
-		opacity: 1;
-		display: block;
-		background-color: var(--dark-one);
-		height: 100%;
-		width: 0;
-		transition: width 0.3s;
-	}
-	.iws-hide-on-mobile {
-		display: none;
-	}
-
-	/* Layout */
-	.container {
-		padding: var(--sectionPadding);
-		width: 100%;
-		margin-inline: auto;
-	}
-
-	.wrapper {
-		max-width: 1440px;
-		margin-inline: auto;
-	}
-
-	/* Images */
-	img {
-		max-width: 100%;
-		height: auto;
-	}
+	/* IWS Colors */
+	--dark-one: #181818;
+	--dark-two: #37474f;
+	--dark-three: #37474fbf;
+	--primary-blue: #192b80;
+	--accent-blue-light-mode: #232ed1;
+	--accent-yellow-light-mode: #ffcd39;
+	--light-one: #fafafa;
+	--light-two: #fafafacc;
+	--light-three: #fafafa80;
+	--accent-blue-dark-mode: #a7c7e7;
+	--accent-yellow-dark-mode: #ffd675;
+	--primary-green: #37474f;
+	--off-white-bg: #eee;
 }
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
+
+/* ==================================
+	TYPOGRAPHY & TEXT STYLES
+================================== */
+body,
+html {
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 100%;
+	color: var(--bodyTextColor);
+	width: 100dvw;
+	transition: background-color 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	color: var(--headerColor);
+	font-family: 'Poppins', 'Arial', sans-serif;
+	letter-spacing: -0.03em;
+	font-weight: 700;
+}
+
+p,
+li,
+a {
+	margin: 0;
+	font-size: var(--bodyFontSize);
+	line-height: 1.5em;
+}
+
+p,
+li {
+	color: #353535;
+}
+
+.iws-topper {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: inherit;
+	letter-spacing: 0.1em;
+	font-size: var(--topperFontSize);
+}
+
+.iws-title {
+	position: relative;
+	margin-bottom: 1rem;
+	font-size: var(--headerFontSize);
+	line-height: 1em;
+	font-weight: 900;
+	color: var(--dark-one);
+	text-align: inherit;
+}
+
+.iws-text {
+	margin: 0;
+	width: 100%;
+	font-size: var(--bodyFontSize);
+	line-height: 1.25em;
+	color: var(--dark-one);
+	text-align: inherit;
+}
+
+/* ==================================
+	BUTTONS & INTERACTIVITY
+================================== */
+.iws-button-solid {
+	z-index: 1;
+	position: relative;
+	display: inline-block;
+	background-color: var(--primary-blue);
+	width: auto;
+	padding: 0 1.875rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: var(--bodyFontSize);
+	line-height: 3.125em;
+	font-weight: bold;
+	color: var(--dark-one);
+	transition: color 0.3s;
+	transition-delay: 0.1s;
+	text-align: center;
+}
+
+.iws-button-solid:hover {
+	color: var(--light-one);
+}
+
+.iws-button-solid:hover:before {
+	width: 100%;
+}
+
+.iws-button-solid:before {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	opacity: 1;
+	display: block;
+	background-color: var(--dark-one);
+	height: 100%;
+	width: 0;
+	transition: width 0.3s;
+}
+
+a:hover,
+button:hover {
+	cursor: pointer;
+}
+
+/* ==================================
+	LAYOUT & SPACING
+================================== */
+.container {
+	padding: var(--sectionPadding);
+	width: 100%;
+	margin-inline: auto;
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin-inline: auto;
+}
+
+/* ==================================
+	IMAGE STYLES
+================================== */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ==================================
+	RESPONSIVE VISIBILITY CLASSES
+================================== */
+.iws-hide-on-mobile {
+	display: none;
+}
+
+/* Desktop - 1100px */
+@media only screen and (width >= 68.75rem) {
 	.iws-hide-on-mobile {
 		display: block;
 	}
@@ -156,69 +215,31 @@
 		display: none;
 	}
 }
-/* Fonts and general styles */
-@media only screen and (width >= 0rem) {
+
+/* ==================================
+	RESET & GLOBAL UTILS
+================================== */
+*,
+*:before,
+*:after {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+.skip {
+	z-index: -1111111;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+/* Reset Margins for Large Screens */
+@media only screen and (width >= 68.75rem) {
 	body,
 	html {
 		margin: 0;
-		overflow-x: hidden;
 		padding: 0;
-		font-family: 'Roboto', Arial, sans-serif;
-		font-size: 100%;
-		color: var(--bodyTextColor);
-		width: 100dvw;
-	}
-	*,
-	*:before,
-	*:after {
-		margin: 0;
-		box-sizing: border-box;
-		padding: 0;
-	}
-	body {
-		transition: background-color 0.3s;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin: 0;
-		color: var(--headerColor);
-		font-family: 'Poppins', 'Arial', sans-serif;
-		letter-spacing: -0.03em;
-		font-weight: 700;
-	}
-	p,
-	li,
-	a {
-		margin: 0;
-		font-size: var(--bodyFontSize);
-		line-height: 1.5em;
-	}
-	p,
-	li {
-		color: #353535;
-	}
-	a:hover,
-	button:hover {
-		cursor: pointer;
-	}
-	.skip {
-		z-index: -1111111;
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-	}
-	/* Reset Margins */
-	@media only screen and (min-width: 1024px) {
-		body,
-		html {
-			margin: 0;
-			padding: 0;
-		}
 	}
 }
