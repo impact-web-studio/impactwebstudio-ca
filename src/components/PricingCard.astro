@@ -108,7 +108,7 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
     color: var(--primary);
 }
 .pricing-card.iws-popular .iws-button-solid:before {
-    background-color: #fff;
+    background-color: var(--light-one);
 }
 .iws-package {
     font-size: 2rem;
@@ -213,13 +213,17 @@ rgb(60, 60, 60) 53.78%,
     color: #fff;
     min-width: 9.375rem;
     padding: 0 3rem;
-    background-color: var(--primary);
+    background-color: var(--primary-blue);
     border-radius: 0.25rem;
     display: inline-block;
     position: relative;
     z-index: 1;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
+}
+
+.iws-popular .iws-button-solid{
+    background-color: var(--primary);
 }
 .iws-button-solid:before {
     content: '';
