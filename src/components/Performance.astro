@@ -201,6 +201,17 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     object-fit: contain;
 }
 
+@media screen and (width >= 40rem){
+    .lhs{
+        max-width: 600px;
+    }
+
+    .iws-image-group{
+        justify-content: center;
+        max-width: 600px;
+    }
+}
+
 
 @media screen and (width >= 67.85rem){
     .iws-content {
@@ -223,6 +234,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         display: flex;
         justify-content: center; /* Centers content inside each grid item */
         align-items: center;
+        width: calc(25% - 1rem);
     }
 
     .iws-image{
