@@ -6,8 +6,10 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 	{topper && <span class='iws-topper'>{topper}</span>}
 	<div class='iws-content'>
 		<h2 class='iws-header'>{heading}</h2>
-		{description && <p class='iws-text'>{description}</p>}
-		{cta && <a href={ctaLink}>{cta}</a>}
+		<div class="body">
+			{description && <p class='iws-text'>{description}</p>}
+			{cta && <a class="iws-button-solid" href={ctaLink}>{cta}</a>}
+		</body>
 	</div>
 </div>
 
@@ -45,6 +47,16 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 	p {
 		font-size: var(--bodyFontSize);
 		color: var(--dark-two);
+	}
+
+	.body{
+		display: flex;
+		flex-direction: column;
+		gap: var(--bodyFontSize);
+	}
+
+	a{
+		width: fit-content;
 	}
 	/* Tablet */
 @media only screen and (width >= 68.75rem){

@@ -141,22 +141,24 @@ li {
 /* ==================================
 	BUTTONS & INTERACTIVITY
 ================================== */
+
 .iws-button-solid {
 	z-index: 1;
 	position: relative;
 	display: inline-block;
+	color: var(--light-one);
 	background-color: var(--primary-blue);
 	width: auto;
-	padding: 0 1.875rem;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: var(--bodyFontSize);
-	line-height: 3.125em;
+	font-size: var(--topperFontSize);
 	font-weight: bold;
-	color: var(--dark-one);
 	transition: color 0.3s;
 	transition-delay: 0.1s;
 	text-align: center;
+	border-radius: 100px;
+	padding: 0.75rem 1.5rem;
+	overflow: hidden;
 }
 
 .iws-button-solid:hover {
@@ -168,16 +170,16 @@ li {
 }
 
 .iws-button-solid:before {
-	z-index: -1;
+	content: '';
 	position: absolute;
+	display: block;
+	height: 100%;
+	width: 0%;
+	background: var(--dark-one);
+	opacity: 1;
 	top: 0;
 	left: 0;
-	content: '';
-	opacity: 1;
-	display: block;
-	background-color: var(--dark-one);
-	height: 100%;
-	width: 0;
+	z-index: -1;
 	transition: width 0.3s;
 }
 
