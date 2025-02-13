@@ -34,12 +34,9 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 	/*-- -------------------------- -->
 <---        Why Choose          -->
 <--- -------------------------- -*/
-	/* Mobile - 360px */
-	@media only screen and (min-width: 0rem) {
 		.iws-item {
 			list-style: none;
 			text-align: left;
-			width: 100%;
 			margin: 0;
 			padding: 1.25rem 1.5rem;
 			background-color: #f7f7f7;
@@ -51,9 +48,7 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 			position: relative;
 			z-index: 1;
 			transition: background-color 0.3s;
-			flex: 1 1 300px;
-			max-width: 600px;
-			min-width: 280px;
+
 		}
 		.iws-item:hover {
 			cursor: pointer;
@@ -155,18 +150,5 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 			color: var(--bodyTextColor);
 			transition: color 0.3s;
 		}
-	}
-	/* Tablet - 768px */
-	@media only screen and (min-width: 600px) {
-		.iws-item {
-			width: calc(50% - 1.5rem);
-		}
-	}
-	/* Desktop - 1300px */
-	@media only screen and (min-width: 81.25rem) {
-		.iws-item {
-			/* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 22.5vw or 23% to get the desired sizes fit 4 in a row and then stack when you add more */
-			width: clamp(23.84%, 22.5vw, 23.95%);
-		}
-	}
+
 </style>

@@ -13,7 +13,7 @@ import BlogCard from "./BlogCard.astro"
         <div class="iws-content">
             <SectionHeader topper="Our blog" heading="latest news and articles"/>
         </div>
-        <ul class="grid-container card-group">
+        <ul class="grid-container card-group odd-group">
             {
                 allBlogPosts.map((post: any) => (
                     <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href={`/blog/${post.id}`}/>
