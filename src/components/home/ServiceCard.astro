@@ -31,112 +31,118 @@ const iconPath = `/assets/svgs/${icon}.svg`;
 
 
 <style>
-	/*-- -------------------------- -->
-<---        Why Choose          -->
-<--- -------------------------- -*/
-		.iws-item {
-			list-style: none;
-			text-align: left;
-			margin: 0;
-			padding: 1.25rem 2rem;
-			background-color: #f7f7f7;
-			border-radius: 1rem;
-			/* clips image corners */
-			overflow: hidden;
-			/* prevents padding from adding to height and width */
-			box-sizing: border-box;
-			position: relative;
-			z-index: 1;
-			transition: background-color 0.3s;
 
-		}
-		.iws-item:hover {
-			cursor: pointer;
-			background: var(--primary-green);
-		}
+.iws-item {
+	list-style: none;
+	text-align: left;
+	margin: 0;
+	padding: 1.25rem 2rem;
+	background-color: #f7f7f7;
+	border-radius: 1rem;
+	/* clips image corners */
+	overflow: hidden;
+	/* prevents padding from adding to height and width */
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+	transition: background-color 0.3s;
 
-		.iws-item:hover .iws-icon {
-			/* turns it white */
-			/* filter: grayscale(1) brightness(1000%); */
-		}
-		.iws-item:hover .iws-h3,
-		.iws-item:hover .iws-item-text, .iws-item:hover span {
-			color: var(--light-one);
-		}
+}
+.iws-item:hover {
+	cursor: pointer;
+	background: var(--primary-green);
+}
 
-		.iws-link {
-			text-decoration: none;
-			display: flex;
-			flex-direction: column;
-			gap: 1.5rem;
-		}
 
-		.card-wrapper {
-			display: flex;
-			flex-direction: column;
-			gap: 0.75rem;
-		}
+.iws-icon {
+	transition: filter 0.3s ease; /* Smooth transition */
+}
 
-		.iws-icon {
-			width: 3rem;
-			height: 3rem;
-			display: block;
-			object-fit: cover;
-		}
-		.iws-icon path {
-			transition: fill 0.3s;
-		}
+/* Change the color using filter when parent is hovered */
+.iws-item:hover .iws-icon {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(106%) contrast(106%);
+}
+.iws-item:hover .iws-h3,
+.iws-item:hover .iws-item-text {
+	color: var(--light-one);
+}
+.iws-item:hover span{
+	color: var(--accent-blue-dark-mode);
+}
 
-		.iws-link-copy {
-			width: fit-content;
-			padding: 0rem 0.875rem;
-			transform: translateX(-0.875rem);
-			color: var(--accent-blue-light-mode);
-			transition: all 0.3s ease;
-			z-index: 1;
-			line-height: 2rem;
-		}
+.iws-link {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
 
-		.iws-link-copy:hover {
-			color: var(--dark-one) !important;
-		}
+.card-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
 
-		/* Background animation effect */
-		.iws-link-copy::before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: 0%;
-			height: 100%;
-			border-radius: 0.5rem;
-			background: var(--light-one);
-			transform: translateX(-50%) scaleY(0);
-			transform-origin: bottom center;
-			transition:
-				transform 0.3s ease,
-				width 0.3s ease;
-			z-index: -1;
-		}
+.iws-icon {
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	object-fit: cover;
+}
+.iws-icon path {
+	transition: fill 0.3s;
+}
 
-		/* Hover effect */
-		.iws-link-copy:hover::before {
-			width: 100%;
-			transform: translateX(-50%) scaleY(1);
-		}
-		.iws-h3 {
-			font-size: 1.25rem;
-			text-transform: uppercase;
-			font-weight: bold;
-			color: var(--dark-one);
-			transition: color 0.3s;
-		}
-		.iws-item-text {
-			font-size: 1rem;
-			line-height: 1.5em;
-			margin: 0;
-			color: var(--bodyTextColor);
-			transition: color 0.3s;
-		}
+.iws-link-copy {
+	width: fit-content;
+	padding: 0rem 0.875rem;
+	transform: translateX(-0.875rem);
+	color: var(--accent-blue-light-mode);
+	transition: all 0.3s ease;
+	z-index: 1;
+	line-height: 2rem;
+}
+
+.iws-link-copy:hover {
+	color: var(--light-one) !important;
+}
+
+/* Background animation effect */
+.iws-link-copy::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0%;
+	height: 100%;
+	border-radius: 0.5rem;
+	background: var(--dark-one);
+	transform: translateX(-50%) scaleY(0);
+	transform-origin: bottom center;
+	transition:
+		transform 0.3s ease,
+		width 0.3s ease;
+	z-index: -1;
+}
+
+/* Hover effect */
+.iws-link-copy:hover::before {
+	width: 100%;
+	transform: translateX(-50%) scaleY(1);
+}
+.iws-h3 {
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--dark-one);
+	transition: color 0.3s;
+}
+.iws-item-text {
+	font-size: 1rem;
+	line-height: 1.5em;
+	margin: 0;
+	color: var(--bodyTextColor);
+	transition: color 0.3s;
+}
 
 </style>
