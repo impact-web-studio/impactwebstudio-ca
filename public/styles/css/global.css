@@ -180,14 +180,20 @@ button:hover {
 /* ==================================
 	LAYOUT & SPACING
 ================================== */
-.container {
-	padding: var(--sectionPadding);
-	width: 100%;
-	margin-inline: auto;
+
+main {
+	width: 100dvw;
 }
 
-.wrapper {
-	max-width: 1440px;
+/* section container, used to center elements */
+section.container {
+	width: 100%;
+}
+
+/* content wrapper, used to limit width to 1110px*/
+section > .wrapper {
+	padding: var(--sectionPadding);
+	max-width: 68.75rem;
 	margin-inline: auto;
 }
 
