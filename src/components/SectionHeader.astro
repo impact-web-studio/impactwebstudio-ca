@@ -58,6 +58,28 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 	a{
 		width: fit-content;
 	}
+
+	.iws-button-solid {
+		font-size: 1rem;
+		/* 46px - 56px */
+		line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+		text-decoration: none;
+		font-weight: 700;
+		text-align: center;
+		margin: 0;
+		color: #fff;
+		min-width: 9.375rem;
+		padding: 0 1.5rem;
+		background-color: var(--accent-blue-light-mode);
+		border-radius: 100px;
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		/* prevents padding from adding to the width */
+		box-sizing: border-box;
+		width: fit-content;
+		align-self: center;
+	}
 	/* Tablet */
 @media only screen and (width >= 68.75rem){
 
