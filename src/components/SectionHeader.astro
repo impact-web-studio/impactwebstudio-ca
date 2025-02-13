@@ -1,8 +1,8 @@
 ---
-const { topper, heading, description, alignment } = Astro.props;
+const { topper, heading, description } = Astro.props;
 ---
 
-<div class={alignment ? 'iws-container sbs' : 'iws-container'}>
+<div class={description ? 'iws-container align-left' : 'iws-container'}>
 	<div class='iws-content'>
 		{topper && <span class='iws-topper'>{topper}</span>}
 		<h2 class='iws-header'>{heading}</h2>
@@ -29,7 +29,7 @@ const { topper, heading, description, alignment } = Astro.props;
 	}
 
 	span {
-		font-size: 0.875rem;
+		font-size: var(--topperFontSize);
 		color: var(--dark-three);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -37,30 +37,15 @@ const { topper, heading, description, alignment } = Astro.props;
 
 	h2 {
 		text-transform: uppercase;
-		font-size: 1.75rem;
-		line-height: 2rem;
-		color: var(--dark-one);
+		font-size: var(--headerFontSize);
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: var(--bodyFontSize);
 		color: var(--dark-two);
 	}
 	/* Tablet */
-@media only screen and (min-width: 600px){
-
-	.iws-container{
-		/* gap: 1rem; */
-	}
-
-	.iws-topper{
-		font-size: 1rem;
-	}
-
-	.iws-header{
-		font-size: 3.5rem;
-		line-height: 1em;
-	}
+@media only screen and (width >= 40rem){
 
 	.iws-text{
 		max-width: 85%;
