@@ -6,7 +6,7 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
 ---
 
 <!-- ============================================ --><!--                   Pricing                    --><!-- ============================================ -->
-<li class={type === "popular" ? "iws-item iws-popular" : "iws-item"}>
+<li class={type === "popular" ? "pricing-card iws-popular" : "pricing-card"}>
 	<h3 class='iws-package'>{title}</h3>
 	<ul class='iws-ul'>
         {console.log(benefitList)}
@@ -29,7 +29,39 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
 
 <style>
 
-@media only screen and (min-width: 0rem) {
+/* Mobile: Stack the cards */
+.pricing-card {
+    min-width: 308px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem;
+    background-color: var(--off-white-bg);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    position: relative;
+    gap: 2rem;
+    border-radius: 0.75rem;
+}
+
+/* Tablet & Desktop: Side by side */
+@media screen and (width >= 40rem) {
+  .pricing-card:last-child {
+    grid-column: span 2; /* Ensure the last card takes full width */
+    justify-self: center;
+  }
+}
+
+@media screen and (width >= 68.75rem) {
+    .pricing-card:last-child {
+    grid-column: auto; /* Reset so all are equal */
+  }
+}
 
     .iws-popular .iws-li span{
         color: var(--accent-blue-dark-mode);
@@ -43,11 +75,11 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
         color: var(--dark-one)
     }
 
-    .iws-item {
+    .pricing-card {
         text-align: left;
         list-style: none;
-        width: 100%;
-        max-width: 31.25rem;
+        /* width: 100%; */
+        /* max-width: 31.25rem; */
         margin: 0;
         padding: 1.5rem;
         background-color: var(--off-white-bg);
@@ -60,30 +92,30 @@ import CrossIcon from '../components/svgs/NoIcon.astro';
         gap: 2rem;
         border-radius: 0.75rem;
     }
-    .iws-item.iws-popular {
+    .pricing-card.iws-popular {
         background-color: var(--primary-green);
     }
 
-    .iws-item.iws-popular .iws-price,
-    .iws-item.iws-popular p,
-    .iws-item.iws-popular .iws-li,
-    .iws-item.iws-popular .iws-package {
+    .pricing-card.iws-popular .iws-price,
+    .pricing-card.iws-popular p,
+    .pricing-card.iws-popular .iws-li,
+    .pricing-card.iws-popular .iws-package {
         color: var(--light-one);
     }
-    .iws-item.iws-popular .iws-li.iws-disabled {
+    .pricing-card.iws-popular .iws-li.iws-disabled {
         filter: grayscale(1) brightness(550%);
     }
-    .iws-item.iws-popular .iws-icon {
+    .pricing-card.iws-popular .iws-icon {
         /* if icon is not black, this turns it white */
         filter: grayscale(1) brightness(1000%);
     }
-    .iws-item.iws-popular .iws-button-solid {
+    .pricing-card.iws-popular .iws-button-solid {
         transition: color 0.3s;
     }
-    .iws-item.iws-popular .iws-button-solid:hover {
+    .pricing-card.iws-popular .iws-button-solid:hover {
         color: var(--primary);
     }
-    .iws-item.iws-popular .iws-button-solid:before {
+    .pricing-card.iws-popular .iws-button-solid:before {
         background-color: #fff;
     }
     .iws-package {
@@ -222,5 +254,5 @@ rgb(60, 60, 60) 53.78%,
     .iws-price-button:before {
         border-radius: 100px;
     }
-}
+
 </style>

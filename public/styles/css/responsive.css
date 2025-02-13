@@ -16,7 +16,7 @@
 
 	/*** Layout  ***/
 	/* Content Wrapper - 1100px */
-	--wrapper-max-width: 68.75rem;
+	--wrapper-max-width: 80rem;
 	--card-max-width: 30rem;
 }
 
@@ -38,7 +38,7 @@
 }
 
 /* Tablet: 2 cards on top (each ~50% width) and 1 stretched below */
-@media (width >= 40rem) and (width < 68.75rem) {
+@media (width >= 40rem) and (width < 80rem) {
 	.grid-container.card-group {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto;
@@ -50,7 +50,7 @@
 }
 
 /* Desktop: 3 items per row */
-@media (width >= 68.75rem) {
+@media (width >= 80rem) {
 	.grid-container.card-group {
 		grid-template-columns: repeat(3, 1fr);
 	}

@@ -194,7 +194,7 @@ section.container {
 section > .wrapper,
 footer > .wrapper {
 	padding: var(--sectionPadding);
-	max-width: 68.75rem;
+	max-width: 80rem;
 	margin-inline: auto;
 }
 
@@ -214,7 +214,7 @@ img {
 }
 
 /* Desktop - 1100px */
-@media only screen and (width >= 68.75rem) {
+@media only screen and (width >= 80rem) {
 	.iws-hide-on-mobile {
 		display: block;
 	}
@@ -243,7 +243,7 @@ img {
 }
 
 /* Reset Margins for Large Screens */
-@media only screen and (width >= 68.75rem) {
+@media only screen and (width >= 80rem) {
 	body,
 	html {
 		margin: 0;
