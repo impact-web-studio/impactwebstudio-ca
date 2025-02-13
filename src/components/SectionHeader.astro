@@ -1,25 +1,31 @@
 ---
-const { topper, heading, description } = Astro.props;
+const { topper, heading, description, alignment } = Astro.props;
 ---
 
-<div class='iws-container'>
-	{topper && <span class='iws-topper'>{topper}</span>}
+<div class={alignment ? 'iws-container sbs' : 'iws-container'}>
 	<div class='iws-content'>
+		{topper && <span class='iws-topper'>{topper}</span>}
 		<h2 class='iws-title'>{heading}</h2>
-		{description && <p class='iws-text'>{description}</p>}
 	</div>
+	{description && <p class='iws-text'>{description}</p>}
 </div>
 
 <style>
 	.iws-container{
 		margin-bottom: clamp(3rem, 2.4286rem + 2.8571vw, 5rem);
 	}
+
 	.iws-container,
 	.iws-content {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		align-items:center;
+	}
+
+	.sbs{
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
 	span {

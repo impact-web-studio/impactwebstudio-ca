@@ -191,7 +191,8 @@ section.container {
 }
 
 /* content wrapper, used to limit width to 1110px*/
-section > .wrapper {
+section > .wrapper,
+footer > .wrapper {
 	padding: var(--sectionPadding);
 	max-width: 68.75rem;
 	margin-inline: auto;

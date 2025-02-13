@@ -1,3 +1,6 @@
+/* ==================================
+	ROOT VARIABLES
+================================== */
 :root {
 	/*** Typography ***/
 	font-size: 16px;
@@ -17,7 +20,42 @@
 	--card-max-width: 30rem;
 }
 
-/* Images */
+/* ==================================
+	GRID LAYOUT
+================================== */
+.grid-container.card-group {
+	display: grid;
+	gap: 1rem;
+}
+
+/* Mobile: Stack all cards */
+@media (width < 40rem) {
+	.grid-container.card-group {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Tablet: 2 cards on top (each ~50% width) and 1 stretched below */
+@media (width >= 40rem) and (width < 68.75rem) {
+	.grid-container.card-group {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+	}
+
+	.grid-container.card-group > :nth-child(3) {
+		grid-column: span 2; /* Stretch third card across both columns */
+	}
+}
+
+/* Desktop: Row of 3 */
+@media (width >= 68.75rem) {
+	.grid-container.card-group {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+/* ==================================
+	IMAGES
+================================== */
 
 /* MEDIA QUERIES */
 
