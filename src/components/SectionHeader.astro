@@ -78,9 +78,7 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		/* prevents padding from adding to the width */
 		box-sizing: border-box;
 		width: fit-content;
-		align-self: center;
 	}
-	/* Tablet */
 @media only screen and (width >= 68.75rem){
 
 	.iws-container{
@@ -97,6 +95,7 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 
 	h2{
 		max-width: 600px;
+		width: 60%;
 	}
 
 	/* no max width on header if description does not exist */

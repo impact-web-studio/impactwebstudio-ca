@@ -139,7 +139,6 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     /* prevents padding from adding to the width */
     box-sizing: border-box;
     width: fit-content;
-    align-self: center;
 }
 .iws-button-solid:before {
     content: "";
@@ -202,8 +201,19 @@ const timeCheck = '/assets/svgs/timecheck.svg'
 }
 
 @media screen and (width >= 40rem){
-    .lhs{
+
+    .iws-content {
+        display: flex;
+        align-items: center;
+        min-height: 100%; /* Make sure it has a height */
+    }
+
+    .lhs {
         max-width: 600px;
+        flex: 1; /* Ensures it stretches */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .iws-image-group{
@@ -217,10 +227,16 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     .iws-content {
         flex-direction: row-reverse;
         justify-content: space-between;
+        align-items: stretch;
     }
 
     .iws-image-group{
         justify-content: flex-end;
+        width: 500px;
+    }
+
+    .lhs{
+        padding-top: 2rem;
     }
 
     .iws-stat-group {
