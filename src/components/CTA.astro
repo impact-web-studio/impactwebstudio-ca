@@ -19,10 +19,11 @@ import SectionHeader from "./SectionHeader.astro"
 <style>
 	section{
 		color: var(--dark-one);
-		background-image: url(/assets/svgs/layered-waves-3.svg);
-		background-size: cover;
+		/* background-image: url(/assets/svgs/layered-waves-3.svg); */
+		/* background-size: cover;
 		background-position: center;
-		background-repeat: no-repeat;
+		background-repeat: no-repeat; */
+		overflow: hidden;
 	}
 	.iws-container,
 	.iws-content {
@@ -32,16 +33,36 @@ import SectionHeader from "./SectionHeader.astro"
 		align-items:center;
 	}
 	.iws-container{
-		padding: 3rem 2rem;
+		width: fit-content;
+		padding: clamp(3rem, 9vw, 6.25rem) clamp(2rem, 7vw, 6.25rem);
 		border-radius: 1rem;
 		gap: 1.25rem;
+		background-color: var(--primary-blue);
+		margin: 5rem auto;
+		position: relative;
 	}
+
+	/* .iws-container::after{
+		content: '';
+		position: absolute;
+		width: 60%;
+        height: clamp(5rem, 10vw, 15rem);
+		display: block;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -2;
+        border-left: 1.25rem solid var(--primary-blue);
+        border-right: 1.25rem solid var(--primary-blue);
+	} */
+
+
 	.iws-content{
 		gap: 0.5rem;
 	}
 	span {
 		font-size: calc(var(--topperFontSize)*1.2);
-		color: var(--dark-two);
+		color: var(--light-two);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		font-family: 'Poppins', sans-serif;
@@ -49,15 +70,15 @@ import SectionHeader from "./SectionHeader.astro"
 
 	h2 {
 		text-transform: uppercase;
-		font-size: calc(var(--headerFontSize)*0.5);
+		font-size: var(--headerFontSize);
 		line-height: 1em;
-		color: var(--dark-one);
+		color: var(--light-one);
 	}
 
 	.iws-button-solid{
 		border-radius: 100px;
-		background: var(--primary-green);
-		color: var(--light-one);
+		background: var(--accent-yellow-light-mode);
+		color: var(--dark-one);
 	}
 
 	.iws-button-solid::before{
