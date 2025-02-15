@@ -11,6 +11,12 @@ const timeCheck = '/assets/svgs/timecheck.svg'
         <SectionHeader topper="performance" heading="better websites, better results" description=" When it comes to website load times, not very many can get the Google PageSpeed scores that we get with each and every site. Test your website load times with Google PageSpeed Insights and see what your current site is scoring right now."/>
         <div class="iws-content">
             <div class="lhs">
+                <ul class="iws-stat-group">
+                    <PerformanceMetric metric="100%" title="Satisfaction Guaranteed"/>
+                    <PerformanceMetric metric="90+" title="Pagespeed Score"/>
+                    <PerformanceMetric metric="< 1s" title="Page Load Times"/>
+                    <PerformanceMetric metric="99.9%" title="Uptime Guarantee"/>
+                </ul>
                 <ul class="iws-ul">
                     <li class="iws-li">
                         <img class="iws-icon" aria-hidden="true" src={timeCheck} loading="lazy" decoding="async" alt="icon" width="32" height="32">
@@ -32,12 +38,6 @@ const timeCheck = '/assets/svgs/timecheck.svg'
                 <picture class="iws-picture">
                     <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/iws-stats.png" alt="performance" class="section-image">
                 </picture>
-                <ul class="iws-stat-group">
-                    <PerformanceMetric metric="100%" title="Satisfaction Guaranteed"/>
-                    <PerformanceMetric metric="90+" title="Pagespeed Score"/>
-                    <PerformanceMetric metric="< 1s" title="Page Load Times"/>
-                    <PerformanceMetric metric="99.9%" title="Uptime Guarantee"/>
-                </ul>
             </div>
         </div>
     </div>
@@ -94,8 +94,8 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* 24px - 32px */
-    row-gap: clamp(1.5rem, 4vw, 2rem);
+    /* 12px - 20px */
+    row-gap: clamp(0.875rem, 4vw, 1.25rem);
 }
 
 .lhs{
@@ -236,7 +236,7 @@ const timeCheck = '/assets/svgs/timecheck.svg'
     }
 
     .lhs{
-        padding-top: 2rem;
+        gap: 3.5rem;
     }
 
     .iws-stat-group {
