@@ -15,6 +15,7 @@
 	/*  top/bot: 60px - 120px | sides: 12px - 32px */
 	--sectionPadding: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem)
 		clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
+	--bannerPadding: clamp(10rem, 8.5714rem + 7.1429vw, 15rem) 0rem 3rem 0rem;
 
 	/*** Layout  ***/
 	/* Content Wrapper - 1100px */

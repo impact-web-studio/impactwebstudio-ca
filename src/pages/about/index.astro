@@ -16,32 +16,9 @@ import CTA from 'src/components/CTA.astro';
 		href='/public/styles/css/about.css'
 		slot='head'
 	/>
-
-	<!-- ============================================ -->
-	<!--                    LANDING                   -->
-	<!-- ============================================ -->
-
-	<section id='int-hero'>
-		<h1 id='home-h'>About Us</h1>
-		<picture>
-			<source
-				media='(max-width: 600px)'
-				srcset='/assets/images/cabinets2-m.jpg'
-			/>
-			<source
-				media='(min-width: 601px)'
-				srcset='/assets/images/cabinets2.jpg'
-			/>
-			<img
-				aria-hidden='true'
-				decoding='async'
-				src='/assets/images/cabinets2.jpg'
-				alt='kitchen cabinets'
-				loading='eager'
-				width='2500'
-				height='1667'
-			/>
-		</picture>
+	<section class='banner'>
+		<span>impact web studio</span>
+		<h1>About Us</h1>
 	</section>
 
 	<!-- ============================================ -->
@@ -134,3 +111,32 @@ import CTA from 'src/components/CTA.astro';
 	</section>
 	<CTA />
 </Layout>
+
+<style>
+	.banner {
+		position: relative;
+		background: var(--dark-one);
+		text-align: center;
+		color: white;
+		padding: var(--bannerPadding);
+		display: flex;
+		flex-direction: column;
+		gap: 0rem;
+	}
+
+	h1 {
+		color: var(--light-one);
+		font-size: calc(var(--headerFontSize) * 1.5);
+		text-transform: uppercase;
+		letter-spacing: 0em;
+		line-height: 1em;
+	}
+
+	span {
+		text-transform: uppercase;
+		color: var(--accent-yellow-dark-mode);
+		font-size: var(--topperFontSize);
+		font-weight: 700;
+		letter-spacing: 0.25em;
+	}
+</style>
