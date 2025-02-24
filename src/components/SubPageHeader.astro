@@ -2,7 +2,7 @@
 const { pageTitle, pageHeader, pageDescription } = Astro.props;
 ---
 
-<section class='container top'>
+<section class='container top subpage'>
 	<div class='wrapper'>
 		{pageTitle && <h1 class='iws-topper'>{pageTitle}</h1>}
 		<div class='sbs'>
@@ -13,10 +13,6 @@ const { pageTitle, pageHeader, pageDescription } = Astro.props;
 </section>
 
 <style>
-	section {
-		padding: var();
-	}
-
 	.wrapper {
 		padding-top: 0px;
 		padding-bottom: 0px;
@@ -24,10 +20,23 @@ const { pageTitle, pageHeader, pageDescription } = Astro.props;
 
 	.sbs {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-		align-items: center;
 	}
+	@media screen and (width >= 40rem) {
+		.sbs {
+			flex-direction: row;
+			align-items: center;
+		}
 
+		h1 {
+			width: 50%;
+		}
+
+		p {
+			width: 45%;
+		}
+	}
 	h1 {
 		font-size: var(--topperFontSize);
 		color: var(--dark-three);
@@ -37,12 +46,10 @@ const { pageTitle, pageHeader, pageDescription } = Astro.props;
 	h2 {
 		text-transform: uppercase;
 		font-size: calc(var(--headerFontSize) * 1.3);
-		width: 50%;
 	}
 	p {
 		text-align: left;
 		font-size: var(--bodyFontSize);
 		color: var(--dark-two);
-		width: 45%;
 	}
 </style>
