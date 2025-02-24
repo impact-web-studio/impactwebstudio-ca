@@ -104,7 +104,6 @@ import { client } from '../_data/client.js';
 					></span>
 				</div>
 			</button>
-			<!-- We need a wrapper div so we can set a fixed height on the iws-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the iws-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
 			<div class='iws-ul-wrapper'>
 				<ul
 					id='iws-expanded'
@@ -226,14 +225,14 @@ import { client } from '../_data/client.js';
 							Pricing
 						</a>
 					</li>
-					<li class='iws-li'>
+					<!-- <li class='iws-li'>
 						<a
 							href='/blog'
 							class='iws-li-link'
 						>
 							Blog
 						</a>
-					</li>
+					</li> -->
 					<li class='iws-li'>
 						<a
 							href='/contact'
@@ -245,6 +244,7 @@ import { client } from '../_data/client.js';
 				</ul>
 			</div>
 		</nav>
+
 		<!-- <div class='iws-contact-group'>
 			<a
 				href=`tel:${client.phone}`
