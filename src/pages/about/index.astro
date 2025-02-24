@@ -1,6 +1,7 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import PageBanner from '@/components/PageBanner.astro';
+import OurProcess from '@/components/pricing/OurProcess.astro';
 import CTA from 'src/components/CTA.astro';
 
 const title = 'About | Impact Web Studio';
@@ -117,13 +118,14 @@ preloadImg: '/assets/images/cabinets2.jpg';
 					/>
 				</div>
 				<a
-					href='/projects'
+					href='/contact'
 					class='iws-button-solid'
-					>Our Projects</a
+					>Get Started</a
 				>
 			</div>
 		</div>
 	</section>
+	<OurProcess />
 	<CTA />
 </Layout>
 
