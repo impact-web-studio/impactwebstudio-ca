@@ -28,9 +28,10 @@ import BlogCard from './BlogCard.astro';
 					<BlogCard
 						title={post.data.title}
 						image={post.rendered.metadata.frontmatter.image}
+						alt={post.rendered.metadata.frontmatter.alt}
 						category={post.data.tags}
 						date={post.rendered.metadata.frontmatter.date}
-						href={`/blog/${post.slug}`}
+						href={`/blog/${post.rendered.metadata.frontmatter.url}`}
 					/>
 				))
 			}
