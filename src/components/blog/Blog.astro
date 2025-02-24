@@ -7,7 +7,6 @@ const allBlogPosts = await getCollection('blogs');
 const latestBlogs = allBlogPosts
 	.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
 	.slice(0, 3);
-
 import SectionHeader from '../SectionHeader.astro';
 import BlogCard from './BlogCard.astro';
 ---
@@ -28,7 +27,7 @@ import BlogCard from './BlogCard.astro';
 				latestBlogs.map((post: any) => (
 					<BlogCard
 						title={post.data.title}
-						image='/assets/images/performance'
+						image={post.rendered.metadata.frontmatter.image}
 						category={post.data.tags}
 						date={post.rendered.metadata.frontmatter.date}
 						href={`/blog/${post.slug}`}
