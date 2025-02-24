@@ -1,6 +1,5 @@
 ---
-import SectionHeader from './SectionHeader.astro';
-import PricingCard from './PricingCard.astro';
+import PricingCard from '@/components/PricingCard.astro';
 
 const lumpSumBenefits = [
 	{
@@ -96,18 +95,8 @@ const ecommerceBenefits = [
 ];
 ---
 
-<section
-	id='pricing'
-	class='container'
->
-	<div class='iws-container wrapper'>
-		<SectionHeader
-			topper='our pricing'
-			heading='flexible package options'
-			description='We offer a variety of pricing options to suit your needs. Choose from a lump sum payment, monthly payments, or an ecommerce package.'
-			cta='Learn More'
-			ctaLink='/pricing'
-		/>
+<section id='pricing'>
+	<div class='iws-container'>
 		<ul class='iws-card-group pricing-container'>
 			<PricingCard
 				title='Lump Sum'

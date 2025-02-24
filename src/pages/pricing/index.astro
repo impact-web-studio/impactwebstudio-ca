@@ -1,0 +1,39 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageBanner from '@/components/PageBanner.astro';
+import SectionHeader from '@/components/SectionHeader.astro';
+import Pricing from './Pricing.astro';
+import CTA from '@/components/CTA.astro';
+
+const title = 'Pricing | Impact Web Studio';
+const description =
+	'Impact Web Studio, monthly pricing, lump sum pricing, ecommerce pricing, website pricing, website design pricing, website development pricing, website maintenance pricing, website hosting pricing, website support pricing, website updates pricing, website security';
+---
+
+<Layout
+	title={title}
+	description={description}
+>
+	<PageBanner pageTitle='Pricing' />
+	<section class='container'>
+		<div class='wrapper'>
+			<SectionHeader
+				topper='Our Pricing'
+				heading='Pricing packages for every budget'
+				cta='Get Started'
+				ctaLink='/contact'
+			/>
+			<Pricing />
+			<CTA />
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.container {
+	}
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+</style>

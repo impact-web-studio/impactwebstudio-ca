@@ -59,16 +59,15 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 
 	.iws-button-solid {
 		font-size: 1rem;
-		/* 46px - 56px */
-		line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+		line-height: 3rem;
 		text-decoration: none;
 		font-weight: 700;
 		text-align: center;
 		margin: 0;
-		color: #fff;
+		color: var(--dark-one);
 		min-width: 9.375rem;
 		padding: 0 1.5rem;
-		background-color: var(--accent-blue-light-mode);
+		background-color: var(--accent-yellow-light-mode);
 		border-radius: 100px;
 		display: inline-block;
 		position: relative;
@@ -77,6 +76,11 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		box-sizing: border-box;
 		width: fit-content;
 		align-self: center;
+		margin-top: 1rem;
+	}
+
+	.iws-button-solid:hover {
+		color: var(--light-one);
 	}
 	@media only screen and (width >= 68.75rem) {
 		.iws-container {

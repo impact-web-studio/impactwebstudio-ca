@@ -146,8 +146,8 @@ li {
 	z-index: 1;
 	position: relative;
 	display: inline-block;
-	color: var(--light-one);
-	background-color: var(--primary-blue);
+	color: var(--dark-one);
+	background-color: var(--accent-yellow-light-mode);
 	width: auto;
 	text-decoration: none;
 	text-transform: uppercase;
