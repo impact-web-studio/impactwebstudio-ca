@@ -1,11 +1,11 @@
 ---
-const title = 'About | Impact Web Studio';
-const description = 'Meta description for the page';
-preloadImg: '/assets/images/cabinets2.jpg';
-
 import Layout from 'src/layouts/Layout.astro';
 import PageBanner from '@/components/PageBanner.astro';
 import CTA from 'src/components/CTA.astro';
+
+const title = 'About | Impact Web Studio';
+const description = 'Meta description for the page';
+preloadImg: '/assets/images/cabinets2.jpg';
 ---
 
 <Layout
@@ -69,27 +69,43 @@ import CTA from 'src/components/CTA.astro';
 			</div>
 			<!-- Right Content Section-->
 			<div class='iws-right'>
-				<span class='iws-topper'>About Us</span>
-				<h2 class='iws-title'>About Company Title</h2>
+				<h1 class='iws-topper'>About Impact Web Studio</h1>
+				<h2 class='iws-title'>Behind the scenes</h2>
 				<p class='iws-text'>
-					In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-					officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-					et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-					nonatourean olei aptent taciti sociosqu ad litora torquent per.
+					I'm Kenny, the owner and lead developer at Impact Web Studio. My
+					journey into web development started in high school with robotics, but
+					I quickly gravitated toward web design and development during my
+					university studies. Coming from a family of nine, I initially built
+					websites to help my siblings launch their businesses. That passion
+					grew into a full-time career, and now I run a team dedicated to
+					creating high-quality websites for small businesses across Canada and
+					the United States.
 				</p>
 				<p class='iws-text'>
-					In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-					officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-					et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-					nonatourean olei aptent taciti sociosqu ad litora torquent per.
+					Over time, what we've found was that one of the biggest challenges
+					small business owners face is the upfront cost of a professional
+					website. Those that can afford it sometimes end up with outdated,
+					poorly designed sites that don't perform well. It's a frustrating
+					situation - businesses either don't have the budget for a great
+					website or don't know who to trust to build one.
+				</p>
+				<p class='iws-text'>
+					That's why I created a pricing model that works for them: $0 down and
+					just $175 a month. This makes it easy for small businesses to get a
+					modern, professional website without the financial strain. At Impact
+					Web Studio, we're focused on making web design accessible, effective,
+					and stress-free, so business owners can focus on what they do
+					best-growing their business.
 				</p>
 				<div class='iws-flex-group'>
 					<p class='iws-flex-p'>
-						In consequat tincidunt turpis sit amet imperdiet. Praesent Classei
-						consequat tincidunt turpis sit amet imperdiet for mind.
+						<i>
+							Impact Web Studio was started with a simple belief: every
+							entrepreneur deserves a website that works as hard as they do.
+						</i>
 					</p>
-					<span class='iws-name'>Justin Time</span>
-					<span class='iws-job'>CEO-Founder</span>
+					<span class='iws-name'>Kenny Nguyen</span>
+					<span class='iws-job'>Owner, Founder</span>
 					<img
 						class='iws-quote-icon'
 						loading='lazy'
@@ -124,18 +140,18 @@ import CTA from 'src/components/CTA.astro';
 	}
 
 	h1 {
-		color: var(--light-one);
+		text-transform: uppercase;
+		color: var(--accent-yellow-light-mode);
+		font-size: var(--topperFontSize);
+		font-weight: 700;
+		letter-spacing: clamp(0.1rem, 0.0571rem + 0.2143vw, 0.25rem);
+	}
+
+	h2 {
+		color: var(--dark-one);
 		font-size: calc(var(--headerFontSize) * 1.5);
 		text-transform: uppercase;
 		letter-spacing: 0em;
 		line-height: 1em;
-	}
-
-	span {
-		text-transform: uppercase;
-		color: var(--accent-yellow-dark-mode);
-		font-size: var(--topperFontSize);
-		font-weight: 700;
-		letter-spacing: clamp(0.1rem, 0.0571rem + 0.2143vw, 0.25rem);
 	}
 </style>

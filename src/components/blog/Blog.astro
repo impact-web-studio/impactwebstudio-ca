@@ -5,128 +5,139 @@ import { getCollection } from 'astro:content';
 // Requires the name of the collection as an argument.
 const allBlogPosts = await getCollection('blogs');
 
-import SectionHeader from "../SectionHeader.astro"
-import BlogCard from "./BlogCard.astro"
+import SectionHeader from '../SectionHeader.astro';
+import BlogCard from './BlogCard.astro';
 ---
-<section id="blog">
-    <div class="iws-container wrapper">
-        <div class="iws-content">
-            <SectionHeader topper="Our blog" heading="latest news and articles"/>
-        </div>
-        <ul class="grid-container card-group odd-group">
-            {
-                allBlogPosts.map((post: any) => (
-                    <BlogCard title={post.data.title} image="/assets/images/performance" category="Ecommerce" date={post.rendered.metadata.frontmatter.date} href={`/blog/${post.id}`}/>
-                ))
-            }
-        </ul>
-    </div>
-    <div class="iws-bubbles" aria-hidden="true"></div>
+
+<section
+	id='blog'
+	class='container'
+>
+	<div class='iws-container wrapper'>
+		<div class='iws-content'>
+			<SectionHeader
+				topper='Our blog'
+				heading='latest news and articles'
+			/>
+		</div>
+		<ul class='grid-container card-group odd-group'>
+			{
+				allBlogPosts.map((post: any) => (
+					<BlogCard
+						title={post.data.title}
+						image='/assets/images/performance'
+						category='Ecommerce'
+						date={post.rendered.metadata.frontmatter.date}
+						href={`/blog/${post.id}`}
+					/>
+				))
+			}
+		</ul>
+	</div>
+	<div
+		class='iws-bubbles'
+		aria-hidden='true'
+	>
+	</div>
 </section>
 
-
 <style>
-@media only screen and (min-width: 0rem) {
-    #blog{
-        padding: var(--sectionPadding);
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-        background: var(--light-one);
+	@media only screen and (min-width: 0rem) {
+		#blog {
+			position: relative;
+			z-index: 1;
+			overflow: hidden;
+		}
+		iws-container {
+			width: 100%;
+			/* changes to 1280px on desktop */
+			max-width: 43.75rem;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* 48px - 64px */
+			gap: clamp(3rem, 6vw, 4rem);
+		}
+		.iws-content {
+			/* set text align to left if content needs to be left aligned */
+			text-align: center;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			/* centers content horizontally, set to flex-start to left align */
+			align-items: center;
+		}
 
-    }
-    iws-container {
-        width: 100%;
-        /* changes to 1280px on desktop */
-        max-width: 43.75rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 48px - 64px */
-        gap: clamp(3rem, 6vw, 4rem);
-    }
-    .iws-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: center;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-    }
-   
-    .iws-bubbles {
-        width: 20.0625rem;
-        height: 26.4375rem;
-        display: none;
-        position: absolute;
-        top: 66.4375rem;
-        right: -8.75rem;
-        z-index: -1;
-    }
-    .iws-bubbles:before {
-        /* white border bubble */
-        content: "";
-        width: 16.5rem;
-        height: 16.5rem;
-        background: transparent;
-        opacity: 1;
-        border: 1px solid #1a1a1a;
-        border-radius: 50%;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        animation-name: floatAnimation;
-        animation-duration: 5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
-    }
-    .iws-bubbles:after {
-        /* orange bubble */
-        content: "";
-        width: 16.5rem;
-        height: 16.5rem;
-        background: var(--primary);
-        opacity: 0.1;
-        border-radius: 50%;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        animation-name: floatAnimation2;
-        animation-duration: 14s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
-    }
-}
-/* Tablet - 768px */
-@media only screen and (width >= 48rem) {
-    .iws-bubbles {
-        display: block;
-    }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    .iws-container {
-        max-width: 80rem;
-    }
+		.iws-bubbles {
+			width: 20.0625rem;
+			height: 26.4375rem;
+			display: none;
+			position: absolute;
+			top: 66.4375rem;
+			right: -8.75rem;
+			z-index: -1;
+		}
+		.iws-bubbles:before {
+			/* white border bubble */
+			content: '';
+			width: 16.5rem;
+			height: 16.5rem;
+			background: transparent;
+			opacity: 1;
+			border: 1px solid #1a1a1a;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			animation-name: floatAnimation;
+			animation-duration: 5s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+			animation-fill-mode: forwards;
+		}
+		.iws-bubbles:after {
+			/* orange bubble */
+			content: '';
+			width: 16.5rem;
+			height: 16.5rem;
+			background: var(--primary);
+			opacity: 0.1;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			animation-name: floatAnimation2;
+			animation-duration: 14s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+			animation-fill-mode: forwards;
+		}
+	}
+	/* Tablet - 768px */
+	@media only screen and (width >= 48rem) {
+		.iws-bubbles {
+			display: block;
+		}
+	}
+	/* Desktop - 1024px */
+	@media only screen and (min-width: 64rem) {
+		.iws-container {
+			max-width: 80rem;
+		}
 
-    .iws-bubbles {
-        top: 17.5625rem;
-    }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-    .iws-bubbles {
-        margin-right: -61.875rem;
-        right: 50%;
-    }
-}
-
-                                
+		.iws-bubbles {
+			top: 17.5625rem;
+		}
+	}
+	/* Large Desktop - 1300px */
+	@media only screen and (min-width: 81.25rem) {
+		.iws-bubbles {
+			margin-right: -61.875rem;
+			right: 50%;
+		}
+	}
 </style>
