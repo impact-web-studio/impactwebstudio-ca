@@ -4,6 +4,7 @@ const description = 'Meta description for the page';
 preloadImg: '/assets/images/cabinets2.jpg';
 
 import Layout from 'src/layouts/Layout.astro';
+import PageBanner from '@/components/PageBanner.astro';
 import CTA from 'src/components/CTA.astro';
 ---
 
@@ -16,10 +17,8 @@ import CTA from 'src/components/CTA.astro';
 		href='/public/styles/css/about.css'
 		slot='head'
 	/>
-	<section class='banner'>
-		<span>impact web studio</span>
-		<h1>About Us</h1>
-	</section>
+
+	<PageBanner pageTitle='About Us' />
 
 	<!-- ============================================ -->
 	<!--                 Side By Side                 -->
@@ -115,7 +114,7 @@ import CTA from 'src/components/CTA.astro';
 <style>
 	.banner {
 		position: relative;
-		background: var(--dark-one);
+		background: var(--primary-blue);
 		text-align: center;
 		color: white;
 		padding: var(--bannerPadding);

@@ -1,0 +1,37 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<section class='banner'>
+	<span>impact web studio</span>
+	<h1>{pageTitle}</h1>
+</section>
+
+<style>
+	.banner {
+		position: relative;
+		background: var(--primary-blue);
+		text-align: center;
+		color: white;
+		padding: var(--bannerPadding);
+		display: flex;
+		flex-direction: column;
+		gap: 0rem;
+	}
+
+	h1 {
+		color: var(--light-one);
+		font-size: calc(var(--headerFontSize) * 1.5);
+		text-transform: uppercase;
+		letter-spacing: 0em;
+		line-height: 1em;
+	}
+
+	span {
+		text-transform: uppercase;
+		color: var(--accent-yellow-dark-mode);
+		font-size: var(--topperFontSize);
+		font-weight: 700;
+		letter-spacing: clamp(0.1rem, 0.0571rem + 0.2143vw, 0.25rem);
+	}
+</style>
