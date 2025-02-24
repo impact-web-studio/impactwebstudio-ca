@@ -6,15 +6,24 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 	{topper && <span class='iws-topper'>{topper}</span>}
 	<div class='iws-content'>
 		<h2 class='iws-header'>{heading}</h2>
-		<div class="body">
+		<div class='body'>
 			{description && <p class='iws-text'>{description}</p>}
-			{cta && <a class="iws-button-solid" href={ctaLink}>{cta}</a>}
-		</body>
+			{
+				cta && (
+					<a
+						class='iws-button-solid'
+						href={ctaLink}
+					>
+						{cta}
+					</a>
+				)
+			}
+		</div>
 	</div>
 </div>
 
 <style>
-	.iws-container{
+	.iws-container {
 		margin-bottom: clamp(3rem, 2.4286rem + 2.8571vw, 4rem);
 	}
 
@@ -23,13 +32,8 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		align-items:center;
+		align-items: center;
 		width: 100%;
-	}
-
-	.sbs{
-		flex-direction: row;
-		justify-content: space-between;
 	}
 
 	span {
@@ -49,13 +53,7 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		color: var(--dark-two);
 	}
 
-	.body{
-		display: flex;
-		flex-direction: column;
-		gap: var(--bodyFontSize);
-	}
-
-	a{
+	a {
 		width: fit-content;
 	}
 
@@ -80,38 +78,35 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		width: fit-content;
 		align-self: center;
 	}
-@media only screen and (width >= 68.75rem){
+	@media only screen and (width >= 68.75rem) {
+		.iws-container {
+			align-items: flex-start;
+		}
 
-	.iws-container{
-		align-items: flex-start;
+		.iws-content {
+			flex-direction: row;
+			text-align: left;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		h2 {
+			max-width: 600px;
+			width: 60%;
+		}
+
+		/* no max width on header if description does not exist */
+		.iws-content:not(:has(p)) h2 {
+			max-width: none;
+		}
+
+		p {
+			max-width: 600px;
+			text-align: left;
+		}
+
+		.iws-button-solid {
+			align-self: start;
+		}
 	}
-
-	.iws-content{
-		flex-direction: row;
-		text-align: left;
-		justify-content: space-between;
-		align-items: flex-start;
-
-	}
-
-	h2{
-		max-width: 600px;
-		width: 60%;
-	}
-
-	/* no max width on header if description does not exist */
-	.iws-content:not(:has(p)) h2{
-		max-width: none;
-	}
-
-	p{
-		max-width: 600px;
-		text-align: left;
-	}
-
-	.iws-button-solid{
-		align-self: start;
-	}
-}
-
 </style>

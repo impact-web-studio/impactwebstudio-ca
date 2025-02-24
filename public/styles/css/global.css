@@ -197,6 +197,10 @@ main {
 }
 
 /* section container, used to center elements */
+section.top {
+	padding-top: clamp(10rem, 8.5714rem + 7.1429vw, 15rem);
+}
+
 section.container {
 	width: 100%;
 }
@@ -210,7 +214,7 @@ footer > .wrapper {
 }
 
 section.subpage {
-	padding: var(--subPagePadding);
+	padding: var(--sectionPadding);
 }
 
 /* ==================================
