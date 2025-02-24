@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
 	>
 		<slot name='head' />
 	</Head>
-	<body>
+	<body class='scroll'>
 		<!--Screen reader skip main nav-->
 		<a
 			class='skip'
@@ -38,7 +38,7 @@ const { title, description } = Astro.props;
 		height: 100%;
 	}
 
-	main{
+	main {
 		width: 100dvw;
 	}
 </style>

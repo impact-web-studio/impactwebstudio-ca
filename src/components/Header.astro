@@ -4,6 +4,21 @@ import { client } from '../_data/client.js';
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
+		// add classes for navigation width transition
+		// This script adds a class to the body after scrolling 100px
+		// and we used these body.scroll styles to create some on scroll
+		// animations with the navbar
+
+		const body = document.querySelector('body');
+		body.addEventListener('scroll', (e) => {
+			var scroll = e.target.scrollTop;
+			if (scroll < 100) {
+				body.classList.add('scroll');
+			} else {
+				body.classList.remove('scroll');
+			}
+		});
+
 		// add classes for mobile navigation toggling
 		var CSbody = document.querySelector('body');
 		const CSnavbarMenu = document.querySelector('#iws-navigation');
@@ -30,19 +45,6 @@ import { client } from '../_data/client.js';
 				csUL.setAttribute('aria-expanded', 'false');
 			}
 		}
-
-		// This script adds a class to the body after scrolling 100px
-		// and we used these body.scroll styles to create some on scroll
-		// animations with the navbar
-
-		document.addEventListener('scroll', (e) => {
-			const scroll = document.documentElement.scrollTop;
-			if (scroll >= 100) {
-				document.querySelector('body').classList.add('scroll');
-			} else {
-				document.querySelector('body').classList.remove('scroll');
-			}
-		});
 
 		// mobile nav toggle code
 		const dropDowns = Array.from(
@@ -1029,5 +1031,11 @@ import { client } from '../_data/client.js';
 		#iws-navigation .iws-social {
 			display: flex;
 		}
+	}
+
+	/* header transition styles */
+
+	#iws-navigation.transform {
+		background-color: red;
 	}
 </style>
