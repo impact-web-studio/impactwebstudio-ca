@@ -13,14 +13,25 @@ const { step, title, description } = Astro.props;
 <style>
 	.card {
 		border-radius: 0.875rem;
+		background: var(--off-white-bg);
+		padding: 1rem 0.875rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	span {
+		font-weight: bold;
+		font-family: 'Poppins', sans-serif;
+		text-transform: uppercase;
 	}
 
 	h3 {
+		text-transform: uppercase;
+		font-size: 1.875rem;
 	}
 
 	p {
+		color: var(--dark-two);
 	}
 </style>

@@ -39,4 +39,12 @@ import ProcessCard from '@/pages/pricing/ProcessCard.astro';
 	section {
 		background-color: var(--primary-blue);
 	}
+
+	.process-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		justify-content: center;
+		align-items: grow;
+		gap: 1.5rem;
+	}
 </style>
