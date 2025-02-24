@@ -39,19 +39,11 @@ const phone = client.phone || null;
 				id='iws-form'
 				name='Contact Form'
 				method='post'
+				data-netlify='true'
 			>
-				<!-- <div class='iws-content'>
-					<span class='iws-topper'>Contact</span>
-					<h2 class='iws-title'>Get in Touch</h2>
-					<p class='iws-text'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-						elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-						ultrices odio pulvinar. Sed ut.
-					</p>
-				</div> -->
 				<div class='input-container'>
 					<label>
-						Name
+						Name*
 						<input
 							required
 							type='text'
@@ -61,7 +53,7 @@ const phone = client.phone || null;
 						/>
 					</label>
 					<label>
-						Email
+						Email*
 						<input
 							required
 							type='text'
@@ -73,7 +65,6 @@ const phone = client.phone || null;
 					<label>
 						Phone
 						<input
-							required
 							type='text'
 							id='phone'
 							name='phone'
@@ -90,7 +81,7 @@ const phone = client.phone || null;
 						/>
 					</label>
 					<label class='iws-label-message'>
-						Message
+						Message*
 						<textarea
 							required
 							name='Message'
