@@ -1,5 +1,5 @@
 ---
-const { image, alt, title, date, category, href } = Astro.props;
+const { image, alt, title, date, category, href, tags } = Astro.props;
 
 const formatDate = (isoString: string) => {
 	const date = new Date(isoString);
@@ -68,7 +68,7 @@ const formattedDate = formatDate(date);
 					{formattedDate}
 				</span>
 				<span class='iws-category'>
-					{category}
+					{tags}
 				</span>
 			</div>
 		</div>

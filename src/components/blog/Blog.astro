@@ -32,6 +32,7 @@ import BlogCard from './BlogCard.astro';
 						category={post.data.tags}
 						date={post.rendered.metadata.frontmatter.date}
 						href={`/blog/${post.rendered.metadata.frontmatter.url}`}
+						tags={post.rendered.metadata.frontmatter.tags}
 					/>
 				))
 			}
