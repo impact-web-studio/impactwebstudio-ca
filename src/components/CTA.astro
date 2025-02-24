@@ -1,23 +1,26 @@
 ---
-import SectionHeader from "./SectionHeader.astro"
+import SectionHeader from './SectionHeader.astro';
 ---
 
-<section id='cta' class="container">
+<section
+	id='cta'
+	class='container'
+>
 	<div class='iws-container wrapper'>
 		<div class='iws-content'>
 			<span class='iws-topper'>Get Started</span>
 			<h2 class='iws-title'>ready to build your ideal site?</h2>
 		</div>
 		<a
-		href='/contact'
-		class='iws-button-solid'
-		>Schedule a call</a
-	>
+			href='/contact'
+			class='iws-button-solid'
+			>Schedule a call</a
+		>
 	</div>
 </section>
 
 <style>
-	section{
+	section {
 		color: var(--dark-one);
 		/* background-image: url(/assets/svgs/layered-waves-3.svg); */
 		/* background-size: cover;
@@ -30,9 +33,9 @@ import SectionHeader from "./SectionHeader.astro"
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		align-items:center;
+		align-items: center;
 	}
-	.iws-container{
+	.iws-container {
 		width: fit-content;
 		padding: clamp(3rem, 9vw, 6.25rem) clamp(2rem, 7vw, 6.25rem);
 		border-radius: 1rem;
@@ -56,12 +59,11 @@ import SectionHeader from "./SectionHeader.astro"
         border-right: 1.25rem solid var(--primary-blue);
 	} */
 
-
-	.iws-content{
+	.iws-content {
 		gap: 0.5rem;
 	}
 	span {
-		font-size: calc(var(--topperFontSize)*1.2);
+		font-size: calc(var(--topperFontSize) * 1.2);
 		color: var(--light-two);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -75,19 +77,18 @@ import SectionHeader from "./SectionHeader.astro"
 		color: var(--light-one);
 	}
 
-	.iws-button-solid{
+	.iws-button-solid {
 		border-radius: 100px;
 		background: var(--accent-yellow-light-mode);
 		color: var(--dark-one);
 	}
 
-	.iws-button-solid::before{
+	.iws-button-solid::before {
 		border-radius: 100px;
 		background: var(--light-one);
 	}
 
-	.iws-button-solid:hover{
+	.iws-button-solid:hover {
 		color: var(--dark-one);
 	}
-
 </style>

@@ -1,7 +1,11 @@
 ---
+
 ---
 
-<section id='hero' class="container">
+<section
+	id='hero'
+	class='container'
+>
 	<div class='iws-container wrapper'>
 		<div class='iws-flex-group'>
 			<span class='iws-topper'>Impact Web Studio</span>
@@ -25,128 +29,131 @@
 				</a>
 			</div>
 		</div>
-		<img src="/assets/images/iws-bg.png" class="section-image"/>
+		<img
+			src='/assets/images/iws-bg.png'
+			class='section-image'
+		/>
 	</div>
 </section>
 
 <style>
-img{
-	width: 100%;
-}
-#hero {
-	overflow: hidden;
-	position: relative;
-	z-index: 10;
-	display: flex;
-	flex-direction: column;
-	align-items:center;
-	padding-top: 8rem;
-	background-color: var(--dark-one);
-	gap: 3rem;
-}
-.iws-container {
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 5.5rem;
-}
-.iws-content {
-	text-align: center;
-	width: 100%;
-	max-width: 39.375rem;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	z-index: 10;
-}
+	img {
+		width: 100%;
+	}
+	#hero {
+		overflow: hidden;
+		position: relative;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 8rem;
+		background-color: var(--primary-blue);
+		gap: 3rem;
+	}
+	.iws-container {
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5.5rem;
+	}
+	.iws-content {
+		text-align: center;
+		width: 100%;
+		max-width: 39.375rem;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 10;
+	}
 
-.iws-flex-group{
-	text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
+	.iws-flex-group {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-.iws-topper {
-	color: var(--accent-yellow-light-mode);
-	text-align: center;
-	letter-spacing: 0.1em;
-}
-.iws-title {
-	font-weight: 900;
-	text-transform: uppercase;
-	width: 100%;
-	color: var(--light-one);
-}
-.iws-text {
-	line-height: 1.25em;
-	width: 100%;
-	color: var(--light-two);
-	margin-bottom: 2rem;
-}
-/* buttons */
+	.iws-topper {
+		color: var(--accent-yellow-light-mode);
+		text-align: center;
+		letter-spacing: 0.1em;
+	}
+	.iws-title {
+		font-weight: 900;
+		text-transform: uppercase;
+		width: 100%;
+		color: var(--light-one);
+	}
+	.iws-text {
+		line-height: 1.25em;
+		width: 100%;
+		color: var(--light-two);
+		margin-bottom: 2rem;
+	}
+	/* buttons */
 
-.btn-container {
-	display: flex;
-	gap: 1.25rem;
-}
-a {
-	text-transform: uppercase;
-	font-size: var(--bodyFontSize);
-	font-weight: bold;
-	letter-spacing: -0.03em;
-	text-align: center;
-	color: var(--light-one);
-	line-height: 1em;
-	text-decoration: none;
-}
-.iws-button-solid {
-	color: var(--dark-one);
-	background-color: var(--accent-yellow-light-mode);
-}
-.iws-button-solid:before {
-	background: var(--accent-blue-light-mode);
-}
-.iws-button-solid:hover {
-	color: var(--light-one);
-}
+	.btn-container {
+		display: flex;
+		gap: 1.25rem;
+	}
+	a {
+		text-transform: uppercase;
+		font-size: var(--bodyFontSize);
+		font-weight: bold;
+		letter-spacing: -0.03em;
+		text-align: center;
+		color: var(--light-one);
+		line-height: 1em;
+		text-decoration: none;
+	}
+	.iws-button-solid {
+		color: var(--dark-one);
+		background-color: var(--accent-yellow-light-mode);
+	}
+	.iws-button-solid:before {
+		background: var(--accent-blue-light-mode);
+	}
+	.iws-button-solid:hover {
+		color: var(--light-one);
+	}
 
-.iws-button-transparent {
-	z-index: 1;
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	background-color: transparent;
-	font-size: var(--bodyFontSize);
-	font-weight: 700;
-}
-.iws-picture {
-	width: 100%;
-	/* 427px - 581px */
-	max-width: clamp(26.6875rem, 50vw, 36.3125rem);
-	height: auto;
-	display: flex;
-	align-items: flex-end;
-	position: relative;
-	z-index: 7;
-}
-.iws-picture img {
-	width: 100%;
-	height: auto;
-}
-.iws-wave-background {
-	width: 100%;
-	height: auto;
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: -1px;
-	z-index: 1;
-}
+	.iws-button-transparent {
+		z-index: 1;
+		position: relative;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		background-color: transparent;
+		font-size: var(--bodyFontSize);
+		font-weight: 700;
+	}
+	.iws-picture {
+		width: 100%;
+		/* 427px - 581px */
+		max-width: clamp(26.6875rem, 50vw, 36.3125rem);
+		height: auto;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		z-index: 7;
+	}
+	.iws-picture img {
+		width: 100%;
+		height: auto;
+	}
+	.iws-wave-background {
+		width: 100%;
+		height: auto;
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -1px;
+		z-index: 1;
+	}
 </style>
