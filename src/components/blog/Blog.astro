@@ -4,6 +4,9 @@ import { getCollection } from 'astro:content';
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
 const allBlogPosts = await getCollection('blogs');
+const latestBlogs = allBlogPosts
+	.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+	.slice(0, 3);
 
 import SectionHeader from '../SectionHeader.astro';
 import BlogCard from './BlogCard.astro';
@@ -22,13 +25,13 @@ import BlogCard from './BlogCard.astro';
 		</div>
 		<ul class='grid-container card-group odd-group'>
 			{
-				allBlogPosts.map((post: any) => (
+				latestBlogs.map((post: any) => (
 					<BlogCard
 						title={post.data.title}
 						image='/assets/images/performance'
-						category='Ecommerce'
+						category={post.data.tags}
 						date={post.rendered.metadata.frontmatter.date}
-						href={`/blog/${post.id}`}
+						href={`/blog/${post.slug}`}
 					/>
 				))
 			}
@@ -48,7 +51,7 @@ import BlogCard from './BlogCard.astro';
 			z-index: 1;
 			overflow: hidden;
 		}
-		iws-container {
+		.iws-container {
 			width: 100%;
 			/* changes to 1280px on desktop */
 			max-width: 43.75rem;
