@@ -1,5 +1,6 @@
 ---
 import SectionHeader from '../SectionHeader.astro';
+import ProcessCard from '@/pages/pricing/ProcessCard.astro';
 ---
 
 <section>
@@ -10,6 +11,32 @@ import SectionHeader from '../SectionHeader.astro';
 			description="After a contract is signed we send a small questionnaire about your business and what you offer, then we expand on that content and write the entire site's content for you, create the design, get approval, then we build. Generally this takes 4-6 weeks from start to finish."
 			cta='Get Started'
 			ctaLink='/contact'
+			additionalClasses='pricing-page'
 		/>
+		<div class='process-cards'>
+			<ProcessCard
+				step='1'
+				title='Discovery'
+				description="We'll send over an email with less than 10 questions learn about your business, services, and what sets you apart."
+			/>
+			<ProcessCard
+				step='2'
+				title='Design Approval'
+				description="After that, we'll do a video screen share showing you the first draft and make any changes and iterate over the design until you're 100% satisfied."
+			/>
+			<ProcessCard
+				step='3'
+				title='website development'
+				description='Once approved, we start coding the site out and setting everything up. We will send a demo link to view before the website is official launched and live.'
+				<
+				div
+			/>
+		</div>
 	</div>
 </section>
+
+<style>
+	section {
+		background-color: var(--primary-blue);
+	}
+</style>

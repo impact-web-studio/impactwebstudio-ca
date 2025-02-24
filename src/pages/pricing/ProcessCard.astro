@@ -1,0 +1,26 @@
+---
+const { step, title, description } = Astro.props;
+---
+
+<div class='card'>
+	<div class='heading'>
+		<span>Step {step}.</span>
+		<h3>{title}</h3>
+	</div>
+	<p>{description}</p>
+</div>
+
+<style>
+	.card {
+		border-radius: 0.875rem;
+	}
+
+	span {
+	}
+
+	h3 {
+	}
+
+	p {
+	}
+</style>

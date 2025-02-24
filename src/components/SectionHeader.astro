@@ -1,8 +1,9 @@
 ---
-const { topper, heading, description, cta, ctaLink } = Astro.props;
+const { topper, heading, description, cta, ctaLink, additionalClasses } =
+	Astro.props;
 ---
 
-<div class='iws-container'>
+<div class=`iws-container ${additionalClasses}`>
 	{topper && <span class='iws-topper'>{topper}</span>}
 	<div class='iws-content'>
 		<h2 class='iws-header'>{heading}</h2>
@@ -112,5 +113,25 @@ const { topper, heading, description, cta, ctaLink } = Astro.props;
 		.iws-button-solid {
 			align-self: start;
 		}
+	}
+
+	/* Alternative Styling for Pricing Card */
+	.pricing-page .iws-topper {
+		color: var(--accent-yellow-light-mode);
+	}
+
+	.pricing-page .iws-header {
+		color: var(--light-one);
+	}
+
+	.pricing-page .iws-text {
+		color: var(--light-two);
+	}
+	.pricing-page .iws-button-solid:hover {
+		color: var(--dark-one);
+	}
+
+	.pricing-page .iws-button-solid:before {
+		background: var(--light-one);
 	}
 </style>
