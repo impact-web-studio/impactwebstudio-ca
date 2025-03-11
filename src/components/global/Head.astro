@@ -1,0 +1,84 @@
+---
+// import Favicon from '../assets/Favicon.astro';
+
+const { title, description } = Astro.props;
+---
+
+<link
+	rel='sitemap'
+	href='/sitemap-index.xml'
+/>
+<!-- Tailwind -->
+<link
+	rel='stylesheet'
+	href='/src/styles/global.css'
+/>
+<!-- CSS Styles -->
+
+<link
+	rel='stylesheet'
+	href='/styles/css/responsive.css'
+/>
+<slot name='style' />
+
+<title>{title}</title>
+<meta
+	name='description'
+	content={description}
+/>
+
+<!-- Web analytics -->
+<script
+	data-goatcounter='https://my-account.goatcounter.com/count'
+	async
+	src='//gc.zgo.at/count.js'
+></script>
+
+<!-- Open Graph tags -->
+<meta
+	property='og:title'
+	content='Impact Web Studio'
+/>
+<meta
+	property='og:type'
+	content='website'
+/>
+<meta
+	property='og:url'
+	content='http://www.impactwebstudio.ca'
+/>
+<meta
+	property='og:description'
+	content='Impact Web Studio, Web Design and Development Services in Canada and the United States.'
+/>
+<meta
+	property='og:image'
+	content='/assets/images/iws-favicon.png'
+/>
+<meta
+	property='og:image:alt'
+	content='Impact Web Studio Favicon'
+/>
+<meta
+	name='viewport'
+	content='width=device-width, initial-scale=1'
+/>
+
+<!-- Dark Mode -->
+<script>
+	// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+	document.documentElement.classList.toggle(
+		'dark',
+		localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+	);
+	// Whenever the user explicitly chooses light mode
+	localStorage.theme = 'light';
+	// Whenever the user explicitly chooses dark mode
+	localStorage.theme = 'dark';
+	// Whenever the user explicitly chooses to respect the OS preference
+	localStorage.removeItem('theme');
+</script>
+<slot />
+<!-- <Favicon /> -->

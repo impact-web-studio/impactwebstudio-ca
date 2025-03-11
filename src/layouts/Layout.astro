@@ -1,13 +1,30 @@
+---
+import Head from '../components/global/Head.astro';
+import Header from '../components/global/Header.astro';
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+<html lang='en'>
+	<Head />
+
+	<meta charset='UTF-8' />
+	<meta
+		name='viewport'
+		content='width=device-width'
+	/>
+	<link
+		rel='icon'
+		type='image/svg+xml'
+		href='/favicon.svg'
+	/>
+	<meta
+		name='generator'
+		content={Astro.generator}
+	/>
+	<title>Astro Basics</title>
+
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>

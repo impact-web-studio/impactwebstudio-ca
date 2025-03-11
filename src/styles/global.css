@@ -1,0 +1,66 @@
+/* Import Fonts */
+
+@import 'tailwindcss';
+
+/* Dark Mode */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Theme Values */
+@theme {
+	/* Fonts */
+	--font-primary: 'Roboto', sans-serif;
+	--font-titles: 'Roboto', sans-serif;
+	--font-topper: 'Roboto', sans-serif;
+
+	/* Colors - Default (Light) */
+	--color-branded-blue: #000;
+
+	/* Layout */
+	--breakpoint-sm: 320px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1100px;
+	--breakpoint-xl: 1440px;
+
+	/* Spacing */
+
+	/* Animations */
+}
+
+@layer theme {
+	/* Colors - Dark Mode */
+	.dark {
+		--color-branded-blue: #fff;
+	}
+}
+
+@layer base {
+	/* Reset */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	/* Typography */
+	html {
+		font-size: 16px;
+		font-family: var(--font-primary);
+	}
+
+	body {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	body * {
+		@apply transition-colors ease-in-out duration-300;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+	}
+}

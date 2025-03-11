@@ -1,0 +1,10 @@
+<header class='bg-green-600'>
+	<button class='primary-btn bg-branded-blue'>Dark Mode Toggle</button>
+</header>
+
+<script>
+	const btn = document.querySelector('.primary-btn');
+	btn?.addEventListener('click', () => {
+		document.documentElement.classList.toggle('dark');
+	});
+</script>
