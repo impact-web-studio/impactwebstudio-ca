@@ -31,8 +31,8 @@ const { navSpacing, navLayout, navColors } = {
 
 // [Styles] Navigation Link Group
 const { linkGroupSpacing, linkGroupLayout } = {
-	linkGroupSpacing: 'space-x-4',
-	linkGroupLayout: 'flex justify-between items-center gap-x-12',
+	linkGroupSpacing: 'gap-x-8',
+	linkGroupLayout: 'flex justify-between items-center',
 };
 
 // [Styles] - Logo
@@ -81,16 +81,16 @@ const {
 				))
 			}
 		</ul>
+		<div class='header-btn'>
+			<button class='theme-toggle'>Toggle Dark Mode</button>
+			<a
+				href={ctaLink.url}
+				class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
+				>{ctaLink.text}</a
+			>
+		</div>
 	</nav>
 </header>
-<div class='header-btn'>
-	<button class='theme-toggle'>Toggle Dark Mode</button>
-	<a
-		href={ctaLink.url}
-		class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
-		>{ctaLink.text}</a
-	>
-</div>
 <script>
 	// [Dark Mode] - Button Toggle
 	const btn = document.querySelector('.theme-toggle');
