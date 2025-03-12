@@ -15,10 +15,16 @@
 	/* Colors - Default (Light) */
 	--color-branded-blue: #000;
 
-	/* Layout */
+	/* Containers */
+	--container-content-sm: 300px;
+	--container-content-md: 650px;
+	--container-content-lg: 1100px;
+	--container-content-xl: 1200px;
+
+	/* Breakpoints */
 	--breakpoint-sm: 320px;
 	--breakpoint-md: 768px;
-	--breakpoint-lg: 1100px;
+	--breakpoint-lg: 1200px;
 	--breakpoint-xl: 1440px;
 
 	/* Spacing */

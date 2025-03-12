@@ -15,20 +15,30 @@ const navLinks = [
 const ctaLink = { text: 'Contact', url: '/contact' };
 
 // [Styles] - Header
-const { headerPadding, headerColors } = {
-	headerPadding: 'px-3 py-2',
+const { headerSpacing, headerLayout, headerColors } = {
+	headerSpacing: 'w-full h-24',
+	headerLayout: '',
 	headerColors: 'bg-green-600',
 };
 
 // [Styles] - Navigation
-const { NavPadding } = {
-	NavPadding: 'px-3 py-2',
+const { navSpacing, navLayout, navColors } = {
+	navSpacing: 'px-3 py-2',
+	navLayout:
+		'flex justify-between items-center mx-auto mx-w-content-sm md:max-w-content-md lg:max-w-content-lg xl:max-w-content-xl',
+	navColors: 'bg-green-600',
+};
+
+// [Styles] Navigation Link Group
+const { linkGroupSpacing, linkGroupLayout } = {
+	linkGroupSpacing: 'space-x-4',
+	linkGroupLayout: 'flex justify-between items-center gap-x-12',
 };
 
 // [Styles] - Logo
-const { logoContainer, logoSrc } = {
-	logoContainer: 'flex items-center',
-	logoSrc: 'w-12 h-12',
+const { logoContainer, logo } = {
+	logoContainer: 'w-[100px] h-[50px]',
+	logo: 'size-full',
 };
 
 // [Styles] - CTA
@@ -45,17 +55,20 @@ const {
 } = Astro.props;
 ---
 
-<header class=`${headerPadding} ${headerColors} ${customHeaderStyles}`>
-	<nav class={`${NavPadding} ${customNavStyles}`}>
+<header class=`${headerSpacing} ${headerColors} ${customHeaderStyles}`>
+	<nav class={`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`}>
 		<div class=`${logoContainer}`>
 			<img
-				class=`${logoSrc}`
-				src='/assets/images/iws-favicon.png'
-				alt='Impact Web Studio Favicon'
+				class=`${logo}`
+				src='/src/assets/brand/iws-logo.svg'
+				alt='Impact Web Studio Logo'
 			/>
 		</div>
 		<!-- Navigation Links -->
-		<ul>
+		<ul
+			class=`${linkGroupSpacing} ${linkGroupLayout}`
+			}
+		>
 			{
 				navLinks.map((link) => (
 					<NavLinkItem
@@ -69,7 +82,7 @@ const {
 	</nav>
 </header>
 <div class='header-btn'>
-	<button class='primary-btn'>Toggle Dark Mode</button>
+	<button class='theme-toggle'>Toggle Dark Mode</button>
 	<a
 		href={ctaLink.url}
 		class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
@@ -78,15 +91,24 @@ const {
 </div>
 <script>
 	// [Dark Mode] - Button Toggle
-	const btn = document.querySelector('.primary-btn');
+	const btn = document.querySelector('.theme-toggle');
 	btn?.addEventListener('click', () => {
 		document.documentElement.classList.toggle('dark');
 	});
 
 	// [NavBar] - Scroll Animation
 	import { scroll, animate } from 'motion';
+	// Fix: Set the initial state of the header to 100% width before any animations occur.
+	// This prevents the header from animating from 0% to 100% on page load.
+	// The animation should only trigger when scrolling, not on initial render.
+	const headerElement = document.querySelector('header');
+	if (headerElement) {
+		headerElement.style.transform = 'scaleX(100%) translateY(0px)';
+	}
+
+	// Scroll Animation Configuration
 	scroll((progress: any) => {
-		if (progress >= 0.9) {
+		if (progress >= 0.95) {
 			animate(
 				'header',
 				{ transform: 'scaleX(80%) translateY(2rem)' },
