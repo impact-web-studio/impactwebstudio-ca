@@ -69,13 +69,16 @@ const {
 	class=`${headerSpacing} ${headerLayout} ${headerColors} ${customHeaderStyles}`
 >
 	<nav class={`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`}>
-		<div class=`${logoContainer}`>
+		<a
+			class=`${logoContainer}`
+			href='/'
+		>
 			<img
 				class=`${logo}`
 				src='/src/assets/brand/iws-logo.svg'
 				alt='Impact Web Studio Logo'
 			/>
-		</div>
+		</a>
 		<!-- [Desktop] - Navigation Links -->
 		<ul
 			class=`${linkGroupSpacing} ${linkGroupLayoutDesktop}`
@@ -126,7 +129,7 @@ const {
 
 		<!-- CTA & Theme Toggle - Hidden on Mobile -->
 		<div class='hidden md:block header-btn'>
-			<!-- <ThemeToggle /> -->
+			<ThemeToggle />
 			<a
 				href={ctaLink.url}
 				class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`

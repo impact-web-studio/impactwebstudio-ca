@@ -50,7 +50,7 @@
 	--font-secondary: 'Poppins', sans-serif;
 
 	/* Colors - Default (Light) */
-	--color-branded-blue: #000;
+	--color-branded-blue: red;
 
 	/* Containers */
 	/* --container-content-sm: 300px; */
@@ -72,7 +72,7 @@
 @layer theme {
 	/* Colors - Dark Mode */
 	.dark {
-		--color-branded-blue: #fff;
+		--color-branded-blue: green;
 	}
 }
 
