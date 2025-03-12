@@ -19,10 +19,10 @@
 </button>
 
 <script>
-	const mobileMenu = document.querySelector('button');
-	mobileMenu?.addEventListener('click', () => {
+	const mobileMenuButton = document.querySelector('button');
+	mobileMenuButton?.addEventListener('click', () => {
 		console.log('clicked');
-		// const mobileMenu = document.getElementById('mobile-menu');
-		// mobileMenu.classList.toggle('hidden');
+		const mobileMenu = document.getElementById('mobile-menu');
+		mobileMenu?.classList.toggle('hidden');
 	});
 </script>

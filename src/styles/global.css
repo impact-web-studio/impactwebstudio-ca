@@ -97,7 +97,6 @@
 
 	body * {
 		@apply transition-colors ease-in-out duration-300;
-		overflow: hidden;
 	}
 
 	h1,

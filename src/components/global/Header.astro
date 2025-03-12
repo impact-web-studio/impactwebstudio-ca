@@ -33,9 +33,16 @@ const { navSpacing, navLayout, navColors } = {
 };
 
 // [Styles] Navigation Link Group
-const { linkGroupSpacing, linkGroupLayout } = {
+const {
+	linkGroupSpacing,
+	linkGroupContainerMobile,
+	linkGroupLayoutMobile,
+	linkGroupLayoutDesktop,
+} = {
 	linkGroupSpacing: 'gap-x-8',
-	linkGroupLayout: 'hidden lg:flex lg:justify-between lg:items-center',
+	linkGroupContainerMobile: 'absolute top-24 left-0 right-0 bg-green-600 z-50',
+	linkGroupLayoutMobile: 'lg:hidden flex flex-col p-4',
+	linkGroupLayoutDesktop: 'hidden lg:flex lg:justify-between lg:items-center',
 };
 
 // [Styles] - Logo
@@ -71,7 +78,7 @@ const {
 		</div>
 		<!-- [Desktop] - Navigation Links -->
 		<ul
-			class=`${linkGroupSpacing} ${linkGroupLayout}`
+			class=`${linkGroupSpacing} ${linkGroupLayoutDesktop}`
 			}
 		>
 			{
@@ -85,6 +92,32 @@ const {
 				))
 			}
 		</ul>
+		<!-- [Mobile] Navigation - Hidden by default -->
+		<div
+			id='mobile-menu'
+			class=`${linkGroupContainerMobile}`
+		>
+			<ul class=`${linkGroupLayoutMobile}`>
+				{
+					navLinks.map((link) => (
+						<NavLinkItem
+							text={link.text}
+							url={link.url}
+							active={link.active}
+							variant='mobile'
+						/>
+					))
+				}
+				{/* Include CTA in mobile menu */}
+				<li class='py-2'>
+					<a
+						href={ctaLink.url}
+						class='block py-2'
+						>{ctaLink.text}</a
+					>
+				</li>
+			</ul>
+		</div>
 		<!-- [Mobile] Hamburger Menu -->
 		<div class='lg:hidden header-btn'>
 			<!-- <ThemeToggle/> -->
