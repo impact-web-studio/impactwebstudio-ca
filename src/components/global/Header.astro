@@ -1,6 +1,7 @@
 ---
 // [Import] Navigation Link List Item
 import NavLinkItem from './navLinkItem.astro';
+import MobileMenuButton from './MobileMenuButton.astro';
 // [Import] Theme Toggle Component
 import ThemeToggle from './ThemeToggle.astro';
 
@@ -34,7 +35,7 @@ const { navSpacing, navLayout, navColors } = {
 // [Styles] Navigation Link Group
 const { linkGroupSpacing, linkGroupLayout } = {
 	linkGroupSpacing: 'gap-x-8',
-	linkGroupLayout: 'flex justify-between items-center',
+	linkGroupLayout: 'hidden lg:flex lg:justify-between lg:items-center',
 };
 
 // [Styles] - Logo
@@ -68,7 +69,7 @@ const {
 				alt='Impact Web Studio Logo'
 			/>
 		</div>
-		<!-- Navigation Links -->
+		<!-- [Desktop] - Navigation Links -->
 		<ul
 			class=`${linkGroupSpacing} ${linkGroupLayout}`
 			}
@@ -79,11 +80,19 @@ const {
 						text={link.text}
 						url={link.url}
 						active={link.active}
+						variant='desktop'
 					/>
 				))
 			}
 		</ul>
-		<div class='header-btn'>
+		<!-- [Mobile] Hamburger Menu -->
+		<div class='lg:hidden header-btn'>
+			<!-- <ThemeToggle/> -->
+			<MobileMenuButton />
+		</div>
+
+		<!-- CTA & Theme Toggle - Hidden on Mobile -->
+		<div class='hidden lg:block header-btn'>
 			<!-- <ThemeToggle /> -->
 			<a
 				href={ctaLink.url}
