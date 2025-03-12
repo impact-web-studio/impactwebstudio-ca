@@ -16,17 +16,16 @@
 	// [NavBar] - Scroll Animation
 	import { scroll, animate } from 'motion';
 	scroll((progress: any) => {
-		console.log(progress);
-		if (progress >= 0.85) {
+		if (progress >= 0.9) {
 			animate(
 				'header',
 				{ transform: 'scaleX(80%) translateY(2rem)' },
-				{ duration: 0.8, ease: 'easeOut' }
+				{ duration: 0.5, ease: 'easeOut' }
 			);
 		} else {
 			animate(
 				'header',
-				{ transform: 'scaleX(100%) translateY(0)' },
+				{ transform: 'scaleX(100%) translateY(0px)' },
 				{ duration: 0.5, ease: 'easeOut' }
 			);
 		}
@@ -37,5 +36,6 @@
 	header {
 		position: sticky;
 		top: 0;
+		height: 150px;
 	}
 </style>
