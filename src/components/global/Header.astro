@@ -17,13 +17,13 @@ const ctaLink = { text: 'Contact', url: '/contact' };
 // [Styles] - Header
 const { headerSpacing, headerLayout, headerColors } = {
 	headerSpacing: 'w-full h-24',
-	headerLayout: '',
+	headerLayout: 'flex justify-center items-center',
 	headerColors: 'bg-green-600',
 };
 
 // [Styles] - Navigation
 const { navSpacing, navLayout, navColors } = {
-	navSpacing: 'px-3 py-2',
+	navSpacing: 'size-full px-3 py-2',
 	navLayout:
 		'flex justify-between items-center mx-auto mx-w-content-sm md:max-w-content-md lg:max-w-content-lg xl:max-w-content-xl',
 	navColors: 'bg-green-600',
@@ -55,7 +55,9 @@ const {
 } = Astro.props;
 ---
 
-<header class=`${headerSpacing} ${headerColors} ${customHeaderStyles}`>
+<header
+	class=`${headerSpacing} ${headerLayout} ${headerColors} ${customHeaderStyles}`
+>
 	<nav class={`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`}>
 		<div class=`${logoContainer}`>
 			<img
@@ -123,11 +125,3 @@ const {
 		}
 	});
 </script>
-
-<style>
-	header {
-		position: sticky;
-		top: 0;
-		height: 150px;
-	}
-</style>
