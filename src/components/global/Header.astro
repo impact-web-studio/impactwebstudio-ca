@@ -19,7 +19,7 @@ const ctaLink = { text: 'Contact', url: '/contact' };
 // [Styles] - Header
 const { headerSpacing, headerLayout, headerColors } = {
 	headerSpacing: 'w-full h-24',
-	headerLayout: 'flex justify-center items-center',
+	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto',
 	headerColors: 'bg-green-600',
 };
 
@@ -84,7 +84,7 @@ const {
 			}
 		</ul>
 		<div class='header-btn'>
-			<ThemeToggle />
+			<!-- <ThemeToggle /> -->
 			<a
 				href={ctaLink.url}
 				class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
@@ -93,12 +93,6 @@ const {
 		</div>
 	</nav>
 	<script>
-		// [Dark Mode] - Button Toggle
-		const btn = document.querySelector('.theme-toggle');
-		btn?.addEventListener('click', () => {
-			document.documentElement.classList.toggle('dark');
-		});
-
 		// [NavBar] - Scroll Animation
 		import { scroll, animate } from 'motion';
 		// Fix: Set the initial state of the header to 100% width before any animations occur.
@@ -106,7 +100,8 @@ const {
 		// The animation should only trigger when scrolling, not on initial render.
 		const headerElement = document.querySelector('header');
 		if (headerElement) {
-			headerElement.style.transform = 'scaleX(100%) translateY(0px)';
+			headerElement.style.transform = 'translateY(0px)';
+			headerElement.style.width = '100%';
 		}
 
 		// Scroll Animation Configuration
@@ -114,13 +109,13 @@ const {
 			if (progress >= 0.95) {
 				animate(
 					'header',
-					{ transform: 'scaleX(80%) translateY(2rem)' },
+					{ width: '90%', transform: 'translateY(2rem)', borderRadius: '1rem' },
 					{ duration: 0.5, ease: 'easeOut' }
 				);
 			} else {
 				animate(
 					'header',
-					{ transform: 'scaleX(100%) translateY(0px)' },
+					{ width: '100%', transform: 'translateY(0px)', borderRadius: '0px' },
 					{ duration: 0.5, ease: 'easeOut' }
 				);
 			}

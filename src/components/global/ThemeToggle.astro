@@ -9,6 +9,11 @@
 </div>
 
 <script>
+	// [Dark Mode] - Button Toggle
+	const btn = document.querySelector('.switch');
+	btn?.addEventListener('click', () => {
+		document.documentElement.classList.toggle('dark');
+	});
 	import { animate, cubicBezier } from 'motion';
 
 	// From https://easings.net/#easeOutBounce
