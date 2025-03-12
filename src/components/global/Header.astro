@@ -17,10 +17,18 @@
 	import { scroll, animate } from 'motion';
 	scroll((progress: any) => {
 		console.log(progress);
-		if (progress > 0.5) {
-			animate('header', { opacity: 0 });
+		if (progress >= 0.85) {
+			animate(
+				'header',
+				{ transform: 'scaleX(80%) translateY(2rem)' },
+				{ duration: 0.8, ease: 'easeOut' }
+			);
 		} else {
-			animate('header', { opacity: 1 });
+			animate(
+				'header',
+				{ transform: 'scaleX(100%) translateY(0)' },
+				{ duration: 0.5, ease: 'easeOut' }
+			);
 		}
 	});
 </script>
