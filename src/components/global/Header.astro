@@ -1,11 +1,68 @@
 ---
+// [Import] Navigation Link List Item
+import NavLinkItem from './navLinkItem.astro';
 
+// [Data] - Navigation Links
+const navLinks = [
+	{ text: 'Home', url: '/', type: 'main', active: true },
+	{ text: 'About', url: '/about', type: 'main', active: false },
+	{ text: 'Services', url: '/services', type: 'main', active: false },
+	{ text: 'Portfolio', url: '/portfolio', type: 'main', active: false },
+	{ text: 'Pricing', url: '/pricing', type: 'main', active: false },
+	{ text: 'Contact', url: '/pricing', type: 'cta', active: false },
+];
+
+// [Styles] - Header
+const { headerPadding, headerColors } = {
+	headerPadding: 'px-3 py-2',
+	headerColors: 'bg-green-600',
+};
+
+// [Styles] - Logo
+const { logoContainer, logoSrc } = {
+	logoContainer: 'flex items-center',
+	logoSrc: 'w-12 h-12',
+};
+
+const { NavPadding } = {
+	NavPadding: 'px-3 py-2',
+};
+
+const {
+	customHeaderStyles = '',
+	customNavStyles = '',
+	customCTAStyles = '',
+} = Astro.props;
 ---
 
-<header class='bg-green-600'>
-	<button class='primary-btn bg-branded-blue'>Dark Mode Toggle</button>
+<header class=`${headerPadding} ${headerColors} ${customHeaderStyles}`>
+	<div class=`${logoContainer}`>
+		<img
+			class=`${logoSrc}`
+			src='/assets/images/iws-favicon.png'
+			alt='Impact Web Studio Favicon'
+		/>
+	</div>
+	<!-- Navigation Links -->
+	<nav class={`${NavPadding} ${customNavStyles}`}>
+		<ul>
+			{
+				navLinks.map((link) => (
+					<NavLinkItem
+						text={link.text}
+						url={link.url}
+						type={link.type}
+						active={link.active}
+					/>
+				))
+			}
+		</ul>
+	</nav>
 </header>
-
+<div class='header-btn'>
+	<button class='primary-btn'>Toggle Dark Mode</button>
+	<a class='primary-btn'>Contact</a>
+</div>
 <script>
 	// [Dark Mode] - Button Toggle
 	const btn = document.querySelector('.primary-btn');
