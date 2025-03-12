@@ -1,10 +1,33 @@
+---
+
+---
+
 <header class='bg-green-600'>
 	<button class='primary-btn bg-branded-blue'>Dark Mode Toggle</button>
 </header>
 
 <script>
+	// [Dark Mode] - Button Toggle
 	const btn = document.querySelector('.primary-btn');
 	btn?.addEventListener('click', () => {
 		document.documentElement.classList.toggle('dark');
 	});
+
+	// [NavBar] - Scroll Animation
+	import { scroll, animate } from 'motion';
+	scroll((progress: any) => {
+		console.log(progress);
+		if (progress > 0.5) {
+			animate('header', { opacity: 0 });
+		} else {
+			animate('header', { opacity: 1 });
+		}
+	});
 </script>
+
+<style>
+	header {
+		position: sticky;
+		top: 0;
+	}
+</style>
