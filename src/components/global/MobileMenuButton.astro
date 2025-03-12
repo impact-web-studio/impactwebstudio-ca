@@ -20,9 +20,8 @@
 
 <script>
 	const mobileMenuButton = document.querySelector('button');
+	const mobileMenu = document.getElementById('mobile-menu');
 	mobileMenuButton?.addEventListener('click', () => {
-		console.log('clicked');
-		const mobileMenu = document.getElementById('mobile-menu');
 		mobileMenu?.classList.toggle('hidden');
 	});
 </script>
