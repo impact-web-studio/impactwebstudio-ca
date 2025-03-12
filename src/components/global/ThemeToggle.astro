@@ -1,0 +1,77 @@
+---
+
+---
+
+<div class='container'>
+	<div class='switch'>
+		<div class='ball'></div>
+	</div>
+</div>
+
+<script>
+	import { animate, cubicBezier } from 'motion';
+
+	// From https://easings.net/#easeOutBounce
+	function bounceEase(y) {
+		const n1 = 7.5625;
+		const d1 = 2.75;
+
+		if (y < 1 / d1) {
+			return n1 * y * y;
+		} else if (y < 2 / d1) {
+			return n1 * (y -= 1.5 / d1) * y + 0.75;
+		} else if (y < 2.5 / d1) {
+			return n1 * (y -= 2.25 / d1) * y + 0.9375;
+		} else {
+			return n1 * (y -= 2.625 / d1) * y + 0.984375;
+		}
+	}
+
+	const bounce = {
+		duration: 1.2,
+		ease: bounceEase,
+	};
+
+	const ball = document.querySelector('.ball');
+	const switchEl = document.querySelector('.switch');
+	let isOn = true;
+
+	switchEl.addEventListener('click', () => {
+		isOn = !isOn;
+
+		animate(
+			ball,
+			{ x: isOn ? 0 : 40 },
+			{ duration: 1.0, ease: cubicBezier(0.77, 0, 0.175, 1) }
+		);
+	});
+</script>
+
+<style>
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: fit-content;
+	}
+
+	.switch {
+		width: 80px;
+		height: 40px;
+		background-color: #fff3;
+		display: flex;
+		align-items: flex-start;
+		border-radius: 50px;
+		padding: 4px;
+		cursor: pointer;
+	}
+
+	.ball {
+		width: 32px;
+		height: 32px;
+		background-color: #f5f5f5;
+		border-radius: 40px;
+		will-change: transform;
+	}
+</style>
