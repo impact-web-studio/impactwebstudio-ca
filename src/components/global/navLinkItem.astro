@@ -1,11 +1,11 @@
 ---
-const { text, url, type, active, className = '' } = Astro.props;
+const { text, url, active, className = '' } = Astro.props;
 ---
 
 <li>
 	<a
 		href={url}
-		class={`${type === 'cta' ? 'text-white bg-green-600' : 'text-gray-900'} ${
+		class={`${'text-gray-900'} ${
 			active ? 'border-b-2 border-green-600' : ''
 		} ${className}}`}
 	>

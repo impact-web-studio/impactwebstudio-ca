@@ -4,18 +4,25 @@ import NavLinkItem from './navLinkItem.astro';
 
 // [Data] - Navigation Links
 const navLinks = [
-	{ text: 'Home', url: '/', type: 'main', active: true },
-	{ text: 'About', url: '/about', type: 'main', active: false },
-	{ text: 'Services', url: '/services', type: 'main', active: false },
-	{ text: 'Portfolio', url: '/portfolio', type: 'main', active: false },
-	{ text: 'Pricing', url: '/pricing', type: 'main', active: false },
-	{ text: 'Contact', url: '/pricing', type: 'cta', active: false },
+	{ text: 'Home', url: '/', active: true },
+	{ text: 'About', url: '/about', active: false },
+	{ text: 'Services', url: '/services', active: false },
+	{ text: 'Portfolio', url: '/portfolio', active: false },
+	{ text: 'Pricing', url: '/pricing', active: false },
 ];
+
+// [Data] - CTA Link (Separate)
+const ctaLink = { text: 'Contact', url: '/contact' };
 
 // [Styles] - Header
 const { headerPadding, headerColors } = {
 	headerPadding: 'px-3 py-2',
 	headerColors: 'bg-green-600',
+};
+
+// [Styles] - Navigation
+const { NavPadding } = {
+	NavPadding: 'px-3 py-2',
 };
 
 // [Styles] - Logo
@@ -24,10 +31,13 @@ const { logoContainer, logoSrc } = {
 	logoSrc: 'w-12 h-12',
 };
 
-const { NavPadding } = {
-	NavPadding: 'px-3 py-2',
+// [Styles] - CTA
+const { ctaPadding, ctaColors } = {
+	ctaPadding: 'px-3 py-2',
+	ctaColors: 'text-black bg-green-600',
 };
 
+// [Styles] - Props - Custom Styles
 const {
 	customHeaderStyles = '',
 	customNavStyles = '',
@@ -36,22 +46,21 @@ const {
 ---
 
 <header class=`${headerPadding} ${headerColors} ${customHeaderStyles}`>
-	<div class=`${logoContainer}`>
-		<img
-			class=`${logoSrc}`
-			src='/assets/images/iws-favicon.png'
-			alt='Impact Web Studio Favicon'
-		/>
-	</div>
-	<!-- Navigation Links -->
 	<nav class={`${NavPadding} ${customNavStyles}`}>
+		<div class=`${logoContainer}`>
+			<img
+				class=`${logoSrc}`
+				src='/assets/images/iws-favicon.png'
+				alt='Impact Web Studio Favicon'
+			/>
+		</div>
+		<!-- Navigation Links -->
 		<ul>
 			{
 				navLinks.map((link) => (
 					<NavLinkItem
 						text={link.text}
 						url={link.url}
-						type={link.type}
 						active={link.active}
 					/>
 				))
@@ -61,7 +70,11 @@ const {
 </header>
 <div class='header-btn'>
 	<button class='primary-btn'>Toggle Dark Mode</button>
-	<a class='primary-btn'>Contact</a>
+	<a
+		href={ctaLink.url}
+		class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
+		>{ctaLink.text}</a
+	>
 </div>
 <script>
 	// [Dark Mode] - Button Toggle
