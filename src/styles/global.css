@@ -1,7 +1,45 @@
-/* Import Fonts */
-
 @import 'tailwindcss';
 
+/* ==================================
+	FONT DEFINITIONS
+================================== */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Poppins/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Poppins/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
 /* Dark Mode */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -9,8 +47,7 @@
 @theme {
 	/* Fonts */
 	--font-primary: 'Roboto', sans-serif;
-	--font-titles: 'Roboto', sans-serif;
-	--font-topper: 'Roboto', sans-serif;
+	--font-secondary: 'Poppins', sans-serif;
 
 	/* Colors - Default (Light) */
 	--color-branded-blue: #000;
@@ -60,5 +97,24 @@
 
 	body * {
 		@apply transition-colors ease-in-out duration-300;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	button,
+	.nav-item {
+		font-family: var(--font-secondary);
+		letter-spacing: -0.03em;
+	}
+
+	p,
+	span,
+	a,
+	button {
+		font-family: var(--font-primary);
 	}
 }

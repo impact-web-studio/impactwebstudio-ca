@@ -1,11 +1,12 @@
 ---
+const linkStyles = 'font-semibold uppercase text-base';
 const { text, url, active, className = '' } = Astro.props;
 ---
 
 <li>
 	<a
 		href={url}
-		class={`${'text-gray-900'} ${
+		class={`nav-item ${linkStyles} ${
 			active ? 'border-b-2 border-green-600' : ''
 		} ${className}}`}
 	>
