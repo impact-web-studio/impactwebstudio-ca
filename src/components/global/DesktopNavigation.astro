@@ -1,7 +1,7 @@
 ---
 // [Import] Navigation Link List Item
 import NavLinkItem from './navLinkItem.astro';
-import MobileNavigation from './MobileNavigation.astro';
+import MobileMenuButton from './MobileMenuButton.astro';
 // [Import] Theme Toggle Component
 import ThemeToggle from './ThemeToggle.astro';
 
@@ -96,7 +96,36 @@ const {
 			}
 		</ul>
 		<!-- [Mobile] Navigation - Hidden by default -->
-		<MobileNavigation />
+		<div
+			id='mobile-menu'
+			class=`${linkGroupContainerMobile}`
+		>
+			<ul class=`${linkGroupLayoutMobile}`>
+				{
+					navLinks.map((link) => (
+						<NavLinkItem
+							text={link.text}
+							url={link.url}
+							active={link.active}
+							variant='mobile'
+						/>
+					))
+				}
+				{/* Include CTA in mobile menu */}
+				<li class='py-2'>
+					<a
+						href={ctaLink.url}
+						class='block py-2'
+						>{ctaLink.text}</a
+					>
+				</li>
+			</ul>
+		</div>
+		<!-- [Mobile] Hamburger Menu -->
+		<div class='lg:hidden header-btn'>
+			<!-- <ThemeToggle/> -->
+			<MobileMenuButton />
+		</div>
 
 		<!-- CTA & Theme Toggle - Hidden on Mobile -->
 		<div class='hidden md:block header-btn'>

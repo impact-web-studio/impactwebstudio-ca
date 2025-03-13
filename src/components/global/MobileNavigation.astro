@@ -1,0 +1,69 @@
+---
+// [Import] Navigation Link List Item
+import NavLinkItem from './navLinkItem.astro';
+import MobileMenuButton from './MobileMenuButton.astro';
+// [Import] Theme Toggle Component
+import ThemeToggle from './ThemeToggle.astro';
+
+// [Import] - Navigation Routes
+import NavigationRoutes from '../../_data/navigation';
+
+// [Data] - CTA Link (Separate)
+const ctaLink = { text: 'Contact', url: '/contact' };
+
+// [Styles] Navigation Link Group
+const {
+	linkGroupSpacing,
+	linkGroupContainerMobile,
+	linkGroupLayoutMobile,
+	linkGroupLayoutDesktop,
+} = {
+	linkGroupSpacing: 'gap-x-8',
+	linkGroupContainerMobile: 'hidden absolute top-24 left-0 right-0 z-50',
+	linkGroupLayoutMobile: 'md:hidden flex flex-col p-4',
+	linkGroupLayoutDesktop: 'hidden md:flex md:justify-between md:items-center',
+};
+
+// [Styles] - Props - Custom Styles
+const {
+	customHeaderStyles = '',
+	customNavStyles = '',
+	customCTAStyles = '',
+} = Astro.props;
+---
+
+<!-- [Mobile] Navigation - Hidden by default --><!-- [Mobile] Hamburger Menu -->
+<div class='lg:hidden header-btn'>
+	<!-- <ThemeToggle/> -->
+	<MobileMenuButton />
+</div>
+<div
+	id='mobile-menu'
+	class=`${linkGroupContainerMobile}`
+>
+	<ul class=`${linkGroupLayoutMobile}`>
+		{
+			NavigationRoutes.map((link) => (
+				<NavLinkItem
+					text={link.text}
+					url={link.url}
+					active={link.active}
+					variant='mobile'
+				/>
+			))
+		}
+		{/* Include CTA in mobile menu */}
+		<li class='py-2'>
+			<a
+				href={ctaLink.url}
+				class='block py-2'
+				>{ctaLink.text}</a
+			>
+		</li>
+	</ul>
+	<!-- [Mobile] Hamburger Menu -->
+	<div class='lg:hidden header-btn'>
+		<!-- <ThemeToggle/> -->
+		<MobileMenuButton />
+	</div>
+</div>
