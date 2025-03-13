@@ -1,152 +1,47 @@
 ---
 // [Data]
-import NavigationRoutes from '../../_data/navigation'; // Navigation Link Routes
+import { navigationLinks, CtaLink } from '../../_data/navigation'; // Navigation Link Routes
 
 // [Components]
 import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
 import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
 
-// [Styles] Header: <header>
-const { headerSpacing, headerLayout, headerColors } = {
-	headerSpacing: 'w-full h-24',
-	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto',
-	headerColors: 'bg-white shadow-md',
-};
-
-// [Styles] - Navigation: <nav>
-const { navSpacing, navLayout, navColors } = {
-	navSpacing: 'size-full px-3 py-2',
-	navLayout:
-		'flex justify-between items-center mx-auto mx-w-content-sm md:max-w-content-md lg:max-w-content-lg xl:max-w-content-xl',
-	navColors: '',
-};
-
 // [Styles] Navigation Link Group: <ul>
-const {
-	linkGroupSpacing,
-	linkGroupContainerMobile,
-	linkGroupLayoutMobile,
-	linkGroupLayoutDesktop,
-} = {
+const { linkGroupSpacing, linkGroupLayout } = {
 	linkGroupSpacing: 'gap-x-8',
-	linkGroupContainerMobile: 'hidden absolute top-24 left-0 right-0 z-50',
-	linkGroupLayoutMobile: 'md:hidden flex flex-col p-4',
-	linkGroupLayoutDesktop: 'hidden md:flex md:justify-between md:items-center',
+	linkGroupLayout: 'hidden md:flex md:justify-between md:items-center',
 };
 
-// [Styles] - CTA Button: <button>
+// [Styles] CTA Button: <button>
 const { ctaPadding, ctaColors } = {
 	ctaPadding: 'px-3 py-2',
 	ctaColors: 'text-black',
 };
 
 // [Styles] Custom Style Props
-const {
-	customHeaderStyles = '',
-	customNavStyles = '',
-	customCTAStyles = '',
-} = Astro.props;
+const { customCTAStyles = '' } = Astro.props;
 ---
 
-<header
-	class=`${headerSpacing} ${headerLayout} ${headerColors} ${customHeaderStyles}`
+<ul
+	class=`${linkGroupSpacing} ${linkGroupLayout}`
+	}
 >
-	<nav class={`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`}>
-		<a
-			class=`${logoContainer}`
-			href='/'
-		>
-			<img
-				class=`${logo}`
-				src='/src/assets/brand/iws-logo.svg'
-				alt='Impact Web Studio Logo'
+	{
+		navigationLinks.map((link) => (
+			<NavLinkItem
+				text={link.text}
+				url={link.url}
+				active={link.active}
+				variant='desktop'
 			/>
-		</a>
-		<!-- [Desktop] - Navigation Links -->
-		<ul
-			class=`${linkGroupSpacing} ${linkGroupLayoutDesktop}`
-			}
-		>
-			{
-				navLinks.map((link) => (
-					<NavLinkItem
-						text={link.text}
-						url={link.url}
-						active={link.active}
-						variant='desktop'
-					/>
-				))
-			}
-		</ul>
-		<!-- [Mobile] Navigation - Hidden by default -->
-		<div
-			id='mobile-menu'
-			class=`${linkGroupContainerMobile}`
-		>
-			<ul class=`${linkGroupLayoutMobile}`>
-				{
-					navLinks.map((link) => (
-						<NavLinkItem
-							text={link.text}
-							url={link.url}
-							active={link.active}
-							variant='mobile'
-						/>
-					))
-				}
-				{/* Include CTA in mobile menu */}
-				<li class='py-2'>
-					<a
-						href={ctaLink.url}
-						class='block py-2'
-						>{ctaLink.text}</a
-					>
-				</li>
-			</ul>
-		</div>
-		<!-- [Mobile] Hamburger Menu -->
-		<div class='lg:hidden header-btn'>
-			<!-- <ThemeToggle/> -->
-			<MobileMenuButton />
-		</div>
-
-		<!-- CTA & Theme Toggle - Hidden on Mobile -->
-		<div class='hidden md:block header-btn'>
-			<ThemeToggle />
-			<a
-				href={ctaLink.url}
-				class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
-				>{ctaLink.text}</a
-			>
-		</div>
-	</nav>
-	<script>
-		// [NavBar] - Scroll Animation
-		import { scroll, animate } from 'motion';
-		// Fix: Set the initial state of the header to 100% width before any animations occur.
-		// This prevents the header from animating from 0% to 100% on page load.
-		// The animation should only trigger when scrolling, not on initial render.
-		const headerElement = document.querySelector('header');
-		if (headerElement) {
-			headerElement.style.transform = 'translateY(0px)';
-			headerElement.style.width = '100%';
-		}
-
-		// Scroll Animation Configuration
-		scroll((progress: any) => {
-			if (progress >= 0.95) {
-				animate(
-					'header',
-					{ width: '90%', transform: 'translateY(2rem)', borderRadius: '1rem' },
-					{ duration: 0.5, ease: 'easeOut' }
-				);
-			} else {
-				animate(
-					'header',
-					{ width: '100%', transform: 'translateY(0px)', borderRadius: '0px' },
-					{ duration: 0.5, ease: 'easeOut' }
-				);
-			}
-		});
-	</script>
-</header>
+		))
+	}
+</ul>
+<div class='hidden md:block header-btn'>
+	<ThemeToggle />
+	<a
+		href={CtaLink.url}
+		class=`${ctaPadding} ${ctaColors} ${customCTAStyles} ${CtaLink.active ? 'active' : ''}`
+		>{CtaLink.text}</a
+	>
+</div>

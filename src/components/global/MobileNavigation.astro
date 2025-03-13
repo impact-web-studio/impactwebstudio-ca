@@ -7,37 +7,23 @@ import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
 import MobileMenuButton from './MobileMenuButton.astro'; // Mobile Menu Button (Hamburger
 import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
 
-// [Styles] Navigation Link Group
-const {
-	linkGroupSpacing,
-	linkGroupContainerMobile,
-	linkGroupLayoutMobile,
-	linkGroupLayoutDesktop,
-} = {
+// [Styles] Navigation Link Group: <div> and <ul>
+const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
+	dropDownContainer: 'hidden absolute top-24 left-0 right-0 z-50',
 	linkGroupSpacing: 'gap-x-8',
-	linkGroupContainerMobile: 'hidden absolute top-24 left-0 right-0 z-50',
-	linkGroupLayoutMobile: 'md:hidden flex flex-col p-4',
-	linkGroupLayoutDesktop: 'hidden md:flex md:justify-between md:items-center',
+	linkGroupLayout: 'md:hidden flex flex-col p-4',
 };
-
-// [Styles] - Props - Custom Styles
-const {
-	customHeaderStyles = '',
-	customNavStyles = '',
-	customCTAStyles = '',
-} = Astro.props;
 ---
 
-<!-- [Mobile] Navigation - Hidden by default --><!-- [Mobile] Hamburger Menu -->
 <div class='lg:hidden header-btn'>
-	<!-- <ThemeToggle/> -->
+	<ThemeToggle />
 	<MobileMenuButton />
 </div>
 <div
 	id='mobile-menu'
-	class=`${linkGroupContainerMobile}`
+	class=`${dropDownContainer}`
 >
-	<ul class=`${linkGroupLayoutMobile}`>
+	<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
 		{
 			navigationLinks.map((link) => (
 				<NavLinkItem
@@ -57,9 +43,4 @@ const {
 			>
 		</li>
 	</ul>
-	<!-- [Mobile] Hamburger Menu -->
-	<div class='lg:hidden header-btn'>
-		<!-- <ThemeToggle/> -->
-		<MobileMenuButton />
-	</div>
 </div>
