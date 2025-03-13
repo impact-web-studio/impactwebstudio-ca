@@ -1,30 +1,19 @@
 ---
-// [Import] Navigation Link List Item
-import NavLinkItem from './navLinkItem.astro';
-import MobileMenuButton from './MobileMenuButton.astro';
-// [Import] Theme Toggle Component
-import ThemeToggle from './ThemeToggle.astro';
+// [Data]
+import NavigationRoutes from '../../_data/navigation'; // Navigation Link Routes
 
-// [Data] - Navigation Links
-const navLinks = [
-	{ text: 'Home', url: '/', active: true },
-	{ text: 'About', url: '/about', active: false },
-	{ text: 'Services', url: '/services', active: false },
-	{ text: 'Portfolio', url: '/portfolio', active: false },
-	{ text: 'Pricing', url: '/pricing', active: false },
-];
+// [Components]
+import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
+import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
 
-// [Data] - CTA Link (Separate)
-const ctaLink = { text: 'Contact', url: '/contact' };
-
-// [Styles] - Header
+// [Styles] Header: <header>
 const { headerSpacing, headerLayout, headerColors } = {
 	headerSpacing: 'w-full h-24',
 	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto',
 	headerColors: 'bg-white shadow-md',
 };
 
-// [Styles] - Navigation
+// [Styles] - Navigation: <nav>
 const { navSpacing, navLayout, navColors } = {
 	navSpacing: 'size-full px-3 py-2',
 	navLayout:
@@ -32,7 +21,7 @@ const { navSpacing, navLayout, navColors } = {
 	navColors: '',
 };
 
-// [Styles] Navigation Link Group
+// [Styles] Navigation Link Group: <ul>
 const {
 	linkGroupSpacing,
 	linkGroupContainerMobile,
@@ -45,19 +34,13 @@ const {
 	linkGroupLayoutDesktop: 'hidden md:flex md:justify-between md:items-center',
 };
 
-// [Styles] - Logo
-const { logoContainer, logo } = {
-	logoContainer: 'w-[100px] h-[50px]',
-	logo: 'size-full',
-};
-
-// [Styles] - CTA
+// [Styles] - CTA Button: <button>
 const { ctaPadding, ctaColors } = {
 	ctaPadding: 'px-3 py-2',
 	ctaColors: 'text-black',
 };
 
-// [Styles] - Props - Custom Styles
+// [Styles] Custom Style Props
 const {
 	customHeaderStyles = '',
 	customNavStyles = '',

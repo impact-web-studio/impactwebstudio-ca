@@ -1,30 +1,17 @@
 ---
-// [Import] Navigation Link List Item
-import NavLinkItem from './navLinkItem.astro';
-import MobileNavigation from './MobileNavigation.astro';
-// [Import] Theme Toggle Component
-import ThemeToggle from './ThemeToggle.astro';
+// [Components]
+import HeaderLogo from './HeaderLogo.astro'; // Company Logo
+import MobileNavigation from './MobileNavigation.astro'; // Mobile Navigation Menu
+import DesktopNavigation from './DesktopNavigation.astro'; // Desktop Navigation Menu
 
-// [Data] - Navigation Links
-const navLinks = [
-	{ text: 'Home', url: '/', active: true },
-	{ text: 'About', url: '/about', active: false },
-	{ text: 'Services', url: '/services', active: false },
-	{ text: 'Portfolio', url: '/portfolio', active: false },
-	{ text: 'Pricing', url: '/pricing', active: false },
-];
-
-// [Data] - CTA Link (Separate)
-const ctaLink = { text: 'Contact', url: '/contact' };
-
-// [Styles] - Header
+// [Styles] - Header: <header>
 const { headerSpacing, headerLayout, headerColors } = {
 	headerSpacing: 'w-full h-24',
 	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto',
 	headerColors: 'bg-white shadow-md',
 };
 
-// [Styles] - Navigation
+// [Styles] - Navigation: <nav>
 const { navSpacing, navLayout, navColors } = {
 	navSpacing: 'size-full px-3 py-2',
 	navLayout:
@@ -32,109 +19,46 @@ const { navSpacing, navLayout, navColors } = {
 	navColors: '',
 };
 
-// [Styles] Navigation Link Group
-const {
-	linkGroupSpacing,
-	linkGroupContainerMobile,
-	linkGroupLayoutMobile,
-	linkGroupLayoutDesktop,
-} = {
-	linkGroupSpacing: 'gap-x-8',
-	linkGroupContainerMobile: 'hidden absolute top-24 left-0 right-0 z-50',
-	linkGroupLayoutMobile: 'md:hidden flex flex-col p-4',
-	linkGroupLayoutDesktop: 'hidden md:flex md:justify-between md:items-center',
-};
-
-// [Styles] - Logo
-const { logoContainer, logo } = {
-	logoContainer: 'w-[100px] h-[50px]',
-	logo: 'size-full',
-};
-
-// [Styles] - CTA
-const { ctaPadding, ctaColors } = {
-	ctaPadding: 'px-3 py-2',
-	ctaColors: 'text-black',
-};
-
 // [Styles] - Props - Custom Styles
-const {
-	customHeaderStyles = '',
-	customNavStyles = '',
-	customCTAStyles = '',
-} = Astro.props;
+const { customHeaderStyles = '', customNavStyles = '' } = Astro.props;
 ---
 
 <header
 	class=`${headerSpacing} ${headerLayout} ${headerColors} ${customHeaderStyles}`
 >
-	<nav class={`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`}>
-		<a
-			class=`${logoContainer}`
-			href='/'
-		>
-			<img
-				class=`${logo}`
-				src='/src/assets/brand/iws-logo.svg'
-				alt='Impact Web Studio Logo'
-			/>
-		</a>
-		<!-- [Desktop] - Navigation Links -->
-		<ul
-			class=`${linkGroupSpacing} ${linkGroupLayoutDesktop}`
-			}
-		>
-			{
-				navLinks.map((link) => (
-					<NavLinkItem
-						text={link.text}
-						url={link.url}
-						active={link.active}
-						variant='desktop'
-					/>
-				))
-			}
-		</ul>
-		<!-- [Mobile] Navigation - Hidden by default -->
+	<nav class=`${navSpacing} ${navLayout} ${navColors} ${customNavStyles}`>
+		<HeaderLogo />
 		<MobileNavigation />
-
-		<!-- CTA & Theme Toggle - Hidden on Mobile -->
-		<div class='hidden md:block header-btn'>
-			<ThemeToggle />
-			<a
-				href={ctaLink.url}
-				class=`${ctaPadding} ${ctaColors} ${customCTAStyles}`
-				>{ctaLink.text}</a
-			>
-		</div>
+		<DesktopNavigation />
 	</nav>
-	<script>
-		// [NavBar] - Scroll Animation
-		import { scroll, animate } from 'motion';
-		// Fix: Set the initial state of the header to 100% width before any animations occur.
-		// This prevents the header from animating from 0% to 100% on page load.
-		// The animation should only trigger when scrolling, not on initial render.
-		const headerElement = document.querySelector('header');
-		if (headerElement) {
-			headerElement.style.transform = 'translateY(0px)';
-			headerElement.style.width = '100%';
-		}
-
-		// Scroll Animation Configuration
-		scroll((progress: any) => {
-			if (progress >= 0.95) {
-				animate(
-					'header',
-					{ width: '90%', transform: 'translateY(2rem)', borderRadius: '1rem' },
-					{ duration: 0.5, ease: 'easeOut' }
-				);
-			} else {
-				animate(
-					'header',
-					{ width: '100%', transform: 'translateY(0px)', borderRadius: '0px' },
-					{ duration: 0.5, ease: 'easeOut' }
-				);
-			}
-		});
-	</script>
 </header>
+
+<script>
+	// Animate Header on Scroll
+	import { scroll, animate } from 'motion';
+	// Fix: Set the initial state of the header to 100% width before any animations occur.
+	// This prevents the header from animating from 0% to 100% on page load.
+	// The animation should only trigger when scrolling, not on initial render.
+	const headerElement = document.querySelector('header');
+	if (headerElement) {
+		headerElement.style.transform = 'translateY(0px)';
+		headerElement.style.width = '100%';
+	}
+
+	// Animation Styles Configuration
+	scroll((progress: any) => {
+		if (progress >= 0.95) {
+			animate(
+				'header',
+				{ width: '90%', transform: 'translateY(2rem)', borderRadius: '1rem' },
+				{ duration: 0.5, ease: 'easeOut' }
+			);
+		} else {
+			animate(
+				'header',
+				{ width: '100%', transform: 'translateY(0px)', borderRadius: '0px' },
+				{ duration: 0.5, ease: 'easeOut' }
+			);
+		}
+	});
+</script>

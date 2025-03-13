@@ -1,6 +1,12 @@
 ---
+// [Styles]
 const linkStyles = 'font-semibold uppercase text-base';
 const { text, url, active, variation, className = '' } = Astro.props;
+
+const { mobileStyles, desktopStyles } = {
+	mobileStyles: 'block py-2',
+	desktopStyles: 'py-2',
+};
 ---
 
 <li>
@@ -8,7 +14,7 @@ const { text, url, active, variation, className = '' } = Astro.props;
 		href={url}
 		class={`nav-item ${linkStyles} ${
 			active ? 'border-b-2 border-branded-blue' : ''
-		} ${className}}`}
+		} ${className}} ${variation === 'mobile' ? mobileStyles : desktopStyles}`}
 	>
 		{text}
 	</a>

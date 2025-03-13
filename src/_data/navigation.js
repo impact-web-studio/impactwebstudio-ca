@@ -1,9 +1,9 @@
-// [Data] - Navigation Links
-export default [
-	{ text: 'Home', url: '/', type: 'default', active: true },
-	{ text: 'About', url: '/about', type: 'default', active: false },
-	{ text: 'Services', url: '/services', type: 'default', active: false },
-	{ text: 'Portfolio', url: '/portfolio', type: 'default', active: false },
-	{ text: 'Pricing', url: '/pricing', type: 'default', active: false },
-	{ text: 'Contact', url: '/pricing', type: 'cta', active: false },
+export const navigationLinks = [
+	{ text: 'Home', url: '/', active: true },
+	{ text: 'About', url: '/about', active: false },
+	{ text: 'Services', url: '/services', active: false },
+	{ text: 'Portfolio', url: '/portfolio', active: false },
+	{ text: 'Pricing', url: '/pricing', active: false },
 ];
+
+export const CtaLink = { text: 'Contact', url: '/contact', active: false };

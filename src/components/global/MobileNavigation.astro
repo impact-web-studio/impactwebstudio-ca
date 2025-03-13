@@ -1,15 +1,11 @@
 ---
-// [Import] Navigation Link List Item
-import NavLinkItem from './navLinkItem.astro';
-import MobileMenuButton from './MobileMenuButton.astro';
-// [Import] Theme Toggle Component
-import ThemeToggle from './ThemeToggle.astro';
+// [Data]
+import { navigationLinks, CtaLink } from '../../_data/navigation'; // Navigation Link Routes
 
-// [Import] - Navigation Routes
-import NavigationRoutes from '../../_data/navigation';
-
-// [Data] - CTA Link (Separate)
-const ctaLink = { text: 'Contact', url: '/contact' };
+// [Components]
+import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
+import MobileMenuButton from './MobileMenuButton.astro'; // Mobile Menu Button (Hamburger
+import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
 
 // [Styles] Navigation Link Group
 const {
@@ -43,7 +39,7 @@ const {
 >
 	<ul class=`${linkGroupLayoutMobile}`>
 		{
-			NavigationRoutes.map((link) => (
+			navigationLinks.map((link) => (
 				<NavLinkItem
 					text={link.text}
 					url={link.url}
@@ -55,9 +51,9 @@ const {
 		{/* Include CTA in mobile menu */}
 		<li class='py-2'>
 			<a
-				href={ctaLink.url}
-				class='block py-2'
-				>{ctaLink.text}</a
+				href={CtaLink.url}
+				class=`block py-2 ${CtaLink.active ? "active" : ""}`
+				>{CtaLink.text}</a
 			>
 		</li>
 	</ul>
