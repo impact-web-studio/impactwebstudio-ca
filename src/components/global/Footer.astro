@@ -1,0 +1,49 @@
+---
+// [Data]
+import { navigationLinks } from '../../_data/navigation';
+
+// [Components]
+import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
+
+// [Styles]
+---
+
+<footer>
+	<div class='footer-top'>
+		<div class='footer-branding'>
+			<img
+				src='/src/assets/brand/iws-logo-white.svg'
+				alt='Impact Web Studio Logo'
+			/>
+			<div class='cta'><p></p><ButtonPrimaryCta /></div>
+		</div>
+		<nav
+			class='footer-links'
+			aria-label='Footer'
+		>
+			<ul>
+				<li><a href='/about'>About</a></li>
+				<li><a href='/services'>Services</a></li>
+				<li><a href='/contact'>Contact</a></li>
+				<li><a href='/blog'>Blog</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class='footer-bottom'>
+		<p>&copy; 2024 Company Name. All rights reserved.</p>
+		<p class='signature'>
+			Designed & developed by <a href='https://yourwebsite.com'>Your Name</a>
+		</p>
+		<nav
+			class='footer-legal'
+			aria-label='Legal'
+		>
+			<ul>
+				<li><a href='/privacy-policy'>Privacy Policy</a></li>
+				<li><a href='/terms-of-service'>Terms of Service</a></li>
+				<li><a href='/cookies'>Cookie Policy</a></li>
+			</ul>
+		</nav>
+	</div>
+</footer>

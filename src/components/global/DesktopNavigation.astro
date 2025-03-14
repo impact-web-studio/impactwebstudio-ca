@@ -5,6 +5,7 @@ import { navigationLinks, CtaLink } from '../../_data/navigation'; // Navigation
 // [Components]
 import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
 import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
+import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
 
 // [Styles] Navigation Link Group: <ul>
 const { linkGroupSpacing, linkGroupLayout } = {
@@ -44,4 +45,5 @@ const { customCTAStyles = '' } = Astro.props;
 		class=`${ctaPadding} ${ctaColors} ${customCTAStyles} ${CtaLink.active ? 'active' : ''}`
 		>{CtaLink.text}</a
 	>
+	<ButtonPrimaryCta classNames='!bg-branded-blue' />
 </div>
