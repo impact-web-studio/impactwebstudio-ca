@@ -9,47 +9,28 @@
 </div>
 
 <script>
-	// [Dark Mode] - Button Toggle
-	const btn = document.querySelector('.switch');
-	btn?.addEventListener('click', () => {
-		document.documentElement.classList.toggle('dark');
-	});
-
 	import { animate, cubicBezier } from 'motion';
 
-	// From https://easings.net/#easeOutBounce
-	function bounceEase(y) {
-		const n1 = 7.5625;
-		const d1 = 2.75;
+	// [Dark Mode] - Button Toggle
+	document.addEventListener('DOMContentLoaded', function () {
+		// References Both Desktop & Mobile Versions
+		const toggleContainers = document.querySelectorAll('.switch');
+		const balls = document.querySelectorAll('.ball');
+		let isOn = true;
 
-		if (y < 1 / d1) {
-			return n1 * y * y;
-		} else if (y < 2 / d1) {
-			return n1 * (y -= 1.5 / d1) * y + 0.75;
-		} else if (y < 2.5 / d1) {
-			return n1 * (y -= 2.25 / d1) * y + 0.9375;
-		} else {
-			return n1 * (y -= 2.625 / d1) * y + 0.984375;
-		}
-	}
+		toggleContainers.forEach((container, index) => {
+			container.addEventListener('click', () => {
+				console.log('clicked');
+				document.documentElement.classList.toggle('dark');
+				isOn = !isOn;
 
-	const bounce = {
-		duration: 1.2,
-		ease: bounceEase,
-	};
-
-	const ball = document.querySelector('.ball');
-	const switchEl = document.querySelector('.switch');
-	let isOn = true;
-
-	switchEl.addEventListener('click', () => {
-		isOn = !isOn;
-
-		animate(
-			ball,
-			{ x: isOn ? 0 : 40 },
-			{ duration: 1.0, ease: cubicBezier(0.77, 0, 0.175, 1) }
-		);
+				animate(
+					balls[index],
+					{ x: isOn ? 0 : 40 },
+					{ duration: 1.0, ease: cubicBezier(0.77, 0, 0.175, 1) }
+				);
+			});
+		});
 	});
 </script>
 
@@ -65,7 +46,7 @@
 	.switch {
 		width: 80px;
 		height: 40px;
-		background-color: #fff3;
+		background-color: rgba(0, 0, 0, 1);
 		display: flex;
 		align-items: flex-start;
 		border-radius: 50px;
@@ -76,7 +57,7 @@
 	.ball {
 		width: 32px;
 		height: 32px;
-		background-color: #f5f5f5;
+		background-color: #ff0000;
 		border-radius: 40px;
 		will-change: transform;
 	}
