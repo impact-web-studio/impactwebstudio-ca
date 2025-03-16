@@ -1,0 +1,28 @@
+---
+// [Data]
+import { navigationLinks } from '../../../_data/navigation';
+
+// [Components]
+import NavLinkItem from '../navLinkItem.astro';
+
+// [Styles] Footer Links: <ul>
+const { linkGroupSpacing, linkGroupLayout } = {
+	linkGroupSpacing: 'gap-x-8',
+	linkGroupLayout: 'lg:hidden flex flex-col p-4',
+};
+---
+
+<h3 class='uppercase text-primary-orange text-2xl font-secondary font-bold'>
+	quick links
+</h3>
+<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
+	{
+		navigationLinks.map((link) => (
+			<NavLinkItem
+				text={link.text}
+				url={link.url}
+				variant='mobile'
+			/>
+		))
+	}
+</ul>

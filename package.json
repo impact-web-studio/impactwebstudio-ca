@@ -1,16 +1,19 @@
 {
-	"name": "tailwind",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@tailwindcss/vite": "^4.0.12",
-		"astro": "^5.4.3",
-		"motion": "^12.4.12"
-	}
+  "name": "iws",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.12",
+    "astro": "^5.4.3",
+    "motion": "^12.4.12"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
 }

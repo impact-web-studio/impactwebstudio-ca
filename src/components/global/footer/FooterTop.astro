@@ -1,0 +1,15 @@
+---
+// [Components]
+import FooterBranding from './FooterBranding.astro';
+import FooterLinks from './FooterLinks.astro';
+
+// [Styles] Footer Top: <div>
+const { footerTop } = {
+	footerTop: 'w-full h-fit',
+};
+---
+
+<div class=`${footerTop}`>
+	<FooterBranding />
+	<FooterLinks />
+</div>
