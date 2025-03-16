@@ -65,10 +65,13 @@
 	--color-primary-blue: #3a86ff;
 	--color-secondary-blue: #232ed1;
 	--color-primary-orange: #f77f00;
+
 	/* Containers */
-	/* --container-content-sm: 300px; */ /* --container-content-md: 650px; */
-	/* --container-content-lg: 1100px; */
 	--container-content-max: 1440px;
+
+	/* Global Padding */
+	--spacing-padding-x: clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
+	--spacing-padding-y: clamp(2.5rem, 1.7857rem + 3.5714vw, 5rem);
 
 	/* Breakpoints */
 	--breakpoint-sm: 500px;
