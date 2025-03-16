@@ -71,14 +71,17 @@
 	--container-content-max: 1440px;
 
 	/* Breakpoints */
-	--breakpoint-sm: 320px;
+	--breakpoint-sm: 500px;
 	--breakpoint-md: 768px;
-	--breakpoint-lg: 1200px;
+	--breakpoint-lg: 1100px;
 	--breakpoint-xl: 1440px;
 
 	/* Spacing */
 
 	/* Animations */
+
+	/* Shadows */
+	--drop-shadow-orange: 0px 3px 50px rgba(96.86%, 49.8%, 0%, 25%);
 }
 
 @layer theme {
@@ -125,14 +128,12 @@
 	}
 
 	p,
-	span,
 	a,
 	button {
 		font-family: var(--font-primary);
 	}
 
 	p,
-	span,
 	a,
 	input,
 	label {

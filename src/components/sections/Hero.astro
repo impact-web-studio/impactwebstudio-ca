@@ -5,7 +5,7 @@ import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
 
 // [Styles] - Wrapper: <div>
 const { textWrapper, titleWrapper } = {
-	textWrapper: 'w-full max-w-7xl flex flex-col gap-8',
+	textWrapper: 'w-full max-w-7xl flex flex-col gap-8 md:max-w-[75%]',
 	titleWrapper: 'flex flex-col gap-3',
 };
 
@@ -35,12 +35,17 @@ const { buttonLayout, anchorText } = {
 
 // [Styles] - Image: <div> and <img>
 const { imageWrapper, image } = {
-	imageWrapper: 'w-full flex justify-center md:justify-end',
-	image: 'w-full max-w-[500px] h-full object-cover',
+	imageWrapper:
+		'w-full flex justify-center md:absolute md:bottom-0 md:justify-end md:right-0 lg:static lg:justify-center',
+	image:
+		'w-full max-w-[500px] h-full object-cover md:max-w-[300px] lg:max-w-full drop-shadow-orange',
 };
 ---
 
-<SectionContainer sectionClassNames='bg-contrast-permanent'>
+<SectionContainer
+	sectionClassNames='bg-contrast-permanent relative pb-0 md:pb-16'
+	containerClassNames='md:items-start'
+>
 	<div class=`${textWrapper}`>
 		<div class=`${titleWrapper}`>
 			<span class=`${topperText}`>where design meets functionality</span>
