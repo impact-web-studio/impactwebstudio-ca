@@ -1,7 +1,6 @@
 ---
 // [Data]
 import { navigationLinks, CtaLink } from '../../_data/navigation'; // Navigation Link Routes
-const { pathname } = Astro.url; // Get current path to determine active link
 
 // [Components]
 import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
@@ -31,7 +30,6 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 				<NavLinkItem
 					text={link.text}
 					url={link.url}
-					active={pathname === link.url}
 					variant='mobile'
 				/>
 			))

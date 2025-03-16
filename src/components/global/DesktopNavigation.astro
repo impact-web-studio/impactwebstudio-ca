@@ -1,7 +1,6 @@
 ---
 // [Data]
 import { navigationLinks } from '../../_data/navigation'; // Navigation Link Routes
-const { pathname } = Astro.url;
 
 // [Components]
 import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
@@ -34,7 +33,6 @@ const { customCTAStyles = '' } = Astro.props;
 			<NavLinkItem
 				text={link.text}
 				url={link.url}
-				active={pathname === link.url}
 				variant='desktop'
 			/>
 		))

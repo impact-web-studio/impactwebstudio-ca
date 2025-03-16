@@ -1,19 +1,24 @@
 ---
-// [Styles]
+// [Styles] Link Text Styles
 const linkStyles = 'font-semibold uppercase text-base';
-const { text, url, active, variation, className = '' } = Astro.props;
+const { text, url, variation, className = '' } = Astro.props;
 
+// [Styles] Mobile and Desktop Styles
 const { mobileStyles, desktopStyles } = {
 	mobileStyles: 'block py-2',
 	desktopStyles: 'py-2',
 };
+
+// [Logic] Determine if link is active
+const { pathname } = Astro.url;
+const isActive = pathname === url;
 ---
 
 <li>
 	<a
 		href={url}
 		class={`nav-item ${linkStyles} ${
-			active ? 'border-b-2 border-branded-blue' : ''
+			isActive ? 'border-b-2 border-branded-blue' : ''
 		} ${className}} ${variation === 'mobile' ? mobileStyles : desktopStyles}`}
 	>
 		{text}
