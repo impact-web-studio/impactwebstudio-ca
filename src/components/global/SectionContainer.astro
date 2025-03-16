@@ -1,0 +1,19 @@
+---
+const { sectionLayout, sectionSpacing } = {
+	sectionLayout: 'flex justify-center align-center',
+	sectionSpacing: 'w-full h-full p-8',
+};
+
+const { containerLayout, containerSpacing } = {
+	containerLayout: 'w-full max-w-content-max mx-auto',
+	containerSpacing: 'flex flex-col lg:flex-row justify-between items-center',
+};
+
+const { sectionClassNames, containerClassNames } = Astro.props;
+---
+
+<section class=`${sectionLayout} ${sectionSpacing} ${sectionClassNames}`>
+	<div class=`${containerLayout} ${containerSpacing} ${containerClassNames}`>
+		<slot />
+	</div>
+</section>

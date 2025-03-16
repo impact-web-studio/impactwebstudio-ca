@@ -1,0 +1,73 @@
+---
+// [Components]
+import SectionContainer from '../global/SectionContainer.astro';
+import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
+
+// [Styles] - Wrapper: <div>
+const { textWrapper, titleWrapper } = {
+	textWrapper: 'w-full max-w-7xl flex flex-col gap-8',
+	titleWrapper: 'flex flex-col gap-3',
+};
+
+// [Styles] - Topper: <span>
+const { topperText } = {
+	topperText: 'text-primary-orange font-bold uppercase tracking-widest',
+};
+
+// [Styles] - Title: <h1> and <span>
+const { titleText, spanText } = {
+	titleText:
+		'text-3xl md:text-4xl lg:text-5xl font-bold tracking-[-0.03em] uppercase text-light-permanent',
+	spanText: 'text-primary-orange',
+};
+
+// [Styles] - Body Text: <p>
+const { bodyText } = {
+	bodyText: 'text-base lg:text-lg font-medium text-light-permanent',
+};
+
+// [Styles] - CTA Links: <div> and <a>
+const { buttonLayout, anchorText } = {
+	buttonLayout: 'flex gap-4 items-center',
+	anchorText: 'text-primary-blue font-bold uppercase',
+};
+
+// [Styles] - Image: <div> and <img>
+const { imageWrapper, image } = {
+	imageWrapper: 'w-full flex justify-center md:justify-end',
+	image: 'w-full max-w-[500px] h-full object-cover',
+};
+---
+
+<SectionContainer sectionClassNames='bg-contrast-permanent'>
+	<div class=`${textWrapper}`>
+		<div class=`${titleWrapper}`>
+			<span class=`${topperText}`>where design meets functionality</span>
+			<h1 class=`${titleText}`>
+				GET A Website That Works as Hard as You Do — <span class=`${spanText}`
+					>Without the Upfront Cost</span
+				>
+			</h1>
+		</div>
+		<p class=`${bodyText}`>
+			We help service-based businesses get more bookings, automate client
+			interactions, and establish a strong online presence — all for an
+			affordable monthly subscription, with no large upfront costs.
+		</p>
+		<div class=`${buttonLayout}`>
+			<ButtonPrimaryCta ctaText='Get Started' />
+			<a
+				href=''
+				class=`${anchorText}`
+				>Learn More</a
+			>
+		</div>
+	</div>
+	<div class=`${imageWrapper}`>
+		<img
+			class=`${image}`
+			src='/src/assets/hero-image.png'
+			alt='Hero Image'
+		/>
+	</div>
+</SectionContainer>
