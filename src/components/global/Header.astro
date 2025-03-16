@@ -7,14 +7,14 @@ import DesktopNavigation from './DesktopNavigation.astro'; // Desktop Navigation
 // [Styles] - Header: <header>
 const { headerSpacing, headerLayout, headerColors } = {
 	headerSpacing: 'w-full h-24',
-	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto',
-	headerColors: 'bg-white shadow-md',
+	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto z-50',
+	headerColors: 'bg-white shadow-md shadow-dark-permanent/20',
 };
 
 // [Styles] - Navigation: <nav>
 const { navSpacing, navLayout, navColors } = {
-	navSpacing: 'size-full px-3 py-2 max-w-content-max',
-	navLayout: 'flex justify-between items-center mx-auto w-full',
+	navSpacing: 'size-full px-padding-x max-w-content-max',
+	navLayout: 'flex justify-between items-center w-full',
 	navColors: '',
 };
 
@@ -46,10 +46,15 @@ const { customHeaderStyles = '', customNavStyles = '' } = Astro.props;
 
 	// Animation Styles Configuration
 	scroll((progress: any) => {
-		if (progress >= 0.95) {
+		console.log(progress);
+		if (progress > 0.1) {
 			animate(
 				'header',
-				{ width: '90%', transform: 'translateY(2rem)', borderRadius: '1rem' },
+				{
+					width: '90%',
+					transform: 'translateY(2rem)',
+					borderRadius: '1.25rem',
+				},
 				{ duration: 0.5, ease: 'easeOut' }
 			);
 		} else {

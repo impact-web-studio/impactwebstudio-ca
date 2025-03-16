@@ -1,11 +1,13 @@
 ---
 // [Data]
 import { navigationLinks, CtaLink } from '../../_data/navigation'; // Navigation Link Routes
+const { pathname } = Astro.url; // Get current path to determine active link
 
 // [Components]
 import NavLinkItem from './navLinkItem.astro'; // Navigation Link Items
 import MobileMenuButton from './MobileMenuButton.astro'; // Mobile Menu Button (Hamburger
 import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
+import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
 
 // [Styles] Navigation Link Group: <div> and <ul>
 const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
@@ -29,18 +31,11 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 				<NavLinkItem
 					text={link.text}
 					url={link.url}
-					active={link.active}
+					active={pathname === link.url}
 					variant='mobile'
 				/>
 			))
 		}
-		{/* Include CTA in mobile menu */}
-		<li class='py-2'>
-			<a
-				href={CtaLink.url}
-				class=`block py-2 ${CtaLink.active ? "active" : ""}`
-				>{CtaLink.text}</a
-			>
-		</li>
+		<ButtonPrimaryCta />
 	</ul>
 </div>
