@@ -4,12 +4,33 @@ import { navigationLinks } from '../../_data/navigation';
 
 // [Components]
 import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
+import FooterMeta from './FooterMeta.astro';
 
-// [Styles]
+// [Styles] - Footer: <footer>
+const { footerSpacing, footerLayout, footerColors } = {
+	footerSpacing: 'w-full h-fit',
+	footerLayout: 'flex flex-col justify-center items-center',
+	footerColors: 'bg-contrast-permanent',
+};
+
+// [Styles] - Footer Top: <div>
+const {
+	footerTop,
+	footerBranding,
+	footerNavLinks,
+	footerContact,
+	footerSignature,
+} = {
+	footerTop: 'w-full h-fit',
+	footerBranding: 'flex flex-col gap-8 items-center',
+	footerNavLinks: 'flex gap-8 items-center',
+	footerContact: 'flex gap-8 items-center',
+	footerSignature: 'text-light-permanent',
+};
 ---
 
-<footer>
-	<div class='footer-top'>
+<footer class=`${footerSpacing} ${footerLayout} ${footerColors}`>
+	<div class=`${footerTop}`>
 		<div class='footer-branding'>
 			<img
 				src='/src/assets/brand/iws-logo-white.svg'
@@ -31,19 +52,6 @@ import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
 	</div>
 
 	<div class='footer-bottom'>
-		<p>&copy; 2024 Company Name. All rights reserved.</p>
-		<p class='signature'>
-			Designed & developed by <a href='https://yourwebsite.com'>Your Name</a>
-		</p>
-		<nav
-			class='footer-legal'
-			aria-label='Legal'
-		>
-			<ul>
-				<li><a href='/privacy-policy'>Privacy Policy</a></li>
-				<li><a href='/terms-of-service'>Terms of Service</a></li>
-				<li><a href='/cookies'>Cookie Policy</a></li>
-			</ul>
-		</nav>
+		<FooterMeta />
 	</div>
 </footer>

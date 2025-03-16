@@ -1,0 +1,12 @@
+---
+const currentYear = new Date().getFullYear();
+
+const { footerMetaData, copyright } = {
+	footerMetaData: 'w-full',
+	copyright: 'flex justify-center items-center text-light-permanent',
+};
+---
+
+<div class=`${footerMetaData}`>
+	<p class=`${copyright}`>Impact Web Studio © {currentYear}</p>
+</div>
