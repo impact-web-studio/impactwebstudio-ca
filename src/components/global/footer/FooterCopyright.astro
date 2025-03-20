@@ -1,13 +1,9 @@
 ---
 const currentYear = new Date().getFullYear();
-
-const { footerMetaData, copyright } = {
-	footerMetaData: 'w-full',
-	copyright:
-		'flex justify-center items-center text-light-permanent/50 text-xs md:text-sm',
-};
 ---
 
-<div class=`px-3 text-2xl mx-auto bg-red-50 py-3 my-3`>
-	<p class="flex justify-center items-center text-light-permanent/50 text-xs md:text-sm">Impact Web Studio © {currentYear}</p>
+<div class='flex justify-center items-center sm:items-start'>
+	<p class='text-light-permanent/50 w-fit text-xs md:text-sm'>
+		Impact Web Studio © {currentYear}
+	</p>
 </div>

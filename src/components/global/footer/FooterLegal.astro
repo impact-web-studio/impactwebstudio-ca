@@ -1,14 +1,36 @@
 ---
-
+const legalLinks = [
+	{
+		href: '/privacy-policy',
+		text: 'Privacy Policy',
+	},
+	{
+		href: '/terms-of-service',
+		text: 'Terms of Service',
+	},
+	{
+		href: '/cookies',
+		text: 'Cookie Policy',
+	},
+];
 ---
 
 <nav
-	class='footer-legal'
+	class='w-fit'
 	aria-label='Legal'
 >
-	<ul>
-		<li><a href='/privacy-policy'>Privacy Policy</a></li>
-		<li><a href='/terms-of-service'>Terms of Service</a></li>
-		<li><a href='/cookies'>Cookie Policy</a></li>
+	<ul class='flex w-full justify-center items-center gap-2 sm:items-end'>
+		{
+			legalLinks.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						class='text-light-permanent/50 text-xs whitespace-nowrap  md:text-sm'
+					>
+						{link.text}
+					</a>
+				</li>
+			))
+		}
 	</ul>
 </nav>
