@@ -3,26 +3,27 @@
 import { navigationLinks, CtaLink } from '../../../_data/navigation'; // Navigation Link Routes
 
 // [Components]
-import NavLinkItem from '../navLinkItem.astro'; // Navigation Link Items
+import NavLinkItem from '../NavLinkItem.astro'; // Navigation Link Items
 import MobileMenuButton from './MobileMenuButton.astro'; // Mobile Menu Button (Hamburger
 import ThemeToggle from './ThemeToggle.astro'; // Theme Toggle Button
 import ButtonPrimaryCta from '../../ButtonPrimaryCta.astro';
 
 // [Styles] Navigation Link Group: <div> and <ul>
 const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
-	dropDownContainer: 'hidden absolute top-24 left-0 right-0 z-50',
-	linkGroupSpacing: 'gap-x-8',
-	linkGroupLayout: 'lg:hidden flex flex-col p-4',
+	dropDownContainer:
+		'hidden absolute top-24 left-0 right-0 z-50 translate-y-[-1.25rem] rounded-b-[1.25rem] overflow-hidden z-40',
+	linkGroupSpacing: 'gap-y-3',
+	linkGroupLayout: 'lg:hidden flex flex-col items-center justify-center py-10',
 };
 ---
 
 <div class='lg:hidden flex gap-1'>
-	<ThemeToggle />
+	<!-- <ThemeToggle /> -->
 	<MobileMenuButton />
 </div>
 <div
 	id='mobile-menu'
-	class=`${dropDownContainer}`
+	class=`${dropDownContainer} bg-white`
 >
 	<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
 		{
@@ -30,10 +31,10 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 				<NavLinkItem
 					text={link.text}
 					url={link.url}
-					variant='mobile'
+					className='!text-2xl'
 				/>
 			))
 		}
-		<ButtonPrimaryCta />
+		<ButtonPrimaryCta className='' />
 	</ul>
 </div>
