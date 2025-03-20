@@ -1,7 +1,7 @@
 export default [
 	{
 		icon: 'mobile',
-		title: 'mobile first design',
+		title: 'mobile-first design',
 		description:
 			'Your website should look stunning everywhere. We craft sleek, modern websites built from the ground up for mobile users—because over 60% of your visitors are browsing on their phones.',
 	},
