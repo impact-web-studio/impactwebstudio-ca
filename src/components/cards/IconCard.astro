@@ -2,10 +2,10 @@
 const { icon, title, description, ctaText, ctaLink } = Astro.props;
 ---
 
-<div class='card'>
+<div class='card shadow-2xl px-4 py-3 basis-[32%] grow shrink-0'>
 	<div class='icon'>icon</div>
 	<div class='text'>
-		<div class='title'>{title}</div>
+		<div class='title text-contrast-permanent'>{title} title</div>
 		<div class='desc'>{description}</div>
 	</div>
 	<div class='cta'>{ctaText}</div>
