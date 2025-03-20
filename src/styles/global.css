@@ -142,4 +142,8 @@
 	label {
 		font-size: var(--text-body);
 	}
+
+	a {
+		cursor: pointer;
+	}
 }

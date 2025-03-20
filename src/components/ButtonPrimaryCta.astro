@@ -1,10 +1,10 @@
 ---
 import { CtaLink } from '../_data/navigation';
 
-const { layout, spacing, colors, text } = {
-	layout: 'text-center rounded-full',
+const { layout, spacing, colors, text, action } = {
+	layout: 'text-center rounded-full min-w-fit z-10 relative overflow-hidden',
 	spacing: 'py-2 px-6 md:py-4 md:px-8',
-	colors: 'bg-primary-blue text-white hover:bg-primary-orange',
+	colors: 'bg-primary-blue text-white',
 	text: 'uppercase font-bold whitespace-nowrap text-button',
 };
 
@@ -14,5 +14,34 @@ const { ctaText = 'get started', classNames = '' } = Astro.props;
 <a
 	class=`${layout} ${spacing} ${colors} ${text} ${classNames}`
 	href={CtaLink.url}
-	>{ctaText}</a
->
+	>{ctaText}
+</a>
+
+<script>
+	import { hover } from 'motion';
+
+	hover('a', (element) => {
+		element.classList.add('hover');
+
+		return () => element.classList.remove('hover');
+	});
+</script>
+
+<style>
+	a::before {
+		content: '';
+		position: absolute;
+		background-color: var(--color-primary-orange);
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+		transition: transform 0.5s;
+		z-index: -1; /* Ensures the background is behind the text */
+	}
+
+	a.hover::before {
+		transform: translateX(0);
+	}
+</style>

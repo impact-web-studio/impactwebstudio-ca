@@ -6,5 +6,113 @@
 		"statusBarItem.remoteBackground": "#f9e64f",
 		"statusBarItem.remoteForeground": "#15202b"
 	},
-	"peacock.color": "#f9e64f"
+	"peacock.color": "#f9e64f",
+	"saveEditorLayout.list": [
+		{
+			"name": "side by side",
+			"documents": [
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/Footer.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/FooterBranding.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/FooterDescription.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/FooterTop.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/FooterBottom.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/footer/FooterCopyright.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/astro.config.mjs",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/package.json",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/pages/index.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/sections/Hero.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/buttonPrimaryCta.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/styles/global.css",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/header/Header.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/_data/navigation.js",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/navLinkItem.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/pages/about/index.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/global/SectionContainer.astro",
+					"column": 1,
+					"pinned": false
+				},
+				{
+					"fsPath": "/Users/impactkenny/impact-web-studio/impactwebstudio-ca-new/src/components/sections/Hero.astro",
+					"column": 2,
+					"pinned": false
+				}
+			],
+			"layout": {
+				"orientation": 0,
+				"groups": [
+					{
+						"size": 724
+					},
+					{
+						"size": 725
+					}
+				]
+			}
+		}
+	]
 }

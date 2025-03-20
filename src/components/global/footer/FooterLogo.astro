@@ -1,7 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import impactLogo from '/src/assets/brand/iws-logo-white.svg';
+---
+
 <div class='footer-logo'>
 	<a href='/'>
-		<img
-			src='/src/assets/brand/iws-logo-white.svg'
+		<Image
+			src={impactLogo}
 			alt='Impact Web Studio Logo'
 		/>
 	</a>
