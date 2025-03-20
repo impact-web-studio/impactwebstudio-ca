@@ -10,9 +10,11 @@ import whatWeDo from '../../_data/whatWeDo';
 	{
 		whatWeDo.map((card) => (
 			<IconCard
+				icon={card.icon}
 				title={card.title}
 				description={card.description}
 				ctaText='learn more'
+				ctaLink='/services'
 			/>
 		))
 	}
