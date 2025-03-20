@@ -1,18 +1,18 @@
 ---
 import { CtaLink } from '../_data/navigation';
 
-const { layout, spacing, colors, text, action } = {
+const { layout, spacing, colors, text } = {
 	layout: 'text-center rounded-full min-w-fit z-10 relative overflow-hidden',
 	spacing: 'py-2 px-6 md:py-4 md:px-8',
 	colors: 'bg-primary-blue text-white',
 	text: 'uppercase font-bold whitespace-nowrap text-button',
 };
 
-const { ctaText = 'get started', classNames = '' } = Astro.props;
+const { ctaText = 'get started', className = '' } = Astro.props;
 ---
 
 <a
-	class=`${layout} ${spacing} ${colors} ${text} ${classNames}`
+	class=`${layout} ${spacing} ${colors} ${text} ${className}`
 	href={CtaLink.url}
 	>{ctaText}
 </a>

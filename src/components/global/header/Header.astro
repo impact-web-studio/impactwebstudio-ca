@@ -6,15 +6,16 @@ import DesktopNavigation from './DesktopNavigation.astro'; // Desktop Navigation
 
 // [Styles] - Header: <header>
 const { headerSpacing, headerLayout, headerColors } = {
-	headerSpacing: 'w-full h-24',
-	headerLayout: 'flex justify-center items-center sticky top-0 mx-auto z-50',
+	headerSpacing: 'w-full h-24 px-padding-x',
+	headerLayout: 'flex justify-center items-center sticky top-0 z-50',
 	headerColors: 'bg-white shadow-md shadow-dark-permanent/20',
 };
 
 // [Styles] - Navigation: <nav>
 const { navSpacing, navLayout, navColors } = {
-	navSpacing: 'size-full px-padding-x max-w-content-max',
-	navLayout: 'flex justify-between items-center w-full',
+	navSpacing: 'size-full',
+	navLayout:
+		'flex justify-between items-center w-full mx-auto max-w-content-max',
 	navColors: '',
 };
 

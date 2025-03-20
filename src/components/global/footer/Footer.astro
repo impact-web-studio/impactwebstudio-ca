@@ -4,9 +4,11 @@ import FooterTop from './FooterTop.astro';
 import FooterBottom from './FooterBottom.astro';
 ---
 
-<footer
-	class='w-full h-fit px-padding-x py-padding-y flex flex-col items-center justify-between gap-10 bg-contrast-permanent'
->
-	<FooterTop />
-	<FooterBottom />
+<footer class='w-full h-fit px-padding-x py-padding-y bg-contrast-permanent'>
+	<div
+		class='max-w-content-max flex flex-col items-center justify-between gap-10 mx-auto'
+	>
+		<FooterTop />
+		<FooterBottom />
+	</div>
 </footer>
