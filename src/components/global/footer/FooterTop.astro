@@ -5,10 +5,13 @@ import FooterLinks from './FooterLinks.astro';
 import FooterContact from './FooterContact.astro';
 ---
 
-<div class='w-full h-fit flex flex-col gap-10 lg:flex-row lg:justify-between'>
+<div
+	class='w-full h-fit flex flex-col gap-10 md:gap-y-20 lg:flex-row lg:justify-between'
+>
 	<FooterBranding />
-	<div class='flex flex-wrap gap-x-20'>
+	<div class='flex flex-wrap gap-x-20 gap-y-10 lg:gap-x-30'>
 		<FooterLinks />
 		<FooterContact />
 	</div>
+	<div class='col'></div>
 </div>
