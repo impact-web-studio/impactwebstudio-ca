@@ -9,7 +9,9 @@ const { topper, title, description } = Astro.props;
 		{topper}
 	</h2>
 	<div class='wrapper w-full flex flex-wrap justify-between gap-5'>
-		<h3 class='text-heading uppercase font-secondary font-bold leading-none'>
+		<h3
+			class='text-heading uppercase font-secondary font-bold leading-none lg:max-w-[600px]'
+		>
 			{title}
 		</h3>
 		<p class='text-contrast-permanent/80 max-w-[600px] lg:max-w-[500px]'>
