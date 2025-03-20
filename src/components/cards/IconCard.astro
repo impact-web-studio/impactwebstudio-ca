@@ -1,0 +1,12 @@
+---
+const { icon, title, description, ctaText, ctaLink } = Astro.props;
+---
+
+<div class='card'>
+	<div class='icon'>icon</div>
+	<div class='text'>
+		<div class='title'>{title}</div>
+		<div class='desc'>{description}</div>
+	</div>
+	<div class='cta'>{ctaText}</div>
+</div>

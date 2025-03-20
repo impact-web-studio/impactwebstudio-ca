@@ -1,13 +1,18 @@
 ---
+// [Components]
 import SectionContainer from '../../components/global/SectionContainer.astro';
 import SectionHeader from '../../components/global/SectionHeader.astro';
+import IconCardGroup from '../../components/cards/IconCard.astro';
+import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 ---
 
-<SectionContainer>
+<SectionContainer containerClassName='lg:!flex-col'>
 	<SectionHeader
 		topper='what we do'
 		title='build, manage, optimize'
 		,
 		description='Professional, high-performance websites for service providers. Built, managed, and optimized—all for a simple monthly fee.'
 	/>
+	<IconCardGroup />
+	<ButtonPrimaryCta />
 </SectionContainer>

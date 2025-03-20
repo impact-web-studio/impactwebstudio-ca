@@ -40,13 +40,13 @@ const { imageWrapper, image } = {
 	imageWrapper:
 		'w-full flex justify-center overflow-hidden md:absolute md:bottom-0 md:justify-end md:right-0 z-0 xl:w-fit',
 	image:
-		'w-full max-w-[600px] h-full object-cover md:translate-x-[23%] lg:max-w-[800px] xl:translate-x-[-5%] xl:max-w-[1000px]',
+		'w-full max-w-[600px] h-full object-cover md:translate-x-[23%] lg:max-w-[800px] xl:translate-x-[0%] xl:max-w-[1000px]',
 };
 ---
 
 <SectionContainer
-	sectionClassNames='bg-contrast-permanent relative pb-0 md:pb-16 lg:py-32 lg:px-16 xl:py-40'
-	containerClassNames='md:items-start lg:items-center'
+	sectionClassName='bg-contrast-permanent relative pb-0 md:pb-16 lg:py-32 lg:px-16 xl:py-40'
+	containerClassName='md:items-start lg:flex-row gap-5 items-center'
 >
 	<div class=`${textWrapper}`>
 		<div class=`${titleWrapper}`>

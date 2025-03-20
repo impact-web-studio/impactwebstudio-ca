@@ -51,7 +51,7 @@
 
 	/* Font Sizes */
 	--text-display: clamp(1.75rem, 1.1786rem + 2.8571vw, 3.75rem); /* 28-60px */
-	--text-topper: clamp(0.625rem, 0.4821rem + 0.7143vw, 1.125rem); /* 10-18px */
+	--text-topper: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem); /* 14-20px */
 	--text-body: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem); /* 16-18px */
 	--text-heading: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem); /* 24-48px */
 	--text-button: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem); /* 14-16px */
