@@ -6,7 +6,9 @@ import whatWeOffer from '../../_data/whatWeOffer';
 import OfferCard from './OfferCard.astro';
 ---
 
-<div class='flex flex-wrap gap-y-6 gap-x-4 md:gap-x-6'>
+<div
+	class='grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 md:gap-x-6 md:gap-y-8 lg:justify-between'
+>
 	{
 		whatWeOffer.map((card) => (
 			<OfferCard

@@ -68,7 +68,7 @@
 	--color-offwhite: #fafafa;
 
 	/* Containers */
-	--container-content-max: 1440px;
+	--container-content-max: 1200px;
 
 	/* Global Padding */
 	--spacing-padding-x: clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
