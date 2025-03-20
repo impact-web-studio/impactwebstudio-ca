@@ -1,0 +1,37 @@
+---
+const { icon, title, description } = Astro.props;
+
+let IconComponent;
+try {
+	IconComponent = await import(`../../assets/icons/${icon}.astro`).then(
+		(module) => module.default
+	);
+} catch (e) {
+	console.error(`Failed to load icon: ${icon}`);
+}
+---
+
+<div class='top flex flex-col gap-4'>
+	<div class='flex gap-4 items-center'>
+		<span class='icon-wrapper w-3'>
+			{
+				IconComponent && (
+					<IconComponent
+						width='100%'
+						height='100%'
+					/>
+				)
+			}
+		</span>
+		<h4
+			class='font-secondary text-[1.25rem] uppercase font-bold text-contrast-permanent'
+		>
+			{title}
+		</h4>
+	</div>
+	<div class=''>
+		<p class='text-body text-contrast-permanent'>
+			{description}
+		</p>
+	</div>
+</div>
