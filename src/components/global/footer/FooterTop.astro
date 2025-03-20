@@ -2,14 +2,13 @@
 // [Components]
 import FooterBranding from './FooterBranding.astro';
 import FooterLinks from './FooterLinks.astro';
-
-// [Styles] Footer Top: <div>
-const { footerTop } = {
-	footerTop: 'w-full h-fit',
-};
+import FooterContact from './FooterContact.astro';
 ---
 
-<div class=`${footerTop}`>
+<div class='w-full h-fit flex flex-col gap-10'>
 	<FooterBranding />
-	<FooterLinks />
+	<div class='flex flex-wrap gap-x-20'>
+		<FooterLinks />
+		<FooterContact />
+	</div>
 </div>

@@ -2,16 +2,11 @@
 // [Components]
 import FooterTop from './FooterTop.astro';
 import FooterBottom from './FooterBottom.astro';
-
-// [Styles] - Footer: <footer>
-const { footerSpacing, footerLayout, footerColors } = {
-	footerSpacing: 'w-full h-fit px-padding-x py-padding-y pb-3 md:pb-5',
-	footerLayout: 'flex flex-col justify-center items-center',
-	footerColors: 'bg-contrast-permanent',
-};
 ---
 
-<footer class=`${footerSpacing} ${footerLayout} ${footerColors}`>
+<footer
+	class='w-full h-fit px-padding-x py-padding-y flex flex-col items-center justify-between gap-10 bg-contrast-permanent'
+>
 	<FooterTop />
 	<FooterBottom />
 </footer>

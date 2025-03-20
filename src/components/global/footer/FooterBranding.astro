@@ -3,14 +3,9 @@
 import FooterLogo from './FooterLogo.astro';
 import FooterDescription from './FooterDescription.astro';
 import ButtonPrimaryCta from '../../ButtonPrimaryCta.astro';
-
-// [Styles] Footer Branding: <div>
-const { footerBranding } = {
-	footerBranding: 'flex flex-col gap-5 items-center',
-};
 ---
 
-<div class=`${footerBranding}`>
+<div class='flex flex-col gap-5 items-start'>
 	<FooterLogo />
 	<FooterDescription />
 	<ButtonPrimaryCta />

@@ -4,26 +4,22 @@ import { navigationLinks } from '../../../_data/navigation';
 
 // [Components]
 import NavLinkItem from '../navLinkItem.astro';
-
-// [Styles] Footer Links: <ul>
-const { linkGroupSpacing, linkGroupLayout } = {
-	linkGroupSpacing: 'gap-x-8',
-	linkGroupLayout: 'lg:hidden flex flex-col p-4',
-};
 ---
 
-<h3 class='uppercase text-primary-orange text-2xl font-secondary font-bold'>
-	quick links
-</h3>
-<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
-	{
-		navigationLinks.map((link) => (
-			<NavLinkItem
-				text={link.text}
-				url={link.url}
-				variant='mobile'
-				className='text-light-permanent/80'
-			/>
-		))
-	}
-</ul>
+<div class='flex flex-col gap-5 w-fit'>
+	<h3 class='uppercase text-primary-orange text-2xl font-secondary font-bold'>
+		quick links
+	</h3>
+	<ul class='grid grid-cols-1 gap-x-10 gap-y-3 md:grid-cols-2'>
+		{
+			navigationLinks.map((link) => (
+				<NavLinkItem
+					text={link.text}
+					url={link.url}
+					variant='mobile'
+					className='text-light-permanent/80 !font-normal !capitalize'
+				/>
+			))
+		}
+	</ul>
+</div>

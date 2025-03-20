@@ -1,0 +1,33 @@
+---
+// [Styles] Link Text Styles
+const linkStyles = 'font-semibold uppercase text-base';
+
+// [Props]
+const { field, value, link = '', icon, className = '' } = Astro.props;
+
+let IconComponent;
+
+try {
+	IconComponent = await import(`../../../assets/icons/${icon}.astro`).then(
+		(module) => module.default
+	);
+} catch (e) {
+	console.error(`Failed to load icon: ${icon}`);
+}
+---
+
+<li class='text-light-permanent flex gap-x-3 items-center'>
+	{IconComponent && <IconComponent />}
+	{
+		link ? (
+			<a
+				href={link}
+				class='text-light-permanent/80 text-body hover:text-primary-orange'
+			>
+				{value}
+			</a>
+		) : (
+			<p class='text-light-permanent/80 text-body'>{value}</p>
+		)
+	}
+</li>
