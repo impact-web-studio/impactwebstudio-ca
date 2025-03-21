@@ -1,0 +1,15 @@
+---
+// [Components]
+import SectionContainer from '../../components/global/SectionContainer.astro';
+import SectionHeader from '../../components/global/SectionHeader.astro';
+import PricingCardGroup from '../../components/cards/PricingCardGroup.astro';
+---
+
+<SectionContainer containerClassName='flex-col gap-5 md:gap-8 lg:gap-20'>
+	<SectionHeader
+		topper='our pricing'
+		title='flexible package options'
+		description='Whether you prefer to pay upfront, go monthly, or need an e-commerce powerhouse, we’ve got you covered. Choose a one-time payment with low-cost hosting, a budget-friendly monthly plan, or a fully customized e-commerce solution. No hidden fees. No surprises.'
+	/>
+	<PricingCardGroup />
+</SectionContainer>

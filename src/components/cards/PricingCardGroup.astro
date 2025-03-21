@@ -1,0 +1,22 @@
+---
+// [Data]
+import pricing from '../../_data/pricing';
+import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
+
+// [Components]
+import PricingCard from './PricingCard.astro';
+---
+
+<div class='flex flex-wrap justify-center gap-y-6 gap-x-4 md:gap-x-6'>
+	{
+		pricing.map((option, index) => (
+			<PricingCard
+				plan={option.plan}
+				basePrice={option.basePrice}
+				secondaryPrice={option.secondaryPrice}
+				offers={option.offers}
+			/>
+		))
+	}
+	<ButtonPrimaryCta className='self-center' />
+</div>

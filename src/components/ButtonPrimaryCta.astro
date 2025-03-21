@@ -9,12 +9,16 @@ const { layout, spacing, colors, text } = {
 	text: 'uppercase font-bold whitespace-nowrap text-button',
 };
 
-const { ctaText = 'get started', className = '' } = Astro.props;
+const {
+	ctaText = 'get started',
+	className = '',
+	ctaLink = CtaLink.url,
+} = Astro.props;
 ---
 
 <a
 	class=`${layout} ${spacing} ${colors} ${text} ${className}`
-	href={CtaLink.url}
+	href={ctaLink}
 	>{ctaText}
 </a>
 
@@ -40,6 +44,10 @@ const { ctaText = 'get started', className = '' } = Astro.props;
 		transform: translateX(-100%);
 		transition: transform 0.5s;
 		z-index: -1; /* Ensures the background is behind the text */
+	}
+
+	a.alt::before {
+		background-color: var(--color-primary-blue);
 	}
 
 	a.hover::before {
