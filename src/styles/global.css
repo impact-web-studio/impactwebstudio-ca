@@ -109,11 +109,15 @@
 	html {
 		font-size: 16px;
 		font-family: var(--font-primary);
+		height: 100%;
+		min-height: fit-content;
 	}
 
 	body {
 		font-size: 1rem;
 		line-height: 1.5;
+		height: 100%;
+		min-height: fit-content;
 	}
 
 	body * {
