@@ -153,4 +153,11 @@
 	a {
 		cursor: pointer;
 	}
+
+	/* Fixes delayed SVG color transition in Chrome when using group-hover  
+	Chrome defers fill/color changes on inline SVGs if the parent has a transition.  
+   	Disabling transitions on SVGs ensures immediate color updates across all browsers. */
+	svg {
+		transition: none;
+	}
 }
