@@ -108,41 +108,21 @@ const animateSections = {
 
 	// [whatWeDo] Icon Card Group animation using staggered animation
 	iconCardGroup: (selector = '.icon-card-container', options = {}) => {
-		console.log('icon group triggered');
+		let hasAnimated = false;
 		inView(selector, (info) => {
-			console.log(info);
-			console.log('Element has entered the viewport');
-			// Get all cards in the container
-			const cards = document.querySelectorAll(`${selector} .card`);
-			console.log(cards);
+			// run animation once
+			if (!hasAnimated) {
+				// Get all cards in the container
+				const cards = document.querySelectorAll(`${selector} .card`);
 
-			applyAnimation(cards, 'fadeInUp', stagger(0.2));
+				// Apply stagger animation
+				applyAnimation(cards, 'fadeInUp', stagger(0.2));
 
-			// 	// Animate the icon wrappers with a slight delay
-			// 	const iconWrappers = document.querySelectorAll(
-			// 		`${selector} .icon-wrapper`
-			// 	);
-			// 	if (iconWrappers.length) {
-			// 		setTimeout(() => {
-			// 			applyStaggeredAnimation(
-			// 				Array.from(iconWrappers),
-			// 				'fadeInScale',
-			// 				0.1
-			// 			);
-			// 		}, 100);
-			// 	}
-
-			// 	// Return cleanup function if needed
-			// 	return (leaveInfo) => {
-			// 		// Optional: animate when leaving view
-			// 	};
-			// },
-			// {
-			// 	margin: options.margin || '-100px 0px -100px 0px',
-			// 	once: options.once !== undefined ? options.once : true,
-			// 	amount: 'all', // Important: detect all elements at once
-			// }
-			// );
+				// Return cleanup function if needed
+				return (leaveInfo) => {
+					hasAnimated = true;
+				};
+			}
 		});
 	},
 
