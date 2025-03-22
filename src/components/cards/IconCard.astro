@@ -1,5 +1,12 @@
 ---
-const { icon, title, description, ctaText, ctaLink } = Astro.props;
+const {
+	class: className,
+	icon,
+	title,
+	description,
+	ctaText,
+	ctaLink,
+} = Astro.props;
 
 let IconComponent;
 try {
@@ -12,7 +19,7 @@ try {
 ---
 
 <div
-	class='card bg-light-permanent shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow shrink-0 rounded-[0.875rem] flex flex-col gap-6 group hover:bg-branded-blue justify-between'
+	class=`card bg-light-permanent shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow shrink-0 rounded-[0.875rem] flex flex-col gap-6 group hover:bg-branded-blue justify-between ${className}`
 >
 	<div class='top flex flex-col gap-4'>
 		<span
