@@ -34,36 +34,8 @@ const { customHeaderStyles = '', customNavStyles = '' } = Astro.props;
 </header>
 
 <script>
-	// Animate Header on Scroll
-	import { scroll, animate } from 'motion';
-	// Fix: Set the initial state of the header to 100% width before any animations occur.
-	// This prevents the header from animating from 0% to 100% on page load.
-	// The animation should only trigger when scrolling, not on initial render.
-	const headerElement = document.querySelector('header');
-	if (headerElement) {
-		headerElement.style.transform = 'translateY(0px)';
-		headerElement.style.width = '100%';
-	}
-
-	// Animation Styles Configuration
-	scroll((progress: any) => {
-		console.log(progress);
-		if (progress > 0.1) {
-			animate(
-				'header',
-				{
-					width: '90%',
-					transform: 'translateY(2rem)',
-					borderRadius: '1.25rem',
-				},
-				{ duration: 0.5, ease: 'easeOut' }
-			);
-		} else {
-			animate(
-				'header',
-				{ width: '100%', transform: 'translateY(0px)', borderRadius: '0px' },
-				{ duration: 0.5, ease: 'easeOut' }
-			);
-		}
+	import { animateSections } from '../../../scripts/animations';
+	document.addEventListener('DOMContentLoaded', () => {
+		animateSections.header();
 	});
 </script>

@@ -1,7 +1,7 @@
 ---
 // [Components]
 import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
-let IconComponent;
+let IconComponent: any;
 try {
 	IconComponent = await import(`../../assets/icons/check.astro`).then(
 		(module) => module.default
@@ -30,7 +30,7 @@ const { highlightedCard, highlightedButton, regularCard, regularButton } = {
 	<h3 class='uppercase font-extrabold text-3xl'>{plan}</h3>
 	<ul class='flex flex-col gap-2 flex-grow'>
 		{
-			offers.map((offer) => {
+			offers.map((offer: any) => {
 				const [key, value] = Object.entries(offer)[0];
 				return (
 					<li class='flex justify-between items-center gap-2'>

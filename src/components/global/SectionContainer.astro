@@ -9,10 +9,10 @@ const { containerLayout, containerSpacing } = {
 	containerSpacing: 'flex flex-col',
 };
 
-const { sectionClassName = '', containerClassName = '' } = Astro.props;
+const { class: className, containerClassName = '' } = Astro.props;
 ---
 
-<section class=`${sectionLayout} ${sectionSpacing} ${sectionClassName}`>
+<section class=`${sectionLayout} ${sectionSpacing} ${className}`>
 	<div class=`${containerLayout} ${containerSpacing} ${containerClassName}`>
 		<slot />
 	</div>
