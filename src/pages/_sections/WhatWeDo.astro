@@ -19,3 +19,13 @@ import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 	<IconCardGroup />
 	<ButtonPrimaryCta className='self-center' />
 </SectionContainer>
+
+<script>
+	import { animateSections } from '../../scripts/animations';
+	import { inView } from 'motion';
+
+	// Initialize the icon card animations
+	document.addEventListener('DOMContentLoaded', () => {
+		animateSections.iconCardGroup();
+	});
+</script>

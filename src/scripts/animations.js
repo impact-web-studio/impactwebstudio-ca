@@ -5,8 +5,7 @@ import { animate, inView, stagger, scroll } from 'motion';
 const animations = {
 	// Fade in from bottom
 	fadeInUp: {
-		initial: { opacity: 0, y: 50 },
-		animate: { opacity: 1, y: 0 },
+		animate: { opacity: [0, 1], y: [100, 0] },
 		options: { duration: 0.5, ease: 'easeOut' },
 	},
 
@@ -39,18 +38,7 @@ function applyAnimation(element, animationType, delay = 0) {
 
 	return animate(element, animation.animate, {
 		...animation.options,
-		delay,
-	});
-}
-
-// Function for staggered animations on multiple elements
-function applyStaggeredAnimation(elements, animationType, staggerDelay = 0.1) {
-	const animation = animations[animationType];
-	if (!animation || !elements.length) return;
-
-	return animate(elements, animation.animate, {
-		...animation.options,
-		delay: stagger(staggerDelay),
+		delay: delay,
 	});
 }
 
@@ -97,7 +85,7 @@ const animateSections = {
 								transform: 'translateY(2rem)',
 								borderRadius: '1.25rem',
 							},
-							{ duration: 0.5, ease: 'easeOut' }
+							{ duration: 0.3, ease: 'easeOut' }
 						);
 					} else {
 						animate(
@@ -107,7 +95,7 @@ const animateSections = {
 								transform: 'translateY(0px)',
 								borderRadius: '0px',
 							},
-							{ duration: 0.5, ease: 'easeOut' }
+							{ duration: 0.3, ease: 'easeOut' }
 						);
 					}
 				},
@@ -119,41 +107,43 @@ const animateSections = {
 	},
 
 	// [whatWeDo] Icon Card Group animation using staggered animation
-	iconCardGroup: (selector = '.what-we-do-section', options = {}) => {
-		inView(
-			selector,
-			(info) => {
-				// Get all cards in the container
-				const cards = document.querySelectorAll(`${selector} .card`);
+	iconCardGroup: (selector = '.icon-card-container', options = {}) => {
+		console.log('icon group triggered');
+		inView(selector, (info) => {
+			console.log(info);
+			console.log('Element has entered the viewport');
+			// Get all cards in the container
+			const cards = document.querySelectorAll(`${selector} .card`);
+			console.log(cards);
 
-				// Apply staggered animation to all cards
-				applyStaggeredAnimation(Array.from(cards), 'fadeInUp', 0.15);
+			applyAnimation(cards, 'fadeInUp', stagger(0.2));
 
-				// Animate the icon wrappers with a slight delay
-				const iconWrappers = document.querySelectorAll(
-					`${selector} .icon-wrapper`
-				);
-				if (iconWrappers.length) {
-					setTimeout(() => {
-						applyStaggeredAnimation(
-							Array.from(iconWrappers),
-							'fadeInScale',
-							0.1
-						);
-					}, 100);
-				}
+			// 	// Animate the icon wrappers with a slight delay
+			// 	const iconWrappers = document.querySelectorAll(
+			// 		`${selector} .icon-wrapper`
+			// 	);
+			// 	if (iconWrappers.length) {
+			// 		setTimeout(() => {
+			// 			applyStaggeredAnimation(
+			// 				Array.from(iconWrappers),
+			// 				'fadeInScale',
+			// 				0.1
+			// 			);
+			// 		}, 100);
+			// 	}
 
-				// Return cleanup function if needed
-				return (leaveInfo) => {
-					// Optional: animate when leaving view
-				};
-			},
-			{
-				margin: options.margin || '-100px 0px -100px 0px',
-				once: options.once !== undefined ? options.once : true,
-				amount: 'all', // Important: detect all elements at once
-			}
-		);
+			// 	// Return cleanup function if needed
+			// 	return (leaveInfo) => {
+			// 		// Optional: animate when leaving view
+			// 	};
+			// },
+			// {
+			// 	margin: options.margin || '-100px 0px -100px 0px',
+			// 	once: options.once !== undefined ? options.once : true,
+			// 	amount: 'all', // Important: detect all elements at once
+			// }
+			// );
+		});
 	},
 
 	// Hero section animation
@@ -179,29 +169,6 @@ const animateSections = {
 			}
 		);
 	},
-
-	// Feature grid animation
-	featureGrid: (selector = '.feature-grid > *', options = {}) => {
-		inView(
-			selector,
-			(info) => {
-				// Get all features
-				const features = document.querySelectorAll(selector);
-
-				// Apply staggered animation
-				applyStaggeredAnimation(Array.from(features), 'fadeInUp', 0.1);
-
-				return () => {
-					// Cleanup function
-				};
-			},
-			{
-				margin: options.margin || '-100px 0px -100px 0px',
-				once: options.once !== undefined ? options.once : true,
-				amount: 'all', // Important: detect all elements at once
-			}
-		);
-	},
 };
 
 // Initialize all animations
@@ -210,9 +177,9 @@ function initAnimations() {
 	document.addEventListener('DOMContentLoaded', () => {
 		// Initialize header animation
 		animateSections.header();
+		animateSections.iconCardGroup();
 
 		// Initialize icon card group animation
-		animateSections.iconCardGroup();
 
 		// Initialize other animations as needed
 		// animateSections.heroSection();
@@ -227,7 +194,6 @@ export {
 	animate,
 	inView,
 	applyAnimation,
-	applyStaggeredAnimation,
 	animateSections,
 	initAnimations,
 	animations,
