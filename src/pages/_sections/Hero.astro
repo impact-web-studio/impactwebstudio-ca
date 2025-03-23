@@ -62,7 +62,7 @@ const { imageWrapper, image } = {
 			interactions, and establish a strong online presence — all for an
 			affordable monthly subscription, with no large upfront costs.
 		</p>
-		<div class=`${buttonLayout}`>
+		<div class=`button-group ${buttonLayout}`>
 			<ButtonPrimaryCta ctaText='Get Started' />
 			<a
 				href=''
@@ -71,7 +71,7 @@ const { imageWrapper, image } = {
 			>
 		</div>
 	</div>
-	<div class=`${imageWrapper}`>
+	<div class=`image-wrapper ${imageWrapper}`>
 		<img
 			class=`${image}`
 			src='/src/assets/hero-image.png'
@@ -79,3 +79,12 @@ const { imageWrapper, image } = {
 		/>
 	</div>
 </SectionContainer>
+
+<script>
+	import { animateSections } from '../../scripts/animations';
+
+	// Initialize the icon card animations
+	document.addEventListener('DOMContentLoaded', () => {
+		animateSections.heroSection();
+	});
+</script>

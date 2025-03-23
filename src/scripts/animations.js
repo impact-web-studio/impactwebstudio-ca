@@ -9,6 +9,12 @@ const animations = {
 		options: { duration: 0.5, ease: 'easeOut' },
 	},
 
+	// Fade in from bottom
+	fadeInDown: {
+		animate: { opacity: [0, 1], y: [-100, 0] },
+		options: { duration: 0.5, ease: 'easeOut' },
+	},
+
 	// Fade in with scale
 	fadeInScale: {
 		initial: { opacity: 0, scale: 0.9 },
@@ -138,13 +144,17 @@ const animateSections = {
 		inView(
 			selector,
 			(element) => {
-				const heading = element.querySelector('h1, h2');
-				const subheading = element.querySelector('p');
-				const button = element.querySelector('button, .button');
+				const heading = element.querySelector('h1');
+				const subheading = element.querySelector('span');
+				const description = element.querySelector('p');
+				const button = element.querySelector('.button-group');
+				const image = element.querySelector('.image-wrapper');
 
-				if (heading) applyAnimation(heading, 'fadeInUp', 0);
-				if (subheading) applyAnimation(subheading, 'fadeInUp', 0.2);
-				if (button) applyAnimation(button, 'fadeInScale', 0.4);
+				if (heading) applyAnimation(heading, 'fadeInUp', 0.2);
+				if (subheading) applyAnimation(subheading, 'fadeInUp', 0);
+				if (description) applyAnimation(description, 'fadeInUp', 0.4); // Adjusted delay for better sequence
+				if (button) applyAnimation(button, 'fadeInUp', 0.6); // Adjusted delay for better sequence
+				if (image) applyAnimation(image, 'fadeInUp', 0.2); // Adjusted delay for better sequence
 
 				return () => {
 					// Cleanup function
@@ -152,7 +162,7 @@ const animateSections = {
 			},
 			{
 				margin: options.margin || '0px',
-				once: options.once !== undefined ? options.once : true,
+				once: false, // Animation will run every time element comes into view
 			}
 		);
 	},
