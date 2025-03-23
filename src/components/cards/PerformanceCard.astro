@@ -10,6 +10,7 @@ try {
 	console.error(`Failed to load icon: ${icon}`);
 }
 
+// Fix: Hourglass is visually larger than other icons, this checks and adjusts the sizing to match the other icons visually
 const isHourGlass = icon === 'hourglass';
 ---
 
