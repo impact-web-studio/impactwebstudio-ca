@@ -14,10 +14,11 @@ try {
 ---
 
 <div
-	class=`card shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow shrink-0 rounded-[0.875rem] flex flex-col gap-6 group justify-between text-contrast-permanent ${className}`
+	class=`card shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow
+shrink-0 rounded-[0.875rem] flex flex-col gap-6 group text-contrast-permanent ${className}`
 >
-	<div class='top flex flex-col gap-4'>
-		<span class='icon-wrapper w-12'>
+	<div class='top-wrapper flex flex-col gap-4 items-start'>
+		<span class='icon-wrapper origin-top-left w-[4rem] h-[4rem]'>
 			{
 				IconComponent && (
 					<IconComponent
@@ -27,15 +28,26 @@ try {
 				)
 			}
 		</span>
-		<div class='text flex flex-col gap-2'>
-			<div
-				class='font-secondary text-[1.25rem] uppercase font-bold text-contrast-permanent group-hover:text-light-permanent'
-			>
-				{title}
-			</div>
-			<div class='text-body leading-5 group-hover:text-light-permanent'>
-				{description}
-			</div>
+		<div
+			class='title font-secondary text-[1.25rem] lg:text-[2.5rem] lg:leading-none text-wrap uppercase font-bold text-contrast-permanent group-hover:text-light-permanent w-full origin-top-left'
+		>
+			{title}
 		</div>
 	</div>
+	<div class='flex flex-col h-100% justify-between flex-grow'>
+		<div class='text-body leading-5 text-light-permanent'>
+			{description}
+		</div>
+		<a
+			href='/contact'
+			class='button uppercase w-fit text-primary-blue hover:border-b-2 font-bold font-secondary text-topper'
+			>get started</a
+		>
+	</div>
 </div>
+
+<style>
+	div > * {
+		/* border: 2px solid red; */
+	}
+</style>

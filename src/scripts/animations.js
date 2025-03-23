@@ -22,6 +22,16 @@ const animations = {
 		options: { duration: 0.4, ease: 'easeOut' },
 	},
 
+	fontSizeDown: {
+		animate: { fontSize: ['2.5rem', '2rem'] }, // Adjust this value to your desired smaller size
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+
+	fontSizeUp: {
+		animate: { fontSize: '2.5rem' }, // Adjust this value to match your original font size
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+
 	// Slide in from left
 	slideInLeft: {
 		initial: { opacity: 0, x: -50 },
@@ -41,6 +51,28 @@ const animations = {
 		initial: { scale: 1 },
 		animate: { scale: 1.1 },
 		options: { duration: 0.5, ease: 'easeOut' },
+	},
+
+	iconScaleDown: {
+		animate: { width: '2.5rem', height: '2.5rem' },
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+	iconScaleUp: {
+		animate: { width: '3rem', height: '3rem' },
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+
+	scaleUp: {
+		animate: { scale: 1 },
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+	revealOnHover: {
+		animate: { opacity: [0, 1], y: [50, 0] },
+		options: { duration: 0.2, ease: 'easeOut' },
+	},
+	hideOnHoverOut: {
+		animate: { opacity: 0, y: 0 },
+		options: { duration: 0.3, ease: 'easeOut' },
 	},
 };
 
@@ -157,6 +189,32 @@ const animateComponents = {
 		});
 	},
 
+	// [Card Group] What We Offer - Offer Card Group animation using staggered animation
+	iconCardGroup: (selector = '.icon-card-container', options = {}) => {
+		let hasAnimated = false;
+		inView(selector, (e) => {
+			// run animation once
+			if (!hasAnimated) {
+				// Get all cards in the container
+				const cards = document.querySelectorAll(`${selector} .card`);
+				const button = document.querySelector(
+					`section:has(${selector}) .button`
+				);
+				// Apply stagger animation
+				applyAnimation(cards, 'fadeInUp', stagger(0.2));
+
+				// Apply button animation
+				if (button)
+					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2); // Adjusted delay for better sequence
+
+				// Return cleanup function if needed
+				return (leaveInfo) => {
+					hasAnimated = true;
+				};
+			}
+		});
+	},
+
 	// [Card Group] What We Do - Icon Card Group animation using staggered animation & Button Animation
 	offerCardGroup: (selector = '.offer-card-container', options = {}) => {
 		let hasAnimated = false;
@@ -184,10 +242,12 @@ const animateComponents = {
 		});
 	},
 
-	// [Card Group] What We Offer - Offer Card Group animation using staggered animation
-	iconCardGroup: (selector = '.icon-card-container', options = {}) => {
+	// [Card Group] What We Do - Icon Card Group animation using staggered animation & Button Animation
+	industryCardGroup: (selector = '.industry-card-container', options = {}) => {
 		let hasAnimated = false;
-		inView(selector, (e) => {
+
+		// Animate on View
+		inView(selector, (info) => {
 			// run animation once
 			if (!hasAnimated) {
 				// Get all cards in the container
@@ -195,18 +255,106 @@ const animateComponents = {
 				const button = document.querySelector(
 					`section:has(${selector}) .button`
 				);
+
 				// Apply stagger animation
-				applyAnimation(cards, 'fadeInUp', stagger(0.2));
+				if (cards) applyAnimation(cards, 'fadeInUp', stagger(0.2));
 
 				// Apply button animation
 				if (button)
-					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2); // Adjusted delay for better sequence
+					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2);
+
+				// Set flag to avoid re-animation
+				hasAnimated = true;
 
 				// Return cleanup function if needed
-				return (leaveInfo) => {
-					hasAnimated = true;
-				};
+				return () => {};
 			}
+		});
+
+		// Animate on Hover
+		const cards = document.querySelectorAll(`${selector} .card`);
+
+		// Add hover event to each card individually
+		cards.forEach((card) => {
+			// Find elements within card
+			const icon = card.querySelector('.icon-wrapper'); // Container for icon
+			const titleElement = card.querySelector('.title'); // The actual title text element
+			const description = card.querySelector('.text-body'); // description text
+			const button = card.querySelector('.button'); // description text
+
+			// Set initial states
+			if (description) {
+				description.style.opacity = '0';
+				description.style.transform = 'translateY(20px)';
+			}
+
+			hover(card, (element) => {
+				// Scale down icon and title
+				if (icon) {
+					animate(
+						icon,
+						animations.iconScaleDown.animate,
+						animations.iconScaleDown.options
+					);
+				}
+
+				// Reduce font size of title
+				if (titleElement) {
+					animate(
+						titleElement,
+						animations.fontSizeDown.animate,
+						animations.fontSizeDown.options
+					);
+				}
+
+				// Reveal description
+				if (description) {
+					animate(
+						description,
+						animations.revealOnHover.animate,
+						animations.revealOnHover.options
+					);
+				}
+
+				// change button color
+				if (button) {
+					button.style.color = 'var(--color-light-permanent)';
+				}
+
+				// Return cleanup function to reset when hover ends
+				return () => {
+					// Scale icon and title back up
+					if (icon) {
+						animate(
+							icon,
+							animations.iconScaleUp.animate,
+							animations.iconScaleUp.options
+						);
+					}
+					// Restore font size
+					if (titleElement) {
+						animate(
+							titleElement,
+							animations.fontSizeUp.animate,
+							animations.fontSizeUp.options
+						);
+					}
+
+					// Hide description
+					if (description) {
+						animate(
+							description,
+							animations.hideOnHoverOut.animate,
+							animations.hideOnHoverOut.options
+						);
+					}
+
+					// revert button color
+					if (button) {
+						button.style.color = 'var(--color-primary-blue)';
+					}
+				};
+			});
 		});
 	},
 
@@ -224,13 +372,17 @@ const animateComponents = {
 				// Apply scale animation to the image wrapper
 				animate(
 					imageWrapper,
-					animations.scaleOnHover.animate,
-					animations.scaleOnHover.options
+					animations.revealOnHover.animate,
+					animations.revealOnHover.options
 				);
 
 				// Return cleanup function to reset when hover ends
 				return () => {
-					animate(imageWrapper, { scale: 1 }, { duration: 0.3 });
+					animate(
+						imageWrapper,
+						animations.hideOnHoverOut.animate,
+						animations.hideOnHoverOut.options
+					);
 				};
 			});
 		});

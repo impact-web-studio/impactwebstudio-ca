@@ -17,3 +17,12 @@ import IndustryCardGroup from '../../components/cards/IndustryCardGroup.astro';
 	<IndustryCardGroup />
 	<ButtonPrimaryCta class='self-center' />
 </SectionContainer>
+
+<script>
+	import { animateComponents } from '../../scripts/animations';
+
+	// Initialize the icon card animations
+	document.addEventListener('DOMContentLoaded', () => {
+		animateComponents.industryCardGroup();
+	});
+</script>
