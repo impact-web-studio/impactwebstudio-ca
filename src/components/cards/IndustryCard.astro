@@ -15,15 +15,18 @@ try {
 
 <div
 	class=`card shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow
-shrink-0 rounded-[0.875rem] flex flex-col gap-6 group text-contrast-permanent ${className}`
+shrink-0 rounded-[0.875rem] lg:h-[420px] flex flex-col gap-6 group text-contrast-permanent ${className}`
 >
 	<div class='top-wrapper flex flex-col gap-4 items-start'>
-		<span class='icon-wrapper origin-top-left w-[4rem] h-[4rem]'>
+		<span
+			class=`icon-wrapper origin-top-left w-[4rem] h-[4rem] group-hover:text-branded-blue`
+		>
 			{
 				IconComponent && (
 					<IconComponent
 						width='100%'
 						height='100%'
+						className='[transition:none!important]'
 					/>
 				)
 			}
