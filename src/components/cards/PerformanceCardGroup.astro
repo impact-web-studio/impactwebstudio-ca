@@ -1,0 +1,19 @@
+---
+// [Components]
+import PerformanceCard from './PerformanceCard.astro';
+
+// [Data]
+import performance from '../../_data/performance';
+---
+
+<ul class='flex flex-col gap-6'>
+	{
+		performance.map((card) => (
+			<PerformanceCard
+				icon={card.icon}
+				title={card.title}
+				description={card.description}
+			/>
+		))
+	}
+</ul>

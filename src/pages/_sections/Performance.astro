@@ -2,11 +2,13 @@
 // [Components]
 import SectionContainer from '../../components/global/SectionContainer.astro';
 import PerformanceHeader from './components/PerformanceHeader.astro';
+import PerformanceCardGroup from '../../components/cards/PerformanceCardGroup.astro';
 ---
 
-<SectionContainer>
-	<PerformanceHeader
-		<
-		SectionContainer
-	/></SectionContainer
->
+<SectionContainer containerClassName='flex'>
+	<div class='left flex-col gap-5 md:gap-8 lg:gap-10'>
+		<PerformanceHeader />
+		<PerformanceCardGroup />
+	</div>
+	<div class='right'></div>
+</SectionContainer>
