@@ -8,11 +8,13 @@ import PerformanceMetric from './components/PerformanceMetric.astro';
 ---
 
 <SectionContainer containerClassName='flex-row'>
-	<div class='left flex-col w-full gap-5 md:gap-8 lg:gap-10'>
+	<div class='left flex flex-col w-full gap-5 md:gap-8 lg:gap-12'>
 		<PerformanceHeader />
 		<PerformanceCardGroup />
 	</div>
-	<div class='right flex flex-col justify-between w-full max-w-[40%]'>
+	<div
+		class='right flex flex-col justify-between w-full max-w-[40%] translate-y-[var(--text-topper)]'
+	>
 		<PerformanceMetric />
 		<Image
 			src='/src/assets/iws-stats.png'
