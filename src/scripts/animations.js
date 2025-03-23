@@ -65,6 +65,13 @@ const animations = {
 		options: { duration: 0.5, ease: 'easeOut' },
 	},
 
+	// Scale decrease on hover out
+	scaleOffHover: {
+		initial: { scale: 1.1 },
+		animate: { scale: 1.0 },
+		options: { duration: 0.5, ease: 'easeOut' },
+	},
+
 	iconScaleDown: {
 		animate: { width: '2.5rem', height: '2.5rem' },
 		options: { duration: 0.3, ease: 'easeOut' },
@@ -435,16 +442,16 @@ const animateComponents = {
 				// Apply scale animation to the image wrapper
 				animate(
 					imageWrapper,
-					animations.revealOnHover.animate,
-					animations.revealOnHover.options
+					animations.scaleOnHover.animate,
+					animations.scaleOnHover.options
 				);
 
 				// Return cleanup function to reset when hover ends
 				return () => {
 					animate(
 						imageWrapper,
-						animations.hideOnHoverOut.animate,
-						animations.hideOnHoverOut.options
+						animations.scaleOffHover.animate,
+						animations.scaleOffHover.options
 					);
 				};
 			});

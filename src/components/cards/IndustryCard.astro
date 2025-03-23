@@ -45,7 +45,7 @@ shrink-0 rounded-[0.875rem] overflow-hidden lg:h-[420px] flex flex-col gap-6 gro
 		</div>
 		<a
 			href='/contact'
-			class='link uppercase w-fit text-primary-blue hover:border-b-2 font-bold font-secondary text-topper z-10'
+			class='link uppercase w-fit text-primary-blue font-bold font-secondary text-topper z-10 relative'
 			>get started</a
 		>
 	</div>
@@ -61,3 +61,22 @@ shrink-0 rounded-[0.875rem] overflow-hidden lg:h-[420px] flex flex-col gap-6 gro
 		/>
 	</div>
 </div>
+
+<style>
+	a::after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-light-permanent);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: scaleX(0); /* Initially hidden */
+		transform-origin: center; /* Animates from left to right */
+		transition: transform 0.3s ease-in-out; /* Smooth transition */
+	}
+
+	a:hover::after {
+		transform: scaleX(1); /* Expands the underline */
+	}
+</style>

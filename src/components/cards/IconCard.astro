@@ -48,8 +48,27 @@ try {
 	</div>
 	<a
 		href={ctaLink}
-		class='font-semibold capitalize font-secondary text-sm text-primary-blue py-2 rounded-lg group-hover:text-primary-orange hover:px-3 hover:bg-primary-orange hover:text-light-permanent transition-colors duration-300 w-fit'
+		class='font-semibold capitalize font-secondary text-sm text-primary-blue py-2 group-hover:text-primary-orange transition-all duration-300 w-fit relative'
 	>
 		{ctaText}
 	</a>
 </div>
+
+<style>
+	a::after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-primary-orange);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: scaleX(0); /* Initially hidden */
+		transform-origin: center; /* Animates from left to right */
+		transition: transform 0.3s ease-in-out; /* Smooth transition */
+	}
+
+	a:hover::after {
+		transform: scaleX(1); /* Expands the underline */
+	}
+</style>
