@@ -8,7 +8,9 @@ import performanceMetrics from '../../../_data/performanceMetrics';
 	{
 		performanceMetrics.map((metric) => (
 			<li class='flex flex-col gap-1 lg:w-1/4'>
-				<p class='font-bold text-[2rem]'>{metric.metric}</p>
+				<p class='font-bold text-[2rem] opacity-100 font-secondary'>
+					{metric.metric}
+				</p>
 				<p class='capitalize whitespace-break-spaces'>{metric.description}</p>
 			</li>
 		))

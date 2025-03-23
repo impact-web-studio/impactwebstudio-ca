@@ -1,5 +1,5 @@
 ---
-const { icon, title, description, class: className } = Astro.props;
+const { icon, title, description, class: className = '' } = Astro.props;
 
 let IconComponent;
 try {
@@ -9,21 +9,29 @@ try {
 } catch (e) {
 	console.error(`Failed to load icon: ${icon}`);
 }
+
+const isHourGlass = icon === 'hourglass';
 ---
 
-<li class=`${className}`>
-	<div class='flex gap-3 items-center'>
-		<span class='icon-wrapper h-4 w-4'>
-			{
-				IconComponent && (
-					<IconComponent
-						width='100%'
-						height='100%'
-					/>
-				)
-			}
-		</span>
-		<h3 class='capitalize font-bold text-lg'>{title}</h3>
+<li class=`flex gap-3 ${className}`>
+	<span
+		class=`${isHourGlass ? 'w-8 h-6 translate-x-1' : 'w-8 h-8'} flex items-center `
+	>
+		{
+			IconComponent && (
+				<IconComponent
+					width='100%'
+					height='100%'
+				/>
+			)
+		}
+	</span>
+	<div class='flex flex-col gap-2'>
+		<h3
+			class=`capitalize font-bold text-xl ${isHourGlass ? 'leading-none' : ''}`
+		>
+			{title}
+		</h3>
+		<p class='lg:max-w-[600px]'>{description}</p>
 	</div>
-	<p class='lg:max-w-[600px]'>{description}</p>
 </li>
