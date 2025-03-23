@@ -1,0 +1,14 @@
+---
+import performanceMetrics from '../../../_data/performanceMetrics';
+---
+
+<ul class='flex gap-3 lg:gap-5'>
+	{
+		performanceMetrics.map((metric) => (
+			<li class='flex flex-col gap-1 w-1/4'>
+				<h3 class='font-bold text-[2rem]'>{metric.metric}</h3>
+				<p class='capitalize'>{metric.description}</p>
+			</li>
+		))
+	}
+</ul>
