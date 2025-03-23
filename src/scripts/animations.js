@@ -1,5 +1,5 @@
 // Import animation utilities from Framer Motion
-import { animate, inView, stagger, scroll } from 'motion';
+import { animate, inView, stagger, scroll, hover } from 'motion';
 
 // Animation presets object - reusable animation configurations
 const animations = {
@@ -27,6 +27,13 @@ const animations = {
 	slideInRight: {
 		initial: { opacity: 0, x: 50 },
 		animate: { opacity: 1, x: 0 },
+		options: { duration: 0.5, ease: 'easeOut' },
+	},
+
+	// Scale increase on hover
+	scaleOnHover: {
+		initial: { scale: 1 },
+		animate: { scale: 1.1 },
 		options: { duration: 0.5, ease: 'easeOut' },
 	},
 };
@@ -148,6 +155,30 @@ const animateSections = {
 				once: options.once !== undefined ? options.once : true,
 			}
 		);
+	},
+	portfolioCard: (selector = '.portfolio-card', options = {}) => {
+		// Use querySelectorAll to get all portfolio cards
+		const cards = document.querySelectorAll(selector);
+
+		// Add hover event to each card individually
+		cards.forEach((card) => {
+			hover(card, (element) => {
+				// Find the image wrapper within this specific card
+				const imageWrapper = element.querySelector('.image-wrapper');
+
+				// Apply scale animation to the image wrapper
+				animate(
+					imageWrapper,
+					animations.scaleOnHover.animate,
+					animations.scaleOnHover.options
+				);
+
+				// Return cleanup function to reset when hover ends
+				return () => {
+					animate(imageWrapper, { scale: 1 }, { duration: 0.3 });
+				};
+			});
+		});
 	},
 };
 

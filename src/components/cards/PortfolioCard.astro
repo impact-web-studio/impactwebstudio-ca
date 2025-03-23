@@ -8,9 +8,7 @@ const { title, description, image, url } = Astro.props;
 const imageSrc = `/src/assets/${image}`;
 ---
 
-<li
-	class='h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden'
->
+<li class='portfolio-card h-full flex flex-col overflow-hidden'>
 	<div class='image-wrapper p-10'>
 		<Image
 			src={imageSrc}
@@ -32,3 +30,12 @@ const imageSrc = `/src/assets/${image}`;
 		>
 	</div>
 </li>
+
+<script>
+	import { animateSections } from '../../scripts/animations';
+
+	// Initialize the icon card animations
+	document.addEventListener('DOMContentLoaded', () => {
+		animateSections.portfolioCard();
+	});
+</script>
