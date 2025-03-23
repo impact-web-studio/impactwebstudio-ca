@@ -3,6 +3,18 @@ import { animate, inView, stagger, scroll, hover } from 'motion';
 
 // Animation presets object - reusable animation configurations
 const animations = {
+	// Fade in
+	fadeIn: {
+		animate: { opacity: [0, 1] },
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+
+	// Fade Out
+	fadeOut: {
+		animate: { opacity: [1, 0] },
+		options: { duration: 0.3, ease: 'easeOut' },
+	},
+
 	// Fade in from bottom
 	fadeInUp: {
 		animate: { opacity: [0, 1], y: [100, 0] },
@@ -68,7 +80,7 @@ const animations = {
 	},
 	revealOnHover: {
 		animate: { opacity: [0, 1], y: [50, 0] },
-		options: { duration: 0.2, ease: 'easeOut' },
+		options: { duration: 0.3, ease: 'easeOut' },
 	},
 	hideOnHoverOut: {
 		animate: { opacity: 0, y: 0 },
@@ -242,7 +254,7 @@ const animateComponents = {
 		});
 	},
 
-	// [Card Group] What We Do - Icon Card Group animation using staggered animation & Button Animation
+	// [Card Group] Who It's For - Icon Card Group and Button Animation
 	industryCardGroup: (selector = '.industry-card-container', options = {}) => {
 		let hasAnimated = false;
 
@@ -280,12 +292,24 @@ const animateComponents = {
 			const icon = card.querySelector('.icon-wrapper'); // Container for icon
 			const titleElement = card.querySelector('.title'); // The actual title text element
 			const description = card.querySelector('.text-body'); // description text
-			const button = card.querySelector('.button'); // description text
+			const link = card.querySelector('.link'); // cta button text
+
+			const backgroundContainer = card.querySelector('.bg-wrapper');
+			const backgroundImg = backgroundContainer.querySelector('img');
 
 			// Set initial states
 			if (description) {
 				description.style.opacity = '0';
 				description.style.transform = 'translateY(20px)';
+			}
+
+			if (backgroundContainer) {
+				backgroundContainer.style.opacity = '0';
+			}
+
+			if (backgroundImg) {
+				description.style.opacity = '0';
+				description.style.transform = 'translateY(100px)';
 			}
 
 			hover(card, (element) => {
@@ -317,8 +341,29 @@ const animateComponents = {
 				}
 
 				// change button color
-				if (button) {
-					button.style.color = 'var(--color-light-permanent)';
+				if (link) {
+					link.style.color = 'var(--color-light-permanent)';
+				}
+
+				// add background overlay
+				if (backgroundContainer) {
+					animate(
+						backgroundContainer,
+						animations.fadeIn.animate,
+						animations.fadeIn.options
+					);
+				}
+
+				// add background image overlay
+				if (backgroundImg) {
+					animate(
+						backgroundImg,
+						{ opacity: [0, 1], y: [150, 0] },
+						{
+							duration: 0.4,
+							ease: 'easeOut',
+						}
+					);
 				}
 
 				// Return cleanup function to reset when hover ends
@@ -350,8 +395,26 @@ const animateComponents = {
 					}
 
 					// revert button color
-					if (button) {
-						button.style.color = 'var(--color-primary-blue)';
+					if (link) {
+						link.style.color = 'var(--color-primary-blue)';
+					}
+
+					// remove background overlay
+					if (backgroundContainer) {
+						animate(
+							backgroundContainer,
+							animations.fadeOut.animate,
+							animations.fadeOut.options
+						);
+					}
+
+					// remove background image overlay
+					if (backgroundImg) {
+						animate(
+							backgroundImg,
+							animations.fadeOut.animate,
+							animations.fadeOut.options
+						);
 					}
 				};
 			});
