@@ -5,7 +5,7 @@ export default [
 	},
 	{
 		metric: '90+',
-		description: 'page speed score',
+		description: 'PageSpeed score',
 	},
 	{
 		metric: '<1s',

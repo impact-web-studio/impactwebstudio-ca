@@ -5,22 +5,25 @@ import SectionContainer from '../../components/global/SectionContainer.astro';
 import PerformanceHeader from './components/PerformanceHeader.astro';
 import PerformanceCardGroup from '../../components/cards/PerformanceCardGroup.astro';
 import PerformanceMetric from './components/PerformanceMetric.astro';
+import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 ---
 
-<SectionContainer containerClassName='flex-row'>
-	<div class='left flex flex-col w-full gap-5 md:gap-8 lg:gap-12'>
-		<PerformanceHeader />
-		<PerformanceCardGroup />
-	</div>
+<SectionContainer containerClassName='gap-20 lg:flex-row-reverse'>
 	<div
-		class='right flex flex-col justify-between w-full max-w-[40%] translate-y-[var(--text-topper)]'
+		class='top flex flex-col items-center gap-5 lg:items-start lg:justify-between w-full lg:max-w-[40%] translate-y-[var(--text-topper)]'
 	>
 		<PerformanceMetric />
 		<Image
 			src='/src/assets/iws-stats.png'
 			alt='laptop image'
-			height={500}
-			width={500}
+			height={600}
+			width={600}
+			class='lg:translate-y-[-25%]'
 		/>
+	</div>
+	<div class='bottom flex flex-col w-full gap-5 md:gap-8 lg:gap-12'>
+		<PerformanceHeader />
+		<PerformanceCardGroup />
+		<ButtonPrimaryCta />
 	</div>
 </SectionContainer>

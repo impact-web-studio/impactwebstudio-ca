@@ -2,12 +2,14 @@
 import performanceMetrics from '../../../_data/performanceMetrics';
 ---
 
-<ul class='flex gap-3 lg:gap-3'>
+<ul
+	class='grid grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-5 md:grid-cols-4 lg:gap-x-5'
+>
 	{
 		performanceMetrics.map((metric) => (
-			<li class='flex flex-col gap-1 w-1/4'>
-				<h3 class='font-bold text-[2rem]'>{metric.metric}</h3>
-				<p class='capitalize'>{metric.description}</p>
+			<li class='flex flex-col gap-1 lg:w-1/4'>
+				<p class='font-bold text-[2rem]'>{metric.metric}</p>
+				<p class='capitalize whitespace-break-spaces'>{metric.description}</p>
 			</li>
 		))
 	}
