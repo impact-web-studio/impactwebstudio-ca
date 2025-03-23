@@ -119,6 +119,7 @@ const animateComponents = {
 
 	// [Section] Hero Animation
 	heroSection: (selector = '.hero-section', options = {}) => {
+		let hasAnimated = false;
 		inView(
 			selector,
 			(e) => {
@@ -127,36 +128,36 @@ const animateComponents = {
 				const description = e.querySelector('p');
 				const button = e.querySelector('.button-group');
 				const image = e.querySelector('.image-wrapper');
-
-				if (heading) applyAnimation(heading, 'fadeInUp', 0.2);
-				if (subheading) applyAnimation(subheading, 'fadeInUp', 0);
-				if (description) applyAnimation(description, 'fadeInUp', 0.4); // Adjusted delay for better sequence
-				if (button) applyAnimation(button, 'fadeInUp', 0.6); // Adjusted delay for better sequence
-				if (image) applyAnimation(image, 'fadeInUp', 0.2); // Adjusted delay for better sequence
+				if (!hasAnimated) {
+					if (heading) applyAnimation(heading, 'fadeInUp', 0.2);
+					if (subheading) applyAnimation(subheading, 'fadeInUp', 0);
+					if (description) applyAnimation(description, 'fadeInUp', 0.4); // Adjusted delay for better sequence
+					if (button) applyAnimation(button, 'fadeInUp', 0.6); // Adjusted delay for better sequence
+					if (image) applyAnimation(image, 'fadeInUp', 0.2); // Adjusted delay for better sequence
+				}
 
 				return () => {
-					// Cleanup function
+					hasAnimated = true;
 				};
 			},
 			{
 				margin: options.margin || '0px',
-				once: false, // Animation will run every time e comes into view
 			}
 		);
 	},
 
 	// [Section] Section Header - Text Animation - PAUSED - TBD
 	sectionHeader: (selector = '.section-header', options = {}) => {
+		let hasAnimated = false;
 		inView(selector, (e) => {
 			const topper = e.querySelector('h2');
-			console.log(topper);
 
 			// Return cleanup function if needed
 			return (leaveInfo) => {};
 		});
 	},
 
-	// [Card Group] What We Do - Icon Card Group animation using staggered animation
+	// [Card Group] What We Do - Icon Card Group animation using staggered animation & Button Animation
 	offerCardGroup: (selector = '.offer-card-container', options = {}) => {
 		let hasAnimated = false;
 		inView(selector, (e) => {
@@ -164,9 +165,16 @@ const animateComponents = {
 			if (!hasAnimated) {
 				// Get all cards in the container
 				const cards = document.querySelectorAll(`${selector} .card`);
+				const button = document.querySelector(
+					`section:has(${selector}) .button`
+				);
 
 				// Apply stagger animation
-				applyAnimation(cards, 'fadeInUp', stagger(0.2));
+				if (cards) applyAnimation(cards, 'fadeInUp', stagger(0.2));
+
+				// Apply button animation
+				if (button)
+					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2); // Adjusted delay for better sequence
 
 				// Return cleanup function if needed
 				return (leaveInfo) => {
@@ -184,9 +192,15 @@ const animateComponents = {
 			if (!hasAnimated) {
 				// Get all cards in the container
 				const cards = document.querySelectorAll(`${selector} .card`);
-
+				const button = document.querySelector(
+					`section:has(${selector}) .button`
+				);
 				// Apply stagger animation
 				applyAnimation(cards, 'fadeInUp', stagger(0.2));
+
+				// Apply button animation
+				if (button)
+					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2); // Adjusted delay for better sequence
 
 				// Return cleanup function if needed
 				return (leaveInfo) => {

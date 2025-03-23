@@ -11,13 +11,13 @@ const { layout, spacing, colors, text } = {
 
 const {
 	ctaText = 'get started',
-	className = '',
+	class: className = '',
 	ctaLink = CtaLink.url,
 } = Astro.props;
 ---
 
 <a
-	class=`${layout} ${spacing} ${colors} ${text} ${className}`
+	class=`button ${layout} ${spacing} ${colors} ${text} ${className}`
 	href={ctaLink}
 	>{ctaText}
 </a>
