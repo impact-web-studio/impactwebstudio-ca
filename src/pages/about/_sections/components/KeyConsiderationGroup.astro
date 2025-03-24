@@ -1,0 +1,29 @@
+---
+// [Components]
+import KeyConsiderationItem from './KeyConsiderationItem.astro';
+
+// [Data]
+const keyConsiderations = [
+	'How much time am I spending each week manually scheduling appointments, sending reminders, and handling payments—and what could I do with that time instead?',
+	'If my competitors are offering online booking and payments, how does my business compare in terms of convenience and customer experience?',
+	'How much more revenue could I generate if I could book appointments 24/7, even when I’m not available to answer the phone?',
+];
+---
+
+<div
+	class='py-10 px-6 bg-primary-orange/10 border-l-4 border-[var(--color-primary-orange)] flex flex-col gap-5 rounded-r-xl'
+>
+	<p class='capitalize font-semibold text-contrast-permanent text-xl'>
+		Key Considerations
+	</p>
+	<ul class='flex flex-col gap-4'>
+		{
+			keyConsiderations.map((keyConsideration, index) => (
+				<KeyConsiderationItem
+					index={index}
+					description={keyConsideration}
+				/>
+			))
+		}
+	</ul>
+</div>

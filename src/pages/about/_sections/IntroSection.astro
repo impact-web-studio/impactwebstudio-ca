@@ -1,0 +1,25 @@
+---
+// [Components]
+import SectionContainer from '../../../components/global/SectionContainer.astro';
+import PageHeader from './components/PageHeader.astro';
+import PageBody from './components/PageBody.astro';
+import KeyConsiderationGroup from './components/KeyConsiderationGroup.astro';
+import ImageQuote from './components/ImageQuote.astro';
+---
+
+<SectionContainer>
+	<div class='layout-container grid grid-cols-1 lg:grid-cols-2 gap-10'>
+		<div class='top lg:order-2'>
+			<ImageQuote image='/src/assets/iws-stats.png' />
+		</div>
+		<div class='bottom flex flex-col gap-10'>
+			<PageHeader
+				page='About Us'
+				title='behind the scenes'
+				class=''
+			/>
+			<PageBody />
+			<KeyConsiderationGroup />
+		</div>
+	</div>
+</SectionContainer>
