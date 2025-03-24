@@ -1,8 +1,8 @@
 ---
-const { topper, title, description } = Astro.props;
+const { topper, title, description, class: className = '' } = Astro.props;
 ---
 
-<div class='section-header flex flex-col w-full gap-0.5'>
+<div class=`section-header flex flex-col w-full gap-0.5 ${className}`>
 	<h2
 		class='text-topper uppercase font-secondary tracking-widest font-bold text-contrast-permanent/70'
 	>
@@ -28,3 +28,16 @@ const { topper, title, description } = Astro.props;
 		animateComponents.sectionHeader();
 	});
 </script>
+
+<style>
+	.section-header.variant-1 {
+		.text-topper {
+			color: var(--color-primary-orange);
+		}
+
+		.text-heading,
+		p {
+			color: var(--color-light-permanent);
+		}
+	}
+</style>
