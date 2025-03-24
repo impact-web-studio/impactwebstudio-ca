@@ -5,28 +5,28 @@ import Footer from '../components/global/footer/Footer.astro';
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 	<Head />
 
-	<meta charset='UTF-8' />
+	<meta charset="UTF-8" />
 	<meta
-		name='viewport'
-		content='width=device-width'
+		name="viewport"
+		content="width=device-width"
 	/>
 	<link
-		rel='icon'
-		type='image/svg+xml'
-		href='/favicon.svg'
+		rel="icon"
+		type="image/svg+xml"
+		href="/favicon.svg"
 	/>
 	<meta
-		name='generator'
+		name="generator"
 		content={Astro.generator}
 	/>
 	<title>Astro Basics</title>
 
 	<body>
 		<Header />
-		<main class='w-full h-fit mx-auto'>
+		<main class="w-full h-fit mx-auto">
 			<slot />
 		</main>
 		<Footer />
