@@ -1,0 +1,35 @@
+---
+// [Data]
+const process = [
+	{
+		title: 'Discovery Questionnaire',
+		description:
+			"We send you an email with less than 10 questions about you business, services, what sets you apart, etc., and we'll handle the rest.",
+	},
+	{
+		title: 'Design Approval',
+		description:
+			"We then do a video screen share showing you the first draft and make any changes you want to make sure you're 100% satisfied.",
+	},
+	{
+		title: 'Website Development',
+		description:
+			'Once approved, we can start coding the site out and setting everything up. We will send a demo link to view before we launch and go live.',
+	},
+];
+
+// [Components]
+import ProcessCard from './ProcessCard.astro';
+---
+
+<ul class="grid grid-cols-3 gap-5">
+	{
+		process.map((step, index) => (
+			<ProcessCard
+				title={step.title}
+				description={step.description}
+				key={index}
+			/>
+		))
+	}
+</ul>
