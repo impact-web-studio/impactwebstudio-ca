@@ -1,0 +1,48 @@
+---
+interface Props {
+	field: string;
+	icon: string;
+	link: string;
+	value: string;
+}
+
+const { field, icon, link, value } = Astro.props;
+
+let IconComponent;
+try {
+	IconComponent = await import(`/src/assets/icons/${icon}.astro`).then(
+		(module) => module.default
+	);
+} catch (e) {
+	console.error(`Failed to load icon: ${icon}`);
+}
+---
+
+<li>
+	<a
+		href={link}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="flex items-center space-x-5 text-primary
+	group hover:text-primary-orange"
+	>
+		<span
+			class="icon-wrapper w-16 h-16 flex items-center justify-center text-contrast-permanent/80 group-hover:text-primary-orange transition-none"
+		>
+			<IconComponent
+				class="h-full w-auto max-w-full max-h-full"
+				style="aspect-ratio: 1;"
+			/>
+		</span>
+		<div>
+			<p class="capitalize font-bold text-2xl group-hover:text-primary-orange">
+				{field}
+			</p>
+			<p
+				class="text-body text-contrast-permanent/80 group-hover:text-primary-orange"
+			>
+				{value}
+			</p>
+		</div>
+	</a>
+</li>

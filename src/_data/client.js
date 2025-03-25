@@ -1,10 +1,4 @@
-export const client = [
-	{
-		client: 'Client 1',
-	},
-];
-
-export const FooterInfo = [
+export const CompanyInfo = [
 	{
 		field: 'Email',
 		value: 'info@impactwebstudio.ca',

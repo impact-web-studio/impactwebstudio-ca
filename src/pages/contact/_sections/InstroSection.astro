@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+// [Layout]
+import SectionContainer from '../../../components/global/SectionContainer.astro';
+
+// [Components]
+import ContactInfoGroup from './components/ContactInfoGroup.astro';
+---
+
+<SectionContainer>
+	<div class="wrapepr max-w-1/2 flex flex-col gap-10">
+		<div class="image-wrapper overflow-hidden rounded-xl w-fit h-fit">
+			<Image
+				src="/src/assets/toronto_cn_rogers.webp"
+				alt="toronto overview"
+				height={500}
+				width={800}
+				class="object-cover"
+			/>
+		</div>
+		<div class="flex flex-col gap-5">
+			<p>
+				Send us an email and let us know everything you want out of a new site.
+				We respond to everyone within 24 hours of contacting us.
+			</p>
+			<p>
+				Got questions? We got answers, check out our FAQs section below for
+				answers to our most common inquiries. If your question isn’t there, let
+				us know using the contact form to the right.
+			</p>
+			<ContactInfoGroup />
+		</div>
+	</div>
+</SectionContainer>
