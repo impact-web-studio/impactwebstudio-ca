@@ -1,78 +1,75 @@
 ---
-// import Favicon from '../assets/Favicon.astro';
-
-const { title, description } = Astro.props;
+const {
+	title = 'Impact Web Studio Inc.',
+	description = 'Business process automation and web development services in Canada and the United States.',
+	author = 'Kenny Nguyen',
+	robots = 'index, follow',
+	url = 'https://www.impactwebstudio.ca',
+	canonicalUrl,
+	keywords,
+} = Astro.props;
 ---
 
-<link
-	rel='sitemap'
-	href='/sitemap-index.xml'
-/>
-<!-- Tailwind -->
-<link
-	rel='stylesheet'
-	href='/src/styles/global.css'
-/>
-<slot name='style' />
-
+<!-- SEO Meta Tags -->
 <title>{title}</title>
+{
+	description && (
+		<meta
+			name="description"
+			content={description}
+		/>
+	)
+}
 <meta
-	name='description'
-	content={description}
+	name="robots"
+	content={robots}
+/>
+<meta
+	name="author"
+	content={author}
 />
 
-<!-- Web analytics -->
-<script
-	data-goatcounter='https://my-account.goatcounter.com/count'
-	async
-	src='//gc.zgo.at/count.js'
-></script>
+{
+	keywords && keywords.length > 0 && (
+		<meta
+			name="keywords"
+			content={keywords.join(', ')}
+		/>
+	)
+}
+
+<!-- Canonical URL -->
+<link
+	rel="canonical"
+	href={canonicalUrl || url}
+/>
 
 <!-- Open Graph tags -->
 <meta
-	property='og:title'
-	content='Impact Web Studio'
+	property="og:title"
+	content={title}
+/>
+{
+	description && (
+		<meta
+			property="og:description"
+			content={description}
+		/>
+	)
+}
+<meta
+	property="og:url"
+	content={url}
 />
 <meta
-	property='og:type'
-	content='website'
-/>
-<meta
-	property='og:url'
-	content='http://www.impactwebstudio.ca'
-/>
-<meta
-	property='og:description'
-	content='Impact Web Studio, Web Design and Development Services in Canada and the United States.'
-/>
-<meta
-	property='og:image'
-	content='/assets/images/iws-favicon.png'
-/>
-<meta
-	property='og:image:alt'
-	content='Impact Web Studio Favicon'
-/>
-<meta
-	name='viewport'
-	content='width=device-width, initial-scale=1'
+	property="og:type"
+	content="website"
 />
 
-<!-- Dark Mode -->
-<script>
-	// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-	document.documentElement.classList.toggle(
-		'dark',
-		localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches)
-	);
-	// Whenever the user explicitly chooses light mode
-	localStorage.theme = 'light';
-	// Whenever the user explicitly chooses dark mode
-	localStorage.theme = 'dark';
-	// Whenever the user explicitly chooses to respect the OS preference
-	localStorage.removeItem('theme');
-</script>
+<!-- Global CSS -->
+<link
+	rel="stylesheet"
+	href="/src/styles/global.css"
+	type="text/css"
+/>
 <slot />
-<!-- <Favicon /> -->

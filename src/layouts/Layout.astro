@@ -1,28 +1,38 @@
 ---
+import { SeoPropsSchema } from '../types/layout';
 import Head from '../components/global/Head.astro';
 import Header from '../components/global/header/Header.astro';
 import Footer from '../components/global/footer/Footer.astro';
+
+const validatedProps = SeoPropsSchema.parse(Astro.props);
 ---
 
 <!doctype html>
 <html lang="en">
-	<Head />
+	<head>
+		<Head
+			title={validatedProps.title}
+			description={validatedProps.description}
+			canonicalUrl={validatedProps.canonicalUrl}
+			robots={validatedProps.robots}
+		/>
 
-	<meta charset="UTF-8" />
-	<meta
-		name="viewport"
-		content="width=device-width"
-	/>
-	<link
-		rel="icon"
-		type="image/svg+xml"
-		href="/favicon.svg"
-	/>
-	<meta
-		name="generator"
-		content={Astro.generator}
-	/>
-	<title>Astro Basics</title>
+		<!-- Page Configs -->
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+	</head>
 
 	<body>
 		<Header />
@@ -32,12 +42,3 @@ import Footer from '../components/global/footer/Footer.astro';
 		<Footer />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

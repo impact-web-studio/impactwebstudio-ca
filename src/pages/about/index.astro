@@ -1,4 +1,12 @@
 ---
+// [Page Meta]
+const metadata = {
+	title: 'About Us | Impact Web Studio Inc.',
+	description:
+		'Learn about our mission to transform business processes through innovative web solutions',
+	canonicalUrl: 'https://www.impactwebstudio.ca/about',
+};
+
 // [Layout]
 import Layout from '../../layouts/Layout.astro';
 
@@ -8,7 +16,7 @@ import OurProcess from '../_reusable/OurProcess.astro';
 import Cta from '../../components/global/Cta.astro';
 ---
 
-<Layout>
+<Layout {...metadata}>
 	<IntroSection />
 	<OurProcess />
 	<Cta />
