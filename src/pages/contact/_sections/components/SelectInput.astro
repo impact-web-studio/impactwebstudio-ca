@@ -1,0 +1,193 @@
+---
+// src/components/SelectInput.astro
+interface Option {
+	value: string;
+	label: string;
+}
+
+interface Props {
+	options: Option[];
+	name?: string;
+	placeholder?: string;
+	className?: string;
+}
+
+const {
+	options,
+	name = 'select-input',
+	placeholder = 'Select an option',
+	className = '',
+} = Astro.props;
+---
+
+<div
+	class={`custom-select relative w-full ${className}`}
+	data-component="custom-select"
+>
+	<div
+		class="select-wrapper
+      flex
+      items-center
+      border
+      border-gray-300
+      rounded-md
+      bg-white
+      cursor-pointer
+      hover:border-gray-400
+      focus-within:border-blue-500
+      focus-within:ring-1
+      focus-within:ring-blue-500"
+	>
+		<input
+			type="hidden"
+			name={name}
+			id={name}
+			class="select-input-hidden"
+		/>
+
+		<div
+			class="select-display
+        flex
+        items-center
+        justify-between
+        w-full
+        px-4
+        py-3"
+			tabindex="0"
+			role="button"
+			aria-haspopup="listbox"
+		>
+			<span class="select-text text-[#7F7F7F] capitalize font-primary text-lg">
+				{placeholder}
+			</span>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-5 w-5 text-gray-400 transition-transform duration-200 select-arrow"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M19 9l-7 7-7-7"
+				></path>
+			</svg>
+		</div>
+
+		<ul
+			class="select-options
+        absolute
+        left-0
+        right-0
+        top-full
+        mt-1
+        bg-white
+        border
+        border-gray-300
+        rounded-md
+        shadow-lg
+        max-h-60
+        overflow-y-auto
+        hidden"
+			role="listbox"
+		>
+			{
+				options.map((option) => (
+					<li
+						class="
+            px-3 
+            py-2 
+            cursor-pointer 
+            hover:bg-gray-100 
+            focus:bg-gray-100 
+            focus:outline-none
+          "
+						data-value={option.value}
+						role="option"
+						tabindex="0"
+					>
+						{option.label}
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const selects = document.querySelectorAll(
+			'[data-component="custom-select"]'
+		);
+
+		selects.forEach((selectContainer) => {
+			const selectDisplay = selectContainer.querySelector('.select-display');
+			const selectText = selectContainer.querySelector('.select-text');
+			const selectOptions = selectContainer.querySelector('.select-options');
+			const hiddenInput = selectContainer.querySelector('.select-input-hidden');
+			const optionItems = selectContainer.querySelectorAll('[role="option"]');
+
+			// Toggle dropdown
+			const toggleDropdown = () => {
+				selectOptions.classList.toggle('hidden');
+			};
+
+			// Close dropdown when clicking outside
+			const closeDropdown = (e) => {
+				if (!selectContainer.contains(e.target)) {
+					selectOptions.classList.add('hidden');
+				}
+			};
+
+			// Select option
+			const selectOption = (option) => {
+				const value = option.getAttribute('data-value');
+				const label = option.textContent;
+
+				selectText.textContent = label;
+				hiddenInput.value = value;
+
+				selectOptions.classList.add('hidden');
+			};
+
+			// Event Listeners
+			selectDisplay.addEventListener('click', toggleDropdown);
+			selectDisplay.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					toggleDropdown();
+				}
+			});
+
+			optionItems.forEach((option) => {
+				option.addEventListener('click', () => selectOption(option));
+
+				option.addEventListener('keydown', (e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						selectOption(option);
+					}
+				});
+			});
+
+			document.addEventListener('click', closeDropdown);
+		});
+	});
+</script>
+
+<style is:global>
+	/* Scrollbar styling for options list */
+	.select-options::-webkit-scrollbar {
+		width: 8px;
+	}
+	.select-options::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	.select-options::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 4px;
+	}
+	.select-options::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+</style>

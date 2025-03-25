@@ -1,0 +1,288 @@
+---
+import { z } from 'astro:content';
+
+// Form validation schema
+const ContactFormSchema = z.object({
+	name: z
+		.string()
+		.min(2, { message: 'Name must be at least 2 characters long' })
+		.max(50, { message: 'Name must be no more than 50 characters long' })
+		.regex(/^[a-zA-Z\s'-]+$/, {
+			message:
+				'Name can only contain letters, spaces, hyphens, and apostrophes',
+		}),
+
+	email: z.string().email({ message: 'Please enter a valid email address' }),
+
+	phone: z
+		.string()
+		.optional()
+		.refine(
+			(val) =>
+				val === undefined || /^\+?1?\d{10,14}$/.test(val.replace(/\D/g, '')),
+			{
+				message: 'Please enter a valid phone number',
+			}
+		),
+
+	package: z.enum(['lump sum', 'monthly', 'e-commerce'], {
+		errorMap: () => ({ message: 'Please select a package type' }),
+	}),
+
+	message: z
+		.string()
+		.min(10, { message: 'Message must be at least 10 characters long' })
+		.max(500, { message: 'Message must be no more than 500 characters long' }),
+});
+
+type ContactFormData = z.infer<typeof ContactFormSchema>;
+
+import SelectInput from './components/SelectInput.astro';
+
+const options = [
+	{ value: 'lump-sum', label: 'Lump Sum' },
+	{ value: 'monthly', label: 'Monthly' },
+	{ value: 'e-commerce', label: 'E-commerce' },
+];
+---
+
+<div
+	class="flex flex-col gap-10 max-w-xl mx-auto bg-light-permanent p-10 rounded-xl shadow-md"
+>
+	<div class="flex flex-col gap-4">
+		<div class="wrapper">
+			<span
+				class="text-topper font-bold tracking-wide uppercase text-primary-orange font-secondary"
+				>contact us</span
+			>
+			<h2 class="text-5xl font-bold text-primary mb-2">Get in touch</h2>
+		</div>
+		<p class="text-gray-600">
+			Fill out the form below and we'll get back to you as soon as possible..
+		</p>
+	</div>
+
+	<form
+		id="contact-form"
+		method="POST"
+		class="space-y-8"
+		x-data="contactForm()"
+		@submit.prevent="submitForm"
+	>
+		<div>
+			<label
+				for="name"
+				class="block text-sm font-medium text-contrast-permanent/80 mb-2"
+			>
+				Full Name <span class="text-primary-red">*</span>
+			</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				required
+				minlength="2"
+				maxlength="50"
+				class="w-full px-4 py-3 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-contrast-permanent"
+				x-model="formData.name"
+				x-on:blur="validateField('name')"
+				placeholder="Name"
+			/>
+			<p
+				x-show="errors.name"
+				x-text="errors.name"
+				class="text-red-500 text-sm mt-1"
+			>
+			</p>
+		</div>
+
+		<div>
+			<label
+				for="email"
+				class="block text-sm font-medium text-gray-700 mb-2"
+			>
+				Email Address <span class="text-red-500">*</span>
+			</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				required
+				class="w-full px-4 py-3 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-contrast-permanent"
+				x-model="formData.email"
+				x-on:blur="validateField('email')"
+				placeholder="Email"
+			/>
+			<p
+				x-show="errors.email"
+				x-text="errors.email"
+				class="text-red-500 text-sm mt-1"
+			>
+			</p>
+		</div>
+
+		<div>
+			<label
+				for="phone"
+				class="block text-sm font-medium text-gray-700 mb-2"
+			>
+				Phone Number (Optional)
+			</label>
+			<input
+				type="tel"
+				id="phone"
+				name="phone"
+				class="w-full px-4 py-3 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-contrast-permanent"
+				x-model="formData.phone"
+				x-on:blur="validateField('phone')"
+				placeholder="Phone Number"
+			/>
+			<p
+				x-show="errors.phone"
+				x-text="errors.phone"
+				class="text-red-500 text-sm mt-1"
+			>
+			</p>
+		</div>
+
+		<div>
+			<label
+				for="package"
+				class="block text-sm font-medium text-gray-700 mb-2"
+			>
+				Service Package <span class="text-red-500">*</span>
+			</label>
+			<div class="relative w-full">
+				<SelectInput
+					options={options}
+					name="my-select"
+					placeholder="Choose an option"
+				/>
+			</div>
+
+			<p
+				x-show="errors.package"
+				x-text="errors.package"
+				class="text-red-500 text-sm mt-1"
+			>
+			</p>
+		</div>
+
+		<div>
+			<label
+				for="message"
+				class="block text-sm font-medium text-gray-700 mb-2"
+			>
+				Your Message <span class="text-red-500">*</span>
+			</label>
+			<textarea
+				id="message"
+				name="message"
+				required
+				minlength="10"
+				maxlength="500"
+				rows="4"
+				class="w-full px-4 py-3 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-contrast-permanent"
+				x-model="formData.message"
+				x-on:blur="validateField('message')"
+			></textarea>
+			<p
+				x-show="errors.message"
+				x-text="errors.message"
+				class="text-red-500 text-sm mt-1"
+			>
+			</p>
+		</div>
+
+		<div>
+			<button
+				type="submit"
+				class="w-fit bg-primary-blue text-white py-3 rounded-full hover:bg-primary-orange transition-colors duration-300 px-6 py-3"
+				:disabled="!isFormValid"
+			>
+				Send Message
+			</button>
+		</div>
+	</form>
+
+	<script>
+		function contactForm() {
+			return {
+				formData: {
+					name: '',
+					email: '',
+					phone: '',
+					package: '',
+					message: '',
+				},
+				errors: {},
+				isFormValid: false,
+
+				validateField(field) {
+					try {
+						// Validate individual field
+						ContactFormSchema.pick({ [field]: true }).parse({
+							[field]: this.formData[field],
+						});
+						this.errors[field] = null;
+					} catch (error) {
+						if (error instanceof z.ZodError) {
+							this.errors[field] = error.errors[0].message;
+						}
+					}
+					this.checkFormValidity();
+				},
+
+				checkFormValidity() {
+					try {
+						ContactFormSchema.parse(this.formData);
+						this.isFormValid = true;
+					} catch (error) {
+						if (error instanceof z.ZodError) {
+							this.isFormValid = false;
+						}
+					}
+				},
+
+				async submitForm() {
+					if (this.isFormValid) {
+						try {
+							// Implement form submission logic - TODO: Replace with actual API endpoint
+							const response = await fetch('/api/submit-contact', {
+								method: 'POST',
+								headers: {
+									'Content-Type': 'application/json',
+								},
+								body: JSON.stringify(this.formData),
+							});
+
+							if (response.ok) {
+								// Handle successful submission
+								alert('Message sent successfully!');
+								this.resetForm();
+							} else {
+								// Handle submission error
+								alert('Failed to send message. Please try again.');
+							}
+						} catch (error) {
+							console.error('Submission error:', error);
+							alert('An error occurred. Please try again.');
+						}
+					}
+				},
+
+				resetForm() {
+					this.formData = {
+						name: '',
+						email: '',
+						phone: '',
+						package: '',
+						message: '',
+					};
+					this.errors = {};
+					this.isFormValid = false;
+				},
+			};
+		}
+	</script>
+</div>

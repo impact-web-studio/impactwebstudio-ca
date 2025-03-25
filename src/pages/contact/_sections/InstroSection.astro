@@ -5,9 +5,10 @@ import SectionContainer from '../../../components/global/SectionContainer.astro'
 
 // [Components]
 import ContactInfoGroup from './components/ContactInfoGroup.astro';
+import ContactForm from './ContactForm.astro';
 ---
 
-<SectionContainer>
+<SectionContainer containerClassName="lg:flex-row lg:gap-10 lg:justify-between">
 	<div class="wrapepr max-w-1/2 flex flex-col gap-10">
 		<div class="image-wrapper overflow-hidden rounded-xl w-fit h-fit">
 			<Image
@@ -32,5 +33,8 @@ import ContactInfoGroup from './components/ContactInfoGroup.astro';
 			</div>
 			<ContactInfoGroup />
 		</div>
+	</div>
+	<div class="">
+		<ContactForm />
 	</div>
 </SectionContainer>
