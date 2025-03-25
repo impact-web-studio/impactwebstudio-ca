@@ -147,6 +147,7 @@ const {
 				const label = option.textContent;
 
 				selectText.textContent = label;
+				selectText.classList.add('selected');
 				hiddenInput.value = value;
 
 				selectOptions.classList.add('hidden');
@@ -189,5 +190,9 @@ const {
 	}
 	.select-options::-webkit-scrollbar-thumb:hover {
 		background: #555;
+	}
+
+	.selected {
+		color: var(--color-contrast-permanent);
 	}
 </style>

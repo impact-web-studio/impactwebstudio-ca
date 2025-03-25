@@ -144,7 +144,8 @@
 	p,
 	a,
 	input,
-	label {
+	label,
+	textarea {
 		font-size: var(--text-body);
 	}
 
