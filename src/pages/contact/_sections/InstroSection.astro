@@ -8,8 +8,12 @@ import ContactInfoGroup from './components/ContactInfoGroup.astro';
 import ContactForm from './ContactForm.astro';
 ---
 
-<SectionContainer containerClassName="lg:flex-row lg:gap-10 lg:justify-between">
-	<div class="wrapepr max-w-1/2 flex flex-col gap-10">
+<SectionContainer
+	containerClassName="items-center gap-20 lg:items-start lg:flex-row lg:gap-10 lg:justify-between"
+>
+	<div
+		class="wrapepr sm-max-w-full md:max-w-[60%] lg:max-w-1/2 flex flex-col gap-10"
+	>
 		<div class="image-wrapper overflow-hidden rounded-xl w-fit h-fit">
 			<Image
 				src="/src/assets/toronto_cn_rogers.webp"
@@ -34,7 +38,7 @@ import ContactForm from './ContactForm.astro';
 			<ContactInfoGroup />
 		</div>
 	</div>
-	<div class="">
+	<div class="w-full">
 		<ContactForm />
 	</div>
 </SectionContainer>
