@@ -3,6 +3,12 @@
 import MinusIcon from '../../../../assets/icons/minus.astro';
 import PlusIcon from '../../../../assets/icons/plus.astro';
 
+// [Type]
+interface Prop {
+	question: string;
+	answer: string;
+}
+
 // [Props]
 const { question, answer } = Astro.props;
 ---

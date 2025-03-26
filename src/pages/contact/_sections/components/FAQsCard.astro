@@ -1,6 +1,14 @@
 ---
+// [Components]
 import FAQsAccordian from './FAQsAccordian.astro';
 
+// [Type]
+interface Props {
+	title: string;
+	faqs: { question: string; answer: string }[];
+}
+
+// [Props]
 const { title, faqs } = Astro.props;
 ---
 
