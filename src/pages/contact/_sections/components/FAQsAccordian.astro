@@ -1,0 +1,90 @@
+---
+// [Components]
+import MinusIcon from '../../../../assets/icons/minus.astro';
+import PlusIcon from '../../../../assets/icons/plus.astro';
+
+// [Props]
+const { question, answer } = Astro.props;
+---
+
+<div class="accordion-item border-b border-slate-200 max-w-3xl">
+	<button
+		class="accordion-button w-full flex justify-between items-center py-5 text-slate-800"
+	>
+		<span>{question}</span>
+		<span class="icon text-slate-800 transition-transform duration-300">
+			<PlusIcon />
+		</span>
+	</button>
+	<div
+		class="accordion-content
+			overflow-hidden
+			transition-[max-height]
+			duration-300
+			ease-in-out
+			max-h-0"
+	>
+		<div class="pb-5 text-sm text-slate-500">
+			{answer}
+		</div>
+	</div>
+</div>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const accordionButtons = document.querySelectorAll('.accordion-button');
+
+		accordionButtons.forEach((button) => {
+			// Remove any existing listeners to prevent double-triggering
+			const oldButton = button.cloneNode(true);
+			button.parentNode.replaceChild(oldButton, button);
+
+			oldButton.addEventListener('click', (event) => {
+				// Prevent event propagation and default behavior
+				event.stopPropagation();
+				event.preventDefault();
+
+				const content = oldButton.nextElementSibling;
+				const icon = oldButton.querySelector('.icon');
+
+				if (content && icon) {
+					if (content.classList.contains('max-h-0')) {
+						// Expand
+						content.style.maxHeight = `${content.scrollHeight}px`;
+						content.classList.remove('max-h-0');
+
+						// Replace with Minus Icon
+						icon.innerHTML = '';
+						icon.innerHTML =
+							document.querySelector('template[data-minus-icon]')?.innerHTML ||
+							'';
+					} else {
+						// Collapse
+						content.style.maxHeight = '0px';
+						content.classList.add('max-h-0');
+
+						// Replace with Plus Icon
+						icon.innerHTML = '';
+						icon.innerHTML =
+							document.querySelector('template[data-plus-icon]')?.innerHTML ||
+							'';
+					}
+				}
+			});
+		});
+	});
+</script>
+
+<template
+	data-plus-icon
+	is:inline
+>
+	<PlusIcon />
+</template>
+
+<template
+	data-minus-icon
+	is:inline
+>
+	<MinusIcon />
+</template>
