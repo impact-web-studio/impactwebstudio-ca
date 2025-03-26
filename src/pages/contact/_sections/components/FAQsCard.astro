@@ -1,19 +1,19 @@
 ---
 import FAQsAccordian from './FAQsAccordian.astro';
 
-const { title } = Astro.props;
+const { title, faqs } = Astro.props;
 ---
 
 <div class="container max-w-3xl mx-auto">
 	<h3 class="text-xl font-bold mb-4">{title}</h3>
 	<div class="space-y-2">
-		<FAQsAccordian
-			question={'First Test Question'}
-			answer={'This is the first answer to the test question.'}
-		/>
-		<FAQsAccordian
-			question={'Second Test Question'}
-			answer={'This is the second answer to the test question.'}
-		/>
+		{
+			faqs.map((faq) => (
+				<FAQsAccordian
+					question={faq.question}
+					answer={faq.answer}
+				/>
+			))
+		}
 	</div>
 </div>
