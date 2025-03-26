@@ -1,9 +1,19 @@
 ---
 // [Components]
 import SectionContainer from '../../../components/global/SectionContainer.astro';
+import SectionHeader from '../../../components/global/SectionHeader.astro';
 import FAQsCardGroup from './components/FAQsCardGroup.astro';
 ---
 
-<SectionContainer>
+<SectionContainer
+	class="bg-branded-blue"
+	containerClassName="items-center gap-20"
+>
+	<SectionHeader
+		topper="FAQs"
+		title="Frequently Asked Questions"
+		description="Got Questions? We’ve got you covered. If your question isn’t answered below, please reach out to us using the contact form."
+		class="variant-1"
+	/>
 	<FAQsCardGroup />
 </SectionContainer>

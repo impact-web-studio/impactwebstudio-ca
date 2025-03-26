@@ -15,10 +15,13 @@ const { question, answer } = Astro.props;
 
 <div class="accordion-item border-b border-slate-200 max-w-3xl">
 	<button
-		class="accordion-button w-full flex justify-between items-center py-5 text-slate-800"
+		class="accordion-button w-full flex justify-between items-center py-4"
 	>
-		<span>{question}</span>
-		<span class="icon text-slate-800 transition-transform duration-300">
+		<span
+			class="text-sm text-light-permanent text-left font-semibold font-secondary tracking-normal"
+			>{question}</span
+		>
+		<span class="icon text-light-permanent transition-transform duration-300">
 			<PlusIcon />
 		</span>
 	</button>
@@ -30,8 +33,8 @@ const { question, answer } = Astro.props;
 			ease-in-out
 			max-h-0"
 	>
-		<div class="pb-5 text-sm text-slate-500">
-			{answer}
+		<div class="mb-4">
+			<p class="text-sm text-light-permanent/90 text-left">{answer}</p>
 		</div>
 	</div>
 </div>
