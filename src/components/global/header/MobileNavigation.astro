@@ -13,16 +13,17 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 	dropDownContainer:
 		'hidden absolute top-24 left-0 right-0 z-50 translate-y-[-1.25rem] rounded-b-[1.25rem] overflow-hidden z-40',
 	linkGroupSpacing: 'gap-y-3',
-	linkGroupLayout: 'lg:hidden flex flex-col items-center justify-center py-10',
+	linkGroupLayout:
+		'desktop:hidden flex flex-col items-center justify-center py-10',
 };
 ---
 
-<div class='lg:hidden flex gap-1'>
+<div class="desktop:hidden flex gap-1">
 	<!-- <ThemeToggle /> -->
 	<MobileMenuButton />
 </div>
 <div
-	id='mobile-menu'
+	id="mobile-menu"
 	class=`${dropDownContainer} bg-white`
 >
 	<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
@@ -31,12 +32,12 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 				<NavLinkItem
 					text={link.text}
 					url={link.url}
-					className='!text-2xl'
+					className="!text-2xl"
 				/>
 			))
 		}
 		<ButtonPrimaryCta
-			className='!bg-branded-blue !py-4 !px-10 !min-w-fit !mt-4'
+			className="!bg-branded-blue !py-4 !px-10 !min-w-fit !mt-4"
 		/>
 	</ul>
 </div>

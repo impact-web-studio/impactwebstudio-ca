@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 const { image, class: className = '' } = Astro.props;
 ---
 
-<div class="relative h-fit w-full mb-[25%] md:mb-[15%]">
+<div class="relative h-fit w-full mb-[25%] tablet:mb-[15%]">
 	<Image
 		src={image}
 		class={`w-full h-full object-cover ${className}`}
@@ -12,16 +12,16 @@ const { image, class: className = '' } = Astro.props;
 		width={500}
 	/>
 	<div
-		class="quote-container p-4 gap-3 md:p-8 rounded-2xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] md:translate-y-[50%] lg:translate-y-[50%] w-[90%] md:w-[85%] bg-[#FFFCF3] shadow-sm flex flex-col md:gap-5"
+		class="quote-container p-4 gap-3 tablet:p-8 rounded-2xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] tablet:translate-y-[50%] desktop:translate-y-[50%] w-[90%] tablet:w-[85%] bg-[#FFFCF3] shadow-sm flex flex-col tablet:gap-5"
 	>
-		<h3 class="uppercase text-lg font-bold text-[#FFC219] md:text-2xl">
+		<h3 class="uppercase text-lg font-bold text-[#FFC219] tablet:text-2xl">
 			The IWS Philosophy
 		</h3>
 		<p class="text-contrast-permanent/80">
 			Impact Web Studio was started with a simple belief - that every business
 			deserves a website that works as hard as they do.
 		</p>
-		<p class="text-sm lg:text-lg font-bold leading-tight">
+		<p class="text-sm desktop:text-lg font-bold leading-tight">
 			Kenny Nguyen <br /> Founder, Lead Developer
 		</p>
 	</div>

@@ -8,20 +8,20 @@ import PerformanceMetric from './components/PerformanceMetric.astro';
 import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 ---
 
-<SectionContainer containerClassName='gap-20 lg:flex-row-reverse'>
+<SectionContainer containerClass="gap-20 desktop:flex-row-reverse">
 	<div
-		class='top flex flex-col items-center gap-5 lg:items-start lg:justify-between w-full lg:max-w-[40%] translate-y-[var(--text-topper)]'
+		class="top flex flex-col items-center gap-5 desktop:items-start desktop:justify-between w-full desktop:max-w-[40%] translate-y-[var(--text-topper)]"
 	>
 		<PerformanceMetric />
 		<Image
-			src='/src/assets/iws-stats.png'
-			alt='laptop image'
+			src="/src/assets/iws-stats.png"
+			alt="laptop image"
 			height={600}
 			width={600}
-			class='lg:translate-y-[-25%]'
+			class="desktop:translate-y-[-25%]"
 		/>
 	</div>
-	<div class='bottom flex flex-col w-full gap-5 md:gap-8 lg:gap-12'>
+	<div class="bottom flex flex-col w-full gap-5 tablet:gap-8 desktop:gap-12">
 		<PerformanceHeader />
 		<PerformanceCardGroup />
 		<ButtonPrimaryCta />

@@ -70,19 +70,24 @@
 	--color-primary-orange: #f77f00;
 	--color-offwhite: #fafafa;
 
+	/* Breakpoints & Containers 
+	- between 320px and 767px: mobile, max-content-width: 767px
+	- between 768px and 1099px: tablet, max-content-width: 767px
+	- above 1100px: desktop, max-content-width: 1200px
+	*/
+	/* Breakpoints */
+	--breakpoint-sm: 500px;
+	--breakpoint-tablet: 768px;
+	--breakpoint-desktop: 1110px;
+
 	/* Containers */
+	--container-contain-max: 768px;
 	--container-content-max: 1200px;
 
 	/* Global Padding */
 	--spacing-padding-x: clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
 	--spacing-padding-y: clamp(2.5rem, 1.7857rem + 3.5714vw, 5rem);
 	--spacing-padding-top-footer: clamp(2rem, 1.1429rem + 4.2857vw, 5rem);
-
-	/* Breakpoints */
-	--breakpoint-sm: 500px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 1100px;
-	--breakpoint-xl: 1440px;
 
 	/* Shadows */
 	--drop-shadow-orange: 0px 3px 50px rgba(96.86%, 49.8%, 0%, 25%);

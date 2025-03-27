@@ -8,19 +8,21 @@ import FAQsCard from '../components/FAQsCard.astro';
 ---
 
 <div
-	class="container flex flex-col lg:flex-row gap-8 h-[500px] max-h-fit min-h-fit"
+	class="container flex flex-col desktop:flex-row gap-8 h-[500px] max-h-fit min-h-fit"
 >
 	<FAQsCard
 		title="general"
 		faqs={GeneralFAQs}
 	/>
-	<div class="divider hidden lg:block w-2 h-full bg-light-permanent/80"></div>
+	<div class="divider hidden desktop:block w-2 h-full bg-light-permanent/80">
+	</div>
 
 	<FAQsCard
 		title="design"
 		faqs={DesignFAQs}
 	/>
-	<div class="divider hidden lg:block w-2 h-full bg-light-permanent/80"></div>
+	<div class="divider hidden desktop:block w-2 h-full bg-light-permanent/80">
+	</div>
 	<FAQsCard
 		title="development"
 		faqs={DevelopmentFAQs}

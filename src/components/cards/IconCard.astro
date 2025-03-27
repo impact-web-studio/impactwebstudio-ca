@@ -19,36 +19,36 @@ try {
 ---
 
 <div
-	class=`card bg-light-permanent shadow-lg px-5 py-6 basis-full min-w-[300px] md:basis-[32%] grow shrink-0 rounded-[0.875rem] flex flex-col gap-6 group hover:bg-branded-blue justify-between ${className}`
+	class=`card bg-light-permanent shadow-lg px-5 py-6 basis-full min-w-[300px] tablet:basis-[32%] grow shrink-0 rounded-[0.875rem] flex flex-col gap-6 group hover:bg-branded-blue justify-between ${className}`
 >
-	<div class='top flex flex-col gap-4'>
+	<div class="top flex flex-col gap-4">
 		<span
-			class='icon-wrapper w-12 group-hover:text-light-permanent [transition:none!important]'
+			class="icon-wrapper w-12 group-hover:text-light-permanent [transition:none!important]"
 		>
 			{
 				IconComponent && (
 					<IconComponent
-						width='100%'
-						height='100%'
-						className='[transition:none!important]'
+						width="100%"
+						height="100%"
+						className="[transition:none!important]"
 					/>
 				)
 			}
 		</span>
-		<div class='text flex flex-col gap-2'>
+		<div class="text flex flex-col gap-2">
 			<div
-				class='font-secondary text-[1.25rem] uppercase font-bold text-contrast-permanent group-hover:text-light-permanent'
+				class="font-secondary text-[1.25rem] uppercase font-bold text-contrast-permanent group-hover:text-light-permanent"
 			>
 				{title}
 			</div>
-			<div class='text-body leading-5 group-hover:text-light-permanent'>
+			<div class="text-body leading-5 group-hover:text-light-permanent">
 				{description}
 			</div>
 		</div>
 	</div>
 	<a
 		href={ctaLink}
-		class='font-semibold capitalize font-secondary text-sm text-primary-blue py-2 group-hover:text-primary-orange transition-all duration-300 w-fit relative'
+		class="font-semibold capitalize font-secondary text-sm text-primary-blue py-2 group-hover:text-primary-orange transition-all duration-300 w-fit relative"
 	>
 		{ctaText}
 	</a>

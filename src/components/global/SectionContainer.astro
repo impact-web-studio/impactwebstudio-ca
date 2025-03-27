@@ -1,19 +1,31 @@
 ---
-const { sectionLayout, sectionSpacing } = {
-	sectionLayout: 'flex justify-center align-center',
-	sectionSpacing: 'w-full h-fit px-padding-x py-padding-y',
-};
+// [Type]
+interface Prop {
+	class: string;
+	containerClass: string;
+	// containerType: ['contain', 'full', ''];
+}
 
-const { containerLayout, containerSpacing } = {
-	containerLayout: 'w-full h-full max-w-content-max mx-auto',
-	containerSpacing: 'flex flex-col',
-};
+// [Props]
+const {
+	class: className,
+	containerClass = '',
+	// containerType = '',
+} = Astro.props;
 
-const { class: className, containerClassName = '' } = Astro.props;
+// [Logic]
+// const containerTypeClass =
+// 	containerType === 'contain'
+// 		? 'tablet:max-w-contain-max desktop:max-w-content-max'
+// 		: 'max-w-content-max';
 ---
 
-<section class=`${sectionLayout} ${sectionSpacing} ${className}`>
-	<div class=`${containerLayout} ${containerSpacing} ${containerClassName}`>
+<section
+	class=`w-full h-fit px-padding-x py-padding-y flex justify-center align-center ${className}`
+>
+	<div
+		class=`w-full h-fit max-w-wrapper-max mx-auto flex flex-col max-w-contain-max desktop:max-w-content-max ${containerClass}`
+	>
 		<slot />
 	</div>
 </section>

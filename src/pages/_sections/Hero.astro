@@ -6,7 +6,7 @@ import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 // [Styles] - Wrapper: <div>
 const { textWrapper, titleWrapper } = {
 	textWrapper:
-		'w-full max-w-7xl flex flex-col gap-8 md:max-w-[70%] xl:max-w-[50%]',
+		'w-full max-w-7xl flex flex-col gap-8 tablet:max-w-[70%] xl:max-w-[50%]',
 	titleWrapper: 'flex flex-col gap-3',
 };
 
@@ -26,7 +26,7 @@ const { titleText, spanText } = {
 // [Styles] - Body Text: <p>
 const { bodyText } = {
 	bodyText:
-		'text-body  font-medium text-light-permanent md:max-w-[80%] xl:max-w-[100%]',
+		'text-body  font-medium text-light-permanent tablet:max-w-[80%] xl:max-w-[100%]',
 };
 
 // [Styles] - CTA Links: <div> and <a>
@@ -38,15 +38,15 @@ const { buttonLayout, anchorText } = {
 // [Styles] - Image: <div> and <img>
 const { imageWrapper, image } = {
 	imageWrapper:
-		'w-full flex justify-center overflow-hidden md:absolute md:bottom-0 md:justify-end md:right-0 z-0 xl:w-fit',
+		'w-full flex justify-center overflow-hidden tablet:absolute tablet:bottom-0 tablet:justify-end tablet:right-0 z-0 xl:w-fit',
 	image:
-		'w-full max-w-[600px] h-full object-cover md:translate-x-[23%] lg:max-w-[800px] xl:translate-x-[0%] xl:max-w-[1000px]',
+		'w-full max-w-[600px] h-full object-cover tablet:translate-x-[23%] desktop:max-w-[800px] xl:translate-x-[0%] xl:max-w-[1000px]',
 };
 ---
 
 <SectionContainer
-	class='hero-section bg-contrast-permanent relative pb-0 md:pb-16 lg:py-32 lg:px-16 xl:py-40'
-	containerClassName='md:items-start lg:flex-row gap-5 items-center'
+	class="hero-section bg-contrast-permanent relative pb-0 tablet:pb-16 desktop:py-32 desktop:px-16 xl:py-40"
+	containerClass="tablet:items-start desktop:flex-row gap-5 items-center"
 >
 	<div class=`${textWrapper}`>
 		<div class=`${titleWrapper}`>
@@ -63,9 +63,9 @@ const { imageWrapper, image } = {
 			affordable monthly subscription, with no large upfront costs.
 		</p>
 		<div class=`button-group ${buttonLayout}`>
-			<ButtonPrimaryCta ctaText='Get Started' />
+			<ButtonPrimaryCta ctaText="Get Started" />
 			<a
-				href=''
+				href=""
 				class=`relative ${anchorText}`
 				>Learn More</a
 			>
@@ -74,8 +74,8 @@ const { imageWrapper, image } = {
 	<div class=`image-wrapper ${imageWrapper}`>
 		<img
 			class=`${image}`
-			src='/src/assets/hero-image.png'
-			alt='Hero Image'
+			src="/src/assets/hero-image.png"
+			alt="Hero Image"
 		/>
 	</div>
 </SectionContainer>

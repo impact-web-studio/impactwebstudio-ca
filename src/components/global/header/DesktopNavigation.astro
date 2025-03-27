@@ -10,12 +10,13 @@ import ButtonPrimaryCta from '../../ButtonPrimaryCta.astro';
 // [Styles] Navigation Link Group: <ul>
 const { linkGroupSpacing, linkGroupLayout } = {
 	linkGroupSpacing: 'gap-x-8',
-	linkGroupLayout: 'hidden lg:flex lg:justify-between lg:items-center',
+	linkGroupLayout:
+		'hidden desktop:flex desktop:justify-between desktop:items-center',
 };
 
 // [Styles] CTA Button: <button>
 const { ctaContainer, ctaPadding, ctaColors } = {
-	ctaContainer: 'hidden lg:flex lg:gap-2',
+	ctaContainer: 'hidden desktop:flex desktop:gap-2',
 	ctaPadding: 'px-3 py-2',
 	ctaColors: 'text-black',
 };
@@ -33,7 +34,7 @@ const { customCTAStyles = '' } = Astro.props;
 			<NavLinkItem
 				text={link.text}
 				url={link.url}
-				variant='desktop'
+				variant="desktop"
 			/>
 		))
 	}
@@ -43,5 +44,5 @@ const { customCTAStyles = '' } = Astro.props;
 	}
 >
 	<!-- <ThemeToggle /> -->
-	<ButtonPrimaryCta class='!bg-branded-blue !py-4 !px-10 !min-w-fit' />
+	<ButtonPrimaryCta class="!bg-branded-blue !py-4 !px-10 !min-w-fit" />
 </div>

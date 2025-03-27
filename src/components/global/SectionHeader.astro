@@ -4,17 +4,17 @@ const { topper, title, description, class: className = '' } = Astro.props;
 
 <div class=`section-header flex flex-col w-full gap-0.5 ${className}`>
 	<h2
-		class='text-topper uppercase font-secondary tracking-widest font-bold text-contrast-permanent/70'
+		class="text-topper uppercase font-secondary tracking-widest font-bold text-contrast-permanent/70"
 	>
 		{topper}
 	</h2>
-	<div class='wrapper w-full flex flex-wrap justify-between gap-5'>
+	<div class="wrapper w-full flex flex-wrap justify-between gap-5">
 		<h3
-			class='text-heading uppercase font-secondary font-bold leading-none lg:max-w-[600px]'
+			class="text-heading uppercase font-secondary font-bold leading-none desktop:max-w-[600px]"
 		>
 			{title}
 		</h3>
-		<p class='text-contrast-permament max-w-[600px] lg:max-w-[550px]'>
+		<p class="text-contrast-permament max-w-[600px] desktop:max-w-[550px]">
 			{description}
 		</p>
 	</div>
