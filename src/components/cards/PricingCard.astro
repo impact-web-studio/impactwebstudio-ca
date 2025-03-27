@@ -1,4 +1,13 @@
 ---
+// [Props]
+interface Props {
+	plan: string;
+	basePrice: string;
+	secondaryPrice: string;
+	offers: Array<{ [key: string]: boolean }>;
+}
+const { plan, basePrice, secondaryPrice, offers } = Astro.props;
+
 // [Components]
 import ButtonPrimaryCta from '../ButtonPrimaryCta.astro';
 let IconComponent: any;
@@ -9,9 +18,6 @@ try {
 } catch (e) {
 	console.error(`Failed to load icon: check`);
 }
-
-// [Props]
-const { plan, basePrice, secondaryPrice, offers } = Astro.props;
 
 const specialPackage = plan === 'Monthly';
 

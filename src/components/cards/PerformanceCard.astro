@@ -1,5 +1,17 @@
 ---
-const { icon, title, description, class: className = '' } = Astro.props;
+interface Props {
+	icon: string;
+	title: string;
+	description: string;
+	class?: string;
+}
+
+const {
+	icon,
+	title,
+	description,
+	class: className = '',
+} = Astro.props as Props;
 
 let IconComponent;
 try {

@@ -1,12 +1,21 @@
 ---
+interface Props {
+	class?: string;
+	icon: string;
+	title: string;
+	description: string;
+	ctaText: string;
+	ctaLink: string;
+}
+
 const {
-	class: className,
+	class: className = '',
 	icon,
 	title,
 	description,
 	ctaText,
 	ctaLink,
-} = Astro.props;
+} = Astro.props as Props;
 
 let IconComponent;
 try {
