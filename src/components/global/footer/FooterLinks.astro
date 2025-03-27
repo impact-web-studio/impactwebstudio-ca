@@ -1,6 +1,6 @@
 ---
 // [Data]
-import { navigationLinks } from '../../../data/navigation';
+import { NavigationLinks } from '@data/navigation';
 
 // [Components]
 import NavLinkItem from '../NavLinkItem.astro';
@@ -16,7 +16,7 @@ import NavLinkItem from '../NavLinkItem.astro';
 		class="grid grid-cols-2 gap-x-10 gap-y-3 tablet:gap-x-20 desktop:gap-x-16"
 	>
 		{
-			navigationLinks.map((link) => (
+			NavigationLinks.map((link) => (
 				<NavLinkItem
 					text={link.text}
 					url={link.url}

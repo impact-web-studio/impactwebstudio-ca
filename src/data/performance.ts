@@ -1,4 +1,10 @@
-export default [
+export interface PerformanceMetricItem {
+	icon: string;
+	title: string;
+	description: string;
+}
+
+const PerformanceMetric: PerformanceMetricItem[] = [
 	{
 		icon: 'hourglass',
 		title: 'speed = more conversions',
@@ -18,3 +24,5 @@ export default [
 			'Most visitions leave if the page takes longer than 3s to load. Our sites are optimized to load in under 1s.',
 	},
 ];
+
+export default PerformanceMetric;

@@ -1,4 +1,9 @@
-export default [
+export interface PerformanceMetricItem {
+	metric: string;
+	description: string;
+}
+
+const PerformanceMetric: PerformanceMetricItem[] = [
 	{
 		metric: '100%',
 		description: 'satisfaction gauranteed',
@@ -16,3 +21,5 @@ export default [
 		description: 'uptime',
 	},
 ];
+
+export default PerformanceMetric;

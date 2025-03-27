@@ -1,4 +1,9 @@
-export const navigationLinks = [
+export interface NavigationLinkItem {
+	text: string;
+	url: string;
+}
+
+export const NavigationLinks: NavigationLinkItem[] = [
 	{ text: 'Home', url: '/' },
 	{ text: 'About', url: '/about' },
 	// { text: 'Services', url: '/services' },
@@ -7,4 +12,4 @@ export const navigationLinks = [
 	{ text: 'Contact', url: '/contact' },
 ];
 
-export const CtaLink = { text: 'Contact', url: '/contact' };
+export const CtaLink: NavigationLinkItem = { text: 'Contact', url: '/contact' };

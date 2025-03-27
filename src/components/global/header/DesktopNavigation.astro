@@ -1,6 +1,6 @@
 ---
 // [Data]
-import { navigationLinks } from '../../../data/navigation'; // Navigation Link Routes
+import { NavigationLinks } from '@data/navigation'; // Navigation Link Routes
 
 // [Components]
 import NavLinkItem from '../NavLinkItem.astro'; // Navigation Link Items
@@ -30,7 +30,7 @@ const { customCTAStyles = '' } = Astro.props;
 	}
 >
 	{
-		navigationLinks.map((link) => (
+		NavigationLinks.map((link) => (
 			<NavLinkItem
 				text={link.text}
 				url={link.url}

@@ -1,4 +1,10 @@
-export default [
+export interface CustomerIndustryItem {
+	icon: string;
+	industry: string;
+	description: string;
+}
+
+const CustomerIndustries: CustomerIndustryItem[] = [
 	{
 		icon: 'sportsFitness',
 		industry: 'sports & fitness',
@@ -54,3 +60,5 @@ export default [
 			'Book more repairs, keep your shop running smoothly. Mechanics, auto detailers, and car service providers can schedule repairs, offer maintenance plans, and accept deposits online — reducing no-shows and maximizing revenue.',
 	},
 ];
+
+export default CustomerIndustries;

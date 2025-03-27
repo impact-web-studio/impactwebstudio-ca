@@ -1,4 +1,10 @@
-export default [
+export interface WhatWeDoItem {
+	icon: string;
+	title: string;
+	description: string;
+}
+
+const WhatWeDo: WhatWeDoItem[] = [
 	{
 		icon: 'mobile',
 		title: 'mobile-first design',
@@ -48,3 +54,5 @@ export default [
 			'Spend less time on admin, more time on business. Integrate online booking, automated reminders, invoicing, and customer management into your site. Free up your time without neglecting your clients.',
 	},
 ];
+
+export default WhatWeDo;

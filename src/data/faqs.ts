@@ -1,4 +1,9 @@
-export const GeneralFAQs = [
+export interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+export const GeneralFAQs: FAQItem[] = [
 	{
 		question: 'What is your refund policy?',
 		answer:
@@ -19,7 +24,7 @@ export const GeneralFAQs = [
 	},
 ];
 
-export const DesignFAQs = [
+export const DesignFAQs: FAQItem[] = [
 	{
 		question: 'What if I dont like the design?',
 		answer: 'full refund',
@@ -38,7 +43,7 @@ export const DesignFAQs = [
 	},
 ];
 
-export const DevelopmentFAQs = [
+export const DevelopmentFAQs: FAQItem[] = [
 	{
 		question: 'What if I dont like the design?',
 		answer: 'full refund',

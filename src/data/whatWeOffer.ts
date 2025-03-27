@@ -1,6 +1,10 @@
-import { desc, i } from 'motion/react-client';
+export interface WhatWeOfferItem {
+	icon: string;
+	title: string;
+	description: string;
+}
 
-export default [
+const WhatWeOffer: WhatWeOfferItem[] = [
 	{
 		icon: 'checkmark',
 		title: 'Integrated Booking & Payments',
@@ -50,3 +54,5 @@ export default [
 			'No weak points. No headaches. Our websites are lightweight, secure websites with no unnecessary bloat — meaning fewer vulnerabilities and faster load times.',
 	},
 ];
+
+export default WhatWeOffer;

@@ -1,4 +1,11 @@
-export const CompanyInfo = [
+export interface CompanyInfoItem {
+	field: string;
+	value: string;
+	link?: string;
+	icon: string;
+}
+
+export const CompanyInfo: CompanyInfoItem[] = [
 	{
 		field: 'Email',
 		value: 'info@impactwebstudio.ca',

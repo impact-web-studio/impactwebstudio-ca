@@ -1,4 +1,11 @@
-export default [
+export interface PortfolioItem {
+	image: string;
+	title: string;
+	description: string;
+	url: string;
+}
+
+const Portfolio: PortfolioItem[] = [
 	{
 		image: 'blkowned.ca.png',
 		title: 'blk owned',
@@ -21,3 +28,5 @@ export default [
 		url: 'https://hendersonhomeimprovements.ca/',
 	},
 ];
+
+export default Portfolio;

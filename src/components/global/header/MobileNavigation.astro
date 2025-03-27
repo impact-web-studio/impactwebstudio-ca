@@ -1,6 +1,6 @@
 ---
 // [Data]
-import { navigationLinks, CtaLink } from '../../../data/navigation'; // Navigation Link Routes
+import { NavigationLinks, CtaLink } from '@data/navigation'; // Navigation Link Routes
 
 // [Components]
 import NavLinkItem from '../NavLinkItem.astro'; // Navigation Link Items
@@ -28,7 +28,7 @@ const { dropDownContainer, linkGroupSpacing, linkGroupLayout } = {
 >
 	<ul class=`${linkGroupSpacing} ${linkGroupLayout}`>
 		{
-			navigationLinks.map((link) => (
+			NavigationLinks.map((link) => (
 				<NavLinkItem
 					text={link.text}
 					url={link.url}

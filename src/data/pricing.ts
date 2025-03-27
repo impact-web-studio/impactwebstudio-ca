@@ -1,4 +1,13 @@
-export default [
+export interface PricingItem {
+	plan: string;
+	basePrice: string;
+	secondaryPrice: string;
+	offers: {
+		[key: string]: boolean;
+	}[];
+}
+
+const Pricing: PricingItem[] = [
 	{
 		plan: 'Lump Sum',
 		basePrice: '$3500',
@@ -42,3 +51,5 @@ export default [
 		],
 	},
 ];
+
+export default Pricing;
