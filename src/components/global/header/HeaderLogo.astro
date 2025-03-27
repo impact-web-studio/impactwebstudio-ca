@@ -1,18 +1,15 @@
 ---
-// [Styles] Logo: <a> and <img>
-const { logoContainer, logoImg } = {
-	logoContainer: 'w-25 h-12 desktop:w-36 desktop:h-16',
-	logoImg: 'w-full h-full',
-};
+import { Image } from 'astro:assets';
+import Logo from '@assets/brand/iws-logo.svg';
 ---
 
 <a
-	class=`${logoContainer}`
+	class="w-25 h-12 desktop:w-36 desktop:h-16"
 	href="/"
 >
-	<img
-		class=`${logoImg}`
-		src="/src/assets/brand/iws-logo.svg"
+	<Image
+		src={Logo}
 		alt="Impact Web Studio Logo"
+		class="w-full h-full"
 	/>
 </a>

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import HeroImage from '@assets/hero-image.png';
 // [Components]
 import SectionContainer from '@components/global/SectionContainer.astro';
 import ButtonPrimaryCta from '@components/ButtonPrimaryCta.astro';
@@ -72,9 +74,9 @@ const { imageWrapper, image } = {
 		</div>
 	</div>
 	<div class=`image-wrapper ${imageWrapper}`>
-		<img
+		<Image
 			class=`${image}`
-			src="/src/assets/hero-image.png"
+			src={HeroImage}
 			alt="Hero Image"
 		/>
 	</div>

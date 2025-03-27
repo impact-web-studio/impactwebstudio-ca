@@ -5,11 +5,12 @@ interface Prop {
 	class?: string;
 }
 const { image, class: className = '' } = Astro.props as Prop;
+const imageSrc = await import(`../../../../assets/${image}`);
 ---
 
 <div class="relative h-fit w-full mb-[25%] tablet:mb-[15%]">
 	<Image
-		src={image}
+		src={imageSrc.default}
 		class={`w-full h-full object-cover ${className}`}
 		alt="Kenny Nguyen Headshot"
 		height={500}

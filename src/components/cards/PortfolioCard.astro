@@ -5,27 +5,27 @@ import { Image } from 'astro:assets';
 const { title, description, image, url } = Astro.props;
 
 // [Logic]
-const imageSrc = `/src/assets/${image}`;
+const imageSrc = await import(`../../assets/${image}`);
 ---
 
-<li class='portfolio-card h-full flex flex-col overflow-hidden'>
-	<div class='image-wrapper p-10'>
+<li class="portfolio-card h-full flex flex-col overflow-hidden">
+	<div class="image-wrapper p-10">
 		<Image
-			src={imageSrc}
+			src={imageSrc.default}
 			alt={title}
 			width={400}
 			height={400}
-			class='w-full h-full object-cover mx-auto translate-x-[-0.5rem]'
+			class="w-full h-full object-cover mx-auto translate-x-[-0.5rem]"
 		/>
 	</div>
-	<div class='wrapper flex flex-col justify-between flex-grow p-6 pt-0 gap-6'>
-		<div class='text mb-4'>
-			<h4 class='font-bold uppercase text-xl mb-2'>{title}</h4>
-			<p class='description'>{description}</p>
+	<div class="wrapper flex flex-col justify-between flex-grow p-6 pt-0 gap-6">
+		<div class="text mb-4">
+			<h4 class="font-bold uppercase text-xl mb-2">{title}</h4>
+			<p class="description">{description}</p>
 		</div>
 		<a
 			href={url}
-			class='uppercase text-primary-blue font-bold relative w-fit'
+			class="uppercase text-primary-blue font-bold relative w-fit"
 			>visit website</a
 		>
 	</div>

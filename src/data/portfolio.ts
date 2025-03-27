@@ -20,13 +20,13 @@ const Portfolio: PortfolioItem[] = [
 			'Henderson Home Improvements is a construction company servicing the GTA.',
 		url: 'https://hendersonhomeimprovements.ca/',
 	},
-	{
-		image: 'hendersonhomeimprovements.ca.png',
-		title: 'henderson home improvements',
-		description:
-			'Henderson Home Improvements is a construction company servicing the GTA.',
-		url: 'https://hendersonhomeimprovements.ca/',
-	},
+	// {
+	// 	image: 'hendersonhomeimprovements.ca.png',
+	// 	title: 'henderson home improvements',
+	// 	description:
+	// 		'Henderson Home Improvements is a construction company servicing the GTA.',
+	// 	url: 'https://hendersonhomeimprovements.ca/',
+	// },
 ];
 
 export default Portfolio;

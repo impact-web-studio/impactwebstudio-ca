@@ -6,6 +6,9 @@ import SectionContainer from '../../../components/global/SectionContainer.astro'
 // [Components]
 import ContactInfoGroup from './components/ContactInfoGroup.astro';
 import ContactForm from './ContactForm.astro';
+
+// [Assets]
+import TorontoCnRogers from '@assets/toronto_cn_rogers.webp';
 ---
 
 <SectionContainer
@@ -15,7 +18,7 @@ import ContactForm from './ContactForm.astro';
 	<div class="wrapper desktop:max-w-1/2 flex flex-col gap-10">
 		<div class="image-wrapper overflow-hidden rounded-xl w-fit h-fit">
 			<Image
-				src="/src/assets/toronto_cn_rogers.webp"
+				src={TorontoCnRogers}
 				alt="toronto overview"
 				height={500}
 				width={800}

@@ -1,6 +1,7 @@
 ---
 // [Astro]
 import { Image } from 'astro:assets';
+import WebsiteDevelopmentImage from '@assets/website-development.webp';
 
 // [Components]
 import SectionContainer from '@components/global/SectionContainer.astro';
@@ -18,7 +19,7 @@ import ButtonPrimaryCta from '@components/ButtonPrimaryCta.astro';
 	>
 		<div>
 			<Image
-				src="/src/assets/website-development.webp"
+				src={WebsiteDevelopmentImage}
 				alt="Team working together to put together a website"
 				width="500"
 				height="400"
