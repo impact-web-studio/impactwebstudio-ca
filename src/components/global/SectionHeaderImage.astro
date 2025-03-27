@@ -1,0 +1,14 @@
+---
+
+---
+
+<div
+	class="layout-container grid grid-cols-1 desktop:grid-cols-2 gap-10 tablet:gap-16 justify-between"
+>
+	<div class="top h-full desktop:order-2 desktop:translate-y-[150px]">
+		<slot name="top-right" />
+	</div>
+	<div class="bottom flex flex-col gap-6 desktop:gap-10">
+		<slot name="bottom-left" />
+	</div>
+</div>
