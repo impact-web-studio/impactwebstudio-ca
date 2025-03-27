@@ -64,10 +64,10 @@ const options = [
 
 	<form
 		id="contact-form"
+		name="contact"
 		method="POST"
 		class="space-y-8"
 		x-data="contactForm()"
-		@submit.prevent="submitForm"
 		data-netlify="true"
 	>
 		<div>
@@ -199,120 +199,9 @@ const options = [
 			<button
 				type="submit"
 				class="w-fit bg-primary-blue text-white rounded-full hover:bg-primary-orange transition-colors duration-300 px-6 py-3"
-				:disabled="!isFormValid"
 			>
 				Send Message
 			</button>
 		</div>
 	</form>
-
-	<script is:inline define:vars={{ options }}>
-		// Validation schema replication for client-side
-		const createZodSchema = () => {
-			return {
-				name: (val) => {
-					if (val.length < 2) return 'Name must be at least 2 characters long';
-					if (val.length > 50)
-						return 'Name must be no more than 50 characters long';
-					if (!/^[a-zA-Z\s'-]+$/.test(val))
-						return 'Name can only contain letters, spaces, hyphens, and apostrophes';
-					return null;
-				},
-				email: (val) => {
-					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-					return !emailRegex.test(val)
-						? 'Please enter a valid email address'
-						: null;
-				},
-				phone: (val) => {
-					if (!val) return null;
-					const cleanedPhone = val.replace(/\D/g, '');
-					return cleanedPhone.length < 10 || cleanedPhone.length > 14
-						? 'Please enter a valid phone number'
-						: null;
-				},
-				package: (val) => {
-					const validPackages = ['lump-sum', 'monthly', 'e-commerce'];
-					return !validPackages.includes(val)
-						? 'Please select a package type'
-						: null;
-				},
-				message: (val) => {
-					if (val.length < 10)
-						return 'Message must be at least 10 characters long';
-					if (val.length > 500)
-						return 'Message must be no more than 500 characters long';
-					return null;
-				},
-			};
-		};
-
-		function contactForm() {
-			const zodSchema = createZodSchema();
-
-			return {
-				formData: {
-					name: '',
-					email: '',
-					phone: '',
-					package: '',
-					message: '',
-				},
-				errors: {},
-				isFormValid: false,
-
-				validateField(field) {
-					const validate = zodSchema[field];
-					const error = validate(this.formData[field]);
-					this.errors[field] = error;
-					this.checkFormValidity();
-				},
-
-				checkFormValidity() {
-					this.isFormValid = Object.keys(this.formData).every((field) => {
-						if (field === 'phone') return true; // phone is optional
-						const validate = zodSchema[field];
-						return !validate(this.formData[field]);
-					});
-				},
-
-				async submitForm() {
-					// Existing submission logic remains the same
-					if (this.isFormValid) {
-						try {
-							const response = await fetch('/api/submit-contact', {
-								method: 'POST',
-								headers: {
-									'Content-Type': 'application/json',
-								},
-								body: JSON.stringify(this.formData),
-							});
-
-							if (response.ok) {
-								alert('Message sent successfully!');
-								this.resetForm();
-							} else {
-								alert('Failed to send message. Please try again.');
-							}
-						} catch (error) {
-							console.error('Submission error:', error);
-							alert('An error occurred. Please try again.');
-						}
-					}
-				},
-
-				resetForm() {
-					this.formData = {
-						name: '',
-						email: '',
-						phone: '',
-						package: '',
-						message: '',
-					};
-					this.errors = {};
-					this.isFormValid = false;
-				},
-			};
-		}
-	</script>
 </div>
