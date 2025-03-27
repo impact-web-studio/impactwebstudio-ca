@@ -1,0 +1,15 @@
+---
+import SectionContainer from '../../../components/global/SectionContainer.astro';
+import SectionHeaderCenter from '../../../components/global/subpage/SectionHeaderCenter.astro';
+import PricingCardGroup from '../../../components/cards/PricingCardGroup.astro';
+import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
+---
+
+<SectionContainer containerClass="gap-y-10 tablet:gap-y-20">
+	<SectionHeaderCenter
+		topper="our pricing"
+		title="Pricing packages for every budget"
+	/>
+	<PricingCardGroup />
+	<ButtonPrimaryCta class="self-center" />
+</SectionContainer>

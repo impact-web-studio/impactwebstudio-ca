@@ -1,0 +1,15 @@
+---
+const { topper, title } = Astro.props;
+---
+
+<div class="flex flex-col items-center">
+	<span
+		class="text-topper uppercase font-secondary text-contrast-permanent/80 font-bold tracking-widest"
+		>{topper}</span
+	>
+	<h3
+		class="uppercase font-bold text-heading text-center leading-none text-contrast-permanent"
+	>
+		{title}
+	</h3>
+</div>

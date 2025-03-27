@@ -19,6 +19,20 @@ import PiggyBank from '../../../assets/personal-savings.svg';
 	<SectionHeaderImage class="desktop:items-center">
 		<div
 			slot="top-right"
+			class="desktop:order-2"
+		>
+			<div class="image-wrapper h-full w-full">
+				<Image
+					src={PiggyBank}
+					alt="piggy bank"
+					height={800}
+					width={800}
+					class="object-contain"
+				/>
+			</div>
+		</div>
+		<div
+			slot="bottom-left"
 			class="flex flex-col gap-10"
 		>
 			<PageHeader
@@ -31,17 +45,6 @@ import PiggyBank from '../../../assets/personal-savings.svg';
 			<HighlightCard />
 			<div class="button-wrapepr">
 				<ButtonPrimaryCta />
-			</div>
-		</div>
-		<div slot="bottom-left">
-			<div class="image-wrapper h-full w-full">
-				<Image
-					src={PiggyBank}
-					alt="piggy bank"
-					height={800}
-					width={800}
-					class="object-contain"
-				/>
 			</div>
 		</div>
 	</SectionHeaderImage>
