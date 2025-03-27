@@ -1,27 +1,30 @@
 ---
 import { Image } from 'astro:assets';
-
-import bgImage from '@assets/kenny.webp';
+import type { ImageMetadata } from 'astro';
 interface Prop {
-	image: string;
+	imagePath: string;
 	class?: string;
 }
-const { image, class: className = '' } = Astro.props as Prop;
+const { imagePath, class: className = '' } = Astro.props as Prop;
 
-const imageSrc = await import(`../../../../assets/background.svg`);
+// [Logic]
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/assets/*.{jpeg,jpg,png,gif,webp}'
+);
+
+if (!images[imagePath])
+	throw new Error(
+		`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+	);
 ---
 
 <div class="relative h-fit w-full mb-[25%] tablet:mb-[15%]">
-	<!-- <Image
-		src={ImageSrc}
+	<Image
+		src={images[imagePath]()}
 		class={`w-full h-full object-cover ${className}`}
 		alt="Kenny Nguyen Headshot"
 		height={500}
 		width={500}
-	/> -->
-	<img
-		src={bgImage.src}
-		alt=""
 	/>
 	<div
 		class="quote-container p-4 gap-3 tablet:p-8 rounded-2xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] tablet:translate-y-[50%] desktop:translate-y-[50%] w-[90%] tablet:w-[85%] bg-[#FFFCF3] shadow-sm flex flex-col tablet:gap-5"
