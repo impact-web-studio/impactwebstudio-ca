@@ -1,14 +1,6 @@
 ---
 import { CtaLink } from '../_data/navigation';
 
-const { layout, spacing, colors, text } = {
-	layout:
-		'text-center rounded-full min-w-fit z-10 relative overflow-hidden w-fit tablet:min-w-[240px]',
-	spacing: 'py-2 px-6 tablet:py-4 tablet:px-8 desktop:px-10',
-	colors: 'bg-primary-blue text-white',
-	text: 'uppercase font-bold whitespace-nowrap text-button',
-};
-
 const {
 	ctaText = 'get started',
 	class: className = '',
@@ -16,16 +8,20 @@ const {
 } = Astro.props;
 ---
 
-<a
-	class=`button ${layout} ${spacing} ${colors} ${text} ${className}`
-	href={ctaLink}
-	>{ctaText}
-</a>
+<div
+	class="button py-2 px-6 tablet:py-4 tablet:px-8 desktop:px-10 bg-primary-blue text-center rounded-full min-w-fit z-10 relative overflow-hidden w-fit tablet:min-w-[240px]"
+>
+	<a
+		class=`text-white uppercase font-bold whitespace-nowrap text-button ${className}`
+		href={ctaLink}
+		>{ctaText}
+	</a>
+</div>
 
 <script>
 	import { hover } from 'motion';
 
-	hover('a', (element) => {
+	hover('.button', (element) => {
 		element.classList.add('hover');
 
 		return () => element.classList.remove('hover');
@@ -33,7 +29,7 @@ const {
 </script>
 
 <style>
-	a::before {
+	.button::before {
 		content: '';
 		position: absolute;
 		background-color: var(--color-primary-orange);
@@ -46,11 +42,11 @@ const {
 		z-index: -1; /* Ensures the background is behind the text */
 	}
 
-	a.alt::before {
+	.button.alt::before {
 		background-color: var(--color-primary-blue);
 	}
 
-	a.hover::before {
+	.button.hover::before {
 		transform: translateX(0);
 	}
 </style>
