@@ -16,8 +16,11 @@ import PiggyBank from '../../../assets/personal-savings.svg';
 ---
 
 <SectionContainer containerType="contain">
-	<SectionHeaderImage>
-		<div slot="top-right">
+	<SectionHeaderImage class="desktop:items-center">
+		<div
+			slot="top-right"
+			class="flex flex-col gap-10"
+		>
 			<PageHeader
 				page="Plans & pricing"
 				title="choose the best plan for your business"
@@ -31,12 +34,15 @@ import PiggyBank from '../../../assets/personal-savings.svg';
 			</div>
 		</div>
 		<div slot="bottom-left">
-			<Image
-				src={PiggyBank}
-				alt="piggy bank"
-				height={500}
-				width={500}
-			/>
+			<div class="image-wrapper h-full w-full">
+				<Image
+					src={PiggyBank}
+					alt="piggy bank"
+					height={800}
+					width={800}
+					class="object-contain"
+				/>
+			</div>
 		</div>
 	</SectionHeaderImage>
 </SectionContainer>
