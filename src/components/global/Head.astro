@@ -1,4 +1,5 @@
 ---
+// [Props] SEO Meta Tags
 const {
 	title = 'Impact Web Studio Inc.',
 	description = 'Business process automation and web development services in Canada and the United States.',
@@ -8,6 +9,9 @@ const {
 	canonicalUrl,
 	keywords,
 } = Astro.props;
+
+// [Import] Global CSS
+import '../../styles/global.css';
 ---
 
 <!-- SEO Meta Tags -->
@@ -66,10 +70,4 @@ const {
 	content="website"
 />
 
-<!-- Global CSS -->
-<link
-	rel="stylesheet"
-	href="/src/styles/global.css"
-	type="text/css"
-/>
 <slot />
