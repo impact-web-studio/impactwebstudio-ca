@@ -1,6 +1,7 @@
 ---
 // [Components]
 import SectionContainer from '../../../components/global/SectionContainer.astro';
+import SectionHeaderImage from '../../../components/global/SectionHeaderImage.astro';
 import PageHeader from './components/PageHeader.astro';
 import PageBody from './components/PageBody.astro';
 import KeyConsiderationGroup from './components/KeyConsiderationGroup.astro';
@@ -9,16 +10,20 @@ import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
 ---
 
 <SectionContainer>
-	<div
-		class="layout-container grid grid-cols-1 desktop:grid-cols-2 gap-10 tablet:gap-16 justify-between"
-	>
-		<div class="top h-full desktop:order-2 desktop:translate-y-[150px]">
+	<SectionHeaderImage>
+		<div
+			slot="top-right"
+			class="h-full desktop:order-2 desktop:translate-y-[150px]"
+		>
 			<ImageQuote
 				image="/src/assets/kenny.webp"
 				class="object-contain max-h-[500px] desktop:max-h-[600px] rounded-2xl"
 			/>
 		</div>
-		<div class="bottom flex flex-col gap-6 desktop:gap-10">
+		<div
+			slot="bottom-left"
+			class="flex flex-col gap-6 desktop:gap-10"
+		>
 			<PageHeader
 				page="About Us"
 				title="behind the scenes"
@@ -28,5 +33,5 @@ import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
 			<KeyConsiderationGroup />
 			<ButtonPrimaryCta />
 		</div>
-	</div>
+	</SectionHeaderImage>
 </SectionContainer>
