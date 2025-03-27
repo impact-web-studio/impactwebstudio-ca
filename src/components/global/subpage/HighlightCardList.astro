@@ -1,0 +1,22 @@
+---
+// [Type]
+interface Prop {
+	title: string;
+	listData: [string];
+}
+// [Components]
+import HighlightCardItem from './HighlightCardItem.astro';
+
+const { title, listData } = Astro.props as Prop;
+---
+
+<div
+	class="py-10 px-6 bg-primary-orange/10 border-l-4 border-[var(--color-primary-orange)] flex flex-col gap-5 rounded-r-xl"
+>
+	<p class="capitalize font-semibold text-contrast-permanent text-xl">
+		{title}
+	</p>
+	<ul class="flex flex-col gap-4">
+		{listData.map((data) => <HighlightCardItem description={data} />)}
+	</ul>
+</div>
