@@ -1,20 +1,27 @@
 ---
 import { Image } from 'astro:assets';
+
+import bgImage from '@assets/kenny.webp';
 interface Prop {
 	image: string;
 	class?: string;
 }
 const { image, class: className = '' } = Astro.props as Prop;
-const imageSrc = await import(`../../../../assets/${image}`);
+
+const imageSrc = await import(`../../../../assets/background.svg`);
 ---
 
 <div class="relative h-fit w-full mb-[25%] tablet:mb-[15%]">
-	<Image
-		src={imageSrc.default}
+	<!-- <Image
+		src={ImageSrc}
 		class={`w-full h-full object-cover ${className}`}
 		alt="Kenny Nguyen Headshot"
 		height={500}
 		width={500}
+	/> -->
+	<img
+		src={bgImage.src}
+		alt=""
 	/>
 	<div
 		class="quote-container p-4 gap-3 tablet:p-8 rounded-2xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] tablet:translate-y-[50%] desktop:translate-y-[50%] w-[90%] tablet:w-[85%] bg-[#FFFCF3] shadow-sm flex flex-col tablet:gap-5"
