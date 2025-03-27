@@ -1,4 +1,17 @@
 {
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"checkJs": false,
+		"baseUrl": ".",
+		"paths": {
+			"@data/*": ["src/data/*"],
+			"@components/*": ["src/components/*"]
+		},
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	},
 	"extends": "astro/tsconfigs/strict",
 	"include": [".astro/types.d.ts", "**/*"],
 	"exclude": ["dist"]

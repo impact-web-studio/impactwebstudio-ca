@@ -7,7 +7,7 @@ const { icon, title, description, className } = Astro.props;
 // [Components]
 let IconComponent;
 try {
-	IconComponent = await import(`../../assets/icons/${icon}.astro`).then(
+	IconComponent = await import(`@assets/icons/${icon}.astro`).then(
 		(module) => module.default
 	);
 } catch (e) {

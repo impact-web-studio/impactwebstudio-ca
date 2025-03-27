@@ -1,6 +1,6 @@
 ---
 // [Data]
-import pricing from '../../_data/pricing';
+import Pricing from '@data/pricing';
 
 // [Components]
 import PricingCard from './PricingCard.astro';
@@ -10,7 +10,7 @@ import PricingCard from './PricingCard.astro';
 	class="pricing-card-container flex flex-wrap justify-center gap-y-6 gap-x-4 tablet:gap-x-6"
 >
 	{
-		pricing.map((option, index) => (
+		Pricing.map((option, index) => (
 			<PricingCard
 				plan={option.plan}
 				basePrice={option.basePrice}

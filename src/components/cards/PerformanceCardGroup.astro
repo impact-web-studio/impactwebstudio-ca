@@ -3,12 +3,12 @@
 import PerformanceCard from './PerformanceCard.astro';
 
 // [Data]
-import performance from '../../_data/performance';
+import Performance from '@data/performance';
 ---
 
-<ul class='flex flex-col gap-6'>
+<ul class="flex flex-col gap-6">
 	{
-		performance.map((card) => (
+		Performance.map((card) => (
 			<PerformanceCard
 				icon={card.icon}
 				title={card.title}
