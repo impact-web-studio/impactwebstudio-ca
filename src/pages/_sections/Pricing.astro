@@ -16,5 +16,13 @@ import ButtonPrimaryCta from '../../components/ButtonPrimaryCta.astro';
 		description="Whether you prefer to pay upfront, go monthly, or need an e-commerce powerhouse, we’ve got you covered. Choose a one-time payment with low-cost hosting, a budget-friendly monthly plan, or a fully customized e-commerce solution. No hidden fees. No surprises."
 	/>
 	<PricingCardGroup />
-	<ButtonPrimaryCta class="self-center" />
+	<ButtonPrimaryCta class="self-center section-button" />
 </SectionContainer>
+
+<script>
+	import { animateComponents } from '../../scripts/animations';
+
+	document.addEventListener('DOMContentLoaded', () => {
+		animateComponents.pricingCardGroup();
+	});
+</script>

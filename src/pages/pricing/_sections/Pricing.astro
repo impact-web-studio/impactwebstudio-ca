@@ -14,5 +14,13 @@ import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
 		title="Pricing packages for every budget"
 	/>
 	<PricingCardGroup />
-	<ButtonPrimaryCta class="self-center" />
+	<ButtonPrimaryCta class="self-center section-button" />
 </SectionContainer>
+
+<script>
+	import { animateComponents } from '../../../scripts/animations';
+
+	document.addEventListener('DOMContentLoaded', () => {
+		animateComponents.pricingCardGroup();
+	});
+</script>

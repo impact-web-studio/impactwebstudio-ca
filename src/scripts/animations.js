@@ -457,6 +457,30 @@ const animateComponents = {
 			});
 		});
 	},
+
+	// [Card Group]
+	pricingCardGroup: (selector = '.pricing-card-container') => {
+		let hasAnimated = false;
+		inView(selector, (e) => {
+			// run animation once
+			if (!hasAnimated) {
+				const button = document.querySelector(
+					`section:has(${selector}) .section-button`
+				);
+
+				applyAnimation(selector, 'fadeInUp');
+
+				// Apply button animation
+				if (button)
+					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2); // Adjusted delay for better sequence
+
+				// Return cleanup function if needed
+				return (leaveInfo) => {
+					hasAnimated = true;
+				};
+			}
+		});
+	},
 };
 
 // Initialize all animations

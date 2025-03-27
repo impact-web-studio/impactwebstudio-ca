@@ -6,7 +6,9 @@ import pricing from '../../_data/pricing';
 import PricingCard from './PricingCard.astro';
 ---
 
-<div class="flex flex-wrap justify-center gap-y-6 gap-x-4 tablet:gap-x-6">
+<div
+	class="pricing-card-container flex flex-wrap justify-center gap-y-6 gap-x-4 tablet:gap-x-6"
+>
 	{
 		pricing.map((option, index) => (
 			<PricingCard
