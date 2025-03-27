@@ -1,10 +1,10 @@
 ---
 // [Components]
 import SectionContainer from '../../../components/global/SectionContainer.astro';
-import SectionHeaderImage from '../../../components/global/SectionHeaderImage.astro';
-import PageHeader from './components/PageHeader.astro';
-import PageBody from './components/PageBody.astro';
-import KeyConsiderationGroup from './components/KeyConsiderationGroup.astro';
+import SectionHeaderImage from '../../../components/global/subpage/SectionHeaderImage.astro';
+import PageHeader from '../../../components/global/subpage/PageHeader.astro';
+import PageBody from '../../../components/global/subpage/PageBody.astro';
+import HighlightCard from './components/HighlightCard.astro';
 import ImageQuote from './components/ImageQuote.astro';
 import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
 ---
@@ -29,8 +29,10 @@ import ButtonPrimaryCta from '../../../components/ButtonPrimaryCta.astro';
 				title="behind the scenes"
 				class=""
 			/>
-			<PageBody />
-			<KeyConsiderationGroup />
+			<PageBody
+				description={"I'm Kenny, the owner and lead developer at Impact Web Studio. I started Impact Web Studio with a singular mission - to help business owners shift their energy from the things they need to do to grow their business, towards the things they originally did. At Impact Web Studio, we get it — being a business owner is tough. There's never enough time in the day, and it can feel like you're always playing catch-up. That's where we come in. We help businesses like yours free up precious time and resources by creating websites and systems that work for you. That means more time to focus on what matters most — whether it's spending time with your family, growing your business, or just taking a breather. Because we believe in making your life easier, not harder."}
+			/>
+			<HighlightCard />
 			<ButtonPrimaryCta />
 		</div>
 	</SectionHeaderImage>

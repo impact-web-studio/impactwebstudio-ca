@@ -1,6 +1,6 @@
 ---
 // [Components]
-import KeyConsiderationItem from './KeyConsiderationItem.astro';
+import HighlightCardList from '../../../../components/global/subpage/HighlightCardList.astro';
 
 // [Data]
 const keyConsiderations = [
@@ -10,20 +10,7 @@ const keyConsiderations = [
 ];
 ---
 
-<div
-	class="py-10 px-6 bg-primary-orange/10 border-l-4 border-[var(--color-primary-orange)] flex flex-col gap-5 rounded-r-xl"
->
-	<p class="capitalize font-semibold text-contrast-permanent text-xl">
-		Key Considerations
-	</p>
-	<ul class="flex flex-col gap-4">
-		{
-			keyConsiderations.map((keyConsideration, index) => (
-				<KeyConsiderationItem
-					index={index}
-					description={keyConsideration}
-				/>
-			))
-		}
-	</ul>
-</div>
+<HighlightCardList
+	title="Key Considerations"
+	listData={keyConsiderations}
+/>
