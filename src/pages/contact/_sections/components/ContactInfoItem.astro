@@ -10,7 +10,7 @@ const { field, icon, link, value } = Astro.props;
 
 let IconComponent;
 try {
-	IconComponent = await import(`/src/assets/icons/${icon}.astro`).then(
+	IconComponent = await import(`../../../../assets/icons/${icon}.astro`).then(
 		(module) => module.default
 	);
 } catch (e) {

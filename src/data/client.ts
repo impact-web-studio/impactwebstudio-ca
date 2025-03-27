@@ -5,7 +5,7 @@ export interface CompanyInfoItem {
 	icon: string;
 }
 
-export const CompanyInfo: CompanyInfoItem[] = [
+const CompanyInfo: CompanyInfoItem[] = [
 	{
 		field: 'Email',
 		value: 'info@impactwebstudio.ca',
@@ -29,3 +29,5 @@ export const CompanyInfo: CompanyInfoItem[] = [
 		icon: 'location',
 	},
 ];
+
+export default CompanyInfo;

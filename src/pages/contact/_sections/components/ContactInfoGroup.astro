@@ -3,7 +3,7 @@
 import ContactInfoItem from './ContactInfoItem.astro';
 
 // [Data]
-import { CompanyInfo } from '../@data/client';
+import CompanyInfo from '@data/client';
 
 // [Type Definition]
 interface ContactInfo {
@@ -21,12 +21,12 @@ const whatsappInfo = CompanyInfo.find(
 	(item) => item.field === 'WhatsApp'
 ) as ContactInfo;
 
-const contactInfo = [emailInfo, whatsappInfo].filter(Boolean);
+const ContactInfo = [emailInfo, whatsappInfo].filter(Boolean);
 ---
 
 <ul class="flex flex-col gap-4">
 	{
-		contactInfo.map((info) => (
+		ContactInfo.map((info) => (
 			<ContactInfoItem
 				field={info.field}
 				icon={info.icon}
