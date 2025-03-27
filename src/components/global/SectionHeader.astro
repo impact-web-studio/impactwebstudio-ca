@@ -1,5 +1,17 @@
 ---
-const { topper, title, description, class: className = '' } = Astro.props;
+// [Props]
+interface Props {
+	topper: string;
+	title: string;
+	description: string;
+	class?: string;
+}
+const {
+	topper,
+	title,
+	description,
+	class: className = '',
+} = Astro.props as Props;
 ---
 
 <div class=`section-header flex flex-col w-full gap-0.5 ${className}`>

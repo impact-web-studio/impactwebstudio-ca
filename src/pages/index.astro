@@ -1,22 +1,15 @@
 ---
-// [Page Meta]
-const metadata = {
-	title: 'Impact Web Studio Inc.',
-	description:
-		'Impact Web Studio Inc. is a web development agency that specializes in building high-performance websites and web applications.',
-	canonicalUrl: 'https://www.impactwebstudio.ca',
-};
 // [Layouts]
 import Layout from '../layouts/Layout.astro';
 // [Sections]
 import Hero from './_sections/Hero.astro';
-import WhatWeDo from './_sections/WhatWeDo.astro';
-import WhatWeOffer from './_sections/WhatWeOffer.astro';
-import WhoItsFor from './_sections/WhoItsFor.astro';
+import WhatWeDo from '@pages/_sections/WhatWeDo.astro';
+import WhatWeOffer from '@pages/_sections/WhatWeOffer.astro';
+import WhoItsFor from '@pages/_sections/WhoItsFor.astro';
 import Pricing from './_sections/Pricing.astro';
 import Performance from './_sections/Performance.astro';
 import Portfolio from './_sections/Portfolio.astro';
-import Cta from '../components/global/Cta.astro';
+import Cta from '@components/global/Cta.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.

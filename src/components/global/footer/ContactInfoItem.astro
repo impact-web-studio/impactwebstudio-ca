@@ -16,18 +16,18 @@ try {
 }
 ---
 
-<li class='text-light-permanent flex gap-x-3 items-center'>
+<li class="text-light-permanent flex gap-x-3 items-center">
 	{IconComponent && <IconComponent />}
 	{
 		link ? (
 			<a
 				href={link}
-				class='text-light-permanent/80 text-body hover:text-primary-orange'
+				class="text-light-permanent/80 text-body hover:text-primary-orange"
 			>
 				{value}
 			</a>
 		) : (
-			<p class='text-light-permanent text-body'>{value}</p>
+			<p class="text-light-permanent text-body">{value}</p>
 		)
 	}
 </li>
