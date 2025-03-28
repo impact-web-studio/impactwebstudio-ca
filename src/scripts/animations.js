@@ -267,44 +267,36 @@ const animateComponents = {
 
 		// Animate on View
 		inView(selector, (info) => {
-			// run animation once
 			if (!hasAnimated) {
-				// Get all cards in the container
 				const cards = document.querySelectorAll(`${selector} .card`);
 				const button = document.querySelector(
 					`section:has(${selector}) .button`
 				);
 
-				// Apply stagger animation
 				if (cards) applyAnimation(cards, 'fadeInUp', stagger(0.2));
-
-				// Apply button animation
 				if (button)
 					applyAnimation(button, 'fadeInUp', cards.length * 0.2 + 0.2);
 
-				// Set flag to avoid re-animation
 				hasAnimated = true;
-
-				// Return cleanup function if needed
 				return () => {};
 			}
 		});
 
-		// Animate on Hover
+		// Check if hover is available
+		const canHover = window.matchMedia('(hover: hover)').matches;
+		if (!canHover) return;
+
+		// Animate on Hover (only for devices that support hover)
 		const cards = document.querySelectorAll(`${selector} .card`);
 
-		// Add hover event to each card individually
 		cards.forEach((card) => {
-			// Find elements within card
-			const icon = card.querySelector('.icon-wrapper'); // Container for icon
-			const titleElement = card.querySelector('.title'); // The actual title text element
-			const description = card.querySelector('.text-body'); // description text
-			const link = card.querySelector('.link'); // cta button text
-
+			const icon = card.querySelector('.icon-wrapper');
+			const titleElement = card.querySelector('.title');
+			const description = card.querySelector('.text-body');
+			const link = card.querySelector('.link');
 			const backgroundContainer = card.querySelector('.bg-wrapper');
-			const backgroundImg = backgroundContainer.querySelector('img');
+			const backgroundImg = backgroundContainer?.querySelector('img');
 
-			// Set initial states
 			if (description) {
 				description.style.opacity = '0';
 				description.style.transform = 'translateY(20px)';
@@ -320,7 +312,6 @@ const animateComponents = {
 			}
 
 			hover(card, (element) => {
-				// Scale down icon and title
 				if (icon) {
 					animate(
 						icon,
@@ -328,8 +319,6 @@ const animateComponents = {
 						animations.iconScaleDown.options
 					);
 				}
-
-				// Reduce font size of title
 				if (titleElement) {
 					animate(
 						titleElement,
@@ -337,8 +326,6 @@ const animateComponents = {
 						animations.fontSizeDown.options
 					);
 				}
-
-				// Reveal description
 				if (description) {
 					animate(
 						description,
@@ -346,13 +333,9 @@ const animateComponents = {
 						animations.revealOnHover.options
 					);
 				}
-
-				// change button color
 				if (link) {
 					link.style.color = 'var(--color-light-permanent)';
 				}
-
-				// add background overlay
 				if (backgroundContainer) {
 					animate(
 						backgroundContainer,
@@ -360,22 +343,15 @@ const animateComponents = {
 						animations.fadeIn.options
 					);
 				}
-
-				// add background image overlay
 				if (backgroundImg) {
 					animate(
 						backgroundImg,
 						{ opacity: [0, 1], y: [150, 0] },
-						{
-							duration: 0.4,
-							ease: 'easeOut',
-						}
+						{ duration: 0.4, ease: 'easeOut' }
 					);
 				}
 
-				// Return cleanup function to reset when hover ends
 				return () => {
-					// Scale icon and title back up
 					if (icon) {
 						animate(
 							icon,
@@ -383,7 +359,6 @@ const animateComponents = {
 							animations.iconScaleUp.options
 						);
 					}
-					// Restore font size
 					if (titleElement) {
 						animate(
 							titleElement,
@@ -391,8 +366,6 @@ const animateComponents = {
 							animations.fontSizeUp.options
 						);
 					}
-
-					// Hide description
 					if (description) {
 						animate(
 							description,
@@ -400,13 +373,9 @@ const animateComponents = {
 							animations.hideOnHoverOut.options
 						);
 					}
-
-					// revert button color
 					if (link) {
 						link.style.color = 'var(--color-primary-blue)';
 					}
-
-					// remove background overlay
 					if (backgroundContainer) {
 						animate(
 							backgroundContainer,
@@ -414,8 +383,6 @@ const animateComponents = {
 							animations.fadeOut.options
 						);
 					}
-
-					// remove background image overlay
 					if (backgroundImg) {
 						animate(
 							backgroundImg,
@@ -427,7 +394,6 @@ const animateComponents = {
 			});
 		});
 	},
-
 	// [Section] Portfolio Image Animation
 	portfolioCard: (selector = '.portfolio-card', options = {}) => {
 		// Use querySelectorAll to get all portfolio cards
