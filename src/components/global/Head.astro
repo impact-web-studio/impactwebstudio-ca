@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+
 // [Props] SEO Meta Tags
 const {
 	title = 'Impact Web Studio Inc.',
@@ -69,5 +71,6 @@ import '../../styles/global.css';
 	property="og:type"
 	content="website"
 />
+<ClientRouter />
 
 <slot />
